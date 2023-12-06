@@ -160,7 +160,6 @@ actions:
         git clone https://github.com/Onemind-Services-LLC/netbox-support.git
         cp ~/netbox-support/scripts/eox-eol.py  /opt/netbox/netbox/scripts/
         apt-get update
-        echo 'machine github.com login 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' >> ~/.netrc
         apt-get install git -y
         pip install git+https://github.com/Onemind-Services-LLC/netbox-support
 
