@@ -15,3 +15,5 @@ logo: /images/onemind_services.png
 baseUrl: https://raw.githubusercontent.com/Onemind-Services-LLC/netbox-jps/dev
 
 ssl: true
+settings:
+  onBeforeInit: scripts/settingsOnBeforeInit.js
