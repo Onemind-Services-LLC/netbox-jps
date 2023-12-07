@@ -14,7 +14,6 @@ fields:
     type: string
     caption: Admin Username
     tooltip: Username for the initial admin user
-    placeholder: admin
     required: true
 
   - name: password
@@ -22,14 +21,12 @@ fields:
     inputType: password
     caption: Admin Password
     tooltip: Password for the initial admin user
-    placeholder: admin
     required: true
 
   - name: email
     type: string
     caption: Admin Email
     tooltip: Email address for the initial admin user
-    placeholder: admin@example.com
     required: false
     vtype: email
 
@@ -47,4 +44,3 @@ fields:
           default: 1
           required: true
           tooltip: Number of rq workers to run
-
