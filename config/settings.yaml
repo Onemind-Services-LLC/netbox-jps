@@ -37,11 +37,29 @@ fields:
     value: false
     showIf:
       true:
-        - name: workerCount
+        - name: highQueue
           type: numberpicker
-          caption: Worker Count
-          min: 1
-          editable: true
+          caption: High Priority Queue
+          tooltip: Number of workers to run for the high priority queue
           default: 1
           required: true
-          tooltip: Number of rq workers to run
+          editable: true
+          min: 1
+
+        - name: defaultQueue
+          type: numberpicker
+          caption: Default Priority Queue
+          tooltip: Number of workers to run for the default priority queue
+          default: 1
+          required: true
+          editable: true
+          min: 1
+
+        - name: lowQueue
+          type: numberpicker
+          caption: Low Priority Queue
+          tooltip: Number of workers to run for the low priority queue
+          default: 1
+          required: true
+          editable: true
+          min: 1
