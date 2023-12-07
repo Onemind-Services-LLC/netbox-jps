@@ -31,7 +31,7 @@ fields:
     vtype: email
 
   - name: workers
-    type: toggle
+    type: checkbox
     caption: Enable Workers
     tooltip: Enable RQ workers
     value: false
