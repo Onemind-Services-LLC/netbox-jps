@@ -34,13 +34,14 @@ fields:
     type: checkbox
     caption: Enable Workers
     tooltip: Enable RQ workers
-    value: false
+    value: true
     showIf:
       true:
         - name: workerCount
-          type: number
+          type: numberpicker
           caption: Worker Count
           min: 1
+          editable: true
           default: 1
           required: true
           tooltip: Number of rq workers to run
