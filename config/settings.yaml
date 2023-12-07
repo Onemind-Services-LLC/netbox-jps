@@ -34,7 +34,7 @@ fields:
     type: checkbox
     caption: Enable Workers
     tooltip: Enable RQ workers
-    value: true
+    value: false
     showIf:
       true:
         - name: workerCount
