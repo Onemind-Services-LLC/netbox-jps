@@ -3,6 +3,7 @@ var resp = {
     nodes: []
 };
 
+// Build PostgreSQL node configuration
 if ('${settings.dbType:standalone}' == 'cluster') {
     resp.nodes.push({
         nodeType: "postgresql",
@@ -17,7 +18,7 @@ if ('${settings.dbType:standalone}' == 'cluster') {
             is_pgpool2: true,
         }
     })
-} else{
+} else {
     resp.nodes.push({
         nodeType: "postgresql",
         count: 1,
@@ -27,6 +28,32 @@ if ('${settings.dbType:standalone}' == 'cluster') {
         isSLBAccessEnabled: true,
         nodeGroup: "sqldb",
         password: `${globals.dbPassword}`,
+    })
+}
+
+// Build Redis node configuration
+if ('${settings.redisType:standalone}' == 'cluster') {
+    resp.nodes.push({
+        nodeType: "redis",
+        count: 6,
+        cloudlets: 32,
+        diskLimit: "${settings.redisDiskLimit:10}",
+        scalingMode: "STATELESS",
+        isSLBAccessEnabled: true,
+        nodeGroup: "redis",
+        password: "${globals.redisPassword}",
+        cluster: true
+    })
+} else {
+    resp.nodes.push({
+        nodeType: "redis",
+        count: 1,
+        cloudlets: 32,
+        diskLimit: "${settings.redisDiskLimit:10}",
+        scalingMode: "STATELESS",
+        isSLBAccessEnabled: true,
+        nodeGroup: "redis",
+        password: "${globals.redisPassword}",
     })
 }
 
