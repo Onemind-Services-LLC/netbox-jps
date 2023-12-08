@@ -6,8 +6,8 @@ fields:
     values:
       - value: v3.3
         caption: v3.3
-      - value: v3.4
-        caption: v3.4-2.5.3
+      - value: v3.4-2.5.3
+        caption: v3.4
     default: v3.4-2.5.3
 
   - name: username
