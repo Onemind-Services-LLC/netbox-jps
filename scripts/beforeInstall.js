@@ -34,7 +34,7 @@ if ('${settings.redisType:standalone}' == 'cluster') {
     resp.nodes.push({
         nodeType: "redis",
         count: 6,
-        cloudlets: 4,
+        cloudlets: 32,
         diskLimit: "${settings.redisDiskLimit:10}",
         scalingMode: "STATELESS",
         isSLBAccessEnabled: true,
@@ -46,7 +46,7 @@ if ('${settings.redisType:standalone}' == 'cluster') {
     resp.nodes.push({
         nodeType: "redis",
         count: 1,
-        cloudlets: 4,
+        cloudlets: 32,
         diskLimit: "${settings.redisDiskLimit:10}",
         scalingMode: "STATELESS",
         isSLBAccessEnabled: true,
@@ -85,7 +85,7 @@ resp.nodes.push({
         "sqldb:postgresql"
     ],
     image: `netboxcommunity/netbox:${settings.version}`,
-    cloudlets: 4,
+    cloudlets: 32,
     diskLimit: 10,
     scalingMode: "STATELESS",
     isSLBAccessEnabled: true,
