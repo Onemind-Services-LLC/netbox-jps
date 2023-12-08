@@ -82,7 +82,7 @@ resp.nodes.push({
     links:[
         "cache:redis",
         "sqldb:postgresql",
-        "extra:pgpool"
+        "pgpool2:pgpool"
     ],
     image: `netboxcommunity/netbox:${settings.version}`,
     cloudlets: 4,
