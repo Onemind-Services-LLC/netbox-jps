@@ -1,9 +1,4 @@
 fields:
-  - name: envName
-    type: string
-    caption: Environment Name
-    tooltip: Name of the environment
-    required: true
   - name: version
     type: list
     caption: NetBox Version
