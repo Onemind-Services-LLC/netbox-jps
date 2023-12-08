@@ -73,9 +73,11 @@ resp.nodes.push({
         REDIS_DATABASE: "0",
         REDIS_HOST: "redis",
         REDIS_PASSWORD: "${globals.redisPassword}",
+        REDIS_USERNAME: "admin",
         REDIS_CACHE_DATABASE: "1",
         REDIS_CACHE_HOST: "redis",
         REDIS_CACHE_PASSWORD: "${globals.redisPassword}",
+        REDIS_CACHE_USERNAME: "admin",
         SECRET_KEY: "${globals.secretKey}",
 
         // Optional settings
