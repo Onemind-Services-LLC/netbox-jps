@@ -36,7 +36,7 @@ if ('${settings.redisType:standalone}' == 'cluster') {
     resp.nodes.push({
         nodeType: "redis",
         count: 6,
-        cloudlets: 32,
+        cloudlets: 4,
         diskLimit: "${settings.redisDiskLimit:10}",
         scalingMode: "STATELESS",
         isSLBAccessEnabled: true,
@@ -48,7 +48,7 @@ if ('${settings.redisType:standalone}' == 'cluster') {
     resp.nodes.push({
         nodeType: "redis",
         count: 1,
-        cloudlets: 32,
+        cloudlets: 4,
         diskLimit: "${settings.redisDiskLimit:10}",
         scalingMode: "STATELESS",
         isSLBAccessEnabled: true,
