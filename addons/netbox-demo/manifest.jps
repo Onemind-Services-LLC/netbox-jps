@@ -55,4 +55,4 @@ actions:
 
   removeConfig:
     - cmd[${nodes.cp.id}]: |-
-        yq -d 0 '.netbox_demo' /etc/netbox/config/plugins.yaml
+        yq -i 'del(.netbox_demo)' /etc/netbox/config/plugins.yaml
