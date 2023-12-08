@@ -65,7 +65,7 @@ resp.nodes.push({
         "/opt/netbox/netbox/sripts",
     ],
     env:{
-        DB_HOST: "node${nodes.pgpool.master.id}-${env.domain}",
+        DB_HOST: "${settings.dbType:standalone}" == "cluster" ? "pgpool" : "postgresql",
         DB_NAME: "netbox",
         DB_USER: "netbox",
         DB_PASSWORD: "${globals.dbPassword}",
@@ -81,7 +81,8 @@ resp.nodes.push({
     },
     links:[
         "cache:redis",
-        "pgpool:pgpool"
+        "pgpool:pgpool",
+        "sqldb:postgresql"
     ],
     image: `netboxcommunity/netbox:${settings.version}`,
     cloudlets: 4,
