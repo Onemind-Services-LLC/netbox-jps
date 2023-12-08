@@ -24,3 +24,14 @@ globals:
   secretKey: ${fn.random(50)}
 
 nodes: definedInOnBeforeInstall
+
+onInstall:
+  - createDb
+
+actions:
+  createDb:
+    - cmd[${nodes.sqldb.master.id}]:
+        psql -U webadmin -d postgres -c "CREATE DATABASE netbox;"
+        psql -U webadmin -d postgres -c "CREATE USER netbox WITH PASSWORD '${globals.dbPassword}';"
+        psql -U webadmin -d postgres -c "ALTER DATABASE netbox OWNER TO netbox;"
+        psql -U webadmin -d postgres -c "GRANT CREATE ON SCHEMA public TO netbox;"
