@@ -81,7 +81,6 @@ resp.nodes.push({
     },
     links:[
         "cache:redis",
-        "sqldb:postgresql",
         "pgpool:pgpool"
     ],
     image: `netboxcommunity/netbox:${settings.version}`,
