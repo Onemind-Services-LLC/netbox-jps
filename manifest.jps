@@ -22,6 +22,7 @@ globals:
   dbPassword: ${fn.password}
   redisPassword: ${fn.password}
   secretKey: ${fn.random(50)}
+  apiToken: ${fn.random(50)}
 
 nodes: definedInOnBeforeInstall
 

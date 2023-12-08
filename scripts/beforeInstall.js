@@ -80,6 +80,10 @@ resp.nodes.push({
         REDIS_CACHE_USERNAME: "admin",
         SECRET_KEY: "${globals.secretKey}",
 
+        // Container settings
+        MAX_DB_WAIT_TIME: "60",
+        DB_WAIT_DEBUG: "1",
+
         // Optional settings
         LOGIN_REQUIRED: "True",
         CORS_ORIGIN_ALLOW_ALL: "True",
@@ -87,9 +91,11 @@ resp.nodes.push({
         LOGIN_PERSISTENCE: "True",
 
         // Superuser settings
+        SKIP_SUPERUSER: "false",
         SUPERUSER_NAME: "${settings.username}",
         SUPERUSER_EMAIL: "${settings.email:netbox@example.com}",
-        SUPERUSER_PASSWORD: "${settings.password}"
+        SUPERUSER_PASSWORD: "${settings.password}",
+        SUPERUSER_API_TOKEN: "${globals.apiToken}",
     },
     links: [
         "cache:redis",
