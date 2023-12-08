@@ -9,6 +9,10 @@ description:
 logo: /images/onemind_services.png
 baseUrl: https://raw.githubusercontent.com/Onemind-Services-LLC/netbox-jps/dev/
 
+targetNodes:
+  nodeGroup:
+    - cp
+
 nodes:
   - nodeGroup: cp
 
@@ -26,11 +30,17 @@ settings:
 onInstall:
   - installPlugin
   - updateConfig
-  - restartNodes [cp]
+  - restartNodes:
+      - nodeGroup: cp
+        nodeType: docker
+        reboot: true
 
 onBeforeDelete:
   - removeConfig
-  - restartNodes [cp]
+  - restartNodes:
+      - nodeGroup: cp
+        nodeType: docker
+        reboot: true
 
 actions:
   installPlugin:
