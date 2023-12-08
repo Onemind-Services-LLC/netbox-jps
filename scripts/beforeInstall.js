@@ -83,6 +83,11 @@ resp.nodes.push({
         CORS_ORIGIN_ALLOW_ALL: "True",
         ENFORCE_GLOBAL_UNIQUE: "True",
         LOGIN_PERSISTENCE: "True",
+
+        // Superuser settings
+        SUPERUSER_NAME: "${settings.username}",
+        SUPERUSER_EMAIL: "${settings.email:netbox@example.com}",
+        SUPERUSER_PASSWORD: "${settings.password}"
     },
     links: [
         "cache:redis",
