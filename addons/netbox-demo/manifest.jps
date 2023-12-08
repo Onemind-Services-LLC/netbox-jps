@@ -35,21 +35,17 @@ actions:
   installPlugin:
     - cmd[${nodes.cp.id}]: |-
         source /opt/netbox/venv/bin/activate
-        echo "Installing NetBox Demo Plugin..."
         pip3 install netbox-demo==${settings.version}
 
   prepareDB:
     - cmd[${nodes.cp.id}]: |-
         source /opt/netbox/venv/bin/activate
-        echo "Preparing NetBox Demo Plugin Database..."
         python3 /opt/netbox/netbox/manage.py migrate
 
   updateConfig:
     - cmd[${nodes.cp.id}]: |-
-        echo "Updating NetBox Demo Plugin Configuration..."
         yq -i '.netbox_demo={}' /etc/netbox/config/plugins.yaml
 
   removeConfig:
     - cmd[${nodes.cp.id}]: |-
-        echo "Removing NetBox Demo Plugin Configuration..."
         yq -d 0 '.netbox_demo' /etc/netbox/config/plugins.yaml
