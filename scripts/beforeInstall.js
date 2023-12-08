@@ -57,4 +57,40 @@ if ('${settings.redisType:standalone}' == 'cluster') {
     })
 }
 
+// Build NetBox node configuration
+resp.nodes.push({
+    nodeType: "docker",
+    volumes:[
+        "/etc/netbox/config",
+        "/opt/netbox/netbox/media",
+        "/opt/netbox/netbox/reports",
+        "/opt/netbox/netbox/sripts",
+    ],
+    env:{
+        DB_HOST: "${nodes.sqldb.first.address}",
+        DB_NAME: "netbox",
+        DB_USER: "webadmin",
+        DB_PASSWORD: "${globals.dbPassword}",
+        REDIS_CACHE_DATABASE: "1",
+        REDIS_CACHE_HOST: "${nodes.cache.first.address}",
+        REDIS_CACHE_INSECURE_SKIP_TLS_VERIFY: "false",
+        REDIS_CACHE_SSL: "false",
+        REDIS_DATABASE: "0",
+        REDIS_HOST: "${nodes.cache.first.address}",
+        REDIS_INSECURE_SKIP_TLS_VERIFY: "false",
+        REDIS_SSL: "false",
+        SECRET_KEY: "${globals.secretKey}",
+    },
+    links:[
+        "cache:redis",
+        "sqldb:postgresql",
+    ],
+    image: `netboxcommunity/netbox:${settings.version}`,
+    cloudlets: 4,
+    diskLimit: 10,
+    scalingMode: "STATELESS",
+    isSLBAccessEnabled: true,
+    nodeGroup: "cp"
+})
+
 return resp;
