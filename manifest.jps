@@ -46,5 +46,5 @@ actions:
 
   setupPluginsFile:
     - cmd[${nodes.cp.id}]: |-
-        wget -O /etc/netbox/config/plugins.py $baseUrl/config/plugins.py
+        wget -O /etc/netbox/config/plugins.py ${baseUrl}/config/plugins.py
         touch /etc/netbox/config/plugins.yaml
