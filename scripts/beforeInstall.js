@@ -67,7 +67,7 @@ resp.nodes.push({
         "/opt/netbox/netbox/sripts",
     ],
     env:{
-        DB_HOST: "node${nodes.pgpool.master.id}-${env.domain}",
+        DB_HOST: "node${nodes.extra.master.id}-${env.domain}",
         DB_NAME: "netbox",
         DB_USER: "webadmin",
         DB_PASSWORD: "${globals.dbPassword}",

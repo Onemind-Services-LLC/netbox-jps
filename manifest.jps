@@ -21,6 +21,6 @@ onBeforeInstall: scripts/beforeInstall.js?_r=${fn.random}
 globals:
   dbPassword: ${fn.password}
   redisPassword: ${fn.password}
-  secretKey: ${fn.random}
+  secretKey: ${fn.random(50)}
 
 nodes: definedInOnBeforeInstall
