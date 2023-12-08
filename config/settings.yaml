@@ -99,7 +99,7 @@ fields:
     type: numberpicker
     caption: Redis Disk Size
     tooltip: Size of the Redis disk in GB
-    default: 1
+    default: 10
     required: true
     editable: true
-    min: 1
+    min: 10
