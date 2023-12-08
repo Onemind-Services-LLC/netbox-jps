@@ -10,7 +10,7 @@ def create_postgres_database(host, port, user, password, database_name):
             host=host,
             port=port,
             user=user,
-            password=password
+            password=password,
             database='postgres'
         )
 
