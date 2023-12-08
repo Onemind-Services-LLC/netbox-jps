@@ -11,7 +11,7 @@ if ('${settings.dbType:standalone}' == 'cluster') {
         cloudlets: 32,
         diskLimit: `${settings.dbDiskLimit:10}`,
         scalingMode: "STATELESS",
-        isSLBAccessEnabled: true,
+        isSLBAccessEnabled: false,
         nodeGroup: "sqldb",
         cluster: {
             is_pgpool2: true,
@@ -24,36 +24,22 @@ if ('${settings.dbType:standalone}' == 'cluster') {
         cloudlets: 32,
         diskLimit: `${settings.dbDiskLimit:10}`,
         scalingMode: "STATEFUL",
-        isSLBAccessEnabled: true,
+        isSLBAccessEnabled: false,
         nodeGroup: "sqldb",
     })
 }
 
 // Build Redis node configuration
-if ('${settings.redisType:standalone}' == 'cluster') {
-    resp.nodes.push({
-        nodeType: "redis",
-        count: 6,
-        cloudlets: 32,
-        diskLimit: "${settings.redisDiskLimit:10}",
-        scalingMode: "STATELESS",
-        isSLBAccessEnabled: true,
-        password: "${globals.redisPassword}",
-        cluster: true,
-        nodeGroup: "cache"
-    })
-} else {
-    resp.nodes.push({
-        nodeType: "redis",
-        count: 1,
-        cloudlets: 32,
-        diskLimit: "${settings.redisDiskLimit:10}",
-        scalingMode: "STATELESS",
-        isSLBAccessEnabled: true,
-        password: "${globals.redisPassword}",
-        nodeGroup: "cache"
-    })
-}
+resp.nodes.push({
+    nodeType: "redis",
+    count: 1,
+    cloudlets: 32,
+    diskLimit: "${settings.redisDiskLimit:10}",
+    scalingMode: "STATELESS",
+    isSLBAccessEnabled: false,
+    password: "${globals.redisPassword}",
+    nodeGroup: "cache"
+})
 
 // Build NetBox node configuration
 resp.nodes.push({
@@ -106,8 +92,18 @@ resp.nodes.push({
     cloudlets: 32,
     diskLimit: 10,
     scalingMode: "STATELESS",
-    isSLBAccessEnabled: true,
+    isSLBAccessEnabled: false,
     nodeGroup: "cp"
+})
+
+// Build Nginx node configuration
+resp.nodes.push({
+    nodeType: "nginx-dockerized",
+    cloudlets: 4,
+    diskLimit: 10,
+    scalingMode: "STATELESS",
+    isSLBAccessEnabled: true,
+    nodeGroup: "bl"
 })
 
 return resp;

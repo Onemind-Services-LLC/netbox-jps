@@ -84,17 +84,6 @@ fields:
     editable: true
     min: 1
 
-  - name: redisType
-    type: list
-    caption: Redis Type
-    tooltip: Deploy Redis in standalone or cluster mode
-    values:
-      - value: standalone
-        caption: Standalone
-      - value: cluster
-        caption: Cluster
-    default: standalone
-
   - name: redisDiskLimit
     type: numberpicker
     caption: Redis Disk Size
