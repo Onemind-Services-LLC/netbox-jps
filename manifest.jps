@@ -12,11 +12,11 @@ description:
   short: "The premier source of truth powering network automation."
 
 logo: /images/onemind_services.png
-baseUrl: https://raw.githubusercontent.com/Onemind-Services-LLC/netbox-jps/dev/
+baseUrl: https://raw.githubusercontent.com/Onemind-Services-LLC/netbox-jps/dev
 
 ssl: true
-onBeforeInit: scripts/beforeInit.js?_r=${fn.random}
-onBeforeInstall: scripts/beforeInstall.js?_r=${fn.random}
+onBeforeInit: /scripts/beforeInit.js?_r=${fn.random}
+onBeforeInstall: /scripts/beforeInstall.js?_r=${fn.random}
 
 globals:
   dbPassword: ${fn.password}
@@ -28,6 +28,8 @@ nodes: definedInOnBeforeInstall
 
 onInstall:
   - createDb
+  - installYq
+  - setupPluginsFile
 
 actions:
   createDb:
@@ -36,3 +38,13 @@ actions:
         psql -U webadmin -d postgres -c "CREATE USER netbox WITH PASSWORD '${globals.dbPassword}';"
         psql -U webadmin -d postgres -c "ALTER DATABASE netbox OWNER TO netbox;"
         psql -U webadmin -d postgres -c "GRANT CREATE ON SCHEMA public TO netbox;"
+
+  installYq:
+    - cmd[${nodes.cp.id}]: |-
+        wget https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64 -O /usr/bin/yq
+        chmod +x /usr/bin/yq
+
+  setupPluginsFile:
+    - cmd[${nodes.cp.id}]: |-
+        wget -O /etc/netbox/config/plugins.py $baseUrl/config/plugins.py
+        touch /etc/netbox/config/plugins.yaml
