@@ -65,6 +65,7 @@ resp.nodes.push({
         "/opt/netbox/netbox/sripts",
     ],
     env: {
+        // Required settings
         DB_HOST: "${settings.dbType:standalone}" == "cluster" ? "pgpool" : "postgresql",
         DB_NAME: "netbox",
         DB_USER: "netbox",
@@ -76,6 +77,12 @@ resp.nodes.push({
         REDIS_CACHE_HOST: "redis",
         REDIS_CACHE_PASSWORD: "${globals.redisPassword}",
         SECRET_KEY: "${globals.secretKey}",
+
+        // Optional settings
+        LOGIN_REQUIRED: "True",
+        CORS_ORIGIN_ALLOW_ALL: "True",
+        ENFORCE_GLOBAL_UNIQUE: "True",
+        LOGIN_PERSISTENCE: "True",
     },
     links: [
         "cache:redis",
