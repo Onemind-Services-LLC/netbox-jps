@@ -58,30 +58,26 @@ if ('${settings.redisType:standalone}' == 'cluster') {
 // Build NetBox node configuration
 resp.nodes.push({
     nodeType: "docker",
-    volumes:[
+    volumes: [
         "/etc/netbox/config",
         "/opt/netbox/netbox/media",
         "/opt/netbox/netbox/reports",
         "/opt/netbox/netbox/sripts",
     ],
-    env:{
+    env: {
         DB_HOST: "${settings.dbType:standalone}" == "cluster" ? "pgpool" : "postgresql",
         DB_NAME: "netbox",
         DB_USER: "netbox",
         DB_PASSWORD: "${globals.dbPassword}",
-        REDIS_CACHE_DATABASE: "1",
-        REDIS_CACHE_HOST: "redis",
-        REDIS_CACHE_PASSWORD: "${globals.redisPassword}",
-        REDIS_CACHE_INSECURE_SKIP_TLS_VERIFY: "false",
-        REDIS_CACHE_SSL: "false",
         REDIS_DATABASE: "0",
         REDIS_HOST: "redis",
         REDIS_PASSWORD: "${globals.redisPassword}",
-        REDIS_INSECURE_SKIP_TLS_VERIFY: "false",
-        REDIS_SSL: "false",
+        REDIS_CACHE_DATABASE: "1",
+        REDIS_CACHE_HOST: "redis",
+        REDIS_CACHE_PASSWORD: "${globals.redisPassword}",
         SECRET_KEY: "${globals.secretKey}",
     },
-    links:[
+    links: [
         "cache:redis",
         "pgpool:pgpool",
         "sqldb:postgresql"
