@@ -40,9 +40,9 @@ if ('${settings.redisType:standalone}' == 'cluster') {
         diskLimit: "${settings.redisDiskLimit:10}",
         scalingMode: "STATELESS",
         isSLBAccessEnabled: true,
-        nodeGroup: "redis",
         password: "${globals.redisPassword}",
-        cluster: true
+        cluster: true,
+        nodeGroup: "nosqldb"
     })
 } else {
     resp.nodes.push({
@@ -52,8 +52,8 @@ if ('${settings.redisType:standalone}' == 'cluster') {
         diskLimit: "${settings.redisDiskLimit:10}",
         scalingMode: "STATELESS",
         isSLBAccessEnabled: true,
-        nodeGroup: "redis",
         password: "${globals.redisPassword}",
+        nodeGroup: "nosqldb"
     })
 }
 
