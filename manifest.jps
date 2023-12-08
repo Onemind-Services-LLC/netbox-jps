@@ -20,3 +20,5 @@ onBeforeInstall: scripts/beforeInstall.js?_r=${fn.random}
 
 globals:
   dbPassword: ${fn.password}
+
+nodes: definedInOnBeforeInstall
