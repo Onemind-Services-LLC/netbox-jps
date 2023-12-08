@@ -67,7 +67,7 @@ resp.nodes.push({
         "/opt/netbox/netbox/sripts",
     ],
     env:{
-        DB_HOST: "postgresql",
+        DB_HOST: "${nodes.pgpool.master.id}",
         DB_NAME: "netbox",
         DB_USER: "webadmin",
         DB_PASSWORD: "${globals.dbPassword}",
@@ -76,7 +76,7 @@ resp.nodes.push({
         REDIS_CACHE_INSECURE_SKIP_TLS_VERIFY: "false",
         REDIS_CACHE_SSL: "false",
         REDIS_DATABASE: "0",
-        REDIS_HOST: "redis",
+        REDIS_HOST: "${nodes.cache.first.address}",
         REDIS_INSECURE_SKIP_TLS_VERIFY: "false",
         REDIS_SSL: "false",
         SECRET_KEY: "${globals.secretKey}",
