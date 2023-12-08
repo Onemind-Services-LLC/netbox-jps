@@ -25,22 +25,18 @@ settings:
 
 onInstall:
   - installPlugin
-  - prepareDB
   - updateConfig
+  - restartNodes [cp]
 
 onBeforeDelete:
   - removeConfig
+  - restartNodes [cp]
 
 actions:
   installPlugin:
     - cmd[${nodes.cp.id}]: |-
         source /opt/netbox/venv/bin/activate
         pip3 install netbox-demo==${settings.version}
-
-  prepareDB:
-    - cmd[${nodes.cp.id}]: |-
-        source /opt/netbox/venv/bin/activate
-        python3 /opt/netbox/netbox/manage.py migrate
 
   updateConfig:
     - cmd[${nodes.cp.id}]: |-
