@@ -1,4 +1,4 @@
-var result = {
+var resp = {
     result: 0,
     nodes: []
 };
@@ -29,3 +29,5 @@ if ('${settings.dbType:standalone}' == 'cluster') {
         password: `${globals.dbPassword}`,
     })
 }
+
+return resp;
