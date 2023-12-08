@@ -13,7 +13,6 @@ if ('${settings.dbType:standalone}' == 'cluster') {
         scalingMode: "STATELESS",
         isSLBAccessEnabled: true,
         nodeGroup: "sqldb",
-        password: `${globals.dbPassword}`,
         cluster: {
             is_pgpool2: true,
         }
@@ -27,7 +26,6 @@ if ('${settings.dbType:standalone}' == 'cluster') {
         scalingMode: "STATEFUL",
         isSLBAccessEnabled: true,
         nodeGroup: "sqldb",
-        password: `${globals.dbPassword}`,
     })
 }
 
