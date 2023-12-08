@@ -63,3 +63,23 @@ fields:
           required: true
           editable: true
           min: 1
+
+  - name: dbType
+    type: list
+    caption: Database Type
+    tooltip: Deploy PostgreSQL in standalone or cluster mode
+    values:
+      - value: standalone
+        caption: Standalone
+      - value: cluster
+        caption: Cluster
+    default: standalone
+
+  - name: dbDiskLimit
+    type: numberpicker
+    caption: Database Disk Size
+    tooltip: Size of the database disk in GB
+    default: 10
+    required: true
+    editable: true
+    min: 10

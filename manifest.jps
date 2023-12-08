@@ -16,3 +16,7 @@ baseUrl: https://raw.githubusercontent.com/Onemind-Services-LLC/netbox-jps/dev/
 
 ssl: true
 onBeforeInit: scripts/beforeInit.js?_r=${fn.random}
+onBeforeInstall: scripts/beforeInstall.js?_r=${fn.random}
+
+globals:
+  dbPassword: ${fn.password}
