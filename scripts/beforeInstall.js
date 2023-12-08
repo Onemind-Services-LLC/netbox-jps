@@ -74,12 +74,10 @@ resp.nodes.push({
         REDIS_HOST: "redis",
         REDIS_PORT: "6379",
         REDIS_PASSWORD: "${globals.redisPassword}",
-        REDIS_USERNAME: "admin",
         REDIS_CACHE_DATABASE: "1",
         REDIS_CACHE_HOST: "redis",
         REDIS_CACHE_PORT: "6379",
         REDIS_CACHE_PASSWORD: "${globals.redisPassword}",
-        REDIS_CACHE_USERNAME: "admin",
         SECRET_KEY: "${globals.secretKey}",
 
         // Container settings
