@@ -19,6 +19,7 @@ onBeforeInit: scripts/beforeInit.js?_r=${fn.random}
 onBeforeInstall: scripts/beforeInstall.js?_r=${fn.random}
 
 globals:
+  baseUrl: ${baseUrl}
   dbPassword: ${fn.password}
   redisPassword: ${fn.password}
 
