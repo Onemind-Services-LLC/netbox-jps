@@ -38,6 +38,7 @@ if ('${settings.redisType:standalone}' == 'cluster') {
         diskLimit: "${settings.redisDiskLimit:10}",
         scalingMode: "STATELESS",
         isSLBAccessEnabled: true,
+        password: "${globals.redisPassword}",
         cluster: true,
         nodeGroup: "cache"
     })
@@ -49,6 +50,7 @@ if ('${settings.redisType:standalone}' == 'cluster') {
         diskLimit: "${settings.redisDiskLimit:10}",
         scalingMode: "STATELESS",
         isSLBAccessEnabled: true,
+        password: "${globals.redisPassword}",
         nodeGroup: "cache"
     })
 }
@@ -70,9 +72,11 @@ resp.nodes.push({
         DB_PASSWORD: "${globals.dbPassword}",
         REDIS_DATABASE: "0",
         REDIS_HOST: "redis",
+        REDIS_PASSWORD: "${globals.redisPassword}",
         REDIS_USERNAME: "admin",
         REDIS_CACHE_DATABASE: "1",
         REDIS_CACHE_HOST: "redis",
+        REDIS_CACHE_PASSWORD: "${globals.redisPassword}",
         REDIS_CACHE_USERNAME: "admin",
         SECRET_KEY: "${globals.secretKey}",
 
