@@ -42,7 +42,7 @@ if ('${settings.redisType:standalone}' == 'cluster') {
         isSLBAccessEnabled: true,
         password: "${globals.redisPassword}",
         cluster: true,
-        nodeGroup: "nosqldb"
+        nodeGroup: "cache"
     })
 } else {
     resp.nodes.push({
@@ -53,7 +53,7 @@ if ('${settings.redisType:standalone}' == 'cluster') {
         scalingMode: "STATELESS",
         isSLBAccessEnabled: true,
         password: "${globals.redisPassword}",
-        nodeGroup: "nosqldb"
+        nodeGroup: "cache"
     })
 }
 
