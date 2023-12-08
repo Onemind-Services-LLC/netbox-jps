@@ -71,7 +71,7 @@ resp.nodes.push({
         DB_WAIT_DEBUG: "1",
 
         // Optional settings
-        LOGIN_REQUIRED: "True",
+        LOGIN_REQUIRED: "False", // TODO: This should be True unless netbox-demo plugin is installed
         CORS_ORIGIN_ALLOW_ALL: "True",
         ENFORCE_GLOBAL_UNIQUE: "True",
         LOGIN_PERSISTENCE: "True",
