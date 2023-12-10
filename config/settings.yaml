@@ -100,6 +100,15 @@ fields:
     value: false
     showIf:
       true:
+        - name: backupRegion
+          type: regionlist
+          caption: Backup Region
+          tooltip: Choose a region for database backups, preferably in a different availability zone
+          required: true
+          disableInactive: true
+          hidden: false
+          selectFirstAvailable: true
+
         - name: backupType
           type: list
           caption: Backup Storage Type
@@ -110,6 +119,15 @@ fields:
             - value: 2
               caption: Cluster Storage
           default: 1
+          showIf:
+            2:
+              - name: backupNodesCount
+                type: spinner
+                caption: Nodes Count
+                tooltip: Number of nodes in the backup cluster
+                default: 3
+                min: 3
+                max: 7
 
         - name: backupDiskLimit
           type: spinner

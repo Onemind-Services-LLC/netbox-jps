@@ -37,6 +37,28 @@ onInstall:
   - createDirectory[cp]:
       - path: /etc/netbox/scripts
       - path: /etc/netbox/reports
+  - if ('${settings.enableBackup:false' == 'true'):
+      - install:
+          jps: wp-restore
+          envName: ${settings.envName}-backup-storage
+          region: ${settings.backupRegion}
+          displayName: Backup Storage for NetBox
+          settings:
+            customName: ${settings.backupType}
+            storageNodesCount: ${settings.backupNodesCount}
+            diskspace: ${settings.backupDiskLimit}
+
+      - install:
+          jps: db-backup
+          nodeGroup: sqldb
+          envName: ${settings.envName}
+          settings:
+            scheduleType: 1
+            cronTime: ${settings.backupSchedule}
+            storageName: ${settings.envName}-backup-storage
+            backupCount: ${settings.backupCount}
+            dbuser: netbox
+            dbpass: ${globals.dbPassword}
 
 actions:
   createDb:
