@@ -15,7 +15,8 @@ fields:
     defaultMargins: 0 10 0 0
     items:
       - type: string
-        tooltip: Username for the initial admin user
+        tooltip:
+          text: Username for the initial admin user
         required: true
         hideLabel: false
         width: 155
@@ -28,7 +29,8 @@ fields:
 
       - type: string
         inputType: password
-        tooltip: Password for the initial admin user
+        tooltip:
+          text: Password for the initial admin user
         required: true
         hideLabel: false
         width: 155
@@ -37,7 +39,7 @@ fields:
     type: string
     caption: Admin Email
     tooltip: Email address for the initial admin user
-    required: false
+    required: true
     vtype: email
 
   - name: workerEnabled
@@ -53,7 +55,8 @@ fields:
           items:
             - name: highQueue
               type: spinner
-              tooltip: Number of workers to run for the high priority queue
+              tooltip:
+                text: Number of workers to run for the high priority queue
               default: 1
               required: true
               editable: true
@@ -67,7 +70,8 @@ fields:
 
             - name: defaultQueue
               type: spinner
-              tooltip: Number of workers to run for the default priority queue
+              tooltip:
+                text: Number of workers to run for the default priority queue
               default: 1
               required: true
               editable: true
@@ -81,7 +85,8 @@ fields:
 
             - name: lowQueue
               type: spinner
-              tooltip: Number of workers to run for the low priority queue
+              tooltip:
+                text: Number of workers to run for the low priority queue
               default: 1
               required: true
               editable: true
@@ -95,7 +100,8 @@ fields:
       - name: dbType
         type: list
         caption: Database Type
-        tooltip: Deploy PostgreSQL in standalone or cluster mode
+        tooltip:
+          text: Deploy PostgreSQL in standalone or cluster mode
         values:
           - value: standalone
             caption: Standalone
@@ -112,7 +118,8 @@ fields:
 
       - name: dbDiskLimit
         type: spinner
-        tooltip: Size of the database disk in GB
+        tooltip:
+          text: Size of the database disk in GB
         default: 10
         required: true
         editable: true
