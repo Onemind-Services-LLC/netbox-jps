@@ -47,32 +47,47 @@ fields:
     value: true
     showIf:
       true:
-        - name: highQueue
-          type: spinner
+        - type: compositefield
           caption: High Priority Queue
-          tooltip: Number of workers to run for the high priority queue
-          default: 1
-          required: true
-          editable: true
-          min: 1
+          defaultMargins: 0 10 0 0
+          items:
+            - name: highQueue
+              type: spinner
+              tooltip: Number of workers to run for the high priority queue
+              default: 1
+              required: true
+              editable: true
+              min: 1
+              width: 155
 
-        - name: defaultQueue
-          type: spinner
-          caption: Default Priority Queue
-          tooltip: Number of workers to run for the default priority queue
-          default: 1
-          required: true
-          editable: true
-          min: 1
+            - type: displayfield
+              markup: Default Priority Queue
+              width: 113
+              margins: 0 11 0 0
 
-        - name: lowQueue
-          type: spinner
-          caption: Low Priority Queue
-          tooltip: Number of workers to run for the low priority queue
-          default: 1
-          required: true
-          editable: true
-          min: 1
+            - name: defaultQueue
+              type: spinner
+              tooltip: Number of workers to run for the default priority queue
+              default: 1
+              required: true
+              editable: true
+              min: 1
+              width: 155
+
+            - type: displayfield
+              markup: Low Priority Queue
+              width: 113
+              margins: 0 11 0 0
+
+            - name: lowQueue
+              type: spinner
+              caption: Low Priority Queue
+              tooltip: Number of workers to run for the low priority queue
+              default: 1
+              required: true
+              editable: true
+              min: 1
+              width: 155
 
   - name: dbType
     type: list
