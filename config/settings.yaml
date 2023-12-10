@@ -25,7 +25,7 @@ fields:
         markup: Admin Password
         width: 113
         cls: x-form-item-label
-        margins: 0 11 0 0
+        margins: 0 10 0 0
 
       - type: string
         inputType: password
@@ -66,7 +66,7 @@ fields:
             - type: displayfield
               markup: Default Queue
               width: 90
-              margins: 0 11 0 0
+              margins: 0 10 0 0
 
             - name: defaultQueue
               type: spinner
@@ -81,7 +81,7 @@ fields:
             - type: displayfield
               markup: Low Queue
               width: 90
-              margins: 0 11 0 0
+              margins: 0 10 0 0
 
             - name: lowQueue
               type: spinner
@@ -111,10 +111,10 @@ fields:
         width: 155
 
       - type: displayfield
-        markup: Database Disk Size
+        markup: Database Size
         width: 113
         cls: x-form-item-label
-        margins: 0 11 0 0
+        margins: 0 10 0 0
 
       - name: dbDiskLimit
         type: spinner
