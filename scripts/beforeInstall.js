@@ -14,7 +14,7 @@ function createNetBoxConfig(nodeGroup, displayName, count, additionalConfig) {
             "/etc/netbox",
             "/opt/netbox/netbox/media",
         ],
-        volumeMounts:{
+        volumeMounts: {
             "/etc/netbox": {
                 protocol: "NFS",
                 readOnly: false,

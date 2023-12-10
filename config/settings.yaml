@@ -105,9 +105,9 @@ fields:
           caption: Backup Storage Type
           tooltip: Storage type for database backups
           values:
-            - value: standalone
+            - value: 1
               caption: Standalone Storage
-            - value: cluster
+            - value: 2
               caption: Cluster Storage
           default: standalone
 
@@ -118,7 +118,7 @@ fields:
           default: 100
           required: true
           editable: true
-          min: 1
+          min: 5
 
         - name: backupSchedule
           type: list
