@@ -109,7 +109,7 @@ fields:
               caption: Standalone Storage
             - value: 2
               caption: Cluster Storage
-          default: standalone
+          default: 1
 
         - name: backupDiskLimit
           type: spinner
