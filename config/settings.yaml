@@ -48,7 +48,7 @@ fields:
     showIf:
       true:
         - type: compositefield
-          caption: High Priority Queue
+          caption: High Queue
           defaultMargins: 0 10 0 0
           items:
             - name: highQueue
@@ -61,7 +61,7 @@ fields:
               width: 100
 
             - type: displayfield
-              markup: Default Priority Queue
+              markup: Default Queue
               width: 113
               margins: 0 11 0 0
 
@@ -81,7 +81,7 @@ fields:
 
             - name: lowQueue
               type: spinner
-              caption: Low Priority Queue
+              caption: Low Queue
               tooltip: Number of workers to run for the low priority queue
               default: 1
               required: true
