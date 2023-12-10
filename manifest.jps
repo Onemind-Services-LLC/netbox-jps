@@ -37,7 +37,7 @@ onInstall:
   - createDirectory[cp]:
       - path: /etc/netbox/scripts
       - path: /etc/netbox/reports
-  - if ('${settings.enableBackup' == 'true'):
+  - if ('${settings.enableBackup}' == 'true'):
       - install:
           jps: wp-restore
           envName: ${settings.envName}-backup-storage
