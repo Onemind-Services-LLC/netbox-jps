@@ -62,6 +62,6 @@ fields:
   - name: dbPassword
     type: string
     caption: Database Password
-    tooltip: Password for the database user, check your Email for the password
+    tooltip: Check your email for the "webadmin" password
     required: true
     inputType: password

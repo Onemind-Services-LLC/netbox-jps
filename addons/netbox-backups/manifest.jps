@@ -4,7 +4,7 @@ name: NetBox Backups
 homepage: https://github.com/netbox-community/netbox
 
 description:
-  short: "This plugin provides a mechanism for backing up NetBox's database and media files."
+  short: "This plugin provides a mechanism for backing up NetBox's database."
 
 logo: /images/logo.png
 baseUrl: https://raw.githubusercontent.com/Onemind-Services-LLC/netbox-jps/dev
@@ -39,5 +39,5 @@ onInstall:
         cronTime: ${settings.backupSchedule}
         storageName: ${env.envName}-backup-storage
         backupCount: ${settings.backupCount}
-        dbuser: netbox
+        dbuser: webadmin
         dbpass: ${settings.dbPassword}
