@@ -48,6 +48,7 @@ actions:
   updateConfig:
     - cmd[${nodes.cp.id}]: |-
         yq -i '.netbox_support={}' /etc/netbox/config/plugins.yaml
+        mkdir -p /etc/netbox/scripts
         cp /opt/netbox/venv/lib/python3.10/site-packages/netbox_support/scripts/eox-eol.py /etc/netbox/scripts/eox-eol.py
 
   removeConfig:
