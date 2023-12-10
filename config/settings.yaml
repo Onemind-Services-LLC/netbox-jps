@@ -12,28 +12,29 @@ fields:
 
   - type: compositefield
     caption: Admin Username
-    defaultMargins: 0 10 0 0
+    align: middle
     items:
       - type: string
-        tooltip:
-          text: Username for the initial admin user
         required: true
         hideLabel: false
         width: 155
+
+      - type: tooltip
+        text: Username for the initial admin user
 
       - type: displayfield
         markup: Admin Password
         width: 113
         cls: x-form-item-label
-        margins: 0 10 0 0
 
       - type: string
         inputType: password
-        tooltip:
-          text: Password for the initial admin user
         required: true
         hideLabel: false
         width: 155
+
+      - type: tooltip
+        text: Password for the initial admin user
 
   - name: email
     type: string
@@ -51,7 +52,7 @@ fields:
       true:
         - type: compositefield
           caption: High Queue
-          defaultMargins: 0 10 0 0
+          align: middle
           items:
             - name: highQueue
               type: spinner
@@ -66,7 +67,6 @@ fields:
             - type: displayfield
               markup: Default Queue
               width: 90
-              margins: 0 10 0 0
 
             - name: defaultQueue
               type: spinner
@@ -81,7 +81,6 @@ fields:
             - type: displayfield
               markup: Low Queue
               width: 90
-              margins: 0 10 0 0
 
             - name: lowQueue
               type: spinner
@@ -95,7 +94,7 @@ fields:
 
   - type: compositefield
     caption: Database Type
-    defaultMargins: 0 10 0 0
+    align: middle
     items:
       - name: dbType
         type: list
@@ -114,7 +113,6 @@ fields:
         markup: Database Size
         width: 113
         cls: x-form-item-label
-        margins: 0 10 0 0
 
       - name: dbDiskLimit
         type: spinner
