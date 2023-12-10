@@ -1,28 +1,28 @@
 fields:
   - name: oauth_key
-    caption: AzureAD Oauth2 Key
+    caption: Oauth2 Key
     type: string
     required: true
 
   - name: oauth_secret
-    caption: AzureAD Oauth2 Secret
+    caption: Oauth2 Secret
     type: string
     required: true
 
   - name: groups_isstaff
-    caption: AzureAD Groups for Staff
+    caption: Groups for Staff
     type: string
     required: false
     tooltip: Comma-separated list of AzureAD groups that should be considered staff.
 
   - name: groups_issuperuser
-    caption: AzureAD Groups for Superusers
+    caption: Groups for Superusers
     type: string
     required: false
     tooltip: Comma-separated list of AzureAD groups that should be considered superusers.
 
   - name: group_mapping
-    caption: AzureAD Group Mapping
+    caption: Group Mapping
     type: text
     required: true
     tooltip: |-
@@ -30,7 +30,7 @@ fields:
       Example: {"AzureAD Group Name": "NetBox Group Name"}
 
   - name: group_permission_mapping
-    caption: AzureAD Group Permission Mapping
+    caption: Group Permission Mapping
     type: text
     required: true
     tooltip: |-
