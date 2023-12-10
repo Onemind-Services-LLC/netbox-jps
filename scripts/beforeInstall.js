@@ -118,7 +118,7 @@ resp.nodes.push(createNetBoxConfig("cp2", "NetBox Housekeeping", 1, {
 }))
 
 // Build NetBox worker node configuration
-if ('${settings.workerEnabled:false}' == 'true') {
+if ('${settings.enableWorkers:false}' == 'true') {
     const queues = ["high", "default", "low"];
     let index = 3;
     queues.forEach(queue => {

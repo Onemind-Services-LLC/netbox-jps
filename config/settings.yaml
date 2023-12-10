@@ -30,7 +30,7 @@ fields:
     required: false
     vtype: email
 
-  - name: workerEnabled
+  - name: enableWorkers
     type: checkbox
     caption: Enable Workers
     tooltip: Enable RQ workers
