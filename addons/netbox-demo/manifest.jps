@@ -10,8 +10,6 @@ logo: /images/onemind_services.png
 baseUrl: https://raw.githubusercontent.com/Onemind-Services-LLC/netbox-jps/dev
 
 targetNodes:
-  nodeGroup:
-    - cp
   dockerName: netbox-community/netbox
 
 nodes:

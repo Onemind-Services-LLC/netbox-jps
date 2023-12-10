@@ -27,7 +27,15 @@ globals:
 nodes: definedInOnBeforeInstall
 
 onInstall:
-  - createDb
+  - prepareSqlDatabase:
+      - nodeGroup: sqldb
+        loginCredentials:
+          user: webadmin
+          password: ${nodes.sqldb.password}
+        newDatabaseName: netbox
+        newDatabaseUser:
+          name: netbox
+          password: ${globals.dbPassword}
   - installYq
   - upload:
       - nodeGroup: cp
@@ -39,13 +47,6 @@ onInstall:
       - path: /etc/netbox/reports
 
 actions:
-  createDb:
-    - cmd[${nodes.sqldb.master.id}]: |-
-        psql -U webadmin -d postgres -c "CREATE DATABASE netbox;"
-        psql -U webadmin -d postgres -c "CREATE USER netbox WITH PASSWORD '${globals.dbPassword}';"
-        psql -U webadmin -d postgres -c "ALTER DATABASE netbox OWNER TO netbox;"
-        psql -U webadmin -d postgres -c "GRANT CREATE ON SCHEMA public TO netbox;"
-
   installYq:
     - cmd[${nodes.cp.id}]: |-
         wget https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64 -O /usr/bin/yq
