@@ -97,6 +97,180 @@ resp.nodes.push({
     nodeGroup: "cp"
 })
 
+// Build NetBox worker node configuration
+if ('${settings.workerEnabled:false}' == 'true') {
+    resp.nodes.push({
+        nodeType: "docker",
+        displayName: "NetBox Worker ${settings.version} - High Queue",
+        count: "${settings.highQueue:1}",
+        volumes: [
+            "/etc/netbox/config",
+            "/opt/netbox/netbox/media",
+            "/etc/netbox/reports",
+            "/etc/netbox/scripts",
+        ],
+        env: {
+            // Required settings
+            DB_HOST: "${settings.dbType:standalone}" == "cluster" ? "pgpool" : "postgresql",
+            DB_NAME: "netbox",
+            DB_USER: "netbox",
+            DB_PASSWORD: "${globals.dbPassword}",
+            REDIS_DATABASE: "0",
+            REDIS_HOST: "redis",
+            REDIS_PORT: "6379",
+            REDIS_PASSWORD: "${globals.redisPassword}",
+            REDIS_CACHE_DATABASE: "1",
+            REDIS_CACHE_HOST: "redis",
+            REDIS_CACHE_PORT: "6379",
+            REDIS_CACHE_PASSWORD: "${globals.redisPassword}",
+            SECRET_KEY: "${globals.secretKey}",
+
+            // Container settings
+            MAX_DB_WAIT_TIME: "60",
+            DB_WAIT_DEBUG: "1",
+
+            // Optional settings
+            LOGIN_REQUIRED: "False",
+            CORS_ORIGIN_ALLOW_ALL: "True",
+            ENFORCE_GLOBAL_UNIQUE: "True",
+            LOGIN_PERSISTENCE: "True",
+
+            // Superuser settings
+            SKIP_SUPERUSER: "false",
+            SUPERUSER_NAME: "${settings.username}",
+            SUPERUSER_EMAIL: "${settings.email:netbox@example.com}",
+            SUPERUSER_PASSWORD: "${settings.password}",
+            SUPERUSER_API_TOKEN: "${globals.apiToken}",
+        },
+        links: [
+            "cache:redis",
+            "pgpool:pgpool",
+            "sqldb:postgresql"
+        ],
+        image: `netboxcommunity/netbox:${settings.version}`,
+        cloudlets: 32,
+        diskLimit: 10,
+        scalingMode: "STATELESS",
+        isSLBAccessEnabled: false,
+        cmd: "/opt/netbox/venv/bin/python /opt/netbox/netbox/manage.py rqworker high",
+        nodeGroup: "cp"
+    })
+
+    resp.nodes.push({
+        nodeType: "docker",
+        displayName: "NetBox Worker ${settings.version} - Default Queue",
+        count: "${settings.defaultQueue:1}",
+        volumes: [
+            "/etc/netbox/config",
+            "/opt/netbox/netbox/media",
+            "/etc/netbox/reports",
+            "/etc/netbox/scripts",
+        ],
+        env: {
+            // Required settings
+            DB_HOST: "${settings.dbType:standalone}" == "cluster" ? "pgpool" : "postgresql",
+            DB_NAME: "netbox",
+            DB_USER: "netbox",
+            DB_PASSWORD: "${globals.dbPassword}",
+            REDIS_DATABASE: "0",
+            REDIS_HOST: "redis",
+            REDIS_PORT: "6379",
+            REDIS_PASSWORD: "${globals.redisPassword}",
+            REDIS_CACHE_DATABASE: "1",
+            REDIS_CACHE_HOST: "redis",
+            REDIS_CACHE_PORT: "6379",
+            REDIS_CACHE_PASSWORD: "${globals.redisPassword}",
+            SECRET_KEY: "${globals.secretKey}",
+
+            // Container settings
+            MAX_DB_WAIT_TIME: "60",
+            DB_WAIT_DEBUG: "1",
+
+            // Optional settings
+            LOGIN_REQUIRED: "False",
+            CORS_ORIGIN_ALLOW_ALL: "True",
+            ENFORCE_GLOBAL_UNIQUE: "True",
+            LOGIN_PERSISTENCE: "True",
+
+            // Superuser settings
+            SKIP_SUPERUSER: "false",
+            SUPERUSER_NAME: "${settings.username}",
+            SUPERUSER_EMAIL: "${settings.email:netbox@example.com}",
+            SUPERUSER_PASSWORD: "${settings.password}",
+            SUPERUSER_API_TOKEN: "${globals.apiToken}",
+        },
+        links: [
+            "cache:redis",
+            "pgpool:pgpool",
+            "sqldb:postgresql"
+        ],
+        image: `netboxcommunity/netbox:${settings.version}`,
+        cloudlets: 32,
+        diskLimit: 10,
+        scalingMode: "STATELESS",
+        isSLBAccessEnabled: false,
+        cmd: "/opt/netbox/venv/bin/python /opt/netbox/netbox/manage.py rqworker default",
+        nodeGroup: "cp"
+    })
+    
+    resp.nodes.push({
+        nodeType: "docker",
+        displayName: "NetBox Worker ${settings.version} - Low Queue",
+        count: "${settings.lowQueue:1}",
+        volumes: [
+            "/etc/netbox/config",
+            "/opt/netbox/netbox/media",
+            "/etc/netbox/reports",
+            "/etc/netbox/scripts",
+        ],
+        env: {
+            // Required settings
+            DB_HOST: "${settings.dbType:standalone}" == "cluster" ? "pgpool" : "postgresql",
+            DB_NAME: "netbox",
+            DB_USER: "netbox",
+            DB_PASSWORD: "${globals.dbPassword}",
+            REDIS_DATABASE: "0",
+            REDIS_HOST: "redis",
+            REDIS_PORT: "6379",
+            REDIS_PASSWORD: "${globals.redisPassword}",
+            REDIS_CACHE_DATABASE: "1",
+            REDIS_CACHE_HOST: "redis",
+            REDIS_CACHE_PORT: "6379",
+            REDIS_CACHE_PASSWORD: "${globals.redisPassword}",
+            SECRET_KEY: "${globals.secretKey}",
+
+            // Container settings
+            MAX_DB_WAIT_TIME: "60",
+            DB_WAIT_DEBUG: "1",
+
+            // Optional settings
+            LOGIN_REQUIRED: "False",
+            CORS_ORIGIN_ALLOW_ALL: "True",
+            ENFORCE_GLOBAL_UNIQUE: "True",
+            LOGIN_PERSISTENCE: "True",
+
+            // Superuser settings
+            SKIP_SUPERUSER: "false",
+            SUPERUSER_NAME: "${settings.username}",
+            SUPERUSER_EMAIL: "${settings.email:netbox@example.com}",
+            SUPERUSER_PASSWORD: "${settings.password}",
+            SUPERUSER_API_TOKEN: "${globals.apiToken}",
+        },
+        links: [
+            "cache:redis",
+            "pgpool:pgpool",
+            "sqldb:postgresql"
+        ],
+        image: `netboxcommunity/netbox:${settings.version}`,
+        cloudlets: 32,
+        diskLimit: 10,
+        scalingMode: "STATELESS",
+        isSLBAccessEnabled: false,
+        cmd: "/opt/netbox/venv/bin/python /opt/netbox/netbox/manage.py rqworker low",
+        nodeGroup: "cp"
+    })
+}
+
 // Build Nginx node configuration
 resp.nodes.push({
     nodeType: "nginx-dockerized",

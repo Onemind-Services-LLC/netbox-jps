@@ -34,7 +34,7 @@ fields:
     type: checkbox
     caption: Enable Workers
     tooltip: Enable RQ workers
-    value: false
+    value: true
     showIf:
       true:
         - name: highQueue
