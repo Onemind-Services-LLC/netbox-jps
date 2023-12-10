@@ -17,7 +17,7 @@ targetNodes:
 nodes:
   - nodeGroup: cp
 
-onBeforeInit: /addons/netbox-demo/scripts/beforeInit.js?_r=${fn.random}
+onBeforeInit: /addons/netbox-backups/scripts/beforeInit.js?_r=${fn.random}
 
 onInstall:
   - install:
