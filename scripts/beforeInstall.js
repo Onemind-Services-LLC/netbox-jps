@@ -100,20 +100,12 @@ resp.nodes.push(createNetBoxConfig("docker", "NetBox ${settings.version}", 1));
 
 // Build NetBox worker node configuration
 if ('${settings.workerEnabled:false}' == 'true') {
-    // High Queue
-    resp.nodes.push(createNetBoxConfig("docker", "NetBox Worker ${settings.version} - High Queue", "${settings.highQueue:1}", {
-        cmd: "/opt/netbox/venv/bin/python /opt/netbox/netbox/manage.py rqworker high"
-    }));
-
-    // Default Queue
-    resp.nodes.push(createNetBoxConfig("docker", "NetBox Worker ${settings.version} - Default Queue", "${settings.defaultQueue:1}", {
-        cmd: "/opt/netbox/venv/bin/python /opt/netbox/netbox/manage.py rqworker default"
-    }));
-
-    // Low Queue
-    resp.nodes.push(createNetBoxConfig("docker", "NetBox Worker ${settings.version} - Low Queue", "${settings.lowQueue:1}", {
-        cmd: "/opt/netbox/venv/bin/python /opt/netbox/netbox/manage.py rqworker low"
-    }));
+    const queues = ["high", "default", "low"];
+    queues.forEach(queue => {
+        resp.nodes.push(createNetBoxConfig("docker", `NetBox Worker ${settings.version} - ${queue.charAt(0).toUpperCase() + queue.slice(1)} Queue`, "${settings." + queue + "Queue:1}", {
+            cmd: `/opt/netbox/venv/bin/python /opt/netbox/netbox/manage.py rqworker ${queue}`
+        }));
+    });
 }
 
 // Build Nginx node configuration
