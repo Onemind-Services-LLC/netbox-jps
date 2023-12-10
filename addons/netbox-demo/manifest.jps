@@ -23,18 +23,18 @@ onInstall:
   - installPlugin
   - updateConfig
   - if ('${settings.restartContainer}' == 'true'):
-    - restartNodes:
-        - nodeGroup: cp
-          nodeType: docker
-          reboot: true
+      - restartNodes:
+          - nodeGroup: cp
+            nodeType: docker
+            reboot: true
 
 onUninstall:
   - removeConfig
   - if ('${settings.restartContainer}' == 'true'):
-    - restartNodes:
-        - nodeGroup: cp
-          nodeType: docker
-          reboot: true
+      - restartNodes:
+          - nodeGroup: cp
+            nodeType: docker
+            reboot: true
 
 actions:
   installPlugin:
