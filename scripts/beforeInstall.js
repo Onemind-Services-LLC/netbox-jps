@@ -6,7 +6,7 @@ var resp = {
 const isDbCluster = '${settings.dbType:standalone}' == 'cluster';
 
 function createNetBoxConfig(displayName, count, additionalConfig) {
-    var baseConfig = {
+    const baseConfig = {
         nodeType: "docker",
         displayName: displayName,
         count: count,
@@ -52,7 +52,7 @@ function createNetBoxConfig(displayName, count, additionalConfig) {
         scalingMode: "STATELESS",
         isSLBAccessEnabled: false,
         nodeGroup: "cp"
-    };
+    }
 
     return {...baseConfig, ...additionalConfig}
 }
