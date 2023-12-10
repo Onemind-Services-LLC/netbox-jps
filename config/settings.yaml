@@ -10,18 +10,28 @@ fields:
         caption: v3.4
     default: v3.4-2.5.3
 
-  - name: username
-    type: string
+  - type: compositefield
     caption: Admin Username
-    tooltip: Username for the initial admin user
-    required: true
+    defaultMargins: 0 10 0 0
+    items:
+      - type: string
+        tooltip: Username for the initial admin user
+        required: true
+        hideLabel: false
+        width: 155
 
-  - name: password
-    type: string
-    inputType: password
-    caption: Admin Password
-    tooltip: Password for the initial admin user
-    required: true
+      - type: displayfield
+        markup: Admin Password
+        width: 113
+        cls: x-form-item-label
+        margins: 0 11 0 0
+
+      - type: string
+        inputType: password
+        tooltip: Password for the initial admin user
+        required: true
+        hideLabel: false
+        width: 155
 
   - name: email
     type: string
