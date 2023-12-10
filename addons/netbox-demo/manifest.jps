@@ -7,7 +7,7 @@ description:
   short: "This plugin serves to ease the administration of the public NetBox demo instance."
 
 logo: /images/onemind_services.png
-baseUrl: https://raw.githubusercontent.com/Onemind-Services-LLC/netbox-jps/dev/addons/netbox-demo/
+baseUrl: https://raw.githubusercontent.com/Onemind-Services-LLC/netbox-jps/dev
 
 targetNodes:
   nodeGroup:
@@ -17,7 +17,7 @@ targetNodes:
 nodes:
   - nodeGroup: cp
 
-onBeforeInit: /scripts/beforeInit.js?_r=${fn.random}
+onBeforeInit: /addons/netbox-demo/scripts/beforeInit.js?_r=${fn.random}
 
 onInstall:
   - installPlugin

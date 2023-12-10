@@ -1,7 +1,7 @@
 fields:
   - name: version
     type: list
-    caption: NetBox Version
+    caption: Version
     tooltip: Version of plugin to install
     values:
       - value: v0.4.0
