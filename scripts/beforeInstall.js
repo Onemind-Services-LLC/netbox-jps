@@ -108,7 +108,7 @@ if ('${settings.workerEnabled:false}' == 'true') {
     const queues = ["high", "default", "low"];
     let index = 3;
     queues.forEach(queue => {
-        resp.nodes.push(createNetBoxConfig(`cp${index}`, `NetBox Worker ${settings.version} - ${queue.charAt(0).toUpperCase() + queue.slice(1)} Queue`, "${settings." + queue + "Queue:1}", {
+        resp.nodes.push(createNetBoxConfig("cp" + index, `NetBox Worker ${settings.version} - ${queue.charAt(0).toUpperCase() + queue.slice(1)} Queue`, "${settings." + queue + "Queue:1}", {
             cmd: `/opt/netbox/venv/bin/python /opt/netbox/netbox/manage.py rqworker ${queue}`
         }));
         index++;
