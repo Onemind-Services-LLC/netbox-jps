@@ -33,7 +33,7 @@ onInstall:
   - install:
       jps: db-backup
       nodeGroup: sqldb
-      envName: ${settings.envName}
+      envName: ${env.envName}
       settings:
         scheduleType: 1
         cronTime: ${settings.backupSchedule}
