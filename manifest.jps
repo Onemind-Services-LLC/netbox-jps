@@ -30,7 +30,7 @@ onInstall:
   - createDb
   - installYq
   - setupPluginsFile
-  - createDirectory [cp]:
+  - createDirectory[cp]:
       - path: /etc/netbox/scripts
       - path: /etc/netbox/reports
 
