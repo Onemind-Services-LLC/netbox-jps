@@ -88,25 +88,36 @@ fields:
               min: 1
               width: 75
 
-  - name: dbType
-    type: list
+  - type: compositefield
     caption: Database Type
-    tooltip: Deploy PostgreSQL in standalone or cluster mode
-    values:
-      - value: standalone
-        caption: Standalone
-      - value: cluster
-        caption: Cluster
-    default: standalone
+    defaultMargins: 0 10 0 0
+    items:
+      - name: dbType
+        type: list
+        caption: Database Type
+        tooltip: Deploy PostgreSQL in standalone or cluster mode
+        values:
+          - value: standalone
+            caption: Standalone
+          - value: cluster
+            caption: Cluster
+        default: standalone
+        width: 155
 
-  - name: dbDiskLimit
-    type: spinner
-    caption: Database Disk Size
-    tooltip: Size of the database disk in GB
-    default: 10
-    required: true
-    editable: true
-    min: 1
+      - type: displayfield
+        markup: Database Disk Size
+        width: 113
+        cls: x-form-item-label
+        margins: 0 11 0 0
+
+      - name: dbDiskLimit
+        type: spinner
+        tooltip: Size of the database disk in GB
+        default: 10
+        required: true
+        editable: true
+        min: 1
+        width: 155
 
   - name: redisDiskLimit
     type: spinner
