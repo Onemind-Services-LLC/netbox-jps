@@ -98,7 +98,7 @@ fields:
     caption: Enable Backups
     tooltip: Enables database backups
     value: false
-    showif:
+    showIf:
       true:
         - name: backupType
           type: list
