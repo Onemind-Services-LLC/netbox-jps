@@ -45,7 +45,7 @@ actions:
     - cmd[${nodes.cp.id}]: |-
         echo machine github.com login ${settings.githubToken} > ~/.netrc
         source /opt/netbox/venv/bin/activate
-        pip3 install netbox-support==${settings.version}
+        pip3 install git+https://github.com/Onemind-Services-LLC/netbox-support@${settings.version}
         rm ~/.netrc
 
   updateConfig:
