@@ -30,6 +30,11 @@ onInstall:
   - createDb
   - installYq
   - setupPluginsFile
+  - createDirectory:
+      - path: /etc/netbox/scripts
+        nodeGroup: cp
+      - path: /etc/netbox/reports
+        nodeGroup: cp
 
 actions:
   createDb:
