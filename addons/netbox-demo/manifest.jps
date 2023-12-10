@@ -45,7 +45,10 @@ actions:
   updateConfig:
     - cmd[${nodes.cp.id}]: |-
         yq -i '.netbox_demo={}' /etc/netbox/config/plugins.yaml
+        echo "LOGIN_REQUIRED = False" >> /etc/netbox/config/netbox_demo.py
+        echo "BANNER_LOGIN = '<p>This is a demo instance of <a href='https://github.com/netbox-community/netbox'>NetBox</a> for public use.</p><p><a href='/plugins/demo/login/'>Click here</a> to create a new user account, or log in with your existing credentials below.</p>'" >> /etc/netbox/config/netbox_demo.py
 
   removeConfig:
     - cmd[${nodes.cp.id}]: |-
         yq -i 'del(.netbox_demo)' /etc/netbox/config/plugins.yaml
+        rm /etc/netbox/config/netbox_demo.py
