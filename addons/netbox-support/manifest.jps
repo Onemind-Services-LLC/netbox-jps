@@ -22,10 +22,6 @@ onBeforeInit: /addons/netbox-support/scripts/beforeInit.js?_r=${fn.random}
 onInstall:
   - installPlugin
   - updateConfig
-  - upload:
-      - nodeGroup: cp
-        sourcePath: https://raw.githubusercontent.com/Onemind-Services-LLC/netbox-support/${settings.version}/scripts/eox-eol.py
-        destPath: /opt/netbox/netbox/scripts/eox-eol.py
   - if ('${settings.restartContainer}' == 'true'):
       - restartNodes:
           - nodeGroup: cp
@@ -43,6 +39,7 @@ onUninstall:
 actions:
   installPlugin:
     - cmd[${nodes.cp.id}]: |-
+        apt update && apt install -y git
         echo machine github.com login ${settings.githubToken} > ~/.netrc
         source /opt/netbox/venv/bin/activate
         pip3 install git+https://github.com/Onemind-Services-LLC/netbox-support@${settings.version}
@@ -51,6 +48,7 @@ actions:
   updateConfig:
     - cmd[${nodes.cp.id}]: |-
         yq -i '.netbox_support={}' /etc/netbox/config/plugins.yaml
+        cp /opt/netbox/venv/lib/python3.10/site-packages/netbox_support/scripts/eox-eol.py /opt/netbox/netbox/scripts/eox-eol.py
 
   removeConfig:
     - cmd[${nodes.cp.id}]: |-
