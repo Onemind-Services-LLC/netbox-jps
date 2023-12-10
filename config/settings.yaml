@@ -10,37 +10,24 @@ fields:
         caption: v3.4
     default: v3.4-2.5.3
 
-  - type: compositefield
+  - name: username
+    type: string
     caption: Admin Username
-    align: middle
-    items:
-      - type: string
-        required: true
-        hideLabel: false
-        width: 155
+    tooltip: Username for the initial admin user
+    required: true
 
-      - type: tooltip
-        text: Username for the initial admin user
-
-      - type: displayfield
-        markup: Admin Password
-        width: 113
-        cls: x-form-item-label
-
-      - type: string
-        inputType: password
-        required: true
-        hideLabel: false
-        width: 155
-
-      - type: tooltip
-        text: Password for the initial admin user
+  - name: password
+    type: string
+    inputType: password
+    caption: Admin Password
+    tooltip: Password for the initial admin user
+    required: true
 
   - name: email
     type: string
     caption: Admin Email
     tooltip: Email address for the initial admin user
-    required: true
+    required: false
     vtype: email
 
   - name: workerEnabled
@@ -50,79 +37,52 @@ fields:
     value: true
     showIf:
       true:
-        - type: compositefield
-          caption: High Queue
-          align: middle
-          items:
-            - name: highQueue
-              type: spinner
-              tooltip:
-                text: Number of workers to run for the high priority queue
-              default: 1
-              required: true
-              editable: true
-              min: 1
-              width: 75
+        - name: highQueue
+          type: spinner
+          caption: High Priority Queue
+          tooltip: Number of workers to run for the high priority queue
+          default: 1
+          required: true
+          editable: true
+          min: 1
 
-            - type: displayfield
-              markup: Default Queue
-              width: 90
+        - name: defaultQueue
+          type: spinner
+          caption: Default Priority Queue
+          tooltip: Number of workers to run for the default priority queue
+          default: 1
+          required: true
+          editable: true
+          min: 1
 
-            - name: defaultQueue
-              type: spinner
-              tooltip:
-                text: Number of workers to run for the default priority queue
-              default: 1
-              required: true
-              editable: true
-              min: 1
-              width: 75
+        - name: lowQueue
+          type: spinner
+          caption: Low Priority Queue
+          tooltip: Number of workers to run for the low priority queue
+          default: 1
+          required: true
+          editable: true
+          min: 1
 
-            - type: displayfield
-              markup: Low Queue
-              width: 90
-
-            - name: lowQueue
-              type: spinner
-              tooltip:
-                text: Number of workers to run for the low priority queue
-              default: 1
-              required: true
-              editable: true
-              min: 1
-              width: 75
-
-  - type: compositefield
+  - name: dbType
+    type: list
     caption: Database Type
-    align: middle
-    items:
-      - name: dbType
-        type: list
-        caption: Database Type
-        tooltip:
-          text: Deploy PostgreSQL in standalone or cluster mode
-        values:
-          - value: standalone
-            caption: Standalone
-          - value: cluster
-            caption: Cluster
-        default: standalone
-        width: 155
+    tooltip: Deploy PostgreSQL in standalone or cluster mode
+    values:
+      - value: standalone
+        caption: Standalone
+      - value: cluster
+        caption: Cluster
+    default: standalone
 
-      - type: displayfield
-        markup: Database Size
-        width: 113
-        cls: x-form-item-label
-
-      - name: dbDiskLimit
-        type: spinner
-        tooltip:
-          text: Size of the database disk in GB
-        default: 10
-        required: true
-        editable: true
-        min: 1
-        width: 155
+  - name: dbDiskLimit
+    type: spinner
+    caption: Database Disk Size
+    tooltip: Size of the database disk in GB
+    default: 10
+    required: true
+    editable: true
+    min: 1
 
   - name: redisDiskLimit
     type: spinner
