@@ -1,14 +1,3 @@
-domain:
-  fields:
-    - name: displayfield
-      type: displayfield
-      hideLabel: true
-      markup: Make sure the the new domain is bound already to the environment via CNAME or via A Record
-    - name: domain
-      type: string
-      caption: Domain
-      hideLabel: true
-      vtype: extdomain
 fields:
   - name: version
     type: list
