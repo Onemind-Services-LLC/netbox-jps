@@ -31,7 +31,7 @@ fields:
   - name: githubToken
     type: string
     caption: GitHub Token
-    required: false
+    required: true
 
   - name: restartContainer
     type: checkbox
