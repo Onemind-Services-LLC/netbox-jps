@@ -5,7 +5,7 @@ var resp = {
 
 const isDbCluster = '${settings.dbType:standalone}' == 'cluster';
 
-function createNetBoxConfig(displayName, count, additionalConfig) {
+function createNetBoxConfig(nodeGroup, displayName, count, additionalConfig) {
     const baseConfig = {
         nodeType: "docker",
         displayName: displayName,
@@ -51,7 +51,7 @@ function createNetBoxConfig(displayName, count, additionalConfig) {
         diskLimit: 10,
         scalingMode: "STATELESS",
         isSLBAccessEnabled: false,
-        nodeGroup: "cp"
+        nodeGroup: nodeGroup
     }
 
     return Object.assign(baseConfig, additionalConfig);
@@ -96,22 +96,24 @@ resp.nodes.push({
 })
 
 // Build NetBox node configuration
-resp.nodes.push(createNetBoxConfig("NetBox ${settings.version}", 1));
+resp.nodes.push(createNetBoxConfig("cp", "NetBox ${settings.version}", 1));
+
+// Build NetBox housekeeping node configuration
+resp.nodes.push(createNetBoxConfig("cp2", `NetBox Housekeeping ${settings.version}`, 1, {
+    cmd: "/opt/netbox/housekeeping.sh"
+}))
 
 // Build NetBox worker node configuration
 if ('${settings.workerEnabled:false}' == 'true') {
     const queues = ["high", "default", "low"];
+    let index = 3;
     queues.forEach(queue => {
-        resp.nodes.push(createNetBoxConfig(`NetBox Worker ${settings.version} - ${queue.charAt(0).toUpperCase() + queue.slice(1)} Queue`, "${settings." + queue + "Queue:1}", {
+        resp.nodes.push(createNetBoxConfig(`cp${index}`, `NetBox Worker ${settings.version} - ${queue.charAt(0).toUpperCase() + queue.slice(1)} Queue`, "${settings." + queue + "Queue:1}", {
             cmd: `/opt/netbox/venv/bin/python /opt/netbox/netbox/manage.py rqworker ${queue}`
         }));
+        index++;
     });
 }
-
-// Build NetBox housekeeping node configuration
-resp.nodes.push(createNetBoxConfig(`NetBox Housekeeping ${settings.version}`, 1, {
-    cmd: "/opt/netbox/housekeeping.sh"
-}))
 
 // Build Nginx node configuration
 resp.nodes.push({
