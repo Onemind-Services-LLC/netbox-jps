@@ -26,7 +26,7 @@ onInstall:
         sourcePath: ${baseUrl}/addons/netbox-sso-azure/sso.py
         destPath: /etc/netbox/config/sso.py
   - replaceInFile:
-      nodeGroup: cp
+      nodeMission: cp
       path: /etc/netbox/config/sso.py
       replacements:
         - pattern: var_oauthKey
