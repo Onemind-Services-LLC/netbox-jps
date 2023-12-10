@@ -17,7 +17,7 @@ targetNodes:
 nodes:
   - nodeGroup: cp
 
-onBeforeInit: /addons/netbox-support/scripts/beforeInit.js?_r=${fn.random}
+onBeforeInit: /addons/netbox-metatype-importer/scripts/beforeInit.js?_r=${fn.random}
 
 onInstall:
   - installPlugin
