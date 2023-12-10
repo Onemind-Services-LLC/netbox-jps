@@ -22,17 +22,19 @@ onBeforeInit: /addons/netbox-demo/scripts/beforeInit.js?_r=${fn.random}
 onInstall:
   - installPlugin
   - updateConfig
-  - restartNodes:
-      - nodeGroup: cp
-        nodeType: docker
-        reboot: true
+  - if ('${settings.restartContainer}' == 'true'):
+    - restartNodes:
+        - nodeGroup: cp
+          nodeType: docker
+          reboot: true
 
 onUninstall:
   - removeConfig
-  - restartNodes:
-      - nodeGroup: cp
-        nodeType: docker
-        reboot: true
+  - if ('${settings.restartContainer}' == 'true'):
+    - restartNodes:
+        - nodeGroup: cp
+          nodeType: docker
+          reboot: true
 
 actions:
   installPlugin:

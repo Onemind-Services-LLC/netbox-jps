@@ -7,3 +7,10 @@ fields:
       - value: v0.4.0
         caption: v0.4.0
     default: v0.4.0
+
+  - name: restartContainer
+    type: checkbox
+    caption: Restart NetBox container
+    tooltip: Restart NetBox container after install/uninstall
+    default: true
+    required: false
