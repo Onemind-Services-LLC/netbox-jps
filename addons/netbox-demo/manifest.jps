@@ -6,7 +6,7 @@ homepage: https://github.com/netbox-community/netbox-demo
 description:
   short: "This plugin serves to ease the administration of the public NetBox demo instance."
 
-logo: /images/onemind_services.png
+logo: /images/logo.png
 baseUrl: https://raw.githubusercontent.com/Onemind-Services-LLC/netbox-jps/dev
 
 targetNodes:

@@ -6,7 +6,7 @@ homepage: https://github.com/Onemind-Services-LLC/netbox-support
 description:
   short: "NetBox Support provides device types and devices EoX data within NetBox."
 
-logo: /images/onemind_services.png
+logo: /images/logo.png
 baseUrl: https://raw.githubusercontent.com/Onemind-Services-LLC/netbox-jps/dev
 
 targetNodes:

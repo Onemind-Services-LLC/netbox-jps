@@ -6,7 +6,7 @@ homepage: https://github.com/Onemind-Services-LLC/netbox-metatype-importer
 description:
   short: "Easily import Device and Module types from GitHub repositories into NetBox."
 
-logo: /images/onemind_services.png
+logo: /images/logo.png
 baseUrl: https://raw.githubusercontent.com/Onemind-Services-LLC/netbox-jps/dev
 
 targetNodes:

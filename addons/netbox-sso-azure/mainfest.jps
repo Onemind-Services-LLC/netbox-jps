@@ -6,7 +6,7 @@ homepage: https://github.com/netbox-community/netbox
 description:
   short: "This plugin adds Azure AD SSO to NetBox."
 
-logo: /images/onemind_services.png
+logo: /images/logo.png
 baseUrl: https://raw.githubusercontent.com/Onemind-Services-LLC/netbox-jps/dev
 
 targetNodes:

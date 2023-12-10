@@ -1,6 +1,6 @@
 type: install
 id: netbox
-name: NetBox By OneMind Services
+name: NetBox
 homepage: https://github.com/netbox-community/netbox
 
 categories:
@@ -11,7 +11,7 @@ description:
   text: "/texts/description.md?_r=1"
   short: "The premier source of truth powering network automation."
 
-logo: /images/onemind_services.png
+logo: /images/logo.png
 baseUrl: https://raw.githubusercontent.com/Onemind-Services-LLC/netbox-jps/dev
 
 ssl: true
