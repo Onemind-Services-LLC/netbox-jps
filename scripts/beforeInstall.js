@@ -103,10 +103,10 @@ resp.nodes.push({
 })
 
 // Build NetBox node configuration
-resp.nodes.push(createNetBoxConfig("cp", "NetBox ${settings.version}", 1));
+resp.nodes.push(createNetBoxConfig("cp", "NetBox", 1));
 
 // Build NetBox housekeeping node configuration
-resp.nodes.push(createNetBoxConfig("cp2", "NetBox Housekeeping ${settings.version}", 1, {
+resp.nodes.push(createNetBoxConfig("cp2", "NetBox Housekeeping", 1, {
     cmd: "/opt/netbox/housekeeping.sh"
 }))
 
@@ -116,7 +116,7 @@ if ('${settings.workerEnabled:false}' == 'true') {
     let index = 3;
     queues.forEach(queue => {
         let queueName = queue.charAt(0).toUpperCase() + queue.slice(1) + " Queue";
-        resp.nodes.push(createNetBoxConfig("cp" + index, "NetBox Worker ${settings.version} - " + queueName, "${settings." + queue + "Queue:1}", {
+        resp.nodes.push(createNetBoxConfig("cp" + index, "NetBox Worker - " + queueName, "${settings." + queue + "Queue:1}", {
             cmd: `/opt/netbox/venv/bin/python /opt/netbox/netbox/manage.py rqworker ${queue}`
         }));
         index++;
