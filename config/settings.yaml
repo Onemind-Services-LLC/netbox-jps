@@ -38,7 +38,7 @@ fields:
     showIf:
       true:
         - name: highQueue
-          type: numberpicker
+          type: spinner
           caption: High Priority Queue
           tooltip: Number of workers to run for the high priority queue
           default: 1
@@ -47,7 +47,7 @@ fields:
           min: 1
 
         - name: defaultQueue
-          type: numberpicker
+          type: spinner
           caption: Default Priority Queue
           tooltip: Number of workers to run for the default priority queue
           default: 1
@@ -56,7 +56,7 @@ fields:
           min: 1
 
         - name: lowQueue
-          type: numberpicker
+          type: spinner
           caption: Low Priority Queue
           tooltip: Number of workers to run for the low priority queue
           default: 1
@@ -76,7 +76,7 @@ fields:
     default: standalone
 
   - name: dbDiskLimit
-    type: numberpicker
+    type: spinner
     caption: Database Disk Size
     tooltip: Size of the database disk in GB
     default: 10
@@ -85,10 +85,60 @@ fields:
     min: 1
 
   - name: redisDiskLimit
-    type: numberpicker
+    type: spinner
     caption: Redis Disk Size
     tooltip: Size of the Redis disk in GB
     default: 10
     required: true
     editable: true
     min: 1
+
+  - name: enableBackup
+    type: checkbox
+    caption: Enable Backups
+    tooltip: Enables database backups
+    value: false
+    showif:
+      true:
+        - name: backupType
+          type: list
+          caption: Backup Storage Type
+          tooltip: Storage type for database backups
+          values:
+            - value: standalone
+              caption: Standalone Storage
+            - value: cluster
+              caption: Cluster Storage
+          default: standalone
+
+        - name: backupDiskLimit
+          type: spinner
+          caption: Backup Disk Size
+          tooltip: Size of the backup disk in GB
+          default: 100
+          required: true
+          editable: true
+          min: 1
+
+        - name: backupSchedule
+          type: list
+          caption: Backup Schedule
+          tooltip: Schedule for database backups
+          values:
+            - value: 0 * * * *
+              caption: "Hourly (at minute 0)"
+            - value: 0 0 * * *
+              caption: "Daily (at 00:00)"
+            - value: 0 0 * * 0
+              caption: "Weekly (at 00:00 on Sunday)"
+            - value: 0 0 1 * *
+              caption: "Monthly (at 00:00 on day 1)"
+          default: 0 0 * * *
+
+        - name: backupCount
+          type: spinner
+          caption: Number of backups
+          tooltip: "The number of newest backups to be kept during rotation."
+          min: 1
+          max: 30
+          default: 5
