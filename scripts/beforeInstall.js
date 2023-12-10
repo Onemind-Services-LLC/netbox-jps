@@ -44,11 +44,12 @@ resp.nodes.push({
 // Build NetBox node configuration
 resp.nodes.push({
     nodeType: "docker",
+    displayName: "NetBox ${settings.version}",
     volumes: [
         "/etc/netbox/config",
         "/opt/netbox/netbox/media",
-        "/opt/netbox/netbox/reports",
-        "/opt/netbox/netbox/sripts",
+        "/etc/netbox/reports",
+        "/etc/netbox/scripts",
     ],
     env: {
         // Required settings
