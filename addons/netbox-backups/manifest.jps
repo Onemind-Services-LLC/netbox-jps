@@ -37,7 +37,7 @@ onInstall:
       settings:
         scheduleType: 1
         cronTime: ${settings.backupSchedule}
-        storageName: ${settings.envName}-backup-storage
+        storageName: ${env.envName}-backup-storage
         backupCount: ${settings.backupCount}
         dbuser: netbox
-        dbpass: ${nodes.sqldb.password}
+        dbpass: ${settings.dbPassword}

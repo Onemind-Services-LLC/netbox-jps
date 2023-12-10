@@ -58,3 +58,10 @@ fields:
     min: 1
     max: 30
     default: 5
+
+  - name: dbPassword
+    type: string
+    caption: Database Password
+    tooltip: Password for the database user, check your Email for the password
+    required: true
+    inputType: password
