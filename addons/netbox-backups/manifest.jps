@@ -22,12 +22,12 @@ onBeforeInit: /addons/netbox-backups/scripts/beforeInit.js?_r=${fn.random}
 onInstall:
   - install:
       jps: wp-restore
-      envName: ${settings.envName}-backup-storage
+      envName: ${env.envName}-backup-storage
       region: ${settings.backupRegion}
       displayName: Backup Storage for NetBox
       settings:
         customName: ${settings.backupType}
-        storageNodesCount: ${settings.backupNodesCount}
+        storageNodesCount: ${settings.backupNodesCount:1}
         diskspace: ${settings.backupDiskLimit}
 
   - install:
