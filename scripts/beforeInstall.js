@@ -5,6 +5,16 @@ var resp = {
 
 const isDbCluster = '${settings.dbType:standalone}' == 'cluster';
 
+function getNFSMount(sourcePath, readOnly) {
+    return {
+        protocol: "NFS",
+        readOnly: readOnly,
+        sourceAddressType: "",
+        sourceNodeGroup: "cp",
+        sourcePath: sourcePath,
+    }
+}
+
 function createNetBoxConfig(nodeGroup, displayName, count, additionalConfig) {
     const baseConfig = {
         nodeType: "docker",
@@ -12,16 +22,13 @@ function createNetBoxConfig(nodeGroup, displayName, count, additionalConfig) {
         count: count,
         volumes: [
             "/etc/netbox",
+            "/opt/netbox/venv",
             "/opt/netbox/netbox/media",
         ],
         volumeMounts: {
-            "/etc/netbox": {
-                protocol: "NFS",
-                readOnly: false,
-                sourceAddressType: "",
-                sourceNodeGroup: "cp",
-                sourcePath: "/etc/netbox",
-            }
+            "/etc/netbox": getNFSMount("/etc/netbox", true),
+            "/opt/netbox/netbox/media": getNFSMount("/opt/netbox/netbox/media", false),
+            "/opt/netbox/venv": getNFSMount("/opt/netbox/venv", true),
         },
         env: {
             DB_HOST: isDbCluster ? "pgpool" : "postgresql",
