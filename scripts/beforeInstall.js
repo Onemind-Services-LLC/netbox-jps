@@ -54,7 +54,7 @@ function createNetBoxConfig(displayName, count, additionalConfig) {
         nodeGroup: "cp"
     };
 
-    return {baseConfig, ...additionalConfig};
+    return {...baseConfig, ...additionalConfig};
 }
 
 // Build PostgreSQL node configuration
