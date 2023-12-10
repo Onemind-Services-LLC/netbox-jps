@@ -58,11 +58,11 @@ fields:
               required: true
               editable: true
               min: 1
-              width: 100
+              width: 75
 
             - type: displayfield
               markup: Default Queue
-              width: 113
+              width: 90
               margins: 0 11 0 0
 
             - name: defaultQueue
@@ -72,22 +72,21 @@ fields:
               required: true
               editable: true
               min: 1
-              width: 100
+              width: 75
 
             - type: displayfield
-              markup: Low Priority Queue
-              width: 113
+              markup: Low Queue
+              width: 90
               margins: 0 11 0 0
 
             - name: lowQueue
               type: spinner
-              caption: Low Queue
               tooltip: Number of workers to run for the low priority queue
               default: 1
               required: true
               editable: true
               min: 1
-              width: 100
+              width: 75
 
   - name: dbType
     type: list
