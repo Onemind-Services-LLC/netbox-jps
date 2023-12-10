@@ -23,7 +23,7 @@ onInstall:
   - installPlugin
   - upload:
       - nodeGroup: cp
-        sourcePath: /addons/netbox-sso-azure/sso.py
+        sourcePath: ${baseUrl}/addons/netbox-sso-azure/sso.py
         destPath: /etc/netbox/config/sso.py
   - replaceInFile:
       nodeGroup: cp
