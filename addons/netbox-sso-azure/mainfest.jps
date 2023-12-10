@@ -29,18 +29,18 @@ onInstall:
       nodeGroup: cp
       path: /etc/netbox/config/sso.py
       replacements:
-        - pattern: var_oauth_key
-          replacement: ${settings.oauth_key}
-        - pattern: var_oauth_secret
-          replacement: ${settings.oauth_secret}
-        - pattern: var_groups_isstaff
-          replacement: ${settings.groups_isstaff}
-        - pattern: var_groups_issuperuser
-          replacement: ${settings.groups_issuperuser}
-        - pattern: var_group_mapping
-          replacement: ${settings.group_mapping}
-        - pattern: var_group_permission_mapping
-          replacement: ${settings.group_permission_mapping}
+        - pattern: var_oauthKey
+          replacement: ${settings.oauthKey}
+        - pattern: var_oauthSecret
+          replacement: ${settings.oauthSecret}
+        - pattern: var_groupsIsStaff
+          replacement: ${settings.groupsIsStaff}
+        - pattern: var_groupsIsSuperuser
+          replacement: ${settings.groupsIsSuperuser}
+        - pattern: var_groupMapping
+          replacement: ${settings.groupMapping}
+        - pattern: var_groupPermissionMapping
+          replacement: ${settings.groupPermissionMapping}
   - if ('${settings.restartContainer}' == 'true'):
       - restartNodes:
           - nodeGroup: cp

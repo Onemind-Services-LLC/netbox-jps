@@ -4,8 +4,8 @@ from django.core.exceptions import ImproperlyConfigured
 REMOTE_AUTH_ENABLED = True
 REMOTE_AUTH_BACKEND = 'social_core.backends.azuread.AzureADOAuth2'
 
-SOCIAL_AUTH_AZUREAD_OAUTH2_KEY = 'var_oauth_key'
-SOCIAL_AUTH_AZUREAD_OAUTH2_SECRET = 'var_oauth_secret'
+SOCIAL_AUTH_AZUREAD_OAUTH2_KEY = 'var_oauthKey'
+SOCIAL_AUTH_AZUREAD_OAUTH2_SECRET = 'var_oauthSecret'
 
 SOCIAL_AUTH_PIPELINE = (
     'social_core.pipeline.social_auth.social_details',
@@ -29,11 +29,11 @@ SOCIAL_AUTH_SESSION_EXPIRATION = True
 
 SOCIAL_AUTH_PIPELINE_CONFIG = {
     'AZUREAD_USER_FLAGS_BY_GROUP': {
-        "is_staff": 'var_groups_isstaff'.split(','),
-        "is_superuser": 'var_groups_issuperuser'.split(','),
+        "is_staff": 'var_groupsIsStaff'.split(','),
+        "is_superuser": 'var_groupsIsSuperuser'.split(','),
     },
-    'AZUREAD_GROUP_MAP': var_group_mapping,
-    'AZUREAD_GROUP_PERMISSIONS': var_group_permission_mapping,
+    'AZUREAD_GROUP_MAP': var_groupMapping,
+    'AZUREAD_GROUP_PERMISSIONS': var_groupPermissionMapping,
 }
 
 
