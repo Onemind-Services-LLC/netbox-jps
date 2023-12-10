@@ -11,11 +11,18 @@ function createNetBoxConfig(nodeGroup, displayName, count, additionalConfig) {
         displayName: displayName,
         count: count,
         volumes: [
-            "/etc/netbox/config",
+            "/etc/netbox",
             "/opt/netbox/netbox/media",
-            "/etc/netbox/reports",
-            "/etc/netbox/scripts",
         ],
+        volumeMounts:{
+            "/etc/netbox": {
+                protocol: "NFS",
+                readOnly: false,
+                sourceAddressType: "",
+                sourceNodeGroup: "cp",
+                sourcePath: "/etc/netbox",
+            }
+        },
         env: {
             DB_HOST: isDbCluster ? "pgpool" : "postgresql",
             DB_NAME: "netbox",
