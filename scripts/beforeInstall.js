@@ -5,9 +5,9 @@ var resp = {
 
 const isDbCluster = '${settings.dbType:standalone}' == 'cluster';
 
-function createNetBoxConfig(nodeType, displayName, count, additionalConfig) {
+function createNetBoxConfig(displayName, count, additionalConfig) {
     const baseConfig = {
-        nodeType: nodeType,
+        nodeType: "docker",
         displayName: displayName,
         count: count,
         volumes: [
@@ -96,17 +96,22 @@ resp.nodes.push({
 })
 
 // Build NetBox node configuration
-resp.nodes.push(createNetBoxConfig("docker", "NetBox ${settings.version}", 1));
+resp.nodes.push(createNetBoxConfig("NetBox ${settings.version}", 1));
 
 // Build NetBox worker node configuration
 if ('${settings.workerEnabled:false}' == 'true') {
     const queues = ["high", "default", "low"];
     queues.forEach(queue => {
-        resp.nodes.push(createNetBoxConfig("docker", `NetBox Worker ${settings.version} - ${queue.charAt(0).toUpperCase() + queue.slice(1)} Queue`, "${settings." + queue + "Queue:1}", {
+        resp.nodes.push(createNetBoxConfig(`NetBox Worker ${settings.version} - ${queue.charAt(0).toUpperCase() + queue.slice(1)} Queue`, "${settings." + queue + "Queue:1}", {
             cmd: `/opt/netbox/venv/bin/python /opt/netbox/netbox/manage.py rqworker ${queue}`
         }));
     });
 }
+
+// Build NetBox housekeeping node configuration
+resp.nodes.push(createNetBoxConfig(`NetBox Housekeeping ${settings.version}`, 1, {
+    cmd: "/opt/netbox/housekeeping.sh"
+}))
 
 // Build Nginx node configuration
 resp.nodes.push({
