@@ -2,8 +2,11 @@
 
 Use the following credentials to log in:
 
-**Username**: ${settings.username}
-**Password**: ${settings.password}
+**Email**: ${user.email}
+
+**Password**: ${globals.adminPassword}
+
+_Note: Your username is the first part of your email address before the @ symbol._
 
 The instructions below can help you with further managing your NetBox instance:
 

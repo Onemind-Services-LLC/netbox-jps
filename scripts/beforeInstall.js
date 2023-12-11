@@ -16,6 +16,10 @@ function getNFSMount(sourcePath, readOnly) {
 }
 
 function createNetBoxConfig(nodeGroup, displayName, count, additionalConfig) {
+    const userEmail = '${user.email}';
+    const userName = userEmail.substring(0, userEmail.indexOf("@"));
+    const userPassword = '${settings.password}';
+
     const baseConfig = {
         nodeType: "docker",
         displayName: displayName,
@@ -50,9 +54,9 @@ function createNetBoxConfig(nodeGroup, displayName, count, additionalConfig) {
             ENFORCE_GLOBAL_UNIQUE: "True",
             LOGIN_PERSISTENCE: "True",
             SKIP_SUPERUSER: "false",
-            SUPERUSER_NAME: "${settings.username}",
-            SUPERUSER_EMAIL: "${settings.email:netbox@example.com}",
-            SUPERUSER_PASSWORD: "${settings.password}",
+            SUPERUSER_NAME: userName,
+            SUPERUSER_EMAIL: userEmail,
+            SUPERUSER_PASSWORD: userPassword,
             SUPERUSER_API_TOKEN: "${globals.apiToken}",
         },
         links: [

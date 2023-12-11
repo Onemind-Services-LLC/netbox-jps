@@ -14,19 +14,22 @@ description:
 logo: /images/logo.png
 baseUrl: https://raw.githubusercontent.com/Onemind-Services-LLC/netbox-jps/master
 
-ssl: true
 onBeforeInit: /scripts/beforeInit.js?_r=${fn.random}
 onBeforeInstall: /scripts/beforeInstall.js?_r=${fn.random}
 
 globals:
-  dbPassword: ${fn.password}
-  redisPassword: ${fn.password}
+  dbPassword: ${fn.password(20)}
+  redisPassword: ${fn.password(20)}
   secretKey: ${fn.random(50)}
   apiToken: ${fn.random(50)}
+  adminPassword: ${fn.password(20)}
 
 nodes: definedInOnBeforeInstall
 
 onInstall:
+  - limits
+  - setProtocol
+  - setDomain
   - createDb
   - installYq
   - upload:
@@ -39,6 +42,29 @@ onInstall:
       - path: /etc/netbox/reports
 
 actions:
+  limits:
+    - env.control.ApplyNodeGroupData[bl,cp,sqldb,storage,nosqldb,cache]:
+        data:
+          project: ${settings.project:default}
+          projectScope: ${settings.projectScope:production}
+          isRequired: true
+
+  setProtocol:
+    - script: |
+        return {
+          result:0,
+          ssl: jelastic.billing.account.GetQuotas('environment.jelasticssl.enabled').array[0].value
+        }
+    - if (${response.ssl}):
+        setGlobals:
+          PROTOCOL: https
+
+  setDomain:
+    - script: /scripts/idna.js
+      domains: ${env.domain}
+    - setGlobals:
+        DOMAIN: ${response.domains}
+
   createDb:
     - cmd[${nodes.sqldb.master.id}]: |-
         psql -U webadmin -d postgres -c "CREATE DATABASE netbox;"
