@@ -27,7 +27,6 @@ globals:
 nodes: definedInOnBeforeInstall
 
 onInstall:
-  - limits
   - setProtocol
   - setDomain
   - createDb
@@ -42,13 +41,6 @@ onInstall:
       - path: /etc/netbox/reports
 
 actions:
-  limits:
-    - env.control.ApplyNodeGroupData[bl,cp,sqldb,storage,nosqldb,cache]:
-        data:
-          project: ${settings.project:default}
-          projectScope: ${settings.projectScope:production}
-          isRequired: true
-
   setProtocol:
     - script: |
         return {
