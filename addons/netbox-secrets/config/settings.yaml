@@ -1,0 +1,65 @@
+fields:
+  - name: version
+    type: list
+    caption: Version
+    tooltip: Version of plugin to install
+    values:
+      - value: v1.7.6
+        caption: v1.7.6
+    default: v1.7.6
+
+  - name: apps
+    type: string
+    caption: Apps
+    tooltip: List of apps to enable
+    default: ['dcim.device', 'virtualization.virtualmachine']
+
+  - name: display_default
+    type: list
+    caption: Display Default
+    tooltip: Where to display the secret on the detail page of the defined apps
+    values:
+      - value: left_page
+        caption: Left Page
+      - value: right_page
+        caption: Right Page
+      - value: full_width_page
+        caption: Full Width Page
+    default: left_page
+
+  - name: display_setting
+    type: text
+    caption: Display Setting
+    tooltip: Set display setting for concrete model
+    default: {}
+
+  - name: enable_contacts
+    type: list
+    caption: Enable Contacts
+    tooltip: Enable Contacts
+    values:
+      - value: True
+        caption: True
+      - value: False
+        caption: False
+    default: False
+
+  - name: public_key_size
+    type: list
+    caption: Public Key Size
+    tooltip: Size of the public key
+    values:
+      - value: 2048
+        caption: 2048
+      - value: 4096
+        caption: 4096
+      - value: 8192
+        caption: 8192
+    default: 2048
+
+  - name: restartContainer
+    type: checkbox
+    caption: Restart NetBox container
+    tooltip: Restart NetBox container after install/uninstall
+    default: true
+    required: false
