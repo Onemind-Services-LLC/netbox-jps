@@ -37,7 +37,6 @@ onInstall:
   - createDirectory[cp]:
       - path: /etc/netbox/scripts
       - path: /etc/netbox/reports
-  - setTriggers
 
 actions:
   createDb:
@@ -51,14 +50,5 @@ actions:
     - cmd[${nodes.cp.id}]: |-
         wget https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64 -O /usr/bin/yq
         chmod +x /usr/bin/yq
-
-  setTriggers:
-    - log: Auto Scaling Triggers
-    - script: /scripts/setTriggers.js?_r=${fn.random}
-      nodeGroup: cp
-      resourceType: CPU
-      loadGrowth: ${settings.scalingStrategy}
-      cleanOldTriggers: true
-      scaleDownLimit: ${nodes.cp.length}
 
 success: /text/success.md?_r=1
