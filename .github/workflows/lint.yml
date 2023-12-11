@@ -24,7 +24,7 @@ jobs:
         repo_name=$(echo "${{ github.repository }}" | cut -d'/' -f2)
         expected_base_url="https://raw.githubusercontent.com/${repo_owner}/${repo_name}/master"
 
-        IFS=$'\n' read -r -d '' -a file_array <<< "${{ steps.find-manifest.outputs.files }}"
+        IFS=' ' read -r -a file_array <<< "${{ steps.find-manifest.outputs.files }}"
         for file in "${file_array[@]}"
         do
           if [ ! -f "$file" ]; then
