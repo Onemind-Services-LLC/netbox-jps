@@ -15,19 +15,21 @@ jobs:
     - name: Find manifest.jps files
       id: find-manifest
       run: |
-        files=$(find . -name 'manifest.jps' -print0)
-        echo "::set-output name=files::$(echo "$files" | xargs -0 echo)"
+        files=$(find . -name 'manifest.jps')
+        echo "::set-output name=files::$files"
 
     - name: Validate baseUrl in manifest files
       run: |
         repo_owner="${{ github.repository_owner }}"
         repo_name=$(echo "${{ github.repository }}" | cut -d'/' -f2)
         expected_base_url="https://raw.githubusercontent.com/${repo_owner}/${repo_name}/master"
-        
-        IFS=$'\n' read -r -d '' -a file_array <<< "${{ steps.find-manifest.outputs.files }}"
 
-        for file in "${file_array[@]}"
+        echo "${{ steps.find-manifest.outputs.files }}" | while IFS= read -r file
         do
+          if [ ! -f "$file" ]; then
+            echo "File not found: $file"
+            continue
+          fi
           baseUrl=$(yq eval '.baseUrl' "$file")
           if [[ "$baseUrl" != "$expected_base_url" ]]; then
             echo "Invalid baseUrl format in $file. Expected ${expected_base_url}, but found ${baseUrl}"
