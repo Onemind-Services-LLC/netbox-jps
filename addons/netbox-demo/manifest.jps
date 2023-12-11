@@ -37,22 +37,21 @@ actions:
         yq -i '.netbox_demo={}' /etc/netbox/config/plugins.yaml
         echo "LOGIN_REQUIRED = False" >> /etc/netbox/config/netbox_demo.py
         echo "BANNER_LOGIN = '<p>This is a demo instance of <a href=\'https://github.com/netbox-community/netbox\'>NetBox</a> for public use.</p><p><a href=\'/plugins/demo/login/\'>Click here</a> to create a new user account, or log in with your existing credentials below.</p>'" >> /etc/netbox/config/netbox_demo.py
-    - if ('${settings.restartContainer}' == 'true'):
-      - restartNetbox
+    - restartNetbox
 
   removeConfig:
     - cmd[${nodes.cp.id}]: |-
         yq -i 'del(.netbox_demo)' /etc/netbox/config/plugins.yaml
         rm /etc/netbox/config/netbox_demo.py
-    - if ('${settings.restartContainer}' == 'true'):
-        - restartNetbox
+    - restartNetbox
 
   restartNetbox:
-    - forEach (env.nodes):
-        - if ("${@i.nodeType}" === "docker"):
-            api: jelastic.environment.control.RestartContainerById
-            envName: ${env.name}
-            nodeid: ${@i.id}
+    - if ('${settings.restartContainer}' == 'true'):
+        - forEach (env.nodes):
+            - if ("${@i.nodeType}" === "docker"):
+                api: jelastic.environment.control.RestartContainerById
+                envName: ${env.name}
+                nodeid: ${@i.id}
 
 buttons:
   - caption: Configure

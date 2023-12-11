@@ -39,22 +39,21 @@ actions:
     - cmd[${nodes.cp.id}]: |-
         yq -i '.netbox_support={}' /etc/netbox/config/plugins.yaml
         cp /opt/netbox/venv/lib/python3.10/site-packages/netbox_support/scripts/eox-eol.py /etc/netbox/scripts/eox-eol.py
-    - if ('${settings.restartContainer}' == 'true'):
-      - restartNetbox
+    - restartNetbox
 
   removeConfig:
     - cmd[${nodes.cp.id}]: |-
         yq -i 'del(.netbox_support)' /etc/netbox/config/plugins.yaml
         rm /etc/netbox/scripts/eox-eol.py
-    - if ('${settings.restartContainer}' == 'true'):
-        - restartNetbox
+    - restartNetbox
 
   restartNetbox:
-    - forEach (env.nodes):
-        - if ("${@i.nodeType}" === "docker"):
-            api: jelastic.environment.control.RestartContainerById
-            envName: ${env.name}
-            nodeid: ${@i.id}
+    - if ('${settings.restartContainer}' == 'true'):
+        - forEach (env.nodes):
+            - if ("${@i.nodeType}" === "docker"):
+                api: jelastic.environment.control.RestartContainerById
+                envName: ${env.name}
+                nodeid: ${@i.id}
 
 buttons:
   - caption: Configure

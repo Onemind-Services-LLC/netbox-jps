@@ -39,21 +39,20 @@ actions:
         yq -i '.netbox_secrets.display_setting=${settings.display_setting:{}}' /etc/netbox/config/plugins.yaml
         yq -i '.netbox_secrets.enable_contacts=${settings.enable_contacts}' /etc/netbox/config/plugins.yaml
         yq -i '.netbox_secrets.public_key_size=${settings.public_key_size}' /etc/netbox/config/plugins.yaml
-    - if ('${settings.restartContainer}' == 'true'):
-      - restartNetbox
+    - restartNetbox
 
   removeConfig:
     - cmd[${nodes.cp.id}]: |-
         yq -i 'del(.netbox_secrets)' /etc/netbox/config/plugins.yaml
-    - if ('${settings.restartContainer}' == 'true'):
-        - restartNetbox
+    - restartNetbox
 
   restartNetbox:
-    - forEach (env.nodes):
-        - if ("${@i.nodeType}" === "docker"):
-            api: jelastic.environment.control.RestartContainerById
-            envName: ${env.name}
-            nodeid: ${@i.id}
+    - if ('${settings.restartContainer}' == 'true'):
+        - forEach (env.nodes):
+            - if ("${@i.nodeType}" === "docker"):
+                api: jelastic.environment.control.RestartContainerById
+                envName: ${env.name}
+                nodeid: ${@i.id}
 
 buttons:
   - caption: Configure

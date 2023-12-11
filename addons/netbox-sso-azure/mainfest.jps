@@ -52,21 +52,20 @@ actions:
             replacement: ${settings.groupMapping}
           - pattern: var_groupPermissionMapping
             replacement: ${settings.groupPermissionMapping}
-    - if ('${settings.restartContainer}' == 'true'):
-      - restartNetbox
+    - restartNetbox
 
   removeConfig:
     - cmd[${nodes.cp.id}]: |-
         rm -f /etc/netbox/config/sso.py
-    - if ('${settings.restartContainer}' == 'true'):
-      - restartNetbox
+    - restartNetbox
 
   restartNetbox:
-    - forEach (env.nodes):
-        - if ("${@i.nodeType}" === "docker"):
-            api: jelastic.environment.control.RestartContainerById
-            envName: ${env.name}
-            nodeid: ${@i.id}
+    - if ('${settings.restartContainer}' == 'true'):
+        - forEach (env.nodes):
+            - if ("${@i.nodeType}" === "docker"):
+                api: jelastic.environment.control.RestartContainerById
+                envName: ${env.name}
+                nodeid: ${@i.id}
 
 buttons:
   - caption: Configure
