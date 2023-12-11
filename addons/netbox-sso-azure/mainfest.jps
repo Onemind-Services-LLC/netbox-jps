@@ -21,34 +21,9 @@ onBeforeInit: /addons/netbox-sso-azure/scripts/beforeInit.js?_r=${fn.random}
 
 onInstall:
   - installPlugin
-  - upload:
-      - nodeGroup: cp
-        sourcePath: ${baseUrl}/addons/netbox-sso-azure/sso.py
-        destPath: /etc/netbox/config/sso.py
-  - replaceInFile:
-      nodeMission: cp
-      path: /etc/netbox/config/sso.py
-      replacements:
-        - pattern: var_oauthKey
-          replacement: ${settings.oauthKey}
-        - pattern: var_oauthSecret
-          replacement: ${settings.oauthSecret}
-        - pattern: var_groupsIsStaff
-          replacement: ${settings.groupsIsStaff}
-        - pattern: var_groupsIsSuperuser
-          replacement: ${settings.groupsIsSuperuser}
-        - pattern: var_groupMapping
-          replacement: ${settings.groupMapping}
-        - pattern: var_groupPermissionMapping
-          replacement: ${settings.groupPermissionMapping}
-  - if ('${settings.restartContainer}' == 'true'):
-      - restartNetbox
 
 onUninstall:
   - removeConfig
-  - if ('${settings.restartContainer}' == 'true'):
-      - forEach (env.nodes):
-          - restartNetbox
 
 actions:
   installPlugin:
@@ -56,9 +31,35 @@ actions:
         source /opt/netbox/venv/bin/activate
         pip3 install --force-reinstall --upgrade social-auth-app-django
 
+  updateConfig:
+    - upload:
+        - nodeGroup: cp
+          sourcePath: ${baseUrl}/addons/netbox-sso-azure/sso.py
+          destPath: /etc/netbox/config/sso.py
+    - replaceInFile:
+        nodeMission: cp
+        path: /etc/netbox/config/sso.py
+        replacements:
+          - pattern: var_oauthKey
+            replacement: ${settings.oauthKey}
+          - pattern: var_oauthSecret
+            replacement: ${settings.oauthSecret}
+          - pattern: var_groupsIsStaff
+            replacement: ${settings.groupsIsStaff}
+          - pattern: var_groupsIsSuperuser
+            replacement: ${settings.groupsIsSuperuser}
+          - pattern: var_groupMapping
+            replacement: ${settings.groupMapping}
+          - pattern: var_groupPermissionMapping
+            replacement: ${settings.groupPermissionMapping}
+    - if ('${settings.restartContainer}' == 'true'):
+      - restartNetbox
+
   removeConfig:
     - cmd[${nodes.cp.id}]: |-
         rm -f /etc/netbox/config/sso.py
+    - if ('${settings.restartContainer}' == 'true'):
+      - restartNetbox
 
   restartNetbox:
     - forEach (env.nodes):

@@ -22,13 +22,9 @@ onBeforeInit: /addons/netbox-secrets/scripts/beforeInit.js?_r=${fn.random}
 onInstall:
   - installPlugin
   - updateConfig
-  - if ('${settings.restartContainer}' == 'true'):
-      - restartNetbox
 
 onUninstall:
   - removeConfig
-  - if ('${settings.restartContainer}' == 'true'):
-      - restartNetbox
 
 actions:
   installPlugin:
@@ -43,10 +39,14 @@ actions:
         yq -i '.netbox_secrets.display_setting=${settings.display_setting:{}}' /etc/netbox/config/plugins.yaml
         yq -i '.netbox_secrets.enable_contacts=${settings.enable_contacts}' /etc/netbox/config/plugins.yaml
         yq -i '.netbox_secrets.public_key_size=${settings.public_key_size}' /etc/netbox/config/plugins.yaml
+    - if ('${settings.restartContainer}' == 'true'):
+      - restartNetbox
 
   removeConfig:
     - cmd[${nodes.cp.id}]: |-
         yq -i 'del(.netbox_secrets)' /etc/netbox/config/plugins.yaml
+    - if ('${settings.restartContainer}' == 'true'):
+        - restartNetbox
 
   restartNetbox:
     - forEach (env.nodes):

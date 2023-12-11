@@ -22,13 +22,9 @@ onBeforeInit: /addons/netbox-support/scripts/beforeInit.js?_r=${fn.random}
 onInstall:
   - installPlugin
   - updateConfig
-  - if ('${settings.restartContainer}' == 'true'):
-      - restartNetbox
 
 onUninstall:
   - removeConfig
-  - if ('${settings.restartContainer}' == 'true'):
-      - restartNetbox
 
 actions:
   installPlugin:
@@ -43,11 +39,15 @@ actions:
     - cmd[${nodes.cp.id}]: |-
         yq -i '.netbox_support={}' /etc/netbox/config/plugins.yaml
         cp /opt/netbox/venv/lib/python3.10/site-packages/netbox_support/scripts/eox-eol.py /etc/netbox/scripts/eox-eol.py
+    - if ('${settings.restartContainer}' == 'true'):
+      - restartNetbox
 
   removeConfig:
     - cmd[${nodes.cp.id}]: |-
         yq -i 'del(.netbox_support)' /etc/netbox/config/plugins.yaml
         rm /opt/netbox/netbox/scripts/eox-eol.py
+    - if ('${settings.restartContainer}' == 'true'):
+        - restartNetbox
 
   restartNetbox:
     - forEach (env.nodes):

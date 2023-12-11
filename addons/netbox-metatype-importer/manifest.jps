@@ -22,13 +22,9 @@ onBeforeInit: /addons/netbox-metatype-importer/scripts/beforeInit.js?_r=${fn.ran
 onInstall:
   - installPlugin
   - updateConfig
-  - if ('${settings.restartContainer}' == 'true'):
-      - restartNetbox
 
 onUninstall:
   - removeConfig
-  - if ('${settings.restartContainer}' == 'true'):
-      - restartNetbox
 
 
 actions:
@@ -43,10 +39,14 @@ actions:
         yq -i '.netbox_metatype_importer.github_token="${settings.githubToken}"' /etc/netbox/config/plugins.yaml
         yq -i '.netbox_metatype_importer.repo="${settings.repo}"' /etc/netbox/config/plugins.yaml
         yq -i '.netbox_metatype_importer.repo_owner="${settings.repoOwner}"' /etc/netbox/config/plugins.yaml
+    - if ('${settings.restartContainer}' == 'true'):
+      - restartNetbox
 
   removeConfig:
     - cmd[${nodes.cp.id}]: |-
         yq -i 'del(.netbox_metatype_importer)' /etc/netbox/config/plugins.yaml
+    - if ('${settings.restartContainer}' == 'true'):
+        - restartNetbox
 
 
   restartNetbox:
