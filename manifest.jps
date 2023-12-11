@@ -60,3 +60,5 @@ actions:
       loadGrowth: ${settings.scalingStrategy}
       cleanOldTriggers: true
       scaleDownLimit: ${nodes.cp.length}
+
+success: /text/success.md?_r=1
