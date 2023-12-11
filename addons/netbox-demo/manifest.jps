@@ -23,20 +23,13 @@ onInstall:
   - installPlugin
   - updateConfig
   - if ('${settings.restartContainer}' == 'true'):
-      - forEach (env.nodes):
-          - if ("${@i.nodeType}" === "docker"):
-              api: jelastic.environment.control.RestartContainerById
-              envName: ${env.name}
-              nodeid: ${@i.id}
+      - restartNetbox
 
 onUninstall:
   - removeConfig
   - if ('${settings.restartContainer}' == 'true'):
       - forEach (env.nodes):
-          - if ("${@i.nodeType}" === "docker"):
-              api: jelastic.environment.control.RestartContainerById
-              envName: ${env.name}
-              nodeid: ${@i.id}
+          - restartNetbox
 
 actions:
   installPlugin:
@@ -54,3 +47,18 @@ actions:
     - cmd[${nodes.cp.id}]: |-
         yq -i 'del(.netbox_demo)' /etc/netbox/config/plugins.yaml
         rm /etc/netbox/config/netbox_demo.py
+
+
+  restartNetbox:
+    - forEach (env.nodes):
+        - if ("${@i.nodeType}" === "docker"):
+            api: jelastic.environment.control.RestartContainerById
+            envName: ${env.name}
+            nodeid: ${@i.id}
+
+buttons:
+  - caption: Configure
+    action: updateConfig
+    settings: main
+    loadingText: Configuring...
+    successText: The plugin has been configured successfully

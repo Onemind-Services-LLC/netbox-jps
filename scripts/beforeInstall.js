@@ -124,7 +124,7 @@ if ('${settings.enableWorkers:false}' == 'true') {
     queues.forEach(queue => {
         let queueName = queue.charAt(0).toUpperCase() + queue.slice(1) + " Queue";
         resp.nodes.push(createNetBoxConfig("cp" + index, "NetBox Worker - " + queueName, "${settings." + queue + "Queue:1}", {
-            cmd: `/opt/netbox/venv/bin/python /opt/netbox/netbox/manage.py rqworker ${queue}`
+            cmd: "/opt/netbox/venv/bin/python /opt/netbox/netbox/manage.py rqworker" + queue
         }));
         index++;
     });

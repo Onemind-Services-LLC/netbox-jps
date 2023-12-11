@@ -23,20 +23,12 @@ onInstall:
   - installPlugin
   - updateConfig
   - if ('${settings.restartContainer}' == 'true'):
-      - forEach (env.nodes):
-          - if ("${@i.nodeType}" === "docker"):
-              api: jelastic.environment.control.RestartContainerById
-              envName: ${env.name}
-              nodeid: ${@i.id}
+      - restartNetbox
 
 onUninstall:
   - removeConfig
   - if ('${settings.restartContainer}' == 'true'):
-      - forEach (env.nodes):
-          - if ("${@i.nodeType}" === "docker"):
-              api: jelastic.environment.control.RestartContainerById
-              envName: ${env.name}
-              nodeid: ${@i.id}
+      - restartNetbox
 
 actions:
   installPlugin:
@@ -46,7 +38,7 @@ actions:
 
   updateConfig:
     - cmd[${nodes.cp.id}]: |-
-        yq -i '.netbox_secrets.apps="${settings.apps}"' /etc/netbox/config/plugins.yaml
+        yq -i '.netbox_secrets.apps=${settings.apps}' /etc/netbox/config/plugins.yaml
         yq -i '.netbox_secrets.display_default="${settings.display_default}"' /etc/netbox/config/plugins.yaml
         yq -i '.netbox_secrets.display_setting=${settings.display_setting:{}}' /etc/netbox/config/plugins.yaml
         yq -i '.netbox_secrets.enable_contacts=${settings.enable_contacts}' /etc/netbox/config/plugins.yaml
@@ -55,3 +47,17 @@ actions:
   removeConfig:
     - cmd[${nodes.cp.id}]: |-
         yq -i 'del(.netbox_secrets)' /etc/netbox/config/plugins.yaml
+
+  restartNetbox:
+    - forEach (env.nodes):
+        - if ("${@i.nodeType}" === "docker"):
+            api: jelastic.environment.control.RestartContainerById
+            envName: ${env.name}
+            nodeid: ${@i.id}
+
+buttons:
+  - caption: Configure
+    action: updateConfig
+    settings: main
+    loadingText: Configuring...
+    successText: The plugin has been configured successfully
