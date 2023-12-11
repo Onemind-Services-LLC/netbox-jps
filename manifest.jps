@@ -12,7 +12,7 @@ description:
   short: "The premier source of truth powering network automation."
 
 logo: /images/logo.png
-baseUrl: https://raw.githubusercontent.com/Onemind-Services-LLC/netbox-jps/dev
+baseUrl: https://raw.githubusercontent.com/Onemind-Services-LLC/netbox-jps/master
 
 ssl: true
 onBeforeInit: /scripts/beforeInit.js?_r=${fn.random}

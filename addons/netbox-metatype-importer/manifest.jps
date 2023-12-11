@@ -7,7 +7,7 @@ description:
   short: "Easily import Device and Module types from GitHub repositories into NetBox."
 
 logo: /images/logo.png
-baseUrl: https://raw.githubusercontent.com/Onemind-Services-LLC/netbox-jps/dev
+baseUrl: https://raw.githubusercontent.com/Onemind-Services-LLC/netbox-jps/master
 
 targetNodes:
   nodeGroup:
