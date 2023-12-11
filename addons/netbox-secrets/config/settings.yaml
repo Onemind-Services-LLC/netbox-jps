@@ -12,7 +12,7 @@ fields:
     type: text
     caption: Apps
     tooltip: List of apps to enable
-    default: ['dcim.device', 'virtualization.virtualmachine']
+    default: "['dcim.device', 'virtualization.virtualmachine']"
 
   - name: display_default
     type: list
