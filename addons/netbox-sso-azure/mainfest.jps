@@ -1,0 +1,66 @@
+type: update
+id: netbox-sso-azure
+name: NetBox SSO Azure Plugin
+homepage: https://github.com/netbox-community/netbox
+
+description:
+  short: "This plugin adds Azure AD SSO to NetBox."
+
+logo: /images/logo.png
+baseUrl: https://raw.githubusercontent.com/Onemind-Services-LLC/netbox-jps/master
+
+targetNodes:
+  nodeGroup:
+    - cp
+  dockerName: netbox-community/netbox
+
+nodes:
+  - nodeGroup: cp
+
+onBeforeInit: /addons/netbox-sso-azure/scripts/beforeInit.js?_r=${fn.random}
+
+onInstall:
+  - installPlugin
+  - upload:
+      - nodeGroup: cp
+        sourcePath: ${baseUrl}/addons/netbox-sso-azure/sso.py
+        destPath: /etc/netbox/config/sso.py
+  - replaceInFile:
+      nodeMission: cp
+      path: /etc/netbox/config/sso.py
+      replacements:
+        - pattern: var_oauthKey
+          replacement: ${settings.oauthKey}
+        - pattern: var_oauthSecret
+          replacement: ${settings.oauthSecret}
+        - pattern: var_groupsIsStaff
+          replacement: ${settings.groupsIsStaff}
+        - pattern: var_groupsIsSuperuser
+          replacement: ${settings.groupsIsSuperuser}
+        - pattern: var_groupMapping
+          replacement: ${settings.groupMapping}
+        - pattern: var_groupPermissionMapping
+          replacement: ${settings.groupPermissionMapping}
+  - if ('${settings.restartContainer}' == 'true'):
+      - restartNodes:
+          - nodeGroup: cp
+            nodeType: docker
+            reboot: true
+
+onUninstall:
+  - removeConfig
+  - if ('${settings.restartContainer}' == 'true'):
+      - restartNodes:
+          - nodeGroup: cp
+            nodeType: docker
+            reboot: true
+
+actions:
+  installPlugin:
+    - cmd[${nodes.cp.id}]: |-
+        source /opt/netbox/venv/bin/activate
+        pip3 install --force-reinstall --upgrade social-auth-app-django
+
+  removeConfig:
+    - cmd[${nodes.cp.id}]: |-
+        rm -f /etc/netbox/config/sso.py

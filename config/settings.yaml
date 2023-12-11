@@ -1,0 +1,94 @@
+fields:
+  - name: version
+    type: list
+    caption: NetBox Version
+    tooltip: Version of NetBox to install
+    values:
+      - value: v3.3
+        caption: v3.3
+      - value: v3.4-2.5.3
+        caption: v3.4
+    default: v3.4-2.5.3
+
+  - name: username
+    type: string
+    caption: Admin Username
+    tooltip: Username for the initial admin user
+    required: true
+
+  - name: password
+    type: string
+    inputType: password
+    caption: Admin Password
+    tooltip: Password for the initial admin user
+    required: true
+
+  - name: email
+    type: string
+    caption: Admin Email
+    tooltip: Email address for the initial admin user
+    required: false
+    vtype: email
+
+  - name: enableWorkers
+    type: checkbox
+    caption: Enable Workers
+    tooltip: Enable RQ workers
+    value: true
+    showIf:
+      true:
+        - name: highQueue
+          type: spinner
+          caption: High Priority Queue
+          tooltip: Number of workers to run for the high priority queue
+          default: 1
+          required: true
+          editable: true
+          min: 1
+
+        - name: defaultQueue
+          type: spinner
+          caption: Default Priority Queue
+          tooltip: Number of workers to run for the default priority queue
+          default: 1
+          required: true
+          editable: true
+          min: 1
+
+        - name: lowQueue
+          type: spinner
+          caption: Low Priority Queue
+          tooltip: Number of workers to run for the low priority queue
+          default: 1
+          required: true
+          editable: true
+          min: 1
+
+  - name: dbType
+    type: list
+    caption: Database Type
+    tooltip: Deploy PostgreSQL in standalone or cluster mode
+    values:
+      - value: standalone
+        caption: Standalone
+      - value: cluster
+        caption: Cluster
+    default: standalone
+
+  - name: dbDiskLimit
+    type: spinner
+    caption: Database Disk Size
+    tooltip: Size of the database disk in GB
+    default: 10
+    required: true
+    editable: true
+    min: 1
+
+  - name: redisDiskLimit
+    type: spinner
+    caption: Redis Disk Size
+    tooltip: Size of the Redis disk in GB
+    default: 10
+    required: true
+    editable: true
+    min: 1

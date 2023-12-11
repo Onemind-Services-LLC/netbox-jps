@@ -1,0 +1,45 @@
+fields:
+  - name: oauthKey
+    caption: Oauth2 Key
+    type: string
+    required: true
+
+  - name: oauthSecret
+    caption: Oauth2 Secret
+    type: string
+    required: true
+
+  - name: groupsIsStaff
+    caption: Groups for Staff
+    type: string
+    required: false
+    tooltip: Comma-separated list of AzureAD groups that should be considered staff.
+
+  - name: groupsIsSuperuser
+    caption: Groups for Superusers
+    type: string
+    required: false
+    tooltip: Comma-separated list of AzureAD groups that should be considered superusers.
+
+  - name: groupMapping
+    caption: Group Mapping
+    type: text
+    required: true
+    tooltip: |-
+      Dictionary mapping AzureAD groups to NetBox groups. The key is the AzureAD group name, and the value is the NetBox group name.
+      Example: {"AzureAD Group Name": "NetBox Group Name"}
+
+  - name: groupPermissionMapping
+    caption: Group Permission Mapping
+    type: text
+    required: true
+    tooltip: |-
+      Dictionary mapping AzureAD groups to NetBox permissions. The key is the AzureAD group name, and the value is an object of the form {"app.model": ["add", "change", "delete", "view"]}.
+      Example: {"AzureAD Group Name": {"dcim.site": ["add", "change", "delete", "view"]}}
+
+  - name: restartContainer
+    type: checkbox
+    caption: Restart NetBox container
+    tooltip: Restart NetBox container after install/uninstall
+    default: true
+    required: false

@@ -1,0 +1,22 @@
+fields:
+  - name: version
+    type: list
+    caption: Version
+    tooltip: Version of plugin to install
+    values:
+      - value: v0.0.3
+        caption: v0.0.3
+    default: v0.0.3
+
+  - name: githubToken
+    type: string
+    caption: GitHub Token
+    tooltip: OneMind Services GitHub token
+    required: true
+
+  - name: restartContainer
+    type: checkbox
+    caption: Restart NetBox container
+    tooltip: Restart NetBox container after install/uninstall
+    default: true
+    required: false
