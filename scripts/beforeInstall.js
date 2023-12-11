@@ -19,7 +19,7 @@ function getNFSMount(sourcePath, readOnly) {
 function createNetBoxConfig(nodeGroup, displayName, count, additionalConfig) {
     const userEmail = '${user.email}';
     const userName = userEmail.substring(0, userEmail.indexOf("@"));
-    const userPassword = '${settings.password}';
+    const userPassword = '${globals.password}';
 
     const baseConfig = {
         nodeType: "docker",
