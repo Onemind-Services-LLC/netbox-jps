@@ -25,9 +25,9 @@ globals:
   adminPassword: ${fn.password(20)}
 
 nodes: definedInOnBeforeInstall
+ssl: true
 
 onInstall:
-  - setProtocol
   - setDomain
   - createDb
   - installYq
@@ -41,16 +41,6 @@ onInstall:
       - path: /etc/netbox/reports
 
 actions:
-  setProtocol:
-    - script: |
-        return {
-          result:0,
-          ssl: jelastic.billing.account.GetQuotas('environment.jelasticssl.enabled').array[0].value
-        }
-    - if (${response.ssl}):
-        setGlobals:
-          PROTOCOL: https
-
   setDomain:
     - script: /scripts/idna.js
       domains: ${env.domain}
