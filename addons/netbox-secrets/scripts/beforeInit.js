@@ -28,5 +28,6 @@ const more_fields = [
     }
 ]
 
-resp.settings.fields.push(version_field)
+resp.settings.fields.push({'name': 'namevalue', type: 'list', caption: 'hello'})
+
 return resp;
