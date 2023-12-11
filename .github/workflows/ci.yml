@@ -1,0 +1,23 @@
+name: JPS Manifest
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  update-manifest:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+
+    - name: Install Python Dependencies
+      run: pip install requests
+
+    - name: Run Update Script
+      run: python .github/jca.py
