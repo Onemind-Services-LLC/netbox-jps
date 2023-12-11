@@ -5,121 +5,114 @@ This file connects with CloudMyDC Jelastic API and adds/updates application mani
 import os
 import requests
 import yaml
+import logging
+from urllib.parse import urlencode
 
+# Initialize logging
+logging.basicConfig(level=logging.INFO)
+
+# Constants and Environment Variables
 JELASTIC_TOKEN = os.environ.get('JELASTIC_TOKEN')
+if not JELASTIC_TOKEN:
+    logging.error("JELASTIC_TOKEN not set.")
+    exit(1)
+
 JELASTIC_BASE_URL = "https://jca.xapp.cloudmydc.com/1.0/marketplace/admin/rest"
 
 
 def url(path, params=None, add_session=True):
     """
-    This function returns the URL for the Jelastic API.
-    :param path: The path to the API endpoint.
-    :param params: The parameters to be passed to the API.
-    :param add_session: Whether to add the session token to the URL.
-    :return: The URL for the API.
+    Generate a full URL for a given API path and parameters.
     """
     if params is None:
         params = {}
 
-    u = f"{JELASTIC_BASE_URL}/{path}"
     if add_session:
-        u += f"?session={JELASTIC_TOKEN}"
+        params['session'] = JELASTIC_TOKEN
 
-    for k, v in params.items():
-        u += f"&{k}={v}"
-
-    return u
+    query_string = urlencode(params)
+    return f"{JELASTIC_BASE_URL}/{path}?{query_string}"
 
 
 def get_apps():
     """
-    This function gets all the applications from the Jelastic account.
+    Get all applications from the Jelastic account.
     """
-    response = requests.get(
-        url=url("getapps", {"appid": "cluster"})
-    )
-    if response.ok:
+    try:
+        response = requests.get(url("getapps", {"appid": "cluster"}))
+        response.raise_for_status()
+        logging.info("Fetched apps from Jelastic.")
         return response.json().get("apps", [])
-
-    response.raise_for_status()
-    return []
+    except requests.RequestException as e:
+        logging.error(f"Error fetching apps: {e}")
+        return []
 
 
 def get_local_manifests():
     """
-    This function gets all the application manifests from the repository.
+    Get all the application manifests from the repository.
     """
     manifests = []
     for root, dirs, files in os.walk("."):
+        if '.git' in dirs:
+            dirs.remove('.git')  # ignore git directory
         for file in files:
             if file.endswith(".jps"):
                 manifests.append(os.path.join(root, file))
 
+    logging.info(f"Found {len(manifests)} manifests in the repository.")
     return manifests
 
 
 def add_app(app_manifest, publish=True, id=None):
     """
-    This function adds an application to the Jelastic account.
-
-    :param id: The ID of the application.
-    :param app_manifest: The path to the application manifest.
-    :param publish: Whether to publish the application to the marketplace.
-    :return: The response from the API.
+    Add or update an application in the Jelastic account.
     """
     if not publish and not id:
         raise ValueError("ID must be provided when updating an application.")
 
-    if id and type(id) != int:
+    if id and not isinstance(id, int):
         raise TypeError("ID must be an integer.")
 
-    print("Adding" if publish else "Updating", f"application {app_manifest}")
-    with open(app_manifest) as f:
-        data = yaml.load(f, Loader=yaml.FullLoader)
+    logging.info(f"{'Adding' if publish else 'Updating'} application {app_manifest}")
 
-    # Build form data
+    with open(app_manifest) as f:
+        data = yaml.safe_load(f)
+
     payload = {
         "appid": "cluster",
-        "session": JELASTIC_TOKEN,
         "manifest": yaml.dump(data),
     }
 
     if publish:
-        path = "addapp"
+        api_path = "addapp"
     else:
         payload["id"] = id
-        path = "editapp"
+        api_path = "editapp"
 
-    response = requests.post(
-        url=url(path, add_session=False),
-        data=payload
-    )
+    try:
+        response = requests.post(url(api_path, add_session=False), data=payload)
+        response.raise_for_status()
 
-    if response.ok:
         if publish:
-            print("Publishing application...")
-            requests.post(
-                url=url("publishapp", {"id": id})
-            )
-
-    response.raise_for_status()
-    return None
+            logging.info(f"Publishing [{data['id']}] application...")
+            publish_response = requests.post(url("publishapp", {"id": id}))
+            publish_response.raise_for_status()
+    except requests.RequestException as e:
+        logging.error(f"Error in {'adding' if publish else 'updating'} app: {e}")
 
 
-remote_apps = get_apps()
-local_manifests = get_local_manifests()
-
-for manifest in local_manifests:
-    # Read the contents of the manifest YAML file
+def process_manifest(manifest, remote_apps):
+    """
+    Process each manifest file.
+    """
     with open(manifest) as f:
-        data = yaml.load(f, Loader=yaml.FullLoader)
+        data = yaml.safe_load(f)
 
-    # Get the ID of the application from the manifest
     app_id = data["id"]
-
-    # Check if the application exists in the Jelastic account
     app_exists = False
     id = None
+
     for app in remote_apps:
         if app["app_id"] == app_id:
             app_exists = True
@@ -127,3 +120,14 @@ for manifest in local_manifests:
             break
 
     add_app(manifest, publish=not app_exists, id=id)
+
+
+# Main Script Execution
+try:
+    remote_apps = get_apps()
+    local_manifests = get_local_manifests()
+
+    for manifest in local_manifests:
+        process_manifest(manifest, remote_apps)
+except Exception as e:
+    logging.error(f"An error occurred: {e}")
