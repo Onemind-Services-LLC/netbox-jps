@@ -23,18 +23,21 @@ onInstall:
   - installPlugin
   - updateConfig
   - if ('${settings.restartContainer}' == 'true'):
-      - restartNodes:
-          - nodeGroup: cp
-            nodeType: docker
-            reboot: true
+      - forEach (env.nodes):
+          - if ("${@i.nodeType}" === "docker"):
+              api: jelastic.environment.control.RestartContainerById
+              envName: ${env.name}
+              nodeid: ${@i.id}
 
 onUninstall:
   - removeConfig
   - if ('${settings.restartContainer}' == 'true'):
-      - restartNodes:
-          - nodeGroup: cp
-            nodeType: docker
-            reboot: true
+      - forEach (env.nodes):
+          - if ("${@i.nodeType}" === "docker"):
+              api: jelastic.environment.control.RestartContainerById
+              envName: ${env.name}
+              nodeid: ${@i.id}
+
 
 actions:
   installPlugin:
