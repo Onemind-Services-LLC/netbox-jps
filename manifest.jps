@@ -18,11 +18,11 @@ onBeforeInit: /scripts/beforeInit.js?_r=${fn.random}
 onBeforeInstall: /scripts/beforeInstall.js?_r=${fn.random}
 
 globals:
-  dbPassword: ${fn.password(20)}
-  redisPassword: ${fn.password(20)}
-  secretKey: ${fn.random(50)}
-  apiToken: ${fn.random(50)}
-  adminPassword: ${fn.password(20)}
+  dbPassword: ${fn.password}
+  redisPassword: ${fn.password}
+  secretKey: ${fn.random(50, 60)}
+  apiToken: ${fn.random(20, 50)}
+  adminPassword: ${fn.password}
 
 nodes: definedInOnBeforeInstall
 ssl: true

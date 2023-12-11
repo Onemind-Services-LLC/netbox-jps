@@ -1,4 +1,4 @@
-**NetBox Environment**: [${globals.PROTOCOL}://${env.domain}/](${globals.PROTOCOL}://${env.domain}/)
+**NetBox Environment**: [https://${env.domain}/](${globals.PROTOCOL}://${env.domain}/)
 
 Use the following credentials to log in:
 
