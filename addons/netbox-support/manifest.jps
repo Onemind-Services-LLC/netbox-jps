@@ -45,7 +45,7 @@ actions:
   removeConfig:
     - cmd[${nodes.cp.id}]: |-
         yq -i 'del(.netbox_support)' /etc/netbox/config/plugins.yaml
-        rm /opt/netbox/netbox/scripts/eox-eol.py
+        rm /etc/netbox/scripts/eox-eol.py
     - if ('${settings.restartContainer}' == 'true'):
         - restartNetbox
 
