@@ -15,6 +15,6 @@ const more_fields = [
 ]
 
 
-resp.settings.fields.push(more_fields)
+resp.settings.fields = more_fields
 
 return resp;
