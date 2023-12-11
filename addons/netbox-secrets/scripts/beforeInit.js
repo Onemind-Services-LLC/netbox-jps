@@ -1,8 +1,9 @@
 // Fetch settings from GitHub
 let resp = {result: 0};
 
-const url = jps.baseUrl + "/addons/netbox-secrets/config/settings.yaml";
-const version_file_url = jps.baseUrl + "/addons/netbox-secrets/config/versions.yaml";
+const baseUrl = jps.baseUrl + globals.addon_path + "/config";
+const url = baseUrl + "/settings.yaml";
+const version_file_url = baseUrl + "/versions.yaml";
 
 resp.settings = toNative(new org.yaml.snakeyaml.Yaml().load(new com.hivext.api.core.utils.Transport().get(url)));
 
