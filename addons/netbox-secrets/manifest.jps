@@ -7,7 +7,7 @@ description:
   short: "A Secret store for NetBox."
 
 logo: /images/logo.png
-baseUrl: https://raw.githubusercontent.com/Onemind-Services-LLC/netbox-jps/master
+baseUrl: https://raw.githubusercontent.com/Onemind-Services-LLC/netbox-jps/gaurav_dev
 
 targetNodes:
   nodeGroup:

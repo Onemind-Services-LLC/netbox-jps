@@ -13,6 +13,7 @@ const more_fields = [
         caption: 'v1.7.7'
     }
 ]
+console.log(resp.settings)
 
 resp.settings.fields.append(more_fields)
 
