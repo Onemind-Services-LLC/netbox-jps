@@ -9,7 +9,7 @@ fields:
     default: v1.7.6
 
   - name: apps
-    type: string
+    type: text
     caption: Apps
     tooltip: List of apps to enable
     default: ['dcim.device', 'virtualization.virtualmachine']
@@ -34,15 +34,10 @@ fields:
     default: {}
 
   - name: enable_contacts
-    type: list
+    type: checkbox
     caption: Enable Contacts
     tooltip: Enable Contacts
-    values:
-      - value: True
-        caption: True
-      - value: False
-        caption: False
-    default: False
+    default: false
 
   - name: public_key_size
     type: list
