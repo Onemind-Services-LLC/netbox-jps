@@ -15,7 +15,7 @@ function getNFSMount(sourcePath, readOnly) {
     }
 }
 
-function createNetBoxConfig(nodeGroup, displayName, count, additionalConfig) {
+function createNetBoxConfig(nodeGroup, displayName, count, cloudlets, additionalConfig) {
     const userEmail = '${user.email}';
     const userName = userEmail.substring(0, userEmail.indexOf("@"));
     const userPassword = '${globals.adminPassword}';
@@ -65,7 +65,7 @@ function createNetBoxConfig(nodeGroup, displayName, count, additionalConfig) {
             "sqldb:postgresql"
         ],
         image: `netboxcommunity/netbox:${settings.version}`,
-        cloudlets: 32,
+        cloudlets: cloudlets,
         diskLimit: 10,
         scalingMode: "STATELESS",
         isSLBAccessEnabled: false,
@@ -80,7 +80,7 @@ if ('${settings.dbType:standalone}' == 'cluster') {
     resp.nodes.push({
         nodeType: "postgresql",
         count: 2,
-        cloudlets: 32,
+        cloudlets: 16,
         diskLimit: `${settings.dbDiskLimit:10}`,
         scalingMode: "STATELESS",
         isSLBAccessEnabled: false,
@@ -105,7 +105,7 @@ if ('${settings.dbType:standalone}' == 'cluster') {
 resp.nodes.push({
     nodeType: "redis",
     count: 1,
-    cloudlets: 32,
+    cloudlets: 8,
     diskLimit: "${settings.redisDiskLimit:10}",
     scalingMode: "STATELESS",
     isSLBAccessEnabled: false,
@@ -114,10 +114,10 @@ resp.nodes.push({
 })
 
 // Build NetBox node configuration
-resp.nodes.push(createNetBoxConfig("cp", "NetBox", 1));
+resp.nodes.push(createNetBoxConfig("cp", "NetBox", 1, 32));
 
 // Build NetBox housekeeping node configuration
-resp.nodes.push(createNetBoxConfig("cp2", "NetBox Housekeeping", 1, {
+resp.nodes.push(createNetBoxConfig("cp2", "NetBox Housekeeping", 1, 4, {
     cmd: "/opt/netbox/housekeeping.sh"
 }))
 
@@ -127,7 +127,7 @@ if ('${settings.enableWorkers:false}' == 'true') {
     let index = 3;
     queues.forEach(queue => {
         let queueName = queue.charAt(0).toUpperCase() + queue.slice(1) + " Queue";
-        resp.nodes.push(createNetBoxConfig("cp" + index, "NetBox Worker - " + queueName, "${settings." + queue + "Queue:1}", {
+        resp.nodes.push(createNetBoxConfig("cp" + index, "NetBox Worker - " + queueName, "${settings." + queue + "Queue:1}", 8, {
             cmd: "/opt/netbox/venv/bin/python /opt/netbox/netbox/manage.py rqworker " + queue
         }));
         index++;
