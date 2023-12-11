@@ -20,4 +20,6 @@ jobs:
       run: pip install requests
 
     - name: Run Update Script
+      env:
+        JELASTIC_TOKEN: ${{ secrets.JELASTIC_TOKEN }}
       run: python .github/jca.py
