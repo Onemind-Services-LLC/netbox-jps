@@ -9,9 +9,6 @@ description:
 logo: /images/logo.png
 baseUrl: https://raw.githubusercontent.com/Onemind-Services-LLC/netbox-jps/gaurav_dev
 
-globals:
-  addon_path: /addons/netbox-secrets
-
 targetNodes:
   nodeGroup:
     - cp
@@ -20,7 +17,7 @@ targetNodes:
 nodes:
   - nodeGroup: cp
 
-onBeforeInit: ${globals.addon_path}/scripts/beforeInit.js?_r=${fn.random}
+onBeforeInit: /addons/netbox-secrets/scripts/beforeInit.js?_r=${fn.random}
 
 onInstall:
   - installPlugin

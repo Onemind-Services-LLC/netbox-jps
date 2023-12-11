@@ -1,7 +1,7 @@
 // Fetch settings from GitHub
 let resp = {result: 0};
 
-const baseUrl = jps.baseUrl + ${globals.addon_path} + "/config";
+const baseUrl = jps.baseUrl + "/addons/netbox-secrets/config";
 const url = baseUrl + "/settings.yaml";
 const version_file_url = baseUrl + "/versions.yaml";
 
