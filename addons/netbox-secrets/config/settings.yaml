@@ -1,13 +1,4 @@
 fields:
-  - name: version
-    type: list
-    caption: Version
-    tooltip: Version of plugin to install
-    values:
-      - value: v1.7.6
-        caption: v1.7.6
-    default: v1.7.6
-
   - name: apps
     type: text
     caption: Apps
