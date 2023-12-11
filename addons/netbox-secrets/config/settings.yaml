@@ -4,8 +4,8 @@ fields:
     caption: Version
     tooltip: Version of plugin to install
     values:
-      - value: v1.7.0
-        caption: v1.7.0
+      - value: v1.7.6
+        caption: v1.7.6
     default: v1.7.6
 
   - name: apps
