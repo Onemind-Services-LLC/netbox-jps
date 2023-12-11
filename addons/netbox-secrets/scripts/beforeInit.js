@@ -28,4 +28,5 @@ const more_fields = [
     }
 ]
 
+resp.settings.fields.push(version_field)
 return resp;
