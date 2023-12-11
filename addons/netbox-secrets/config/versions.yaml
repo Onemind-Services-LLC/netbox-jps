@@ -1,15 +1,15 @@
 versions:
-  - value: 'v1.7.1',
+  - value: 'v1.7.1'
     caption: 'v1.7.1'
-  - value: 'v1.7.2',
+  - value: 'v1.7.2'
     caption: 'v1.7.2'
-  - value: 'v1.7.3',
+  - value: 'v1.7.3'
     caption: 'v1.7.3'
-  - value: 'v1.7.4',
+  - value: 'v1.7.4'
     caption: 'v1.7.4'
-  - value: 'v1.7.5',
+  - value: 'v1.7.5'
     caption: 'v1.7.5'
-  - value: 'v1.7.6',
+  - value: 'v1.7.6'
     caption: 'v1.7.6'
-  - value: 'v1.7.7',
+  - value: 'v1.7.7'
     caption: 'v1.7.7'
