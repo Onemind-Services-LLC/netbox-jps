@@ -89,6 +89,7 @@ if ('${settings.dbType:standalone}' == 'cluster') {
         scalingMode: "STATELESS",
         isSLBAccessEnabled: false,
         nodeGroup: "sqldb",
+        displayName: "PostgreSQL Cluster",
         cluster: {
             is_pgpool2: true,
         }
@@ -102,6 +103,7 @@ if ('${settings.dbType:standalone}' == 'cluster') {
         scalingMode: "STATEFUL",
         isSLBAccessEnabled: false,
         nodeGroup: "sqldb",
+        displayName: "PostgreSQL",
     })
 }
 
@@ -114,7 +116,8 @@ resp.nodes.push({
     scalingMode: "STATELESS",
     isSLBAccessEnabled: false,
     password: "${globals.redisPassword}",
-    nodeGroup: "cache"
+    nodeGroup: "cache",
+    displayName: "Redis",
 })
 
 // Build NetBox node configuration
@@ -140,7 +143,8 @@ resp.nodes.push({
     diskLimit: 10,
     scalingMode: "STATELESS",
     isSLBAccessEnabled: true,
-    nodeGroup: "bl"
+    nodeGroup: "bl",
+    displayName: "Load Balancer",
 })
 
 return resp;
