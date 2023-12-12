@@ -7,34 +7,46 @@ fields:
     disableInactive: true
     hidden: false
 
-  - name: backupType
-    type: list
-    caption: Backup Storage Type
-    tooltip: Storage type for database backups
-    values:
-      - value: 1
-        caption: Standalone Storage
-      - value: 2
-        caption: Cluster Storage
-    default: 1
+  - name: backupStorage
+    type: checkbox
+    caption: Choose Existing Storage
+    tooltip: Choose an existing storage for database backups
+    default: false
     showIf:
-      2:
-        - name: backupNodesCount
-          type: spinner
-          caption: Nodes Count
-          tooltip: Number of nodes in the backup cluster
-          default: 3
-          min: 3
-          max: 7
+      true:
+        - name: backupStorageEnv
+          type: envlist
+          caption: Backup Storage
+          editable: true
+      false:
+        - name: backupType
+          type: list
+          caption: Backup Storage Type
+          tooltip: Storage type for database backups
+          values:
+            - value: 1
+              caption: Standalone Storage
+            - value: 2
+              caption: Cluster Storage
+          default: 1
+          showIf:
+            2:
+              - name: backupNodesCount
+                type: spinner
+                caption: Nodes Count
+                tooltip: Number of nodes in the backup cluster
+                default: 3
+                min: 3
+                max: 7
 
-  - name: backupDiskLimit
-    type: spinner
-    caption: Backup Disk Size
-    tooltip: Size of the backup disk in GB
-    default: 100
-    required: true
-    editable: true
-    min: 5
+        - name: backupDiskLimit
+          type: spinner
+          caption: Backup Disk Size
+          tooltip: Size of the backup disk in GB
+          default: 100
+          required: true
+          editable: true
+          min: 5
 
   - name: backupSchedule
     type: list

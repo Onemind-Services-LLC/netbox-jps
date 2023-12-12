@@ -17,24 +17,25 @@ targetNodes:
 onBeforeInit: /addons/netbox-backups/scripts/beforeInit.js?_r=${fn.random}
 
 onInstall:
-  - install:
-      jps: wp-restore
-      envName: ${env.envName}-backup-storage
-      region: ${settings.backupRegion}
-      displayName: Backup Storage for NetBox
-      settings:
-        customName: ${settings.backupType}
-        storageNodesCount: ${settings.backupNodesCount:1}
-        diskspace: ${settings.backupDiskLimit}
-
-  - install:
-      jps: db-backup
-      nodeGroup: sqldb
-      envName: ${env.envName}
-      settings:
-        scheduleType: 1
-        cronTime: ${settings.backupSchedule}
-        storageName: ${env.envName}-backup-storage
-        backupCount: ${settings.backupCount}
-        dbuser: webadmin
-        dbpass: ${settings.dbPassword}
+  - log: ${settings.backupStorageEnv}
+#  - install:
+#      jps: wp-restore
+#      envName: ${env.envName}-backup-storage
+#      region: ${settings.backupRegion}
+#      displayName: Backup Storage for NetBox
+#      settings:
+#        customName: ${settings.backupType}
+#        storageNodesCount: ${settings.backupNodesCount:1}
+#        diskspace: ${settings.backupDiskLimit}
+#
+#  - install:
+#      jps: db-backup
+#      nodeGroup: sqldb
+#      envName: ${env.envName}
+#      settings:
+#        scheduleType: 1
+#        cronTime: ${settings.backupSchedule}
+#        storageName: ${env.envName}-backup-storage
+#        backupCount: ${settings.backupCount}
+#        dbuser: webadmin
+#        dbpass: ${settings.dbPassword}
