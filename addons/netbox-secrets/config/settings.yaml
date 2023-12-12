@@ -4,6 +4,7 @@ fields:
     caption: Apps
     tooltip: List of apps to enable, make sure to use double quotes and square brackets
     default: '["dcim.device", "virtualization.virtualmachine"]'
+    required: true
 
   - name: display_default
     type: list
