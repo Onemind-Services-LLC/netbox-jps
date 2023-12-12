@@ -1,0 +1,15 @@
+type: update
+id: netbox-cluster-events
+name: NetBox Cluster Events
+baseUrl: https://raw.githubusercontent.com/Onemind-Services-LLC/netbox-jps/master
+
+onAfterScaleIn[cp]: updateTriggers
+
+onAfterScaleOut[nodeGroup:cp]: updateTriggers
+
+actions:
+  updateTriggers:
+    if (!${event.params.auto:true} && ${settings.deploymentType} == "production"):
+      - log: update scaling trigger
+      - script: /scripts/updateTriggers.js
+        count: ${nodes.cp.length}

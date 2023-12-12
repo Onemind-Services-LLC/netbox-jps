@@ -45,6 +45,8 @@ onInstall:
       - path: /etc/netbox/scripts
       - path: /etc/netbox/reports
   - setupHousekeeping
+  - install:
+      - jps: /scripts/events.jps?_r=${fn.random}
 
 actions:
   addLimits:
