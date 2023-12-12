@@ -14,6 +14,13 @@ NetBox serves as the cornerstone for network automation in thousands of organiza
 Get registered at [Virtuozzo Application Platform(VAP)](https://app.xapp.cloudmydc.com/) and you can deploy this 
 cluster from Marketplace.
 
-## Installation Process
+## NetBox Cluster Topology
 
-TBD
+Upon package installation, a new environment with the following topology will be created:
+
+- A highly available [NGINX](https://www.virtuozzo.com/application-platform-docs/tcp-load-balancing/) load balancer
+is used for distributing the incoming traffic within a cluster.
+- **Web Application Firewall** will be enabled by default to protect your cluster from malicious attacks.
+- **Redis** is high-performance RAM-allocated data structure store used as a high-speed caching solution.
+- A standalone or highly-available [PostgreSQL](https://github.com/jelastic-jps/postgres) database cluster is installed
+to store the application data.
