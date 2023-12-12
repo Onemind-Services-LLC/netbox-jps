@@ -5,10 +5,10 @@ var resp = {
 
 const isDbCluster = '${settings.dbType:standalone}' == 'cluster';
 
-function getNFSMount(sourcePath, readOnly = false) {
+function getNFSMount(sourcePath) {
     return {
         protocol: "NFS",
-        readOnly: readOnly,
+        readOnly: false,
         sourceAddressType: "",
         sourceNodeGroup: "cp",
         sourcePath: sourcePath,
