@@ -76,12 +76,11 @@ def add_app(app_manifest, publish=True, id=None):
 
     logging.info(f"{'Adding' if publish else 'Updating'} application {app_manifest}")
 
-    with open(app_manifest) as f:
-        data = yaml.safe_load(f)
+    data = open(app_manifest).read()
 
     payload = {
         "appid": "cluster",
-        "manifest": yaml.dump(data),
+        "manifest": data,
     }
 
     if publish:
