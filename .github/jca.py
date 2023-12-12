@@ -89,15 +89,18 @@ def add_app(app_manifest, publish=True, id=None):
     else:
         payload["id"] = id
         api_path = "editapp"
+        payload["session"] = JELASTIC_TOKEN
 
     try:
         response = requests.post(url(api_path, add_session=False), data=payload)
-        response.raise_for_status()
+        if response.json().get("result") != 0:
+            raise Exception(response.json().get("error"))
 
         if publish:
             logging.info(f"Publishing [{data['id']}] application...")
             publish_response = requests.post(url("publishapp", {"id": id}))
-            publish_response.raise_for_status()
+            if publish_response.json().get("result") != 0:
+                raise Exception(publish_response.json().get("error"))
     except requests.RequestException as e:
         logging.error(f"Error in {'adding' if publish else 'updating'} app: {e}")
 
