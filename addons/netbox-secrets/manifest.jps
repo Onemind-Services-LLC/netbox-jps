@@ -14,9 +14,6 @@ targetNodes:
     - cp
   dockerName: netbox-community/netbox
 
-nodes:
-  - nodeGroup: cp
-
 onBeforeInit: /addons/netbox-secrets/scripts/beforeInit.js?_r=${fn.random}
 
 onInstall:
