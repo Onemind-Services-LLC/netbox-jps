@@ -33,7 +33,6 @@ function createNetBoxConfig(nodeGroup, displayName, count, cloudlets, additional
             "/etc/netbox": getNFSMount("/etc/netbox"),
             "/opt/netbox/netbox/media": getNFSMount("/opt/netbox/netbox/media"),
             "/opt/netbox/venv": getNFSMount("/opt/netbox/venv"),
-            "/usr/local/bin": getNFSMount("/usr/local/bin"),
         },
         env: {
             DB_HOST: isDbCluster ? "pgpool" : "postgresql",
