@@ -28,6 +28,7 @@ function createNetBoxConfig(nodeGroup, displayName, count, cloudlets, additional
             "/etc/netbox",
             "/opt/netbox/venv",
             "/opt/netbox/netbox/media",
+            "/etc/cron.daily"
         ],
         volumeMounts: {
             "/etc/netbox": getNFSMount("/etc/netbox", false),
