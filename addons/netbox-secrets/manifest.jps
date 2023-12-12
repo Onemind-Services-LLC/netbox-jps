@@ -37,7 +37,7 @@ actions:
 
   updateConfig:
     - cmd[${nodes.cp.id}]: |-
-        yq -i '.netbox_secrets.apps=${settings.apps}' /etc/netbox/config/plugins.yaml
+        yq -i '.netbox_secrets.apps="${settings.apps}"' /etc/netbox/config/plugins.yaml
         yq -i '.netbox_secrets.display_default="${settings.display_default}"' /etc/netbox/config/plugins.yaml
         yq -i '.netbox_secrets.display_setting=${settings.display_setting:{}}' /etc/netbox/config/plugins.yaml
         yq -i '.netbox_secrets.enable_contacts=${settings.enable_contacts}' /etc/netbox/config/plugins.yaml
