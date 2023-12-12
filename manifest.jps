@@ -31,6 +31,7 @@ onInstall:
   - addLimits
   - setDomain
   - createDb
+  - if ('${settings.deploymentType}' == 'production'): setTriggers
   - installYq
   - upload:
       - nodeGroup: cp
@@ -56,6 +57,15 @@ actions:
       domains: ${env.domain}
     - setGlobals:
         DOMAIN: ${response.domains}
+
+  setTriggers:
+    - log: Auto Scaling Triggers
+    - script: /scripts/addTriggers.js
+      nodeGroup: cp
+      resourceType: CPU
+      loadGrowth: ${settings.loadGrowth}
+      cleanOldTriggers: true
+      scaleDownLimit: ${nodes.cp.length}
 
   createDb:
     - cmd[${nodes.sqldb.master.id}]: |-
