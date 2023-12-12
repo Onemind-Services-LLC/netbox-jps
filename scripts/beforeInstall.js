@@ -3,8 +3,8 @@ var resp = {
     nodes: []
 };
 
-const isDbCluster = '${settings.deploymentType}' == 'production';
-const nodeCount = isDbCluster ? 2 : 1;
+const isProd = '${settings.deploymentType}' == 'production';
+const nodeCount = isProd ? 2 : 1;
 
 function getNFSMount(sourcePath) {
     return {
@@ -38,7 +38,7 @@ function createNetBoxConfig(nodeGroup, displayName, count, cloudlets, additional
             "/etc/cron.daily": getNFSMount("/etc/cron.daily"),
         },
         env: {
-            DB_HOST: isDbCluster ? "pgpool" : "postgresql",
+            DB_HOST: isProd ? "pgpool" : "postgresql",
             DB_NAME: "netbox",
             DB_USER: "netbox",
             DB_PASSWORD: "${globals.dbPassword}",
@@ -145,9 +145,10 @@ if ('${settings.deploymentType}' == 'production') {
         cloudlets: 8,
         diskLimit: 10,
         scalingMode: "STATEFUL",
-        isSLBAccessEnabled: true,
+        isSLBAccessEnabled: false,
         nodeGroup: "bl",
         displayName: "Load Balancer",
+        extip: true
     })
 } else {
     resp.nodes.push({
