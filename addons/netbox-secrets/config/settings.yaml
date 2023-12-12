@@ -2,8 +2,8 @@ fields:
   - name: apps
     type: text
     caption: Apps
-    tooltip: List of apps to enable
-    default: "['dcim.device', 'virtualization.virtualmachine']"
+    tooltip: List of apps to enable, make sure to use double quotes and square brackets
+    default: '["dcim.device", "virtualization.virtualmachine"]'
 
   - name: display_default
     type: list
