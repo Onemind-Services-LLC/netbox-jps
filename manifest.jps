@@ -42,6 +42,7 @@ onInstall:
   - createDirectory[cp]:
       - path: /etc/netbox/scripts
       - path: /etc/netbox/reports
+  - setupHousekeeping
 
 actions:
   setDomain:
@@ -56,6 +57,10 @@ actions:
         psql -U webadmin -d postgres -c "CREATE USER netbox WITH PASSWORD '${globals.dbPassword}';"
         psql -U webadmin -d postgres -c "ALTER DATABASE netbox OWNER TO netbox;"
         psql -U webadmin -d postgres -c "GRANT CREATE ON SCHEMA public TO netbox;"
+
+  setupHousekeeping:
+    - cmd[${nodes.cp.id}]: |-
+        cp -fv /opt/netbox/contrib/netbox-housekeeping.sh /etc/cron.daily/
 
   installYq:
     - cmd[${nodes.cp.id}]: |-
