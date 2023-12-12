@@ -26,6 +26,7 @@ actions:
   installAndConfigure:
     - installPlugin
     - updateConfig
+    - setUsername
 
   installPlugin:
     - cmd[${nodes.cp.id}]: |-
