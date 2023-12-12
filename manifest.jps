@@ -28,6 +28,7 @@ nodes: definedInOnBeforeInstall
 ssl: true
 
 onInstall:
+  - addLimits
   - setDomain
   - createDb
   - installYq
@@ -45,6 +46,11 @@ onInstall:
   - setupHousekeeping
 
 actions:
+  addLimits:
+    - env.control.ApplyNodeGroupData [*]:
+        data:
+          isRequired: true
+
   setDomain:
     - script: /scripts/idna.js
       domains: ${env.domain}
