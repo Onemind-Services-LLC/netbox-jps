@@ -1,4 +1,15 @@
 fields:
+  - name: deploymentType
+    type: list
+    caption: Deployment Type
+    tooltip: Development is for a single node setup and production are for multi-node setups
+    values:
+      - value: development
+        caption: Development
+      - value: production
+        caption: Production
+    default: development
+
   - name: version
     type: list
     caption: NetBox Version
@@ -58,17 +69,6 @@ fields:
           required: true
           editable: true
           min: 1
-
-  - name: dbType
-    type: list
-    caption: Database Type
-    tooltip: Deploy PostgreSQL in standalone or cluster mode
-    values:
-      - value: standalone
-        caption: Standalone
-      - value: cluster
-        caption: Cluster
-    default: standalone
 
   - name: dbDiskLimit
     type: spinner

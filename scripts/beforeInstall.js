@@ -3,7 +3,8 @@ var resp = {
     nodes: []
 };
 
-const isDbCluster = '${settings.dbType:standalone}' == 'cluster';
+const isDbCluster = '${settings.deploymentType}' == 'production';
+const nodeCount = isDbCluster ? 2 : 1;
 
 function getNFSMount(sourcePath, readOnly) {
     return {
@@ -80,12 +81,12 @@ function createNetBoxConfig(nodeGroup, displayName, count, cloudlets, additional
 }
 
 // Build PostgreSQL node configuration
-if ('${settings.dbType:standalone}' == 'cluster') {
+if ('${settings.deploymentType}' != 'development') {
     resp.nodes.push({
         nodeType: "postgresql",
         count: 2,
         cloudlets: 16,
-        diskLimit: `${settings.dbDiskLimit:10}`,
+        diskLimit: ${settings.dbDiskLimit},
         scalingMode: "STATELESS",
         isSLBAccessEnabled: false,
         nodeGroup: "sqldb",
@@ -99,7 +100,7 @@ if ('${settings.dbType:standalone}' == 'cluster') {
         nodeType: "postgresql",
         count: 1,
         cloudlets: 32,
-        diskLimit: `${settings.dbDiskLimit:10}`,
+        diskLimit: ${settings.dbDiskLimit},
         scalingMode: "STATEFUL",
         isSLBAccessEnabled: false,
         nodeGroup: "sqldb",
@@ -121,7 +122,7 @@ resp.nodes.push({
 })
 
 // Build NetBox node configuration
-resp.nodes.push(createNetBoxConfig("cp", "NetBox", 1, 32));
+resp.nodes.push(createNetBoxConfig("cp", "NetBox", nodeCount, 8));
 
 // Build NetBox worker node configuration
 if ('${settings.enableWorkers:false}' == 'true') {
@@ -137,14 +138,28 @@ if ('${settings.enableWorkers:false}' == 'true') {
 }
 
 // Build Nginx node configuration
-resp.nodes.push({
-    nodeType: "nginx-dockerized",
-    cloudlets: 4,
-    diskLimit: 10,
-    scalingMode: "STATELESS",
-    isSLBAccessEnabled: true,
-    nodeGroup: "bl",
-    displayName: "Load Balancer",
-})
+if ('${settings.deploymentType}' == 'production') {
+    resp.nodes.push({
+        nodeType: "nginx-dockerized",
+        count: nodeCount,
+        cloudlets: 8,
+        diskLimit: 10,
+        scalingMode: "STATEFUL",
+        isSLBAccessEnabled: true,
+        nodeGroup: "bl",
+        displayName: "Load Balancer",
+    })
+} else {
+    resp.nodes.push({
+        nodeType: "nginx-dockerized",
+        count: nodeCount,
+        cloudlets: 8,
+        diskLimit: 10,
+        scalingMode: "STATELESS",
+        isSLBAccessEnabled: true,
+        nodeGroup: "bl",
+        displayName: "Load Balancer",
+    })
+}
 
 return resp;
