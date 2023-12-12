@@ -163,4 +163,6 @@ if ('${settings.deploymentType}' == 'production') {
     })
 }
 
+resp.ssl = !isProd;
+
 return resp;

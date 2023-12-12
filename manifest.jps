@@ -25,7 +25,6 @@ globals:
   adminPassword: ${fn.password}
 
 nodes: definedInOnBeforeInstall
-ssl: true
 
 onInstall:
   - addLimits
