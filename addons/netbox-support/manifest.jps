@@ -20,13 +20,16 @@ nodes:
 onBeforeInit: /addons/netbox-support/scripts/beforeInit.js?_r=${fn.random}
 
 onInstall:
-  - installPlugin
-  - updateConfig
+  - installAndConfigure
 
 onUninstall:
   - removeConfig
 
 actions:
+  installAndConfigure:
+    - installPlugin
+    - updateConfig
+
   installPlugin:
     - cmd[${nodes.cp.id}]: |-
         apt update && apt install -y git
@@ -57,7 +60,7 @@ actions:
 
 buttons:
   - caption: Configure
-    action: updateConfig
+    action: installAndConfigure
     settings: main
     loadingText: Configuring...
     successText: The plugin has been configured successfully
