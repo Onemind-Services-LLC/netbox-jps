@@ -39,14 +39,14 @@ actions:
         yq -i '.netbox_secrets.display_setting=var_display_setting' /etc/netbox/config/plugins.yaml
         yq -i '.netbox_secrets.enable_contacts=${settings.enable_contacts}' /etc/netbox/config/plugins.yaml
         yq -i '.netbox_secrets.public_key_size=${settings.public_key_size}' /etc/netbox/config/plugins.yaml
-    - replaceInFile:
-        nodeMission: cp
-        path: /etc/netbox/config/plugins.yaml
-        replacements:
-          - pattern: var_apps
-            replacement: ${settings.apps}
-          - pattern: var_display_setting
-            replacement: ${settings.display_setting}
+#    - replaceInFile:
+#        nodeMission: cp
+#        path: /etc/netbox/config/plugins.yaml
+#        replacements:
+#          - pattern: var_apps
+#            replacement: ${settings.apps}
+#          - pattern: var_display_setting
+#            replacement: ${settings.display_setting}
     - restartNetbox
 
   removeConfig:
