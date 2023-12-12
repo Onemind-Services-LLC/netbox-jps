@@ -6,10 +6,10 @@ var resp = {
 const isDbCluster = '${settings.deploymentType}' == 'production';
 const nodeCount = isDbCluster ? 2 : 1;
 
-function getNFSMount(sourcePath, readOnly) {
+function getNFSMount(sourcePath) {
     return {
         protocol: "NFS",
-        readOnly: readOnly,
+        readOnly: false,
         sourceAddressType: "",
         sourceNodeGroup: "cp",
         sourcePath: sourcePath,
@@ -32,10 +32,10 @@ function createNetBoxConfig(nodeGroup, displayName, count, cloudlets, additional
             "/etc/cron.daily"
         ],
         volumeMounts: {
-            "/etc/netbox": getNFSMount("/etc/netbox", false),
-            "/opt/netbox/netbox/media": getNFSMount("/opt/netbox/netbox/media", false),
-            "/opt/netbox/venv": getNFSMount("/opt/netbox/venv", false),
-            "/etc/cron.daily": getNFSMount("/etc/cron.daily", true),
+            "/etc/netbox": getNFSMount("/etc/netbox"),
+            "/opt/netbox/netbox/media": getNFSMount("/opt/netbox/netbox/media"),
+            "/opt/netbox/venv": getNFSMount("/opt/netbox/venv"),
+            "/etc/cron.daily": getNFSMount("/etc/cron.daily"),
         },
         env: {
             DB_HOST: isDbCluster ? "pgpool" : "postgresql",
