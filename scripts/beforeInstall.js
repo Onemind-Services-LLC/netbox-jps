@@ -5,7 +5,7 @@ var resp = {
 
 const isDbCluster = '${settings.dbType:standalone}' == 'cluster';
 
-function getNFSMount(sourcePath, readOnly) {
+function getNFSMount(sourcePath, readOnly = false) {
     return {
         protocol: "NFS",
         readOnly: readOnly,
@@ -30,9 +30,10 @@ function createNetBoxConfig(nodeGroup, displayName, count, cloudlets, additional
             "/opt/netbox/netbox/media",
         ],
         volumeMounts: {
-            "/etc/netbox": getNFSMount("/etc/netbox", true),
-            "/opt/netbox/netbox/media": getNFSMount("/opt/netbox/netbox/media", false),
-            "/opt/netbox/venv": getNFSMount("/opt/netbox/venv", true),
+            "/etc/netbox": getNFSMount("/etc/netbox"),
+            "/opt/netbox/netbox/media": getNFSMount("/opt/netbox/netbox/media"),
+            "/opt/netbox/venv": getNFSMount("/opt/netbox/venv"),
+            "/usr/local/bin": getNFSMount("/usr/local/bin"),
         },
         env: {
             DB_HOST: isDbCluster ? "pgpool" : "postgresql",

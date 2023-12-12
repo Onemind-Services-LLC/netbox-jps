@@ -59,7 +59,7 @@ actions:
 
   installYq:
     - cmd[${nodes.cp.id}]: |-
-        wget https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64 -O /usr/bin/yq
-        chmod +x /usr/bin/yq
+        wget https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64 -O /opt/netbox/venv/bin/yq
+        chmod +x /opt/netbox/venv/bin/yq
 
 success: /texts/success.md?_r=1

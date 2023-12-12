@@ -41,11 +41,15 @@ actions:
   updateConfig:
     - cmd[${nodes.cp.id}]: |-
         yq -i '.netbox_initializers={}' /etc/netbox/config/plugins.yaml
+    - restartNetbox
+
+  runInitializers:
+    - cmd[${nodes.cp.id}]: |-
+        source /opt/netbox/venv/bin/activate
         git clone https://${settings.repoToken}@github.com/${settings.repoOwner}/${settings.repoName} /tmp/${settings.repoName}
         cp -r /tmp/${settings.repoName}/${settings.repoPath} /etc/netbox/config/initializers
         /opt/netbox/netbox/manage.py load_initializer_data --path /etc/netbox/config/initializers
         rm -rf /tmp/${settings.repoName}
-    - restartNetbox
 
   removeConfig:
     - cmd[${nodes.cp.id}]: |-
@@ -67,3 +71,9 @@ buttons:
     settings: main
     loadingText: Configuring...
     successText: The plugin has been configured successfully
+
+  - caption: Run Initializers
+    action: runInitializers
+    settings: main
+    loadingText: Running Initializers...
+    successText: Initializers have loaded successfully
