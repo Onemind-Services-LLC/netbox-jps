@@ -1,0 +1,45 @@
+fields:
+  - name: githubToken
+    type: string
+    caption: GitHub Token
+    tooltip: OneMind Services GitHub token
+    required: true
+
+  - name: repoOwner
+    type: string
+    caption: Repository Owner
+    tooltip: GitHub repository owner
+    required: true
+
+  - name: repoName
+    type: string
+    caption: Repository Name
+    tooltip: GitHub repository name
+    required: true
+
+  - name: repoBranch
+    type: string
+    caption: Repository Branch
+    tooltip: GitHub repository branch
+    default: master
+    required: true
+
+  - name: repoPath
+    type: string
+    caption: Repository Path
+    tooltip: GitHub repository path
+    default: initializers
+    required: true
+
+  - name: repoToken
+    type: string
+    caption: Repository Token
+    tooltip: GitHub repository token
+    required: true
+
+  - name: restartContainer
+    type: checkbox
+    caption: Restart NetBox container
+    tooltip: Restart NetBox container after install/uninstall
+    default: true
+    required: false
