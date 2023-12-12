@@ -20,6 +20,7 @@ nodes:
 onBeforeInit: /addons/netbox-demo/scripts/beforeInit.js?_r=${fn.random}
 
 onInstall:
+  - setUsername
   - installPlugin
   - updateConfig
 
@@ -32,11 +33,17 @@ actions:
         source /opt/netbox/venv/bin/activate
         pip3 install netbox-demo==${settings.version}
 
+  setUsername:
+    - script: |
+        const userEmail = '${user.email}';
+        const username = userEmail.substring(0, userEmail.indexOf("@")).toString();
+        return {"result": 0, "username": username};
+    - setGlobals:
+        adminUsername: ${response.username}
+
   updateConfig:
     - cmd[${nodes.cp.id}]: |-
-        user_email=${user.email}
-        user_name=$(echo $user_email | cut -d'@' -f1)
-        yq -i '.netbox_demo.admin_username="${user_name}"' /etc/netbox/config/plugins.yaml
+        yq -i '.netbox_demo.admin_username="${globals.adminUsername}"' /etc/netbox/config/plugins.yaml
         echo "LOGIN_REQUIRED = False" >> /etc/netbox/config/netbox_demo.py
         echo "BANNER_LOGIN = '<p>This is a demo instance of <a href=\'https://github.com/netbox-community/netbox\'>NetBox</a> for public use.</p><p><a href=\'/plugins/demo/login/\'>Click here</a> to create a new user account, or log in with your existing credentials below.</p>'" >> /etc/netbox/config/netbox_demo.py
     - restartNetbox
