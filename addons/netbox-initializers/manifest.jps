@@ -21,6 +21,8 @@ onBeforeInit: /addons/netbox-initializers/scripts/beforeInit.js?_r=${fn.random}
 
 onInstall:
   - installAndConfigure
+  - createDirectory[cp]:
+      - path: /etc/netbox/initializers
 
 onUninstall:
   - removeConfig
@@ -47,14 +49,14 @@ actions:
     - cmd[${nodes.cp.id}]: |-
         source /opt/netbox/venv/bin/activate
         git clone https://${settings.repoToken}@github.com/${settings.repoOwner}/${settings.repoName} /tmp/${settings.repoName}
-        cp -r /tmp/${settings.repoName}/${settings.repoPath} /etc/netbox/config/initializers
-        /opt/netbox/netbox/manage.py load_initializer_data --path /etc/netbox/config/initializers
+        cp -r /tmp/${settings.repoName}/${settings.repoPath} /etc/netbox/initializers
+        /opt/netbox/netbox/manage.py load_initializer_data --path /etc/netbox/initializers
         rm -rf /tmp/${settings.repoName}
 
   removeConfig:
     - cmd[${nodes.cp.id}]: |-
         yq -i 'del(.netbox_initializers)' /etc/netbox/config/plugins.yaml
-        rm -rf /etc/netbox/config/initializers
+        rm -rf /etc/netbox/initializers
     - restartNetbox
 
   restartNetbox:
