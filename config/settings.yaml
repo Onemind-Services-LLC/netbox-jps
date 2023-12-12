@@ -27,6 +27,7 @@ fields:
             - value: fast
               caption: High Load
               tooltip: <h3>High load scaling strategy</h3>add 2 new nodes when CPU > 30% <p>remove when CPU < 10%</p>
+          default: slow
 
   - name: version
     type: list
