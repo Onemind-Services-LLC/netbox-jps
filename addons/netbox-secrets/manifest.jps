@@ -37,11 +37,18 @@ actions:
 
   updateConfig:
     - cmd[${nodes.cp.id}]: |-
-        yq -i '.netbox_secrets.apps=${settings.apps}' /etc/netbox/config/plugins.yaml
+        yq -i '.netbox_secrets.apps="var_apps"' /etc/netbox/config/plugins.yaml
         yq -i '.netbox_secrets.display_default="${settings.display_default}"' /etc/netbox/config/plugins.yaml
-        yq -i '.netbox_secrets.display_setting=${settings.display_setting:{}}' /etc/netbox/config/plugins.yaml
+        yq -i '.netbox_secrets.display_setting=${settings.display_setting}' /etc/netbox/config/plugins.yaml
         yq -i '.netbox_secrets.enable_contacts=${settings.enable_contacts}' /etc/netbox/config/plugins.yaml
         yq -i '.netbox_secrets.public_key_size=${settings.public_key_size}' /etc/netbox/config/plugins.yaml
+    - replaceInFile:
+        nodeMission: cp
+        path: /etc/netbox/config/plugins.yaml
+        replacements:
+          - pattern: var_apps
+            replacement: ${settings.apps}
+
     - restartNetbox
 
   removeConfig:

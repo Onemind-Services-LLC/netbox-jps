@@ -23,7 +23,7 @@ fields:
     type: text
     caption: Display Setting
     tooltip: Set display setting for concrete model
-    default: {}
+    default: '{}'
 
   - name: enable_contacts
     type: checkbox
