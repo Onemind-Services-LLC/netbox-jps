@@ -81,6 +81,7 @@ def add_app(app_manifest, publish=True, id=None):
     payload = {
         "appid": "cluster",
         "manifest": data,
+        "session": JELASTIC_TOKEN,
     }
 
     if publish:
@@ -88,7 +89,6 @@ def add_app(app_manifest, publish=True, id=None):
     else:
         payload["id"] = id
         api_path = "editapp"
-        payload["session"] = JELASTIC_TOKEN
 
     try:
         response = requests.post(url(api_path, add_session=False), data=payload)
