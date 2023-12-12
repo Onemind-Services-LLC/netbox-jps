@@ -9,7 +9,9 @@ resp.settings = toNative(new org.yaml.snakeyaml.Yaml().load(new com.hivext.api.c
 
 const versions = toNative(new org.yaml.snakeyaml.Yaml().load(new com.hivext.api.core.utils.Transport().get(version_file_url)))
 
-resp.settings.main.fields.push({
+resp.settings.main.fields = {}
+
+resp.settings.main.fields.unshift({
     name: 'version',
     type: 'list',
     caption: 'Version',
