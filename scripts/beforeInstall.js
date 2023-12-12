@@ -118,15 +118,10 @@ resp.nodes.push({
 // Build NetBox node configuration
 resp.nodes.push(createNetBoxConfig("cp", "NetBox", 1, 32));
 
-// Build NetBox housekeeping node configuration
-resp.nodes.push(createNetBoxConfig("cp2", "NetBox Housekeeping", 1, 4, {
-    cmd: "/opt/netbox/housekeeping.sh"
-}))
-
 // Build NetBox worker node configuration
 if ('${settings.enableWorkers:false}' == 'true') {
     const queues = ["high", "default", "low"];
-    let index = 3;
+    let index = 2;
     queues.forEach(queue => {
         let queueName = queue.charAt(0).toUpperCase() + queue.slice(1) + " Queue";
         resp.nodes.push(createNetBoxConfig("cp" + index, "NetBox Worker - " + queueName, "${settings." + queue + "Queue:1}", 8, {
