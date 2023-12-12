@@ -54,7 +54,6 @@ actions:
   removeConfig:
     - cmd[${nodes.cp.id}]: |-
         yq -i 'del(.netbox_secrets)' /etc/netbox/config/plugins.yaml
-    - restartNetbox
 
   restartNetbox:
     - if ('${settings.restartContainer}' == 'true'):

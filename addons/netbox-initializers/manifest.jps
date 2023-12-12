@@ -57,7 +57,6 @@ actions:
     - cmd[${nodes.cp.id}]: |-
         yq -i 'del(.netbox_initializers)' /etc/netbox/config/plugins.yaml
         rm -rf /etc/netbox/initializers
-    - restartNetbox
 
   restartNetbox:
     - if ('${settings.restartContainer}' == 'true'):

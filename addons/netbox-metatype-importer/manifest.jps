@@ -42,7 +42,6 @@ actions:
         yq -i '.netbox_metatype_importer.github_token="${settings.githubToken}"' /etc/netbox/config/plugins.yaml
         yq -i '.netbox_metatype_importer.repo="${settings.repo}"' /etc/netbox/config/plugins.yaml
         yq -i '.netbox_metatype_importer.repo_owner="${settings.repoOwner}"' /etc/netbox/config/plugins.yaml
-    - restartNetbox
 
   removeConfig:
     - cmd[${nodes.cp.id}]: |-

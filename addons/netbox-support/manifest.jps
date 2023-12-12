@@ -48,7 +48,6 @@ actions:
     - cmd[${nodes.cp.id}]: |-
         yq -i 'del(.netbox_support)' /etc/netbox/config/plugins.yaml
         rm /etc/netbox/scripts/eox-eol.py
-    - restartNetbox
 
   restartNetbox:
     - if ('${settings.restartContainer}' == 'true'):

@@ -57,7 +57,6 @@ actions:
   removeConfig:
     - cmd[${nodes.cp.id}]: |-
         rm -f /etc/netbox/config/sso.py
-    - restartNetbox
 
   restartNetbox:
     - if ('${settings.restartContainer}' == 'true'):

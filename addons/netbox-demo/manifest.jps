@@ -54,7 +54,6 @@ actions:
     - cmd[${nodes.cp.id}]: |-
         yq -i 'del(.netbox_demo)' /etc/netbox/config/plugins.yaml
         rm /etc/netbox/config/netbox_demo.py
-    - restartNetbox
 
   restartNetbox:
     - if ('${settings.restartContainer}' == 'true'):
