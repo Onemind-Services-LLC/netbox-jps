@@ -16,9 +16,8 @@ baseUrl: https://raw.githubusercontent.com/Onemind-Services-LLC/netbox-jps/maste
 
 onBeforeInit: /scripts/beforeInit.js?_r=${fn.random}
 onBeforeInstall: /scripts/beforeInstall.js?_r=${fn.random}
-onAfterInstallAddon [nodeGroup:cp]:
-  - cmd[${nodes.cp.master.id}]: |-
-      /opt/netbox/venv/bin/python3 /opt/netbox/netbox/manage.py collectstatic --no-input
+onAfterRestartNode [nodeType:docker]:
+  cmd [${nodes.cp.master.id}]: /opt/netbox/venv/bin/python3 /opt/netbox/netbox/manage.py collectstatic --no-input
 
 globals:
   dbPassword: ${fn.password}
