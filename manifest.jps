@@ -35,6 +35,9 @@ onInstall:
       - nodeGroup: cp
         sourcePath: ${baseUrl}/config/plugins.py
         destPath: /etc/netbox/config/plugins.py
+      - nodeGroup: cp
+        sourcePath: ${baseUrl}/config/logging.py
+        destPath: /etc/netbox/config/logging.py
   - createFile[cp]: /etc/netbox/config/plugins.yaml
   - createDirectory[cp]:
       - path: /etc/netbox/scripts

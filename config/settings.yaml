@@ -8,6 +8,23 @@ fields:
         caption: v3.4
     default: v3.4-2.5.3
 
+  - name: loglevel
+    type: list
+    caption: Log Level
+    tooltip: Log level for NetBox
+    values:
+      - value: DEBUG
+        caption: DEBUG
+      - value: INFO
+        caption: INFO
+      - value: WARNING
+        caption: WARNING
+      - value: ERROR
+        caption: ERROR
+      - value: CRITICAL
+        caption: CRITICAL
+    default: INFO
+
   - name: enableWorkers
     type: checkbox
     caption: Enable Workers
