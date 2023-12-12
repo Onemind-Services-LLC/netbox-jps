@@ -49,7 +49,7 @@ actions:
     - cmd[${nodes.cp.id}]: |-
         source /opt/netbox/venv/bin/activate
         git clone https://${settings.repoToken}@github.com/${settings.repoOwner}/${settings.repoName} /tmp/${settings.repoName}
-        cp -r /tmp/${settings.repoName}/${settings.repoPath} /etc/netbox/initializers
+        cp -r /tmp/${settings.repoName}/${settings.repoPath}/* /etc/netbox/initializers
         /opt/netbox/netbox/manage.py load_initializer_data --path /etc/netbox/initializers
         rm -rf /tmp/${settings.repoName}
 
