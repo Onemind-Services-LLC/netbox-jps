@@ -17,12 +17,16 @@ targetNodes:
 onBeforeInit: /addons/netbox-sso-azure/scripts/beforeInit.js?_r=${fn.random}
 
 onInstall:
-  - installPlugin
+  - installAndConfigure
 
 onUninstall:
   - removeConfig
 
 actions:
+  installAndConfigure:
+    - installPlugin
+    - updateConfig
+
   installPlugin:
     - cmd[${nodes.cp.id}]: |-
         source /opt/netbox/venv/bin/activate
@@ -65,7 +69,7 @@ actions:
 
 buttons:
   - caption: Configure
-    action: updateConfig
+    action: installAndConfigure
     settings: main
     loadingText: Configuring...
     successText: The plugin has been configured successfully
