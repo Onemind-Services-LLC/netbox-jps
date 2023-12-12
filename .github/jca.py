@@ -64,9 +64,15 @@ def get_local_manifests():
     return manifests
 
 
-def add_app(app_manifest, publish=True, id=None):
+def add_app(app_id, app_manifest, publish=True, id=None):
     """
     Add or update an application in the Jelastic account.
+
+    :param app_id: ID of the application.
+    :param app_manifest: Path to the manifest file.
+    :param publish: Whether to publish the application.
+    :param id: ID of the application if updating.
+    :return: None
     """
     if not publish and not id:
         raise ValueError("ID must be provided when updating an application.")
@@ -74,7 +80,7 @@ def add_app(app_manifest, publish=True, id=None):
     if id and not isinstance(id, int):
         raise TypeError("ID must be an integer.")
 
-    logging.info(f"{'Adding' if publish else 'Updating'} application {app_manifest}")
+    logging.info(f"{'Adding' if publish else 'Updating'} application [{app_id}]")
 
     data = open(app_manifest).read()
 
@@ -96,8 +102,14 @@ def add_app(app_manifest, publish=True, id=None):
             raise Exception(response.json().get("error"))
 
         if publish:
-            logging.info(f"Publishing [{data['id']}] application...")
-            publish_response = requests.post(url("publishapp", {"id": id}))
+            # Fetch the ID of the newly added application
+            for app in get_apps():
+                if app["app_id"] == app_id:
+                    id = app["id"]
+                    break
+
+            logging.info(f"Publishing [{app_id}] application...")
+            publish_response = requests.post(url("publishapp", {"id": id, "appid": "cluster"}))
             if publish_response.json().get("result") != 0:
                 raise Exception(publish_response.json().get("error"))
     except requests.RequestException as e:
@@ -121,7 +133,7 @@ def process_manifest(manifest, remote_apps):
             id = app["id"]
             break
 
-    add_app(manifest, publish=not app_exists, id=id)
+    add_app(app_id, manifest, publish=not app_exists, id=id)
 
 
 # Main Script Execution
