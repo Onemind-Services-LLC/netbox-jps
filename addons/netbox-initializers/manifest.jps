@@ -74,6 +74,6 @@ buttons:
 
   - caption: Run Initializers
     action: runInitializers
-    settings: main
+    settings: run
     loadingText: Running Initializers...
     successText: Initializers have loaded successfully
