@@ -10,6 +10,8 @@ datacenter infrastructure management (DCIM) with powerful APIs and extensions,
 NetBox provides the ideal "source of truth" to power network automation.
 NetBox serves as the cornerstone for network automation in thousands of organizations.
 
+[![JPS Manifest](https://github.com/Onemind-Services-LLC/netbox-jps/actions/workflows/ci.yml/badge.svg)](https://github.com/Onemind-Services-LLC/netbox-jps/actions/workflows/ci.yml) [![Update Plugin Versions](https://github.com/Onemind-Services-LLC/netbox-jps/actions/workflows/versions.yml/badge.svg)](https://github.com/Onemind-Services-LLC/netbox-jps/actions/workflows/versions.yml)
+
 ## Table of Contents
 
 - [Deployment to the Cloud](#deployment-to-the-cloud)
