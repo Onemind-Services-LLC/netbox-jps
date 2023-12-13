@@ -81,10 +81,10 @@ function createNetBoxConfig(nodeGroup, displayName, count, cloudlets, additional
 }
 
 // Build PostgreSQL node configuration
-if ('${settings.deploymentType}' != 'development') {
+if ('${settings.deploymentType}' == 'production') {
     resp.nodes.push({
         nodeType: "postgresql",
-        count: 2,
+        count: nodeCount,
         cloudlets: 16,
         diskLimit: ${settings.dbDiskLimit},
         scalingMode: "STATELESS",
@@ -98,7 +98,7 @@ if ('${settings.deploymentType}' != 'development') {
 } else {
     resp.nodes.push({
         nodeType: "postgresql",
-        count: 1,
+        count: nodeCount,
         cloudlets: 32,
         diskLimit: ${settings.dbDiskLimit},
         scalingMode: "STATEFUL",

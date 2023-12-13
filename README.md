@@ -3,7 +3,8 @@
   <p>The premier source of truth powering network automation</p>
 </div>
 
-[NetBox](https://github.com/netbox-community/netbox) is the leading solution for modeling and documenting modern networks. By
+[NetBox](https://github.com/netbox-community/netbox) is the leading solution for modeling and documenting modern
+networks. By
 combining the traditional disciplines of IP address management (IPAM) and
 datacenter infrastructure management (DCIM) with powerful APIs and extensions,
 NetBox provides the ideal "source of truth" to power network automation.
@@ -11,7 +12,7 @@ NetBox serves as the cornerstone for network automation in thousands of organiza
 
 ## Deployment to the Cloud
 
-Get registered at [Virtuozzo Application Platform(VAP)](https://app.xapp.cloudmydc.com/) and you can deploy this 
+Get registered at [Virtuozzo Application Platform(VAP)](https://app.xapp.cloudmydc.com/) and you can deploy this
 cluster from Marketplace.
 
 ## NetBox Cluster Topology
@@ -19,11 +20,11 @@ cluster from Marketplace.
 Upon package installation, a new environment with the following topology will be created:
 
 - A highly available [NGINX](https://www.virtuozzo.com/application-platform-docs/tcp-load-balancing/) load balancer
-is used for distributing the incoming traffic within a cluster.
+  is used for distributing the incoming traffic within a cluster.
 - **Web Application Firewall** will be enabled by default to protect your cluster from malicious attacks.
 - **Redis** is high-performance RAM-allocated data structure store used as a high-speed caching solution.
 - A standalone or highly-available [PostgreSQL](https://github.com/jelastic-jps/postgres) database cluster is installed
-to store the application data.
+  to store the application data.
 - **RQ Workers** are used for executing background tasks.
 
 ## Installation Process
@@ -45,7 +46,8 @@ In the opened installation dialog, make sure to specify the following parameters
 - **Deployment Type** - select `Development` to deploy a single instance of NetBox.
 - **NetBox Version** - select the desired NetBox version to be installed.
 - **Log Level** - select the desired log level for the application.
-- **Enable Workers** - select `Yes` to enable RQ workers and specify the number of workers to be deployed for each queue.
+- **Enable Workers** - select `Yes` to enable RQ workers and specify the number of workers to be deployed for each
+  queue.
 - **Database Disk Size** - specify the disk size for the database.
 - **Redis Disk Size** - specify the disk size for the Redis database.
 - **Environment Name** - specify the name of the environment to be created.
@@ -64,6 +66,26 @@ instance, whilst the same information will be sent to your email.
 So now you can just click on the **Open in Browser** button to access your NetBox instance.
 
 ![NetBox Access](images/netbox-access.png)
+
+#### Topology
+
+The following topology will be created upon package installation:
+
+|      Container       |       Type        | Cloudlets |    Count     |
+|:--------------------:|:-----------------:|:---------:|:------------:|
+|        NGINX         | TCP Load Balancer |     8     |      1       |
+|        NetBox        | Docker Container  |     8     |      1       |
+|  RQ Workers (High)   | Docker Container  |     8     | User-Defined |
+| RQ Workers (Default) | Docker Container  |     8     | User-Defined |
+|   RQ Workers (Low)   | Docker Container  |     8     | User-Defined |
+|        Redis         |       Redis       |     8     |      1       |
+|      PostgreSQL      |    PostgreSQL     |    32     |      1       |
+
+Additionally, the following resources will be created:
+
+- **Shared Load Balancer** - a shared load balancer will be created to distribute the incoming traffic within a cluster.
+- **Built-in SSL** - a built-in SSL will be enabled for the shared load balancer.
+- **Load Alerts** - load alerts will be enabled for the nodes.
 
 ### Production Deployment
 
@@ -78,7 +100,8 @@ In the opened installation dialog, make sure to specify the following parameters
 - **Scaling Strategy** - select the desired scaling strategy for the application.
 - **NetBox Version** - select the desired NetBox version to be installed.
 - **Log Level** - select the desired log level for the application.
-- **Enable Workers** - select `Yes` to enable RQ workers and specify the number of workers to be deployed for each queue.
+- **Enable Workers** - select `Yes` to enable RQ workers and specify the number of workers to be deployed for each
+  queue.
 - **Database Disk Size** - specify the disk size for the database.
 - **Redis Disk Size** - specify the disk size for the Redis database.
 - **Environment Name** - specify the name of the environment to be created.
@@ -97,3 +120,24 @@ instance, whilst the same information will be sent to your email.
 So now you can just click on the **Open in Browser** button to access your NetBox instance.
 
 ![NetBox Access](images/netbox-access.png)
+
+#### Topology
+
+The following topology will be created upon package installation:
+
+|      Container       |       Type        | Cloudlets |    Count     |
+|:--------------------:|:-----------------:|:---------:|:------------:|
+|        NGINX         | TCP Load Balancer |     8     |      2       |
+|        NetBox        | Docker Container  |     8     |      2       |
+|  RQ Workers (High)   | Docker Container  |     8     | User-Defined |
+| RQ Workers (Default) | Docker Container  |     8     | User-Defined |
+|   RQ Workers (Low)   | Docker Container  |     8     | User-Defined |
+|        Redis         |       Redis       |     8     |      1       |
+| PostgreSQL (Cluster) |    PostgreSQL     |    16     |      2       |
+| PGPool-II (Cluster)  |     PGPool-II     |    16     |      2       |
+
+Additionally, the following resources will be created:
+
+- **Public IP** - a public IP will be assigned to the NGINX load balancer.
+- **Automatic Horizontal Scaling** - automatic horizontal scaling will be enabled for the NetBox instances.
+- **Load Alerts** - load alerts will be enabled for the nodes.
