@@ -1,0 +1,163 @@
+type: updatee
+id: netbox-administration
+name: NetBox Administration
+homepage: https://github.com/netbox-community/netbox
+
+description:
+  short: "This plugin provides a way to perform administrative tasks in NetBox."
+
+logo: /images/logo.png
+baseUrl: https://raw.githubusercontent.com/Onemind-Services-LLC/netbox-jps/master
+
+targetNodes:
+  dockerName: netbox-community/netbox
+
+settings:
+  manageUser:
+    fields:
+      - name: username
+        caption: Username
+        type: string
+        required: true
+        tooltip: If a username is not found, a new user will be created with the provided details. Otherwise, the existing user will be updated.
+
+      - name: activate
+        caption: Activate
+        type: boolean
+        required: false
+        default: true
+        tooltip: Check this box to activate the user else leave unchecked to deactivate the user.
+
+      - name: staff
+        caption: Staff
+        type: boolean
+        required: false
+        default: false
+        tooltip: Check this box to grant staff permissions to the user else leave unchecked to remove staff permissions.
+
+      - name: superuser
+        caption: Superuser
+        type: boolean
+        required: false
+        default: false
+        tooltip: Check this box to grant superuser permissions to the user else leave unchecked to remove superuser permissions.
+
+      - name: password
+        caption: Change Password
+        type: string
+        required: false
+        tooltip: Enter a password for the user. Leave blank to leave unchanged.
+        inputType: password
+
+      - name: changeApiToken
+        caption: Change API Token
+        type: boolean
+        required: false
+        default: false
+        showIf:
+          true:
+            - name: apiToken
+              caption: API Token
+              type: string
+              required: true
+              tooltip: Enter an API token for the user. Leave blank to leave unchanged.
+
+            - name: apiTokenExpiration
+              caption: API Token Expiration
+              type: string
+              required: false
+              tooltip: Enter an API token expiration date for the user. Leave blank to leave unchanged.
+              inputType: date
+
+            - name: apiTokenReadOnly
+              caption: API Token Read-Only
+              type: boolean
+              required: false
+              default: false
+              tooltip: Check this box to grant read-only permissions to the API token else leave unchecked to grant full permissions.
+
+menu:
+  - caption: Collect Static
+    confirmText: Are you sure you want to collect static files?
+    loadingText: Collecting static files...
+    action: collectStatic
+    successText: Static files collected successfully.
+    title: Collect Static
+    submitButtonText: Submit
+
+  - caption: Reload Configuration
+    confirmText: Are you sure you want to reload the NetBox configuration?
+    loadingText: Reloading configuration...
+    action: reloadConfig
+    successText: Configuration reloaded successfully.
+    title: Reload
+    submitButtonText: Reload
+
+buttons:
+  - caption: Manage User
+    confirmText: Are you sure you want to update this user?
+    loadingText: Updating user...
+    action: manageUser
+    successText: User updated successfully.
+    settings: manageUser
+
+actions:
+  - collectStatic:
+      - cmd[${nodes.cp.id}]: |-
+          source /opt/netbox/venv/bin/activate
+          python3 /opt/netbox/netbox/manage.py collectstatic --no-input
+
+  - manageUser:
+      - cmd[${nodes.cp.master.id}]: |-
+          source /opt/netbox/venv/bin/activate
+          python3 /opt/netbox/netbox/manage.py --interface python <<END
+          
+            from django.contrib.auth.models import User
+            from django.utils import timezone
+            from datetime import datetime, timedelta
+            from django.conf import settings
+            from django.core.exceptions import ObjectDoesNotExist
+            from django.contrib.auth.hashers import make_password
+            from users.models import Token
+          
+            username = "${settings.manageUser.username}"
+            activate = ${settings.manageUser.activate}
+            staff = ${settings.manageUser.staff}
+            superuser = ${settings.manageUser.superuser}
+            password = "${settings.manageUser.password}"
+            changeApiToken = ${settings.manageUser.changeApiToken}
+            apiToken = "${settings.manageUser.apiToken}"
+            apiTokenExpiration = "${settings.manageUser.apiTokenExpiration}"
+            apiTokenReadOnly = ${settings.manageUser.apiTokenReadOnly}
+          
+            try:
+              user = User.objects.get(username=username)
+            except ObjectDoesNotExist:
+              user = User(username=username)
+          
+            if password:
+                user.set_password(password)
+          
+            user.is_active = activate == 'true'
+            user.is_staff = staff == 'true'
+            user.is_superuser = superuser == 'true'
+            user.save()
+
+            if changeApiToken:
+                Token.objects.create(
+                    user=user,
+                    key=apiToken,
+                    write_enabled=not apiTokenReadOnly,
+                    expires=timezone.now() + timedelta(days=apiTokenExpiration),
+                    description="API Token created by JPS"
+                )
+          
+          END
+
+
+  - reloadConfig:
+      - forEach (env.nodes):
+          - if ("${@i.nodeType}" === "docker"):
+              api: jelastic.environment.control.RestartContainerById
+              envName: ${env.name}
+              nodeid: ${@i.id}
