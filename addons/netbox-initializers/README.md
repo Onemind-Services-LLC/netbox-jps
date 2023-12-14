@@ -3,9 +3,9 @@
   <p>The premier source of truth powering network automation</p>
 </div>
 
-# NetBox Support Addon
+# NetBox Initializers  Addon
 
-NetBox Support provides device types and devices EoX data within NetBox. It is designed to be used with the
+NetBox Initializers loads data from YAML files into NetBox. It is designed to be used with the
 [NetBox JPS](https://github.com/Onemind-Services-LLC/netbox-jps) project.
 
 ## Add-On Installation
@@ -13,7 +13,7 @@ NetBox Support provides device types and devices EoX data within NetBox. It is d
 The add-on can be installed on top of the **NetBox** nodes only.
 
 1. Log into your [Virtuozzo Application Platform](https://app.xapp.cloudmydc.com/) and click on the **Add-Ons** tab on the **NetBox** node.
-2. Find the **Netbox Support Plugin** add-on and click **Install**.
+2. Find the **Netbox Initializers Plugin** add-on and click **Install**.
 3. When prompted within the opened dialog, ensure to provide the following parameters:
     - **Version** Specify the desired version of the plugin.
     - **GitHub Token** Supply your GitHub token for authentication and access.

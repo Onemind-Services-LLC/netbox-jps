@@ -3,7 +3,7 @@
   <p>The premier source of truth powering network automation</p>
 </div>
 
-# NetBox DeviceType/ModuleType Import Addon
+# NetBox SSO Azure Addon
 
 This plugin will activate Single Sign-On (SSO) within the NetBox instance. It is designed to be used with the
 [NetBox JPS](https://github.com/Onemind-Services-LLC/netbox-jps) project.
