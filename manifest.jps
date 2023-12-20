@@ -20,13 +20,13 @@ onBeforeInstall: /scripts/beforeInstall.js?_r=${fn.random}
 globals:
   dbPassword: ${fn.password}
   redisPassword: ${fn.password}
-  secretKey: ${fn.random(50, 60)}
   apiToken: ${fn.random(20, 50)}
   adminPassword: ${fn.password}
 
 nodes: definedInOnBeforeInstall
 
 onInstall:
+  - generateSecretKey
   - addLimits
   - setDomain
   - createDb
@@ -52,6 +52,11 @@ actions:
     - env.control.ApplyNodeGroupData [*]:
         data:
           isRequired: true
+
+  generateSecretKey:
+    - script: "return {result: 0, password: '${fn.password(20)}'.toUpperCase() + '${fn.password(20)}'.toLowerCase() + '${fn.random(10)}' + '~!@#$%^&*()'['${fn.random(10)}'] };"
+    - setGlobals:
+        secretKey: ${response.password}
 
   setDomain:
     - script: /scripts/idna.js
