@@ -77,7 +77,11 @@ actions:
 
   setupHousekeeping:
     - cmd[${nodes.cp.id}]: |-
-        cp -fv /opt/netbox/contrib/netbox-housekeeping.sh /etc/cron.daily/
+        if [ ! -f /opt/netbox/housekeeping.sh ]; then
+          cp -fv /opt/netbox/contrib/netbox-housekeeping.sh /etc/cron.daily/
+        else
+          cp -fv /opt/netbox/housekeeping.sh /etc/cron.daily/
+        fi
 
   installYq:
     - cmd[${nodes.cp.id}]: |-
