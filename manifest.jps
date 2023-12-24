@@ -20,7 +20,7 @@ onBeforeInstall: /scripts/beforeInstall.js?_r=${fn.random}
 globals:
   dbPassword: ${fn.password}
   redisPassword: ${fn.password}
-  apiToken: ${fn.password(50)}
+  apiToken: ${fn.password(40)}
   adminPassword: ${fn.password}
   secretKey: ${fn.password(50)}
 
