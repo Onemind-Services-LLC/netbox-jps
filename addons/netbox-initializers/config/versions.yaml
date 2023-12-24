@@ -1,5 +1,9 @@
-default: v0.0.2
+default: v0.2.0
 versions:
+- caption: v0.2.0
+  value: v0.2.0
+- caption: v0.1.0
+  value: v0.1.0
 - caption: v0.0.2
   value: v0.0.2
 - caption: v0.0.1
