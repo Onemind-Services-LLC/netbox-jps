@@ -2,6 +2,7 @@ type: update
 id: netbox-meta-importer
 name: Netbox DeviceType/ModuleType Import Plugin
 homepage: https://github.com/Onemind-Services-LLC/netbox-metatype-importer
+repositoryName: https://github.com/Onemind-Services-LLC/netbox-metatype-importer
 
 categories:
   - apps/netbox-plugins

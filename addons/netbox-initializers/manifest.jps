@@ -2,6 +2,7 @@ type: update
 id: netbox-initializers
 name: NetBox Initializers Plugin
 homepage: https://github.com/Onemind-Services-LLC/netbox-initializers
+repositoryName: https://github.com/Onemind-Services-LLC/netbox-initializers
 
 categories:
   - apps/netbox-plugins

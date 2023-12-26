@@ -2,6 +2,7 @@ type: update
 id: netbox-support
 name: NetBox Support Plugin
 homepage: https://github.com/Onemind-Services-LLC/netbox-support
+repositoryName: https://github.com/Onemind-Services-LLC/netbox-support
 
 categories:
   - apps/netbox-plugins

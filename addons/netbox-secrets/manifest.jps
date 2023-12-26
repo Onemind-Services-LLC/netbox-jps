@@ -2,6 +2,7 @@ type: update
 id: netbox-secrets
 name: NetBox Secrets Plugin
 homepage: https://github.com/Onemind-Services-LLC/netbox-secrets
+repositoryName: https://github.com/Onemind-Services-LLC/netbox-secrets
 
 categories:
   - apps/netbox-plugins

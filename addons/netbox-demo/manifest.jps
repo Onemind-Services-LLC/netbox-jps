@@ -2,6 +2,7 @@ type: update
 id: netbox-demo
 name: NetBox Demo Plugin
 homepage: https://github.com/netbox-community/netbox-demo
+repositoryName: https://github.com/netbox-community/netbox-demo
 
 categories:
   - apps/netbox-plugins
