@@ -3,6 +3,9 @@ id: netbox-secrets
 name: NetBox Secrets Plugin
 homepage: https://github.com/Onemind-Services-LLC/netbox-secrets
 
+categories:
+  - apps/netbox-plugins
+
 description:
   short: "A Secret store for NetBox."
 

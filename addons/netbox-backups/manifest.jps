@@ -3,6 +3,9 @@ id: netbox-backups
 name: NetBox Backups
 homepage: https://github.com/netbox-community/netbox
 
+categories:
+  - apps/netbox-plugins
+
 description:
   short: "This plugin provides a mechanism for backing up NetBox's database."
 

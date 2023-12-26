@@ -3,6 +3,9 @@ id: netbox-meta-importer
 name: Netbox DeviceType/ModuleType Import Plugin
 homepage: https://github.com/Onemind-Services-LLC/netbox-metatype-importer
 
+categories:
+  - apps/netbox-plugins
+
 description:
   short: "Easily import Device and Module types from GitHub repositories into NetBox."
 

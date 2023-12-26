@@ -3,6 +3,9 @@ id: netbox-support
 name: NetBox Support Plugin
 homepage: https://github.com/Onemind-Services-LLC/netbox-support
 
+categories:
+  - apps/netbox-plugins
+
 description:
   short: "NetBox Support provides device types and devices EoX data within NetBox."
 

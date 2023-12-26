@@ -3,6 +3,9 @@ id: netbox-initializers
 name: NetBox Initializers Plugin
 homepage: https://github.com/Onemind-Services-LLC/netbox-initializers
 
+categories:
+  - apps/netbox-plugins
+
 description:
   short: "NetBox Initializers loads data from YAML files into NetBox."
 

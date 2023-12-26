@@ -3,6 +3,9 @@ id: netbox-demo
 name: NetBox Demo Plugin
 homepage: https://github.com/netbox-community/netbox-demo
 
+categories:
+  - apps/netbox-plugins
+
 description:
   short: "This plugin serves to ease the administration of the public NetBox demo instance."
 
