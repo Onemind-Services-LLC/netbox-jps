@@ -95,24 +95,6 @@ if ('${settings.deploymentType}' != 'development') {
             is_pgpool2: true,
         }
     })
-    resp.nodes.push({
-        displayName: "PG Pool",
-        applyQuotas: true,
-        clusterExtraItem: 0,
-        clusterGroup: "sqldb",
-        count: 1,
-        isSLBAccessEnabled: false,
-        nodeGroup: "pgpool",
-        nodeType: "pgpool2",
-        restartDelay: 30,
-        scalingMode: "STATEFUL",
-        skipNodeEmails: true,
-        validation: {
-            maxCount: 3,
-            minCount: 1,
-            scalingMode: "STATEFUL"
-        }
-    })
 } else {
     resp.nodes.push({
         nodeType: "postgresql",
