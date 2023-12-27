@@ -4,7 +4,7 @@ name: NetBox SSO Azure Plugin
 homepage: https://github.com/netbox-community/netbox
 
 categories:
-  - apps/netbox-plugins
+  - apps/netbox-sso
 
 description:
   short: "This plugin adds Azure AD SSO to NetBox."
