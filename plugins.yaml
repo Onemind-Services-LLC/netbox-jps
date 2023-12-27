@@ -1,5 +1,6 @@
 netbox-demo:
   description: NetBox plugin for demo instances (not for production use)
+  github_api_url: https://api.github.com/repos/netbox-community/netbox-demo
   github_url: https://github.com/netbox-community/netbox-demo
   name: netbox-demo
   netbox_name: netbox_demo
@@ -38,6 +39,7 @@ netbox-demo:
   stars: 1
 netbox-initializers:
   description: Inspired from https://github.com/tobiasge/netbox-initializers
+  github_api_url: https://api.github.com/repos/Onemind-Services-LLC/netbox-initializers
   github_url: https://github.com/Onemind-Services-LLC/netbox-initializers
   name: netbox-initializers
   netbox_name: netbox_initializers
@@ -71,6 +73,7 @@ netbox-initializers:
   stars: 0
 netbox-metatype-importer:
   description: Import Metatypes
+  github_api_url: https://api.github.com/repos/Onemind-Services-LLC/netbox-metatype-importer
   github_url: https://github.com/Onemind-Services-LLC/netbox-metatype-importer
   name: netbox-metatype-importer
   netbox_name: netbox_metatype_importer
@@ -108,6 +111,7 @@ netbox-metatype-importer:
   stars: 30
 netbox-secrets:
   description: Netbox Secrets
+  github_api_url: https://api.github.com/repos/Onemind-Services-LLC/netbox-secrets
   github_url: https://github.com/Onemind-Services-LLC/netbox-secrets
   name: netbox-secrets
   netbox_name: netbox_secrets
@@ -176,6 +180,7 @@ netbox-secrets:
   stars: 53
 netbox-support:
   description: NetBox Support provides device types and devices EoX data within NetBox.
+  github_api_url: https://api.github.com/repos/Onemind-Services-LLC/netbox-support
   github_url: https://github.com/Onemind-Services-LLC/netbox-support
   name: netbox-support
   netbox_name: netbox_support
