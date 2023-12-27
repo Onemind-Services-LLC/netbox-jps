@@ -29,6 +29,8 @@ netbox-initializers:
   private: true
   stars: 0
   github_url: https://github.com/Onemind-Services-LLC/netbox-initializers
+  pypi_url: null
+  github_issue_url: https://github.com/Onemind-Services-LLC/netbox-initializers/issues
 netbox-secrets:
   plugin_id: netbox-secrets
   name: netbox-secrets
@@ -95,6 +97,8 @@ netbox-secrets:
   private: false
   stars: 53
   github_url: https://github.com/Onemind-Services-LLC/netbox-secrets
+  pypi_url: https://pypi.org/project/netbox-secrets/
+  github_issue_url: https://github.com/Onemind-Services-LLC/netbox-secrets/issues
 netbox-support:
   plugin_id: netbox-support
   name: netbox-support
@@ -146,6 +150,8 @@ netbox-support:
   private: true
   stars: 0
   github_url: https://github.com/Onemind-Services-LLC/netbox-support
+  pypi_url: null
+  github_issue_url: https://github.com/Onemind-Services-LLC/netbox-support/issues
 netbox-demo:
   plugin_id: netbox-demo
   name: netbox-demo
@@ -182,6 +188,8 @@ netbox-demo:
   private: false
   stars: 1
   github_url: https://github.com/netbox-community/netbox-demo
+  pypi_url: https://pypi.org/project/netbox-demo/
+  github_issue_url: https://github.com/netbox-community/netbox-demo/issues
 netbox-metatype-importer:
   plugin_id: netbox-metatype-importer
   name: netbox-metatype-importer
@@ -213,3 +221,5 @@ netbox-metatype-importer:
   private: false
   stars: 30
   github_url: https://github.com/Onemind-Services-LLC/netbox-metatype-importer
+  pypi_url: https://pypi.org/project/netbox-metatype-importer/
+  github_issue_url: https://github.com/Onemind-Services-LLC/netbox-metatype-importer/issues
