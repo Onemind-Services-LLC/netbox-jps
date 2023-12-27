@@ -1,224 +1,224 @@
-netbox-initializers:
-  plugin_id: netbox-initializers
-  name: netbox-initializers
-  description: Inspired from https://github.com/tobiasge/netbox-initializers
-  owner:
-    name: Onemind-Services-LLC
-    url: https://github.com/Onemind-Services-LLC
-  releases:
-  - tag: v0.2.0
-    netbox:
-      min: 3.6.0
-      max: 3.6.99
-      required_settings: []
-  - tag: v0.1.0
-    netbox:
-      min: 3.5.0
-      max: 3.5.99
-      required_settings: []
-  - tag: v0.0.2
-    netbox:
-      min: 3.4.0
-      max: 3.4.99
-      required_settings: []
-  - tag: v0.0.1
-    netbox:
-      min: 3.4.0
-      max: 3.4.99
-      required_settings: []
-  private: true
-  stars: 0
-  github_url: https://github.com/Onemind-Services-LLC/netbox-initializers
-  pypi_url: null
-netbox-secrets:
-  plugin_id: netbox-secrets
-  name: netbox-secrets
-  description: Netbox Secrets
-  owner:
-    name: Onemind-Services-LLC
-    url: https://github.com/Onemind-Services-LLC
-  releases:
-  - tag: 1.7.3
-    netbox:
-      min: 3.4.0
-      max: 3.4.99
-      required_settings: []
-  - tag: 1.7.4
-    netbox:
-      min: 3.4.0
-      max: 3.4.99
-      required_settings: []
-  - tag: 1.7.5
-    netbox:
-      min: 3.4.0
-      max: 3.4.99
-      required_settings: []
-  - tag: 1.7.6
-    netbox:
-      min: 3.4.0
-      max: 3.4.99
-      required_settings: []
-  - tag: 1.8.0
-    netbox:
-      min: 3.5.0
-      max: 3.5.99
-      required_settings: []
-  - tag: 1.8.1
-    netbox:
-      min: 3.5.0
-      max: 3.5.99
-      required_settings: []
-  - tag: 1.8.2
-    netbox:
-      min: 3.5.0
-      max: 3.5.99
-      required_settings: []
-  - tag: 1.8.3
-    netbox:
-      min: 3.5.0
-      max: 3.5.99
-      required_settings: []
-  - tag: 1.8.4
-    netbox:
-      min: 3.5.0
-      max: 3.5.99
-      required_settings: []
-  - tag: 1.8.5
-    netbox:
-      min: 3.5.0
-      max: 3.5.99
-      required_settings: []
-  - tag: 1.9.0
-    netbox:
-      min: 3.6.0
-      max: 3.6.99
-      required_settings: []
-  private: false
-  stars: 53
-  github_url: https://github.com/Onemind-Services-LLC/netbox-secrets
-  pypi_url: https://pypi.org/project/netbox-secrets/
-netbox-support:
-  plugin_id: netbox-support
-  name: netbox-support
-  description: NetBox Support provides device types and devices EoX data within NetBox.
-  owner:
-    name: Onemind-Services-LLC
-    url: https://github.com/Onemind-Services-LLC
-  releases:
-  - tag: v0.0.8
-    netbox:
-      min: 3.4.0
-      max: 3.4.99
-      required_settings: []
-  - tag: v0.0.7
-    netbox:
-      min: 3.4.0
-      max: 3.4.99
-      required_settings: []
-  - tag: v0.0.6
-    netbox:
-      min: 3.4.0
-      max: 3.4.99
-      required_settings: []
-  - tag: v0.0.5
-    netbox:
-      min: 3.4.0
-      max: 3.4.99
-      required_settings: []
-  - tag: v0.0.4
-    netbox:
-      min: 3.4.0
-      max: 3.4.99
-      required_settings: []
-  - tag: v0.0.3
-    netbox:
-      min: 3.4.0
-      max: 3.4.99
-      required_settings: []
-  - tag: v0.0.2
-    netbox:
-      min: 3.4.0
-      max: 3.4.99
-      required_settings: []
-  - tag: v0.0.1
-    netbox:
-      min: 3.4.0
-      max: 3.4.99
-      required_settings: []
-  private: true
-  stars: 0
-  github_url: https://github.com/Onemind-Services-LLC/netbox-support
-  pypi_url: null
 netbox-demo:
-  plugin_id: netbox-demo
-  name: netbox-demo
   description: NetBox plugin for demo instances (not for production use)
+  github_url: https://github.com/netbox-community/netbox-demo
+  name: netbox-demo
   owner:
     name: netbox-community
     url: https://github.com/netbox-community
-  releases:
-  - tag: '0.1'
-    netbox:
-      min: null
-      max: null
-      required_settings: []
-  - tag: '0.2'
-    netbox:
-      min: null
-      max: null
-      required_settings: []
-  - tag: '0.3'
-    netbox:
-      min: null
-      max: null
-      required_settings: []
-  - tag: 0.3.1
-    netbox:
-      min: null
-      max: null
-      required_settings: []
-  - tag: 0.4.0
-    netbox:
-      min: null
-      max: null
-      required_settings: []
+  plugin_id: netbox-demo
   private: false
-  stars: 1
-  github_url: https://github.com/netbox-community/netbox-demo
   pypi_url: https://pypi.org/project/netbox-demo/
-netbox-metatype-importer:
-  plugin_id: netbox-metatype-importer
-  name: netbox-metatype-importer
-  description: Import Metatypes
+  releases:
+  - netbox:
+      max: null
+      min: null
+      required_settings: []
+    tag: '0.1'
+  - netbox:
+      max: null
+      min: null
+      required_settings: []
+    tag: '0.2'
+  - netbox:
+      max: null
+      min: null
+      required_settings: []
+    tag: '0.3'
+  - netbox:
+      max: null
+      min: null
+      required_settings: []
+    tag: 0.3.1
+  - netbox:
+      max: null
+      min: null
+      required_settings: []
+    tag: 0.4.0
+  stars: 1
+netbox-initializers:
+  description: Inspired from https://github.com/tobiasge/netbox-initializers
+  github_url: https://github.com/Onemind-Services-LLC/netbox-initializers
+  name: netbox-initializers
   owner:
     name: Onemind-Services-LLC
     url: https://github.com/Onemind-Services-LLC
+  plugin_id: netbox-initializers
+  private: true
+  pypi_url: null
   releases:
-  - tag: 0.0.3
-    netbox:
-      min: 3.4.0
-      max: 3.4.99
-      required_settings:
-      - github_token
-  - tag: 0.0.4
-    netbox:
-      min: 3.4.0
-      max: 3.4.99
-      required_settings:
-      - github_token
-  - tag: 0.0.5
-    netbox:
-      min: 3.4.0
-      max: 3.4.99
-      required_settings:
-      - github_token
-  - tag: 0.1.0
-    netbox:
-      min: 3.5.0
+  - netbox:
+      max: 3.6.99
+      min: 3.6.0
+      required_settings: []
+    tag: v0.2.0
+  - netbox:
       max: 3.5.99
+      min: 3.5.0
+      required_settings: []
+    tag: v0.1.0
+  - netbox:
+      max: 3.4.99
+      min: 3.4.0
+      required_settings: []
+    tag: v0.0.2
+  - netbox:
+      max: 3.4.99
+      min: 3.4.0
+      required_settings: []
+    tag: v0.0.1
+  stars: 0
+netbox-metatype-importer:
+  description: Import Metatypes
+  github_url: https://github.com/Onemind-Services-LLC/netbox-metatype-importer
+  name: netbox-metatype-importer
+  owner:
+    name: Onemind-Services-LLC
+    url: https://github.com/Onemind-Services-LLC
+  plugin_id: netbox-metatype-importer
+  private: false
+  pypi_url: https://pypi.org/project/netbox-metatype-importer/
+  releases:
+  - netbox:
+      max: 3.4.99
+      min: 3.4.0
       required_settings:
       - github_token
-  private: false
+    tag: 0.0.3
+  - netbox:
+      max: 3.4.99
+      min: 3.4.0
+      required_settings:
+      - github_token
+    tag: 0.0.4
+  - netbox:
+      max: 3.4.99
+      min: 3.4.0
+      required_settings:
+      - github_token
+    tag: 0.0.5
+  - netbox:
+      max: 3.5.99
+      min: 3.5.0
+      required_settings:
+      - github_token
+    tag: 0.1.0
   stars: 30
-  github_url: https://github.com/Onemind-Services-LLC/netbox-metatype-importer
-  pypi_url: https://pypi.org/project/netbox-metatype-importer/
+netbox-secrets:
+  description: Netbox Secrets
+  github_url: https://github.com/Onemind-Services-LLC/netbox-secrets
+  name: netbox-secrets
+  owner:
+    name: Onemind-Services-LLC
+    url: https://github.com/Onemind-Services-LLC
+  plugin_id: netbox-secrets
+  private: false
+  pypi_url: https://pypi.org/project/netbox-secrets/
+  releases:
+  - netbox:
+      max: 3.4.99
+      min: 3.4.0
+      required_settings: []
+    tag: 1.7.3
+  - netbox:
+      max: 3.4.99
+      min: 3.4.0
+      required_settings: []
+    tag: 1.7.4
+  - netbox:
+      max: 3.4.99
+      min: 3.4.0
+      required_settings: []
+    tag: 1.7.5
+  - netbox:
+      max: 3.4.99
+      min: 3.4.0
+      required_settings: []
+    tag: 1.7.6
+  - netbox:
+      max: 3.5.99
+      min: 3.5.0
+      required_settings: []
+    tag: 1.8.0
+  - netbox:
+      max: 3.5.99
+      min: 3.5.0
+      required_settings: []
+    tag: 1.8.1
+  - netbox:
+      max: 3.5.99
+      min: 3.5.0
+      required_settings: []
+    tag: 1.8.2
+  - netbox:
+      max: 3.5.99
+      min: 3.5.0
+      required_settings: []
+    tag: 1.8.3
+  - netbox:
+      max: 3.5.99
+      min: 3.5.0
+      required_settings: []
+    tag: 1.8.4
+  - netbox:
+      max: 3.5.99
+      min: 3.5.0
+      required_settings: []
+    tag: 1.8.5
+  - netbox:
+      max: 3.6.99
+      min: 3.6.0
+      required_settings: []
+    tag: 1.9.0
+  stars: 53
+netbox-support:
+  description: NetBox Support provides device types and devices EoX data within NetBox.
+  github_url: https://github.com/Onemind-Services-LLC/netbox-support
+  name: netbox-support
+  owner:
+    name: Onemind-Services-LLC
+    url: https://github.com/Onemind-Services-LLC
+  plugin_id: netbox-support
+  private: true
+  pypi_url: null
+  releases:
+  - netbox:
+      max: 3.4.99
+      min: 3.4.0
+      required_settings: []
+    tag: v0.0.8
+  - netbox:
+      max: 3.4.99
+      min: 3.4.0
+      required_settings: []
+    tag: v0.0.7
+  - netbox:
+      max: 3.4.99
+      min: 3.4.0
+      required_settings: []
+    tag: v0.0.6
+  - netbox:
+      max: 3.4.99
+      min: 3.4.0
+      required_settings: []
+    tag: v0.0.5
+  - netbox:
+      max: 3.4.99
+      min: 3.4.0
+      required_settings: []
+    tag: v0.0.4
+  - netbox:
+      max: 3.4.99
+      min: 3.4.0
+      required_settings: []
+    tag: v0.0.3
+  - netbox:
+      max: 3.4.99
+      min: 3.4.0
+      required_settings: []
+    tag: v0.0.2
+  - netbox:
+      max: 3.4.99
+      min: 3.4.0
+      required_settings: []
+    tag: v0.0.1
+  stars: 0
