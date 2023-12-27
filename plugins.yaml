@@ -28,6 +28,7 @@ netbox-initializers:
       required_settings: []
   private: true
   stars: 0
+  github_url: https://github.com/Onemind-Services-LLC/netbox-initializers
 netbox-secrets:
   plugin_id: netbox-secrets
   name: netbox-secrets
@@ -93,6 +94,7 @@ netbox-secrets:
       required_settings: []
   private: false
   stars: 53
+  github_url: https://github.com/Onemind-Services-LLC/netbox-secrets
 netbox-support:
   plugin_id: netbox-support
   name: netbox-support
@@ -143,6 +145,7 @@ netbox-support:
       required_settings: []
   private: true
   stars: 0
+  github_url: https://github.com/Onemind-Services-LLC/netbox-support
 netbox-demo:
   plugin_id: netbox-demo
   name: netbox-demo
@@ -178,6 +181,7 @@ netbox-demo:
       required_settings: []
   private: false
   stars: 1
+  github_url: https://github.com/netbox-community/netbox-demo
 netbox-metatype-importer:
   plugin_id: netbox-metatype-importer
   name: netbox-metatype-importer
@@ -208,3 +212,4 @@ netbox-metatype-importer:
       required_settings: github_token
   private: false
   stars: 30
+  github_url: https://github.com/Onemind-Services-LLC/netbox-metatype-importer
