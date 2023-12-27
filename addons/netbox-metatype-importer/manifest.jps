@@ -21,14 +21,14 @@ targetNodes:
 onBeforeInit: /addons/netbox-metatype-importer/scripts/beforeInit.js?_r=${fn.random}
 
 onInstall:
-  - installAndConfigure
+  - configure
 
 onUninstall:
   - removeConfig
 
 
 actions:
-  installAndConfigure:
+  configure:
     - installPlugin
     - updateConfig
 
@@ -59,7 +59,7 @@ actions:
 
 buttons:
   - caption: Configure
-    action: installAndConfigure
+    action: configure
     settings: main
     loadingText: Configuring...
     successText: The plugin has been configured successfully
