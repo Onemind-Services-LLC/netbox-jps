@@ -1,0 +1,146 @@
+netbox-initializers:
+  plugin_id: netbox-initializers
+  name: netbox-initializers
+  description: Inspired from https://github.com/tobiasge/netbox-initializers
+  owner:
+    name: Onemind-Services-LLC
+    url: https://github.com/Onemind-Services-LLC
+  releases:
+  - tag: v0.2.0
+    netbox_min_version: 3.6.0
+    netbox_max_version: 3.6.99
+  - tag: v0.1.0
+    netbox_min_version: 3.5.0
+    netbox_max_version: 3.5.99
+  - tag: v0.0.2
+    netbox_min_version: 3.4.0
+    netbox_max_version: 3.4.99
+  - tag: v0.0.1
+    netbox_min_version: 3.4.0
+    netbox_max_version: 3.4.99
+  private: true
+  stars: 0
+netbox-secrets:
+  plugin_id: netbox-secrets
+  name: netbox-secrets
+  description: Netbox Secrets
+  owner:
+    name: Onemind-Services-LLC
+    url: https://github.com/Onemind-Services-LLC
+  releases:
+  - tag: 1.7.3
+    netbox_min_version: 3.4.0
+    netbox_max_version: 3.4.99
+  - tag: 1.7.4
+    netbox_min_version: 3.4.0
+    netbox_max_version: 3.4.99
+  - tag: 1.7.5
+    netbox_min_version: 3.4.0
+    netbox_max_version: 3.4.99
+  - tag: 1.7.6
+    netbox_min_version: 3.4.0
+    netbox_max_version: 3.4.99
+  - tag: 1.8.0
+    netbox_min_version: 3.5.0
+    netbox_max_version: 3.5.99
+  - tag: 1.8.1
+    netbox_min_version: 3.5.0
+    netbox_max_version: 3.5.99
+  - tag: 1.8.2
+    netbox_min_version: 3.5.0
+    netbox_max_version: 3.5.99
+  - tag: 1.8.3
+    netbox_min_version: 3.5.0
+    netbox_max_version: 3.5.99
+  - tag: 1.8.4
+    netbox_min_version: 3.5.0
+    netbox_max_version: 3.5.99
+  - tag: 1.8.5
+    netbox_min_version: 3.5.0
+    netbox_max_version: 3.5.99
+  - tag: 1.9.0
+    netbox_min_version: 3.6.0
+    netbox_max_version: 3.6.99
+  private: false
+  stars: 53
+netbox-support:
+  plugin_id: netbox-support
+  name: netbox-support
+  description: null
+  owner:
+    name: Onemind-Services-LLC
+    url: https://github.com/Onemind-Services-LLC
+  releases:
+  - tag: v0.0.8
+    netbox_min_version: 3.4.0
+    netbox_max_version: 3.4.99
+  - tag: v0.0.7
+    netbox_min_version: 3.4.0
+    netbox_max_version: 3.4.99
+  - tag: v0.0.6
+    netbox_min_version: 3.4.0
+    netbox_max_version: 3.4.99
+  - tag: v0.0.5
+    netbox_min_version: 3.4.0
+    netbox_max_version: 3.4.99
+  - tag: v0.0.4
+    netbox_min_version: 3.4.0
+    netbox_max_version: 3.4.99
+  - tag: v0.0.3
+    netbox_min_version: 3.4.0
+    netbox_max_version: 3.4.99
+  - tag: v0.0.2
+    netbox_min_version: 3.4.0
+    netbox_max_version: 3.4.99
+  - tag: v0.0.1
+    netbox_min_version: 3.4.0
+    netbox_max_version: 3.4.99
+  private: true
+  stars: 0
+netbox-demo:
+  plugin_id: netbox-demo
+  name: netbox-demo
+  description: NetBox plugin for demo instances (not for production use)
+  owner:
+    name: netbox-community
+    url: https://github.com/netbox-community
+  releases:
+  - tag: '0.1'
+    netbox_min_version: null
+    netbox_max_version: null
+  - tag: '0.2'
+    netbox_min_version: null
+    netbox_max_version: null
+  - tag: '0.3'
+    netbox_min_version: null
+    netbox_max_version: null
+  - tag: 0.3.1
+    netbox_min_version: null
+    netbox_max_version: null
+  - tag: 0.4.0
+    netbox_min_version: null
+    netbox_max_version: null
+  private: false
+  stars: 1
+netbox-metatype-importer:
+  plugin_id: netbox-metatype-importer
+  name: netbox-metatype-importer
+  description: Import Metatypes
+  owner:
+    name: Onemind-Services-LLC
+    url: https://github.com/Onemind-Services-LLC
+  releases:
+  - tag: 0.0.3
+    netbox_min_version: 3.4.0
+    netbox_max_version: 3.4.99
+  - tag: 0.0.4
+    netbox_min_version: 3.4.0
+    netbox_max_version: 3.4.99
+  - tag: 0.0.5
+    netbox_min_version: 3.4.0
+    netbox_max_version: 3.4.99
+  - tag: 0.1.0
+    netbox_min_version: 3.5.0
+    netbox_max_version: 3.5.99
+  private: false
+  stars: 30
