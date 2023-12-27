@@ -7,17 +7,25 @@ netbox-initializers:
     url: https://github.com/Onemind-Services-LLC
   releases:
   - tag: v0.2.0
-    netbox_min_version: 3.6.0
-    netbox_max_version: 3.6.99
+    netbox:
+      min: 3.6.0
+      max: 3.6.99
+      required_settings: []
   - tag: v0.1.0
-    netbox_min_version: 3.5.0
-    netbox_max_version: 3.5.99
+    netbox:
+      min: 3.5.0
+      max: 3.5.99
+      required_settings: []
   - tag: v0.0.2
-    netbox_min_version: 3.4.0
-    netbox_max_version: 3.4.99
+    netbox:
+      min: 3.4.0
+      max: 3.4.99
+      required_settings: []
   - tag: v0.0.1
-    netbox_min_version: 3.4.0
-    netbox_max_version: 3.4.99
+    netbox:
+      min: 3.4.0
+      max: 3.4.99
+      required_settings: []
   private: true
   stars: 0
 netbox-secrets:
@@ -29,38 +37,60 @@ netbox-secrets:
     url: https://github.com/Onemind-Services-LLC
   releases:
   - tag: 1.7.3
-    netbox_min_version: 3.4.0
-    netbox_max_version: 3.4.99
+    netbox:
+      min: 3.4.0
+      max: 3.4.99
+      required_settings: []
   - tag: 1.7.4
-    netbox_min_version: 3.4.0
-    netbox_max_version: 3.4.99
+    netbox:
+      min: 3.4.0
+      max: 3.4.99
+      required_settings: []
   - tag: 1.7.5
-    netbox_min_version: 3.4.0
-    netbox_max_version: 3.4.99
+    netbox:
+      min: 3.4.0
+      max: 3.4.99
+      required_settings: []
   - tag: 1.7.6
-    netbox_min_version: 3.4.0
-    netbox_max_version: 3.4.99
+    netbox:
+      min: 3.4.0
+      max: 3.4.99
+      required_settings: []
   - tag: 1.8.0
-    netbox_min_version: 3.5.0
-    netbox_max_version: 3.5.99
+    netbox:
+      min: 3.5.0
+      max: 3.5.99
+      required_settings: []
   - tag: 1.8.1
-    netbox_min_version: 3.5.0
-    netbox_max_version: 3.5.99
+    netbox:
+      min: 3.5.0
+      max: 3.5.99
+      required_settings: []
   - tag: 1.8.2
-    netbox_min_version: 3.5.0
-    netbox_max_version: 3.5.99
+    netbox:
+      min: 3.5.0
+      max: 3.5.99
+      required_settings: []
   - tag: 1.8.3
-    netbox_min_version: 3.5.0
-    netbox_max_version: 3.5.99
+    netbox:
+      min: 3.5.0
+      max: 3.5.99
+      required_settings: []
   - tag: 1.8.4
-    netbox_min_version: 3.5.0
-    netbox_max_version: 3.5.99
+    netbox:
+      min: 3.5.0
+      max: 3.5.99
+      required_settings: []
   - tag: 1.8.5
-    netbox_min_version: 3.5.0
-    netbox_max_version: 3.5.99
+    netbox:
+      min: 3.5.0
+      max: 3.5.99
+      required_settings: []
   - tag: 1.9.0
-    netbox_min_version: 3.6.0
-    netbox_max_version: 3.6.99
+    netbox:
+      min: 3.6.0
+      max: 3.6.99
+      required_settings: []
   private: false
   stars: 53
 netbox-support:
@@ -72,29 +102,45 @@ netbox-support:
     url: https://github.com/Onemind-Services-LLC
   releases:
   - tag: v0.0.8
-    netbox_min_version: 3.4.0
-    netbox_max_version: 3.4.99
+    netbox:
+      min: 3.4.0
+      max: 3.4.99
+      required_settings: []
   - tag: v0.0.7
-    netbox_min_version: 3.4.0
-    netbox_max_version: 3.4.99
+    netbox:
+      min: 3.4.0
+      max: 3.4.99
+      required_settings: []
   - tag: v0.0.6
-    netbox_min_version: 3.4.0
-    netbox_max_version: 3.4.99
+    netbox:
+      min: 3.4.0
+      max: 3.4.99
+      required_settings: []
   - tag: v0.0.5
-    netbox_min_version: 3.4.0
-    netbox_max_version: 3.4.99
+    netbox:
+      min: 3.4.0
+      max: 3.4.99
+      required_settings: []
   - tag: v0.0.4
-    netbox_min_version: 3.4.0
-    netbox_max_version: 3.4.99
+    netbox:
+      min: 3.4.0
+      max: 3.4.99
+      required_settings: []
   - tag: v0.0.3
-    netbox_min_version: 3.4.0
-    netbox_max_version: 3.4.99
+    netbox:
+      min: 3.4.0
+      max: 3.4.99
+      required_settings: []
   - tag: v0.0.2
-    netbox_min_version: 3.4.0
-    netbox_max_version: 3.4.99
+    netbox:
+      min: 3.4.0
+      max: 3.4.99
+      required_settings: []
   - tag: v0.0.1
-    netbox_min_version: 3.4.0
-    netbox_max_version: 3.4.99
+    netbox:
+      min: 3.4.0
+      max: 3.4.99
+      required_settings: []
   private: true
   stars: 0
 netbox-demo:
@@ -106,20 +152,30 @@ netbox-demo:
     url: https://github.com/netbox-community
   releases:
   - tag: '0.1'
-    netbox_min_version: null
-    netbox_max_version: null
+    netbox:
+      min: null
+      max: null
+      required_settings: []
   - tag: '0.2'
-    netbox_min_version: null
-    netbox_max_version: null
+    netbox:
+      min: null
+      max: null
+      required_settings: []
   - tag: '0.3'
-    netbox_min_version: null
-    netbox_max_version: null
+    netbox:
+      min: null
+      max: null
+      required_settings: []
   - tag: 0.3.1
-    netbox_min_version: null
-    netbox_max_version: null
+    netbox:
+      min: null
+      max: null
+      required_settings: []
   - tag: 0.4.0
-    netbox_min_version: null
-    netbox_max_version: null
+    netbox:
+      min: null
+      max: null
+      required_settings: []
   private: false
   stars: 1
 netbox-metatype-importer:
@@ -131,16 +187,24 @@ netbox-metatype-importer:
     url: https://github.com/Onemind-Services-LLC
   releases:
   - tag: 0.0.3
-    netbox_min_version: 3.4.0
-    netbox_max_version: 3.4.99
+    netbox:
+      min: 3.4.0
+      max: 3.4.99
+      required_settings: github_token
   - tag: 0.0.4
-    netbox_min_version: 3.4.0
-    netbox_max_version: 3.4.99
+    netbox:
+      min: 3.4.0
+      max: 3.4.99
+      required_settings: github_token
   - tag: 0.0.5
-    netbox_min_version: 3.4.0
-    netbox_max_version: 3.4.99
+    netbox:
+      min: 3.4.0
+      max: 3.4.99
+      required_settings: github_token
   - tag: 0.1.0
-    netbox_min_version: 3.5.0
-    netbox_max_version: 3.5.99
+    netbox:
+      min: 3.5.0
+      max: 3.5.99
+      required_settings: github_token
   private: false
   stars: 30
