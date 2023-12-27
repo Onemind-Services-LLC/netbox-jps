@@ -30,7 +30,6 @@ netbox-initializers:
   stars: 0
   github_url: https://github.com/Onemind-Services-LLC/netbox-initializers
   pypi_url: null
-  github_issue_url: https://github.com/Onemind-Services-LLC/netbox-initializers/issues
 netbox-secrets:
   plugin_id: netbox-secrets
   name: netbox-secrets
@@ -98,11 +97,10 @@ netbox-secrets:
   stars: 53
   github_url: https://github.com/Onemind-Services-LLC/netbox-secrets
   pypi_url: https://pypi.org/project/netbox-secrets/
-  github_issue_url: https://github.com/Onemind-Services-LLC/netbox-secrets/issues
 netbox-support:
   plugin_id: netbox-support
   name: netbox-support
-  description: null
+  description: NetBox Support provides device types and devices EoX data within NetBox.
   owner:
     name: Onemind-Services-LLC
     url: https://github.com/Onemind-Services-LLC
@@ -151,7 +149,6 @@ netbox-support:
   stars: 0
   github_url: https://github.com/Onemind-Services-LLC/netbox-support
   pypi_url: null
-  github_issue_url: https://github.com/Onemind-Services-LLC/netbox-support/issues
 netbox-demo:
   plugin_id: netbox-demo
   name: netbox-demo
@@ -189,7 +186,6 @@ netbox-demo:
   stars: 1
   github_url: https://github.com/netbox-community/netbox-demo
   pypi_url: https://pypi.org/project/netbox-demo/
-  github_issue_url: https://github.com/netbox-community/netbox-demo/issues
 netbox-metatype-importer:
   plugin_id: netbox-metatype-importer
   name: netbox-metatype-importer
@@ -202,24 +198,27 @@ netbox-metatype-importer:
     netbox:
       min: 3.4.0
       max: 3.4.99
-      required_settings: github_token
+      required_settings:
+      - github_token
   - tag: 0.0.4
     netbox:
       min: 3.4.0
       max: 3.4.99
-      required_settings: github_token
+      required_settings:
+      - github_token
   - tag: 0.0.5
     netbox:
       min: 3.4.0
       max: 3.4.99
-      required_settings: github_token
+      required_settings:
+      - github_token
   - tag: 0.1.0
     netbox:
       min: 3.5.0
       max: 3.5.99
-      required_settings: github_token
+      required_settings:
+      - github_token
   private: false
   stars: 30
   github_url: https://github.com/Onemind-Services-LLC/netbox-metatype-importer
   pypi_url: https://pypi.org/project/netbox-metatype-importer/
-  github_issue_url: https://github.com/Onemind-Services-LLC/netbox-metatype-importer/issues
