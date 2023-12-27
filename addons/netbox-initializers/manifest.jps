@@ -21,7 +21,7 @@ targetNodes:
 onBeforeInit: /addons/netbox-initializers/scripts/beforeInit.js?_r=${fn.random}
 
 onInstall:
-  - installAndConfigure
+  - configure
   - createDirectory[cp]:
       - path: /etc/netbox/initializers
 
@@ -29,7 +29,7 @@ onUninstall:
   - removeConfig
 
 actions:
-  installAndConfigure:
+  configure:
     - installPlugin
     - updateConfig
 
@@ -69,7 +69,7 @@ actions:
 
 buttons:
   - caption: Configure
-    action: installAndConfigure
+    action: configure
     settings: main
     loadingText: Configuring...
     successText: The plugin has been configured successfully

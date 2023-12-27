@@ -21,13 +21,13 @@ targetNodes:
 onBeforeInit: /addons/netbox-demo/scripts/beforeInit.js?_r=${fn.random}
 
 onInstall:
-  - installAndConfigure
+  - configure
 
 onUninstall:
   - removeConfig
 
 actions:
-  installAndConfigure:
+  configure:
     - installPlugin
     - updateConfig
     - setUsername
@@ -67,7 +67,7 @@ actions:
 
 buttons:
   - caption: Configure
-    action: installAndConfigure
+    action: configure
     settings: main
     loadingText: Configuring...
     successText: The plugin has been configured successfully

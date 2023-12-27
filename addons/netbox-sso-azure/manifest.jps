@@ -4,7 +4,7 @@ name: NetBox SSO Azure Plugin
 homepage: https://github.com/netbox-community/netbox
 
 categories:
-  - apps/netbox-plugins
+  - apps/netbox-sso
 
 description:
   short: "This plugin adds Azure AD SSO to NetBox."
@@ -20,13 +20,13 @@ targetNodes:
 onBeforeInit: /addons/netbox-sso-azure/scripts/beforeInit.js?_r=${fn.random}
 
 onInstall:
-  - installAndConfigure
+  - configure
 
 onUninstall:
   - removeConfig
 
 actions:
-  installAndConfigure:
+  configure:
     - installPlugin
     - updateConfig
 
@@ -72,7 +72,7 @@ actions:
 
 buttons:
   - caption: Configure
-    action: installAndConfigure
+    action: configure
     settings: main
     loadingText: Configuring...
     successText: The plugin has been configured successfully
