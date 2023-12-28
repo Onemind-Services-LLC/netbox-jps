@@ -59,39 +59,30 @@ fields:
         caption: CRITICAL
     default: INFO
 
-  - name: enableWorkers
-    type: checkbox
-    caption: Enable Workers
-    tooltip: Enable RQ workers
-    value: true
-    showIf:
-      true:
-        - name: highQueue
-          type: spinner
-          caption: High Priority Queue
-          tooltip: Number of workers to run for the high priority queue
-          default: 1
-          required: true
-          editable: true
-          min: 1
+  - name: highQueue
+    type: spinner
+    caption: High Priority Queue
+    tooltip: Number of workers to run for the high priority queue
+    default: 0
+    editable: true
+    min: 0
 
-        - name: defaultQueue
-          type: spinner
-          caption: Default Priority Queue
-          tooltip: Number of workers to run for the default priority queue
-          default: 1
-          required: true
-          editable: true
-          min: 1
+  - name: defaultQueue
+    type: spinner
+    caption: Default Priority Queue
+    tooltip: Number of workers to run for the default priority queue
+    default: 1
+    required: true
+    editable: true
+    min: 1
 
-        - name: lowQueue
-          type: spinner
-          caption: Low Priority Queue
-          tooltip: Number of workers to run for the low priority queue
-          default: 1
-          required: true
-          editable: true
-          min: 1
+  - name: lowQueue
+    type: spinner
+    caption: Low Priority Queue
+    tooltip: Number of workers to run for the low priority queue
+    default: 0
+    editable: true
+    min: 0
 
   - name: dbDiskLimit
     type: spinner
