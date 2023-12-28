@@ -38,7 +38,6 @@ function createNetBoxConfig(nodeGroup, displayName, count, cloudlets, additional
             "/etc/cron.daily": getNFSMount("/etc/cron.daily"),
         },
         env: {
-            ALLOWED_HOSTS: jps.env.domain,
             DB_HOST: isProd ? "pgpool" : "postgresql",
             DB_NAME: "netbox",
             DB_USER: "netbox",
