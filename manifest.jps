@@ -46,12 +46,22 @@ onInstall:
   - setupHousekeeping
   - install:
       - jps: /scripts/events.jps?_r=${fn.random}
+  - defaultNginxConfig
 
 actions:
   addLimits:
     - env.control.ApplyNodeGroupData [*]:
         data:
           isRequired: true
+
+  defaultNginxConfig:
+    - replaceInFile:
+        nodeMission: bl
+        path: /etc/nginx/nginx-jelastic.conf
+        replacements:
+          - pattern: large_client_header_buffers [0-9]* [0-9]*k;
+            replacement: large_client_header_buffers 4 64k;
+
 
   setDomain:
     - script: /scripts/idna.js
