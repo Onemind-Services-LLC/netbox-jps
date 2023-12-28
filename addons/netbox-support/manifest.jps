@@ -33,7 +33,6 @@ actions:
 
   installPlugin:
     - cmd[${nodes.cp.id}]: |-
-        apt update && apt install -y git
         echo machine github.com login ${settings.githubToken} > ~/.netrc
         source /opt/netbox/venv/bin/activate
         pip3 install git+https://github.com/Onemind-Services-LLC/netbox-support@${settings.version}
