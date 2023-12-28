@@ -46,7 +46,7 @@ onInstall:
   - setupHousekeeping
   - install:
       - jps: /scripts/events.jps?_r=${fn.random}
-  - defaultNginxConfig
+  - nginxConfig
 
 actions:
   addLimits:
@@ -54,7 +54,7 @@ actions:
         data:
           isRequired: true
 
-  defaultNginxConfig:
+  nginxConfig:
     - replaceInFile:
         nodeMission: bl
         path: /etc/nginx/nginx-jelastic.conf
