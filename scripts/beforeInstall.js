@@ -133,7 +133,7 @@ queues.forEach(queue => {
     resp.nodes.push(createNetBoxConfig("cp" + node_index, "NetBox Worker - " + queueName, "${settings." + queue + "Queue:1}", 8, {
         cmd: "/opt/netbox/venv/bin/python /opt/netbox/netbox/manage.py rqworker " + queue
     }));
-    index++;
+    node_index++;
 });
 
 // Build Nginx node configuration
