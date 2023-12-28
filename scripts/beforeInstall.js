@@ -46,6 +46,7 @@ function createNetBoxConfig(nodeGroup, displayName, count, cloudlets, additional
             LOGLEVEL: "${settings.loglevel}",
             REDIS_HOST: "redis",
             REDIS_PASSWORD: "${globals.redisPassword}",
+            REDIS_PORT: "6379",
             SECRET_KEY: "${globals.secretKey}",
             CORS_ORIGIN_ALLOW_ALL: "True",
             ENFORCE_GLOBAL_UNIQUE: "True",
