@@ -30,20 +30,11 @@ actions:
   configure:
     - installPlugin
     - updateConfig
-    - setUsername
 
   installPlugin:
     - cmd[${nodes.cp.id}]: |-
         source /opt/netbox/venv/bin/activate
         pip3 install netbox-demo==${settings.version}
-
-  setUsername:
-    - script: |
-        const userEmail = '${user.email}';
-        const username = userEmail.substring(0, userEmail.indexOf("@")).toString();
-        return {"result": 0, "username": username};
-    - setGlobals:
-        adminUsername: ${response.username}
 
   updateConfig:
     - cmd[${nodes.cp.id}]: |-
@@ -54,7 +45,7 @@ actions:
         nodeMission: cp
         path: /etc/netbox/config/plugins.yaml
         replacements:
-          - pattern: 'netbox_demo: {}'
+          - pattern: 'netbox_demo:'
             replacement: 'netbox_demo:\n  ${settings.settings}'
 
 
