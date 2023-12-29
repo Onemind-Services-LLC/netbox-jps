@@ -1,8 +1,0 @@
-fields:
-  - name: settings
-    type: text
-    default: {}
-    caption: Plugin settings
-    tooltip: |
-      This is a YAML object that will be merged into the NetBox configuration file.
-    required: false

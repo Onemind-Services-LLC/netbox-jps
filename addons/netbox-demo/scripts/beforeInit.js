@@ -2,10 +2,7 @@
 let resp = {result: 0};
 
 const baseUrl = jps.baseUrl + "/addons/netbox-demo/config";
-const url = baseUrl + "/settings.yaml";
 const version_file_url = baseUrl + "/versions.yaml";
-
-resp.settings = toNative(new org.yaml.snakeyaml.Yaml().load(new com.hivext.api.core.utils.Transport().get(url)));
 
 const versions = toNative(new org.yaml.snakeyaml.Yaml().load(new com.hivext.api.core.utils.Transport().get(version_file_url)))
 

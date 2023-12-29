@@ -41,13 +41,6 @@ actions:
         yq -i '.netbox_demo={}' /etc/netbox/config/plugins.yaml
         echo "LOGIN_REQUIRED = False" >> /etc/netbox/config/netbox_demo.py
         echo "BANNER_LOGIN = '<p>This is a demo instance of <a href=\'https://github.com/netbox-community/netbox\'>NetBox</a> for public use.</p><p><a href=\'/plugins/demo/login/\'>Click here</a> to create a new user account, or log in with your existing credentials below.</p>'" >> /etc/netbox/config/netbox_demo.py
-    - replaceInFile:
-        nodeMission: cp
-        path: /etc/netbox/config/plugins.yaml
-        replacements:
-          - pattern: 'netbox_demo:'
-            replacement: 'netbox_demo:\n  ${settings.settings}'
-
 
   removeConfig:
     - cmd[${nodes.cp.id}]: |-
@@ -60,3 +53,5 @@ buttons:
     settings: main
     loadingText: Configuring...
     successText: The plugin has been configured successfully
+
+success: The plugin has been installed successfully. Use netbox-cloud-pilot to configure it.
