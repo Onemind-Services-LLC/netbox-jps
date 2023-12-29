@@ -21,6 +21,11 @@ function createNetBoxConfig(nodeGroup, displayName, count, cloudlets, additional
     const userName = userEmail.substring(0, userEmail.indexOf("@"));
     const userPassword = '${globals.adminPassword}';
 
+    // If count=0, don't create the node
+    if (count === 0) {
+        return {};
+    }
+
     const baseConfig = {
         nodeType: "docker",
         displayName: displayName,
