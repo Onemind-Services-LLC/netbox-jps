@@ -50,7 +50,7 @@ onInstall:
 
 actions:
   addLimits:
-    - env.control.ApplyNodeGroupData [*]:
+    - env.control.ApplyNodeGroupData [bl, cp, sqldb, cache]:
         data:
           isRequired: true
 
