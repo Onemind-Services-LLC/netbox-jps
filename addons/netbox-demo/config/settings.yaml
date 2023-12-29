@@ -5,6 +5,4 @@ fields:
     caption: Plugin settings
     tooltip: |
       This is a YAML object that will be merged into the NetBox configuration file.
-    placeholder: |-
-      admin_username: admin
     required: false
