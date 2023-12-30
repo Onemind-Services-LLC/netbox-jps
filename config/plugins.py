@@ -10,7 +10,8 @@ def _read_plugins():
         with open(plugin_file) as f:
             plugins = yaml.safe_load(f)
 
-        return plugins or {}
+        # Remove any keys with None value
+        return {k: v for k, v in plugins.items() if v}
 
     return {}
 
