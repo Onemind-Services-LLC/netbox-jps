@@ -1,20 +1,24 @@
 import os
 import yaml
-from pathlib import Path
 
 
 def _read_plugins():
-    # Read the plugins.yaml file if exists from /etc/netbox/config
-    plugin_file = Path("/etc/netbox/config/plugins.yaml")
-    if plugin_file.is_file():
-        with open(plugin_file) as f:
-            plugins = yaml.safe_load(f)
+    plugin_file = "/etc/netbox/config/plugins.yaml"
+    if os.path.isfile(plugin_file):
+        try:
+            with open(plugin_file) as f:
+                plugins = yaml.safe_load(f) or {}
 
-        # Remove any keys with None value
-        return {k: v for k, v in plugins.items() if v}
+            # Remove any keys with None value
+            return {k: v for k, v in plugins.items() if v}
+        except yaml.YAMLError as e:
+            print(f"Error reading YAML file: {e}")
+            return {}
 
     return {}
 
 
-PLUGINS = list(_read_plugins().keys())
-PLUGINS_CONFIG = _read_plugins()
+# Read plugins once and use the result for PLUGINS and PLUGINS_CONFIG
+plugins_config = _read_plugins()
+PLUGINS = list(plugins_config.keys())
+PLUGINS_CONFIG = plugins_config
