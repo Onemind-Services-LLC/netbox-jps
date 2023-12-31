@@ -22,7 +22,7 @@ function createNetBoxConfig(nodeGroup, displayName, count, cloudlets, additional
     const userPassword = '${globals.adminPassword}';
 
     // If count=0, don't create the node, do not check type
-    if (count === 0) {
+    if (count == 0) {
         return {};
     }
 
@@ -112,7 +112,7 @@ const queues = ["high", "default", "low"];
 let node_index = 2;
 queues.forEach(queue => {
     let queueName = queue.charAt(0).toUpperCase() + queue.slice(1) + " Queue";
-    const queueSetting = ${settings[queue + "Queue"]};
+    const queueSetting = '${settings.' + queue + 'Queue}';
     const config = createNetBoxConfig("cp" + node_index, "NetBox Worker - " + queueName, queueSetting, 8, {
         cmd: "/opt/netbox/venv/bin/python /opt/netbox/netbox/manage.py rqworker " + queue
     });
