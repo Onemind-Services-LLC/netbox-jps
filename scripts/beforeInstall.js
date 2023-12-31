@@ -22,7 +22,7 @@ function createNetBoxConfig(nodeGroup, displayName, count, cloudlets, additional
     const userPassword = '${globals.adminPassword}';
 
     // If count=0, don't create the node, do not check type
-    if (count == 0) {
+    if (count === 0) {
         return {};
     }
 
@@ -53,9 +53,6 @@ function createNetBoxConfig(nodeGroup, displayName, count, cloudlets, additional
             REDIS_PASSWORD: "${globals.redisPassword}",
             REDIS_PORT: "6379",
             SECRET_KEY: "${globals.secretKey}",
-            CORS_ORIGIN_ALLOW_ALL: "True",
-            ENFORCE_GLOBAL_UNIQUE: "True",
-            LOGIN_PERSISTENCE: "True",
             SKIP_SUPERUSER: "false",
             SUPERUSER_NAME: userName,
             SUPERUSER_EMAIL: userEmail,
@@ -78,33 +75,21 @@ function createNetBoxConfig(nodeGroup, displayName, count, cloudlets, additional
     return Object.assign(baseConfig, additionalConfig);
 }
 
-// Build PostgreSQL node configuration
-if ('${settings.deploymentType}' != 'development') {
-    resp.nodes.push({
-        nodeType: "postgresql",
-        count: 2,
-        cloudlets: 16,
-        diskLimit: ${settings.dbDiskLimit},
-        scalingMode: "STATELESS",
-        isSLBAccessEnabled: false,
-        nodeGroup: "sqldb",
-        displayName: "PostgreSQL Cluster",
-        cluster: {
-            is_pgpool2: true,
-        }
-    })
-} else {
-    resp.nodes.push({
-        nodeType: "postgresql",
-        count: 1,
-        cloudlets: 32,
-        diskLimit: ${settings.dbDiskLimit},
-        scalingMode: "STATEFUL",
-        isSLBAccessEnabled: false,
-        nodeGroup: "sqldb",
-        displayName: "PostgreSQL",
-    })
+// PostgreSQL node configuration
+const pgsqlConfig = {
+    nodeType: "postgresql",
+    count: isProd ? 2 : 1,
+    cloudlets: isProd ? 16 : 32,
+    diskLimit: `${settings.dbDiskLimit}`,
+    scalingMode: isProd ? "STATELESS" : "STATEFUL",
+    isSLBAccessEnabled: false,
+    nodeGroup: "sqldb",
+    displayName: isProd ? "PostgreSQL Cluster" : "PostgreSQL"
+};
+if (isProd) {
+    pgsqlConfig.cluster = { is_pgpool2: true };
 }
+resp.nodes.push(pgsqlConfig);
 
 // Build Redis node configuration
 resp.nodes.push({
@@ -122,42 +107,37 @@ resp.nodes.push({
 // Build NetBox node configuration
 resp.nodes.push(createNetBoxConfig("cp", "NetBox", nodeCount, 8));
 
-// Build NetBox worker node configuration
+// NetBox worker node configuration
 const queues = ["high", "default", "low"];
 let node_index = 2;
 queues.forEach(queue => {
     let queueName = queue.charAt(0).toUpperCase() + queue.slice(1) + " Queue";
-    resp.nodes.push(createNetBoxConfig("cp" + node_index, "NetBox Worker - " + queueName, "${settings." + queue + "Queue:0}", 8, {
+    const queueSetting = ${settings[queue + "Queue"]};
+    const config = createNetBoxConfig("cp" + node_index, "NetBox Worker - " + queueName, queueSetting, 8, {
         cmd: "/opt/netbox/venv/bin/python /opt/netbox/netbox/manage.py rqworker " + queue
-    }));
+    });
+
+    if (Object.keys(config).length > 0) {
+        resp.nodes.push(config);
+    }
     node_index++;
 });
 
-// Build Nginx node configuration
-if ('${settings.deploymentType}' == 'production') {
-    resp.nodes.push({
-        nodeType: "nginx-dockerized",
-        count: nodeCount,
-        cloudlets: 8,
-        diskLimit: 10,
-        scalingMode: "STATEFUL",
-        isSLBAccessEnabled: false,
-        nodeGroup: "bl",
-        displayName: "Load Balancer",
-        extip: true
-    })
-} else {
-    resp.nodes.push({
-        nodeType: "nginx-dockerized",
-        count: nodeCount,
-        cloudlets: 8,
-        diskLimit: 10,
-        scalingMode: "STATELESS",
-        isSLBAccessEnabled: true,
-        nodeGroup: "bl",
-        displayName: "Load Balancer",
-    })
+// Nginx node configuration
+const nginxConfig = {
+    nodeType: "nginx-dockerized",
+    count: nodeCount,
+    cloudlets: 8,
+    diskLimit: 10,
+    scalingMode: isProd ? "STATEFUL" : "STATELESS",
+    isSLBAccessEnabled: !isProd,
+    nodeGroup: "bl",
+    displayName: "Load Balancer"
+};
+if (isProd) {
+    nginxConfig.extip = true;
 }
+resp.nodes.push(nginxConfig);
 
 resp.ssl = !isProd;
 
