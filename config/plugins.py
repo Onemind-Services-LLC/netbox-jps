@@ -9,16 +9,17 @@ def _read_plugins():
             with open(plugin_file) as f:
                 plugins = yaml.safe_load(f) or {}
 
-            # Remove any keys with None value
-            return {k: v for k, v in plugins.items() if v}
+            # Separate all keys and valid configurations
+            all_keys = list(plugins.keys())
+            valid_configs = {k: v for k, v in plugins.items() if isinstance(v, dict)}
+
+            return all_keys, valid_configs
         except yaml.YAMLError as e:
             print(f"Error reading YAML file: {e}")
-            return {}
+            return [], {}
 
-    return {}
+    return [], {}
 
 
 # Read plugins once and use the result for PLUGINS and PLUGINS_CONFIG
-plugins_config = _read_plugins()
-PLUGINS = list(plugins_config.keys())
-PLUGINS_CONFIG = plugins_config
+PLUGINS, PLUGINS_CONFIG = _read_plugins()
