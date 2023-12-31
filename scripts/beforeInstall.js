@@ -21,8 +21,8 @@ function createNetBoxConfig(nodeGroup, displayName, count, cloudlets, additional
     const userName = userEmail.substring(0, userEmail.indexOf("@"));
     const userPassword = '${globals.adminPassword}';
 
-    // If count=0, don't create the node
-    if (count === 0) {
+    // If count=0, don't create the node, do not check type
+    if (count == 0) {
         return {};
     }
 
