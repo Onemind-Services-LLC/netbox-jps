@@ -13,7 +13,7 @@ from functools import lru_cache
 logging.basicConfig(level=logging.INFO)
 
 # Constants and Environment Variables
-GITHUB_TOKEN = os.environ.get('GITHUB_TOKEN')
+GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN")
 if not GITHUB_TOKEN:
     logging.error("GITHUB_TOKEN not set.")
     exit(1)
@@ -112,12 +112,9 @@ for plugin in local_plugins():
     tags = get_tags(repo_owner, repo_name)
 
     # Update the versions.yaml file for the plugin
-    versions = {'versions': [], 'default': latest_tag}
+    versions = {"versions": [], "default": latest_tag}
     for tag in tags:
-        versions['versions'].append({
-            'value': tag,
-            'caption': tag
-        })
+        versions["versions"].append({"value": tag, "caption": tag})
 
     with open(f"addons/{plugin}/config/versions.yaml", "w") as f:
         yaml.dump(versions, f)

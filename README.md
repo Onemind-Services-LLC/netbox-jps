@@ -11,7 +11,7 @@ NetBox serves as the cornerstone for network automation in thousands of organiza
 
 ## Deployment to the Cloud
 
-Get registered at [Virtuozzo Application Platform(VAP)](https://app.xapp.cloudmydc.com/) and you can deploy this 
+Get registered at [Virtuozzo Application Platform(VAP)](https://app.xapp.cloudmydc.com/) and you can deploy this
 cluster from Marketplace.
 
 ## NetBox Cluster Topology

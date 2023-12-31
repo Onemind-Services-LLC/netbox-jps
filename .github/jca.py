@@ -12,7 +12,7 @@ from urllib.parse import urlencode
 logging.basicConfig(level=logging.INFO)
 
 # Constants and Environment Variables
-JELASTIC_TOKEN = os.environ.get('JELASTIC_TOKEN')
+JELASTIC_TOKEN = os.environ.get("JELASTIC_TOKEN")
 if not JELASTIC_TOKEN:
     logging.error("JELASTIC_TOKEN not set.")
     exit(1)
@@ -28,7 +28,7 @@ def url(path, params=None, add_session=True):
         params = {}
 
     if add_session:
-        params['session'] = JELASTIC_TOKEN
+        params["session"] = JELASTIC_TOKEN
 
     query_string = urlencode(params)
     return f"{JELASTIC_BASE_URL}/{path}?{query_string}"
@@ -54,8 +54,8 @@ def get_local_manifests():
     """
     manifests = []
     for root, dirs, files in os.walk("."):
-        if '.git' in dirs:
-            dirs.remove('.git')  # ignore git directory
+        if ".git" in dirs:
+            dirs.remove(".git")  # ignore git directory
         for file in files:
             if file.endswith(".jps"):
                 manifests.append(os.path.join(root, file))
@@ -109,7 +109,9 @@ def add_app(app_id, app_manifest, publish=True, id=None):
                     break
 
             logging.info(f"Publishing [{app_id}] application...")
-            publish_response = requests.post(url("publishapp", {"id": id, "appid": "cluster"}))
+            publish_response = requests.post(
+                url("publishapp", {"id": id, "appid": "cluster"})
+            )
             if publish_response.json().get("result") != 0:
                 raise Exception(publish_response.json().get("error"))
     except requests.RequestException as e:
