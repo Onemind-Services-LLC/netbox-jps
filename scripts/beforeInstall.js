@@ -127,7 +127,7 @@ const queues = ["high", "default", "low"];
 let node_index = 2;
 queues.forEach(queue => {
     let queueName = queue.charAt(0).toUpperCase() + queue.slice(1) + " Queue";
-    resp.nodes.push(createNetBoxConfig("cp" + node_index, "NetBox Worker - " + queueName, "${settings." + queue + "Queue:1}", 8, {
+    resp.nodes.push(createNetBoxConfig("cp" + node_index, "NetBox Worker - " + queueName, "${settings." + queue + "Queue:0}", 8, {
         cmd: "/opt/netbox/venv/bin/python /opt/netbox/netbox/manage.py rqworker " + queue
     }));
     node_index++;
