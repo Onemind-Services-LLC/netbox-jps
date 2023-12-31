@@ -33,7 +33,6 @@ def _environ_get_and_map(
 
 _AS_BOOL = lambda value: value.lower() == "true"
 _AS_INT = lambda value: int(value)
-_AS_LIST = lambda value: list(filter(None, value.split(" ")))
 
 _BASE_DIR = dirname(dirname(abspath(__file__)))
 
