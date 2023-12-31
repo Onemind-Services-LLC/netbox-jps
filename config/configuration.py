@@ -73,12 +73,18 @@ DATABASE = {
 # Redis database settings. Redis is used for caching and for queuing background tasks such as webhook events. A separate
 # configuration exists for each. Full connection details are required in both sections, and it is strongly recommended
 # to use two separate database IDs.
+
+REDIS_HOST = environ.get("REDIS_HOST", "localhost")
+REDIS_PORT = _environ_get_and_map("REDIS_PORT", 6379, _AS_INT)
+REDIS_USERNAME = environ.get("REDIS_USERNAME", "")
+REDIS_PASSWORD = environ.get("REDIS_PASSWORD", "")
+
 REDIS = {
     "tasks": {
-        "HOST": environ.get("REDIS_HOST", "localhost"),
-        "PORT": _environ_get_and_map("REDIS_PORT", 6379, _AS_INT),
-        "USERNAME": environ.get("REDIS_USERNAME", ""),
-        "PASSWORD": environ.get("REDIS_PASSWORD", ""),
+        "HOST": REDIS_HOST,
+        "PORT": REDIS_PORT,
+        "USERNAME": REDIS_USERNAME,
+        "PASSWORD": REDIS_PASSWORD,
         "DATABASE": _environ_get_and_map("REDIS_DATABASE", 0, _AS_INT),
         "SSL": _environ_get_and_map("REDIS_SSL", "False", _AS_BOOL),
         "INSECURE_SKIP_TLS_VERIFY": _environ_get_and_map(
@@ -86,17 +92,11 @@ REDIS = {
         ),
     },
     "caching": {
-        "HOST": environ.get("REDIS_CACHE_HOST", environ.get("REDIS_HOST", "localhost")),
-        "PORT": _environ_get_and_map(
-            "REDIS_CACHE_PORT", environ.get("REDIS_PORT", "6379"), _AS_INT
-        ),
-        "USERNAME": environ.get(
-            "REDIS_CACHE_USERNAME", environ.get("REDIS_USERNAME", "")
-        ),
-        "PASSWORD": environ.get(
-            "REDIS_CACHE_PASSWORD", environ.get("REDIS_PASSWORD", "")
-        ),
-        "DATABASE": _environ_get_and_map("REDIS_CACHE_DATABASE", "1", _AS_INT),
+        "HOST": environ.get("REDIS_CACHE_HOST", REDIS_HOST),
+        "PORT": _environ_get_and_map("REDIS_CACHE_PORT", REDIS_PORT, _AS_INT),
+        "USERNAME": environ.get("REDIS_CACHE_USERNAME", REDIS_USERNAME),
+        "PASSWORD": environ.get("REDIS_CACHE_PASSWORD", REDIS_PASSWORD),
+        "DATABASE": _environ_get_and_map("REDIS_CACHE_DATABASE", 1, _AS_INT),
         "SSL": _environ_get_and_map(
             "REDIS_CACHE_SSL", environ.get("REDIS_SSL", "False"), _AS_BOOL
         ),
