@@ -108,9 +108,10 @@ netbox-metatype-importer:
       required_settings:
       - github_token
     tag: 0.1.0
-  stars: 30
+  stars: 31
 netbox-secrets:
-  description: Netbox Secrets
+  description: Enhance your secret management with encrypted storage and flexible,
+    user-friendly features.
   github_api_url: https://api.github.com/repos/Onemind-Services-LLC/netbox-secrets
   github_url: https://github.com/Onemind-Services-LLC/netbox-secrets
   name: netbox-secrets
@@ -122,6 +123,11 @@ netbox-secrets:
   private: false
   pypi_url: https://pypi.org/project/netbox-secrets/
   releases:
+  - netbox:
+      max: 3.7.99
+      min: 3.7.0
+      required_settings: []
+    tag: 1.10.0
   - netbox:
       max: 3.4.99
       min: 3.4.0
@@ -177,6 +183,11 @@ netbox-secrets:
       min: 3.6.0
       required_settings: []
     tag: 1.9.0
+  - netbox:
+      max: 3.6.99
+      min: 3.6.0
+      required_settings: []
+    tag: 1.9.1
   stars: 53
 netbox-support:
   description: NetBox Support provides device types and devices EoX data within NetBox.
