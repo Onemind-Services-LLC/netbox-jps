@@ -1,9 +1,9 @@
 netbox-demo:
+  app_label: netbox_demo
   description: NetBox plugin for demo instances (not for production use)
   github_api_url: https://api.github.com/repos/netbox-community/netbox-demo
   github_url: https://github.com/netbox-community/netbox-demo
   name: netbox-demo
-  netbox_name: netbox_demo
   owner:
     name: netbox-community
     url: https://github.com/netbox-community
@@ -38,11 +38,11 @@ netbox-demo:
     tag: 0.4.0
   stars: 1
 netbox-initializers:
+  app_label: netbox_initializers
   description: Inspired from https://github.com/tobiasge/netbox-initializers
   github_api_url: https://api.github.com/repos/Onemind-Services-LLC/netbox-initializers
   github_url: https://github.com/Onemind-Services-LLC/netbox-initializers
   name: netbox-initializers
-  netbox_name: netbox_initializers
   owner:
     name: Onemind-Services-LLC
     url: https://github.com/Onemind-Services-LLC
@@ -72,11 +72,11 @@ netbox-initializers:
     tag: v0.0.1
   stars: 0
 netbox-metatype-importer:
+  app_label: netbox_metatype_importer
   description: Import Metatypes
   github_api_url: https://api.github.com/repos/Onemind-Services-LLC/netbox-metatype-importer
   github_url: https://github.com/Onemind-Services-LLC/netbox-metatype-importer
   name: netbox-metatype-importer
-  netbox_name: netbox_metatype_importer
   owner:
     name: Onemind-Services-LLC
     url: https://github.com/Onemind-Services-LLC
@@ -110,12 +110,12 @@ netbox-metatype-importer:
     tag: 0.1.0
   stars: 31
 netbox-secrets:
+  app_label: netbox_secrets
   description: Enhance your secret management with encrypted storage and flexible,
     user-friendly features.
   github_api_url: https://api.github.com/repos/Onemind-Services-LLC/netbox-secrets
   github_url: https://github.com/Onemind-Services-LLC/netbox-secrets
   name: netbox-secrets
-  netbox_name: netbox_secrets
   owner:
     name: Onemind-Services-LLC
     url: https://github.com/Onemind-Services-LLC
@@ -190,11 +190,11 @@ netbox-secrets:
     tag: 1.9.1
   stars: 53
 netbox-support:
+  app_label: netbox_support
   description: NetBox Support provides device types and devices EoX data within NetBox.
   github_api_url: https://api.github.com/repos/Onemind-Services-LLC/netbox-support
   github_url: https://github.com/Onemind-Services-LLC/netbox-support
   name: netbox-support
-  netbox_name: netbox_support
   owner:
     name: Onemind-Services-LLC
     url: https://github.com/Onemind-Services-LLC
