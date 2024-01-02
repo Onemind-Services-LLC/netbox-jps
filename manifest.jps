@@ -31,7 +31,6 @@ onInstall:
   - setDomain
   - createDb
   - if ('${settings.deploymentType}' == 'production'): setTriggers
-  - installTools
   - upload:
       - nodeGroup: cp
         sourcePath: ${baseUrl}/config/plugins.py
@@ -97,11 +96,5 @@ actions:
         else
           cp -fv /opt/netbox/housekeeping.sh /etc/cron.daily/
         fi
-
-  installTools:
-    - cmd[${nodes.cp.id}]: |-
-        wget https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64 -O /opt/netbox/venv/bin/yq
-        chmod +x /opt/netbox/venv/bin/yq
-        apt update && apt install -y git
 
 success: /texts/success.md?_r=1
