@@ -277,7 +277,7 @@ netbox-demo:
   stars: 1
 netbox-documents:
   app_label: netbox_documents
-  description: null
+  description: A plugin for NetBox to manage documents
   github_api_url: https://api.github.com/repos/Onemind-Services-LLC/netbox-documents
   github_url: https://github.com/Onemind-Services-LLC/netbox-documents
   name: netbox-documents
@@ -343,7 +343,7 @@ netbox-floorplan:
   stars: 68
 netbox-gateways:
   app_label: netbox_gateways
-  description: null
+  description: Manage simple prefix default gateways
   github_api_url: https://api.github.com/repos/Onemind-Services-LLC/netbox-gateways
   github_url: https://github.com/Onemind-Services-LLC/netbox-gateways
   name: netbox-gateways
@@ -361,7 +361,7 @@ netbox-gateways:
   stars: 0
 netbox-initializers:
   app_label: netbox_initializers
-  description: Inspired from https://github.com/tobiasge/netbox-initializers
+  description: Loads data from YAML files into NetBox.
   github_api_url: https://api.github.com/repos/Onemind-Services-LLC/netbox-initializers
   github_url: https://github.com/Onemind-Services-LLC/netbox-initializers
   name: netbox-initializers
@@ -537,7 +537,7 @@ netbox-inventory:
   stars: 140
 netbox-labs:
   app_label: netbox_labs
-  description: null
+  description: Manage various different labs in NetBox
   github_api_url: https://api.github.com/repos/Onemind-Services-LLC/netbox-labs
   github_url: https://github.com/Onemind-Services-LLC/netbox-labs
   name: netbox-labs
@@ -565,7 +565,7 @@ netbox-labs:
   stars: 0
 netbox-licenses:
   app_label: netbox_licenses
-  description: null
+  description: A Netbox plugin for License management.
   github_api_url: https://api.github.com/repos/Onemind-Services-LLC/netbox-licenses
   github_url: https://github.com/Onemind-Services-LLC/netbox-licenses
   name: netbox-licenses
@@ -707,7 +707,7 @@ netbox-napalm:
   stars: 36
 netbox-nat:
   app_label: netbox_nat
-  description: null
+  description: Manage NAT entries in NetBox
   github_api_url: https://api.github.com/repos/Onemind-Services-LLC/netbox-nat
   github_url: https://github.com/Onemind-Services-LLC/netbox-nat
   name: netbox-nat
@@ -920,7 +920,7 @@ netbox-support:
   stars: 1
 netbox-todo:
   app_label: netbox_todo
-  description: null
+  description: A plugin for NetBox to manage todo tasks
   github_api_url: https://api.github.com/repos/Onemind-Services-LLC/netbox-todo
   github_url: https://github.com/Onemind-Services-LLC/netbox-todo
   name: netbox-todo
