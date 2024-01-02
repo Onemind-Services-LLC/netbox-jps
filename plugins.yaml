@@ -206,40 +206,10 @@ netbox-support:
       max: 3.4.99
       min: 3.4.0
       required_settings: []
-    tag: v0.0.8
-  - netbox:
-      max: 3.4.99
-      min: 3.4.0
-      required_settings: []
-    tag: v0.0.7
-  - netbox:
-      max: 3.4.99
-      min: 3.4.0
-      required_settings: []
-    tag: v0.0.6
-  - netbox:
-      max: 3.4.99
-      min: 3.4.0
-      required_settings: []
-    tag: v0.0.5
-  - netbox:
-      max: 3.4.99
-      min: 3.4.0
-      required_settings: []
-    tag: v0.0.4
-  - netbox:
-      max: 3.4.99
-      min: 3.4.0
-      required_settings: []
-    tag: v0.0.3
-  - netbox:
-      max: 3.4.99
-      min: 3.4.0
-      required_settings: []
     tag: v0.0.2
   - netbox:
       max: 3.4.99
       min: 3.4.0
       required_settings: []
     tag: v0.0.1
-  stars: 0
+  stars: 1
