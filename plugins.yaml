@@ -738,6 +738,64 @@ netbox-nat:
       required_settings: []
     tag: v0.1.4
   stars: 0
+netbox-networkdevice-config:
+  app_label: netbox_networkdevice_config
+  description: null
+  github_api_url: https://api.github.com/repos/Onemind-Services-LLC/netbox-networkdevice-config
+  github_url: https://github.com/Onemind-Services-LLC/netbox-networkdevice-config
+  name: netbox-networkdevice-config
+  owner:
+    name: Onemind-Services-LLC
+    url: https://github.com/Onemind-Services-LLC
+  private: true
+  pypi_url: null
+  releases:
+  - netbox:
+      max: 3.4.99
+      min: 3.4.0
+      required_settings: []
+    tag: v0.0.9
+  - netbox:
+      max: 3.4.99
+      min: 3.4.0
+      required_settings: []
+    tag: v0.0.8
+  - netbox:
+      max: 3.4.99
+      min: 3.4.0
+      required_settings: []
+    tag: v0.0.7
+  - netbox:
+      max: 3.4.99
+      min: 3.4.0
+      required_settings: []
+    tag: v0.0.6
+  - netbox:
+      max: 3.4.99
+      min: 3.4.0
+      required_settings: []
+    tag: v0.0.5
+  - netbox:
+      max: 3.4.99
+      min: 3.4.0
+      required_settings: []
+    tag: v0.0.4
+  - netbox:
+      max: 3.4.99
+      min: 3.4.0
+      required_settings: []
+    tag: v0.0.3
+  - netbox:
+      max: 3.4.99
+      min: 3.4.0
+      required_settings: []
+    tag: v0.0.2
+  - netbox:
+      max: 3.4.99
+      min: 3.4.0
+      required_settings: []
+    tag: v0.0.1
+  stars: 0
 netbox-qrcode:
   app_label: netbox_qrcode
   description: QR Code generation for netbox objects
