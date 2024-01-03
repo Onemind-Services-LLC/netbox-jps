@@ -288,6 +288,11 @@ netbox-documents:
   pypi_url: null
   releases:
   - netbox:
+      max: 3.5.99
+      min: 3.5.0
+      required_settings: []
+    tag: v0.2.1
+  - netbox:
       max: 3.4.99
       min: 3.4.0
       required_settings: []
@@ -353,6 +358,11 @@ netbox-gateways:
   private: true
   pypi_url: null
   releases:
+  - netbox:
+      max: 3.5.99
+      min: 3.5.0
+      required_settings: []
+    tag: v0.6.1
   - netbox:
       max: 3.4.99
       min: 3.4.0
@@ -548,6 +558,11 @@ netbox-labs:
   pypi_url: null
   releases:
   - netbox:
+      max: 3.5.99
+      min: 3.5.0
+      required_settings: []
+    tag: v0.1.1
+  - netbox:
       max: 3.4.99
       min: 3.4.0
       required_settings: []
@@ -576,6 +591,11 @@ netbox-licenses:
   pypi_url: null
   releases:
   - netbox:
+      max: 3.5.99
+      min: 3.5.0
+      required_settings: []
+    tag: v0.5.1
+  - netbox:
       max: 3.4.99
       min: 3.4.0
       required_settings: []
@@ -594,17 +614,7 @@ netbox-licenses:
       max: 3.4.99
       min: 3.4.0
       required_settings: []
-    tag: v0.4.5
-  - netbox:
-      max: 3.4.99
-      min: 3.4.0
-      required_settings: []
     tag: v0.4.4
-  - netbox:
-      max: 3.4.99
-      min: 3.4.0
-      required_settings: []
-    tag: v0.4.3
   - netbox:
       max: 3.4.99
       min: 3.4.0
@@ -717,6 +727,11 @@ netbox-nat:
   private: true
   pypi_url: null
   releases:
+  - netbox:
+      max: 3.5.99
+      min: 3.5.0
+      required_settings: []
+    tag: v0.4.1
   - netbox:
       max: 3.4.99
       min: 3.4.0
@@ -936,6 +951,11 @@ netbox-support:
   pypi_url: null
   releases:
   - netbox:
+      max: 3.5.99
+      min: 3.5.0
+      required_settings: []
+    tag: v0.1.0
+  - netbox:
       max: 3.4.99
       min: 3.4.0
       required_settings: []
@@ -988,6 +1008,11 @@ netbox-todo:
   private: true
   pypi_url: null
   releases:
+  - netbox:
+      max: 3.5.99
+      min: 3.5.0
+      required_settings: []
+    tag: v0.2.1
   - netbox:
       max: 3.4.99
       min: 3.4.0
@@ -1444,4 +1469,4 @@ nextbox-ui-plugin:
       min: null
       required_settings: []
     tag: 0.9.2
-  stars: 440
+  stars: 441
