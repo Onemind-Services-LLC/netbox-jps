@@ -1,3 +1,627 @@
+nbrisk:
+  app_label: nb_risk
+  description: NIST 800-30 Risk Management for Netbox
+  github_api_url: https://api.github.com/repos/renatoalmeidaoliveira/nbrisk
+  github_url: https://github.com/renatoalmeidaoliveira/nbrisk
+  name: NbRisk
+  owner:
+    name: renatoalmeidaoliveira
+    url: https://github.com/renatoalmeidaoliveira
+  private: false
+  pypi_url: https://pypi.org/project/NbRisk/
+  releases:
+  - netbox:
+      max: null
+      min: null
+      required_settings: []
+    tag: 0.1.0
+  - netbox:
+      max: null
+      min: null
+      required_settings: []
+    tag: 0.2.0
+  - netbox:
+      max: null
+      min: null
+      required_settings: []
+    tag: 0.3.0
+  - netbox:
+      max: null
+      min: null
+      required_settings: []
+    tag: 0.3.1
+  - netbox:
+      max: null
+      min: null
+      required_settings: []
+    tag: 0.4.0
+  - netbox:
+      max: null
+      min: null
+      required_settings: []
+    tag: 0.4.1
+  - netbox:
+      max: null
+      min: null
+      required_settings: []
+    tag: 0.5.0
+  - netbox:
+      max: null
+      min: null
+      required_settings: []
+    tag: 34.0.0
+  - netbox:
+      max: null
+      min: null
+      required_settings: []
+    tag: 34.0.1
+  - netbox:
+      max: null
+      min: null
+      required_settings: []
+    tag: 35.0.0
+  - netbox:
+      max: null
+      min: null
+      required_settings: []
+    tag: 35.0.1
+  - netbox:
+      max: null
+      min: null
+      required_settings: []
+    tag: 35.0.2
+  - netbox:
+      max: null
+      min: null
+      required_settings: []
+    tag: 35.1.0
+  stars: 46
+netbox-acls:
+  app_label: netbox_acls
+  description: A NetBox plugin for Access List management
+  github_api_url: https://api.github.com/repos/ryanmerolle/netbox-acls
+  github_url: https://github.com/ryanmerolle/netbox-acls
+  name: netbox-acls
+  owner:
+    name: ryanmerolle
+    url: https://github.com/ryanmerolle
+  private: false
+  pypi_url: https://pypi.org/project/netbox-acls/
+  releases:
+  - netbox:
+      max: null
+      min: null
+      required_settings: []
+    tag: 1.0.0
+  - netbox:
+      max: null
+      min: null
+      required_settings: []
+    tag: 1.0.1
+  - netbox:
+      max: null
+      min: null
+      required_settings: []
+    tag: 1.1.0
+  - netbox:
+      max: 3.5.99
+      min: 3.5.0
+      required_settings: []
+    tag: 1.3.0
+  stars: 63
+netbox-circuitmaintenance:
+  app_label: netbox_circuitmaintenance
+  description: Provides the ability to record circuit maintenance, maintenance impact
+    and maintenance notifications in Netbox and link them to Providers and Circuits.
+  github_api_url: https://api.github.com/repos/jasonyates/netbox-circuitmaintenance
+  github_url: https://github.com/jasonyates/netbox-circuitmaintenance
+  name: netbox-circuitmaintenance
+  owner:
+    name: jasonyates
+    url: https://github.com/jasonyates
+  private: false
+  pypi_url: https://pypi.org/project/netbox-circuitmaintenance/
+  releases:
+  - netbox:
+      max: null
+      min: null
+      required_settings: []
+    tag: 0.1.0
+  - netbox:
+      max: null
+      min: null
+      required_settings: []
+    tag: 0.2.0
+  - netbox:
+      max: null
+      min: null
+      required_settings: []
+    tag: 0.2.1
+  - netbox:
+      max: null
+      min: null
+      required_settings: []
+    tag: 0.2.2
+  - netbox:
+      max: null
+      min: null
+      required_settings: []
+    tag: 0.3.0
+  stars: 49
+netbox-cloud-pilot:
+  app_label: netbox_cloud_pilot
+  description: Enhances NetBox on CloudMyDC's VAP with advanced management and control
+    features.
+  github_api_url: https://api.github.com/repos/Onemind-Services-LLC/netbox-cloud-pilot
+  github_url: https://github.com/Onemind-Services-LLC/netbox-cloud-pilot
+  name: netbox-cloud-pilot
+  owner:
+    name: Onemind-Services-LLC
+    url: https://github.com/Onemind-Services-LLC
+  private: false
+  pypi_url: https://pypi.org/project/netbox-cloud-pilot/
+  releases:
+  - netbox:
+      max: 3.5.99
+      min: 3.5.0
+      required_settings: []
+    tag: 0.0.1
+  stars: 0
+netbox-ddns:
+  app_label: netbox_ddns
+  description: Dynamic DNS Connector for NetBox
+  github_api_url: https://api.github.com/repos/sjm-steffann/netbox-ddns
+  github_url: https://github.com/sjm-steffann/netbox-ddns
+  name: netbox-ddns
+  owner:
+    name: sjm-steffann
+    url: https://github.com/sjm-steffann
+  private: false
+  pypi_url: https://pypi.org/project/netbox-ddns/
+  releases:
+  - netbox:
+      max: null
+      min: null
+      required_settings: []
+    tag: 0.3.1
+  - netbox:
+      max: null
+      min: null
+      required_settings: []
+    tag: 0.3.2
+  - netbox:
+      max: null
+      min: null
+      required_settings: []
+    tag: 1.0.1
+  - netbox:
+      max: null
+      min: null
+      required_settings: []
+    tag: 1.0.2
+  - netbox:
+      max: null
+      min: null
+      required_settings: []
+    tag: 1.0.3
+  - netbox:
+      max: null
+      min: null
+      required_settings: []
+    tag: 1.0.6
+  - netbox:
+      max: null
+      min: null
+      required_settings: []
+    tag: 1.0.7
+  - netbox:
+      max: null
+      min: null
+      required_settings: []
+    tag: 1.0.8
+  stars: 89
+netbox-demo:
+  app_label: netbox_demo
+  description: NetBox plugin for demo instances (not for production use)
+  github_api_url: https://api.github.com/repos/netbox-community/netbox-demo
+  github_url: https://github.com/netbox-community/netbox-demo
+  name: netbox-demo
+  owner:
+    name: netbox-community
+    url: https://github.com/netbox-community
+  private: false
+  pypi_url: https://pypi.org/project/netbox-demo/
+  releases:
+  - netbox:
+      max: null
+      min: null
+      required_settings: []
+    tag: 0.3.1
+  - netbox:
+      max: null
+      min: null
+      required_settings: []
+    tag: 0.4.0
+  stars: 1
+netbox-documents:
+  app_label: netbox_documents
+  description: A plugin for NetBox to manage documents
+  github_api_url: https://api.github.com/repos/Onemind-Services-LLC/netbox-documents
+  github_url: https://github.com/Onemind-Services-LLC/netbox-documents
+  name: netbox-documents
+  owner:
+    name: Onemind-Services-LLC
+    url: https://github.com/Onemind-Services-LLC
+  private: true
+  pypi_url: null
+  releases:
+  - netbox:
+      max: 3.5.99
+      min: 3.5.0
+      required_settings: []
+    tag: v0.2.1
+  stars: 0
+netbox-floorplan:
+  app_label: netbox_floorplan
+  description: Netbox Plugin to support graphical floorplans
+  github_api_url: https://api.github.com/repos/tbotnz/netbox_floorplan
+  github_url: https://github.com/tbotnz/netbox_floorplan
+  name: netbox-floorplan-plugin
+  owner:
+    name: tbotnz
+    url: https://github.com/tbotnz
+  private: false
+  pypi_url: https://pypi.org/project/netbox-floorplan-plugin/
+  releases: []
+  stars: 68
+netbox-gateways:
+  app_label: netbox_gateways
+  description: Manage simple prefix default gateways
+  github_api_url: https://api.github.com/repos/Onemind-Services-LLC/netbox-gateways
+  github_url: https://github.com/Onemind-Services-LLC/netbox-gateways
+  name: netbox-gateways
+  owner:
+    name: Onemind-Services-LLC
+    url: https://github.com/Onemind-Services-LLC
+  private: true
+  pypi_url: null
+  releases:
+  - netbox:
+      max: 3.5.99
+      min: 3.5.0
+      required_settings: []
+    tag: v0.6.1
+  stars: 0
+netbox-initializers:
+  app_label: netbox_initializers
+  description: Loads data from YAML files into NetBox.
+  github_api_url: https://api.github.com/repos/Onemind-Services-LLC/netbox-initializers
+  github_url: https://github.com/Onemind-Services-LLC/netbox-initializers
+  name: netbox-initializers
+  owner:
+    name: Onemind-Services-LLC
+    url: https://github.com/Onemind-Services-LLC
+  private: true
+  pypi_url: null
+  releases:
+  - netbox:
+      max: 3.6.99
+      min: 3.6.0
+      required_settings: []
+    tag: v0.2.0
+  - netbox:
+      max: 3.5.99
+      min: 3.5.0
+      required_settings: []
+    tag: v0.1.0
+  stars: 0
+netbox-inventory:
+  app_label: netbox_inventory
+  description: Inventory asset management in NetBox
+  github_api_url: https://api.github.com/repos/ArnesSI/netbox-inventory
+  github_url: https://github.com/ArnesSI/netbox-inventory
+  name: netbox-inventory
+  owner:
+    name: ArnesSI
+    url: https://github.com/ArnesSI
+  private: false
+  pypi_url: https://pypi.org/project/netbox-inventory/
+  releases:
+  - netbox:
+      max: null
+      min: 3.5.0
+      required_settings: []
+    tag: 1.3.0
+  - netbox:
+      max: null
+      min: 3.5.0
+      required_settings: []
+    tag: 1.3.1
+  - netbox:
+      max: null
+      min: 3.5.0
+      required_settings: []
+    tag: 1.3.2
+  - netbox:
+      max: null
+      min: 3.5.2
+      required_settings: []
+    tag: 1.3.3
+  - netbox:
+      max: null
+      min: 3.5.2
+      required_settings: []
+    tag: 1.4.0
+  - netbox:
+      max: null
+      min: 3.5.2
+      required_settings: []
+    tag: 1.4.1
+  - netbox:
+      max: null
+      min: 3.5.2
+      required_settings: []
+    tag: 1.4.2
+  - netbox:
+      max: null
+      min: 3.5.2
+      required_settings: []
+    tag: 1.4.3
+  - netbox:
+      max: null
+      min: 3.5.2
+      required_settings: []
+    tag: 1.4.4
+  - netbox:
+      max: null
+      min: 3.6.0
+      required_settings: []
+    tag: 1.5.0
+  - netbox:
+      max: null
+      min: 3.6.0
+      required_settings: []
+    tag: 1.5.1
+  - netbox:
+      max: null
+      min: 3.6.0
+      required_settings: []
+    tag: 1.5.2
+  stars: 140
+netbox-labs:
+  app_label: netbox_labs
+  description: Manage various different labs in NetBox
+  github_api_url: https://api.github.com/repos/Onemind-Services-LLC/netbox-labs
+  github_url: https://github.com/Onemind-Services-LLC/netbox-labs
+  name: netbox-labs
+  owner:
+    name: Onemind-Services-LLC
+    url: https://github.com/Onemind-Services-LLC
+  private: true
+  pypi_url: null
+  releases:
+  - netbox:
+      max: 3.5.99
+      min: 3.5.0
+      required_settings: []
+    tag: v0.1.1
+  stars: 0
+netbox-licenses:
+  app_label: netbox_licenses
+  description: A Netbox plugin for License management.
+  github_api_url: https://api.github.com/repos/Onemind-Services-LLC/netbox-licenses
+  github_url: https://github.com/Onemind-Services-LLC/netbox-licenses
+  name: netbox-licenses
+  owner:
+    name: Onemind-Services-LLC
+    url: https://github.com/Onemind-Services-LLC
+  private: true
+  pypi_url: null
+  releases:
+  - netbox:
+      max: 3.5.99
+      min: 3.5.0
+      required_settings: []
+    tag: v0.5.1
+  stars: 0
+netbox-metatype-importer:
+  app_label: netbox_metatype_importer
+  description: Import Metatypes
+  github_api_url: https://api.github.com/repos/Onemind-Services-LLC/netbox-metatype-importer
+  github_url: https://github.com/Onemind-Services-LLC/netbox-metatype-importer
+  name: netbox-metatype-importer
+  owner:
+    name: Onemind-Services-LLC
+    url: https://github.com/Onemind-Services-LLC
+  private: false
+  pypi_url: https://pypi.org/project/netbox-metatype-importer/
+  releases:
+  - netbox:
+      max: 3.5.99
+      min: 3.5.0
+      required_settings:
+      - github_token
+    tag: 0.1.0
+  stars: 31
+netbox-napalm:
+  app_label: netbox_napalm_plugin
+  description: NetBox plugin for Napalm.
+  github_api_url: https://api.github.com/repos/netbox-community/netbox-napalm
+  github_url: https://github.com/netbox-community/netbox-napalm
+  name: netbox-napalm-plugin
+  owner:
+    name: netbox-community
+    url: https://github.com/netbox-community
+  private: false
+  pypi_url: https://pypi.org/project/netbox-napalm-plugin/
+  releases: []
+  stars: 36
+netbox-nat:
+  app_label: netbox_nat
+  description: Manage NAT entries in NetBox
+  github_api_url: https://api.github.com/repos/Onemind-Services-LLC/netbox-nat
+  github_url: https://github.com/Onemind-Services-LLC/netbox-nat
+  name: netbox-nat
+  owner:
+    name: Onemind-Services-LLC
+    url: https://github.com/Onemind-Services-LLC
+  private: true
+  pypi_url: null
+  releases:
+  - netbox:
+      max: 3.5.99
+      min: 3.5.0
+      required_settings: []
+    tag: v0.4.1
+  stars: 0
+netbox-qrcode:
+  app_label: netbox_qrcode
+  description: QR Code generation for netbox objects
+  github_api_url: https://api.github.com/repos/k01ek/netbox-qrcode
+  github_url: https://github.com/k01ek/netbox-qrcode
+  name: netbox-qrcode
+  owner:
+    name: k01ek
+    url: https://github.com/k01ek
+  private: false
+  pypi_url: https://pypi.org/project/netbox-qrcode/
+  releases:
+  - netbox:
+      max: null
+      min: null
+      required_settings: []
+    tag: 0.0.10
+  - netbox:
+      max: null
+      min: null
+      required_settings: []
+    tag: 0.0.4
+  - netbox:
+      max: null
+      min: null
+      required_settings: []
+    tag: 0.0.5
+  - netbox:
+      max: null
+      min: null
+      required_settings: []
+    tag: 0.0.6
+  - netbox:
+      max: null
+      min: null
+      required_settings: []
+    tag: 0.0.7
+  - netbox:
+      max: null
+      min: null
+      required_settings: []
+    tag: 0.0.8
+  - netbox:
+      max: null
+      min: null
+      required_settings: []
+    tag: 0.0.9
+  stars: 158
+netbox-secrets:
+  app_label: netbox_secrets
+  description: Enhance your secret management with encrypted storage and flexible,
+    user-friendly features.
+  github_api_url: https://api.github.com/repos/Onemind-Services-LLC/netbox-secrets
+  github_url: https://github.com/Onemind-Services-LLC/netbox-secrets
+  name: netbox-secrets
+  owner:
+    name: Onemind-Services-LLC
+    url: https://github.com/Onemind-Services-LLC
+  private: false
+  pypi_url: https://pypi.org/project/netbox-secrets/
+  releases:
+  - netbox:
+      max: 3.7.99
+      min: 3.7.0
+      required_settings: []
+    tag: 1.10.0
+  - netbox:
+      max: 3.7.99
+      min: 3.7.0
+      required_settings: []
+    tag: 1.10.1
+  - netbox:
+      max: 3.5.99
+      min: 3.5.0
+      required_settings: []
+    tag: 1.8.0
+  - netbox:
+      max: 3.5.99
+      min: 3.5.0
+      required_settings: []
+    tag: 1.8.1
+  - netbox:
+      max: 3.5.99
+      min: 3.5.0
+      required_settings: []
+    tag: 1.8.2
+  - netbox:
+      max: 3.5.99
+      min: 3.5.0
+      required_settings: []
+    tag: 1.8.3
+  - netbox:
+      max: 3.5.99
+      min: 3.5.0
+      required_settings: []
+    tag: 1.8.4
+  - netbox:
+      max: 3.5.99
+      min: 3.5.0
+      required_settings: []
+    tag: 1.8.5
+  - netbox:
+      max: 3.6.99
+      min: 3.6.0
+      required_settings: []
+    tag: 1.9.0
+  - netbox:
+      max: 3.6.99
+      min: 3.6.0
+      required_settings: []
+    tag: 1.9.1
+  stars: 54
+netbox-support:
+  app_label: netbox_support
+  description: NetBox Support provides device types and devices EoX data within NetBox.
+  github_api_url: https://api.github.com/repos/Onemind-Services-LLC/netbox-support
+  github_url: https://github.com/Onemind-Services-LLC/netbox-support
+  name: netbox-support
+  owner:
+    name: Onemind-Services-LLC
+    url: https://github.com/Onemind-Services-LLC
+  private: true
+  pypi_url: null
+  releases:
+  - netbox:
+      max: 3.5.99
+      min: 3.5.0
+      required_settings: []
+    tag: v0.1.0
+  stars: 1
+netbox-todo:
+  app_label: netbox_todo
+  description: A plugin for NetBox to manage todo tasks
+  github_api_url: https://api.github.com/repos/Onemind-Services-LLC/netbox-todo
+  github_url: https://github.com/Onemind-Services-LLC/netbox-todo
+  name: netbox-todo
+  owner:
+    name: Onemind-Services-LLC
+    url: https://github.com/Onemind-Services-LLC
+  private: true
+  pypi_url: null
+  releases:
+  - netbox:
+      max: 3.5.99
+      min: 3.5.0
+      required_settings: []
+    tag: v0.2.1
+  stars: 0
 netbox-topology-views:
   app_label: netbox_topology_views
   description: An NetBox plugin to create Topology maps
