@@ -56,23 +56,23 @@ nbrisk:
       required_settings: []
     tag: 34.0.1
   - netbox:
-      max: null
-      min: null
+      max: 3.5.7
+      min: 3.5.0
       required_settings: []
     tag: 35.0.0
   - netbox:
-      max: null
-      min: null
+      max: 3.5.7
+      min: 3.5.0
       required_settings: []
     tag: 35.0.1
   - netbox:
-      max: null
-      min: null
+      max: 3.5.7
+      min: 3.5.0
       required_settings: []
     tag: 35.0.2
   - netbox:
-      max: null
-      min: null
+      max: 3.5.999
+      min: 3.5.8
       required_settings: []
     tag: 35.1.0
   stars: 46
@@ -166,6 +166,16 @@ netbox-cloud-pilot:
       min: 3.5.0
       required_settings: []
     tag: 0.0.1
+  - netbox:
+      max: 3.5.99
+      min: 3.5.0
+      required_settings: []
+    tag: 0.0.2
+  - netbox:
+      max: 3.5.99
+      min: 3.5.0
+      required_settings: []
+    tag: 0.0.3
   stars: 0
 netbox-ddns:
   app_label: netbox_ddns
@@ -183,12 +193,22 @@ netbox-ddns:
       max: null
       min: null
       required_settings: []
+    tag: '0.2'
+  - netbox:
+      max: null
+      min: null
+      required_settings: []
     tag: 0.3.1
   - netbox:
       max: null
       min: null
       required_settings: []
     tag: 0.3.2
+  - netbox:
+      max: null
+      min: null
+      required_settings: []
+    tag: '1.0'
   - netbox:
       max: null
       min: null
@@ -236,6 +256,21 @@ netbox-demo:
       max: null
       min: null
       required_settings: []
+    tag: '0.1'
+  - netbox:
+      max: null
+      min: null
+      required_settings: []
+    tag: '0.2'
+  - netbox:
+      max: null
+      min: null
+      required_settings: []
+    tag: '0.3'
+  - netbox:
+      max: null
+      min: null
+      required_settings: []
     tag: 0.3.1
   - netbox:
       max: null
@@ -255,6 +290,11 @@ netbox-documents:
   private: true
   pypi_url: null
   releases:
+  - netbox:
+      max: 3.5.99
+      min: 3.5.0
+      required_settings: []
+    tag: v0.2.2
   - netbox:
       max: 3.5.99
       min: 3.5.0
@@ -290,6 +330,11 @@ netbox-gateways:
       max: 3.5.99
       min: 3.5.0
       required_settings: []
+    tag: v0.6.2
+  - netbox:
+      max: 3.5.99
+      min: 3.5.0
+      required_settings: []
     tag: v0.6.1
   stars: 0
 netbox-initializers:
@@ -304,6 +349,11 @@ netbox-initializers:
   private: true
   pypi_url: null
   releases:
+  - netbox:
+      max: 3.6.99
+      min: 3.6.0
+      required_settings: []
+    tag: v0.2.1
   - netbox:
       max: 3.6.99
       min: 3.6.0
@@ -422,11 +472,16 @@ netbox-licenses:
       max: 3.5.99
       min: 3.5.0
       required_settings: []
+    tag: v0.5.2
+  - netbox:
+      max: 3.5.99
+      min: 3.5.0
+      required_settings: []
     tag: v0.5.1
   stars: 0
 netbox-metatype-importer:
   app_label: netbox_metatype_importer
-  description: Import Metatypes
+  description: Easily import Device and Module types from GitHub repo
   github_api_url: https://api.github.com/repos/Onemind-Services-LLC/netbox-metatype-importer
   github_url: https://github.com/Onemind-Services-LLC/netbox-metatype-importer
   name: netbox-metatype-importer
@@ -442,7 +497,13 @@ netbox-metatype-importer:
       required_settings:
       - github_token
     tag: 0.1.0
-  stars: 31
+  - netbox:
+      max: 3.5.99
+      min: 3.5.0
+      required_settings:
+      - github_token
+    tag: 0.1.1
+  stars: 32
 netbox-napalm:
   app_label: netbox_napalm_plugin
   description: NetBox plugin for Napalm.
@@ -603,7 +664,7 @@ netbox-secrets:
       min: 3.6.0
       required_settings: []
     tag: 1.9.1
-  stars: 54
+  stars: 55
 netbox-support:
   app_label: netbox_support
   description: NetBox Support provides device types and devices EoX data within NetBox.
@@ -616,6 +677,11 @@ netbox-support:
   private: true
   pypi_url: null
   releases:
+  - netbox:
+      max: 3.5.99
+      min: 3.5.0
+      required_settings: []
+    tag: v0.1.1
   - netbox:
       max: 3.5.99
       min: 3.5.0
@@ -638,6 +704,11 @@ netbox-todo:
       max: 3.5.99
       min: 3.5.0
       required_settings: []
+    tag: v0.2.2
+  - netbox:
+      max: 3.5.99
+      min: 3.5.0
+      required_settings: []
     tag: v0.2.1
   stars: 0
 netbox-topology-views:
@@ -652,6 +723,21 @@ netbox-topology-views:
   private: false
   pypi_url: https://pypi.org/project/netbox-topology-views/
   releases:
+  - netbox:
+      max: null
+      min: null
+      required_settings: []
+    tag: '0.1'
+  - netbox:
+      max: null
+      min: null
+      required_settings: []
+    tag: '0.2'
+  - netbox:
+      max: null
+      min: null
+      required_settings: []
+    tag: '0.3'
   - netbox:
       max: null
       min: null
@@ -731,6 +817,46 @@ netbox-topology-views:
       max: null
       min: null
       required_settings: []
+    tag: 1.0.0a1
+  - netbox:
+      max: null
+      min: null
+      required_settings: []
+    tag: 1.0.0a2
+  - netbox:
+      max: null
+      min: null
+      required_settings: []
+    tag: 1.0.0a3
+  - netbox:
+      max: null
+      min: null
+      required_settings: []
+    tag: 1.0.0a4
+  - netbox:
+      max: null
+      min: null
+      required_settings: []
+    tag: 1.0.0a5
+  - netbox:
+      max: null
+      min: null
+      required_settings: []
+    tag: 1.0.0a6
+  - netbox:
+      max: null
+      min: null
+      required_settings: []
+    tag: 1.0.0a7
+  - netbox:
+      max: null
+      min: null
+      required_settings: []
+    tag: 1.0.0b1
+  - netbox:
+      max: null
+      min: null
+      required_settings: []
     tag: 1.0.1
   - netbox:
       max: null
@@ -747,6 +873,11 @@ netbox-topology-views:
       min: null
       required_settings: []
     tag: 1.1.0
+  - netbox:
+      max: null
+      min: null
+      required_settings: []
+    tag: 1.1.0b1
   - netbox:
       max: null
       min: null
@@ -772,6 +903,16 @@ netbox-topology-views:
       min: null
       required_settings: []
     tag: 3.0.0
+  - netbox:
+      max: null
+      min: null
+      required_settings: []
+    tag: 3.0.0b1
+  - netbox:
+      max: null
+      min: null
+      required_settings: []
+    tag: 3.0.0b2
   - netbox:
       max: null
       min: null
@@ -803,8 +944,8 @@ netbox-topology-views:
       required_settings: []
     tag: 3.3.0
   - netbox:
-      max: 3.5.999
-      min: 3.5.0
+      max: null
+      min: null
       required_settings: []
     tag: 3.4.0
   - netbox:
@@ -821,6 +962,16 @@ netbox-topology-views:
       max: null
       min: null
       required_settings: []
+    tag: 3.6.0b1
+  - netbox:
+      max: null
+      min: null
+      required_settings: []
+    tag: 3.6.0b2
+  - netbox:
+      max: null
+      min: null
+      required_settings: []
     tag: 3.6.1
   - netbox:
       max: null
@@ -833,8 +984,8 @@ netbox-topology-views:
       required_settings: []
     tag: 3.7.0
   - netbox:
-      max: null
-      min: null
+      max: 3.6.3
+      min: 3.6.0
       required_settings: []
     tag: 3.8.0
   - netbox:
@@ -842,4 +993,9 @@ netbox-topology-views:
       min: 3.6.4
       required_settings: []
     tag: 3.8.1
-  stars: 550
+  - netbox:
+      max: null
+      min: null
+      required_settings: []
+    tag: 3.9b1
+  stars: 551
