@@ -107,6 +107,11 @@ netbox-cloud-pilot:
       required_settings: []
     tag: 0.0.5
   - netbox:
+      max: 3.5.99
+      min: 3.5.0
+      required_settings: []
+    tag: 0.0.6
+  - netbox:
       max: 3.6.99
       min: 3.6.0
       required_settings: []
@@ -116,6 +121,11 @@ netbox-cloud-pilot:
       min: 3.6.0
       required_settings: []
     tag: 0.1.1
+  - netbox:
+      max: 3.6.99
+      min: 3.6.0
+      required_settings: []
+    tag: 0.1.2
   stars: 0
 netbox-demo:
   app_label: netbox_demo
