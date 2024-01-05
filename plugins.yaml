@@ -390,7 +390,7 @@ netbox-nat:
   stars: 0
 netbox-networkdevice-config:
   app_label: netbox_networkdevice_config
-  description: null
+  description: A plugin to manage Device configuration, compliance checks and remediation
   github_api_url: https://api.github.com/repos/Onemind-Services-LLC/netbox-networkdevice-config
   github_url: https://github.com/Onemind-Services-LLC/netbox-networkdevice-config
   name: netbox-networkdevice-config
