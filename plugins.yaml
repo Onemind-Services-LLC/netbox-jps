@@ -551,6 +551,11 @@ netbox-networkdevice-config:
       max: 3.5.99
       min: 3.5.0
       required_settings: []
+    tag: v0.1.2
+  - netbox:
+      max: 3.5.99
+      min: 3.5.0
+      required_settings: []
     tag: v0.1.1
   stars: 0
 netbox-qrcode:
