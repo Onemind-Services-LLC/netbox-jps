@@ -26,7 +26,7 @@ nbrisk:
       required_settings: []
     tag: 35.0.2
   - netbox:
-      max: 3.5.999
+      max: 3.5.99
       min: 3.5.8
       required_settings: []
     tag: 35.1.0
@@ -63,7 +63,7 @@ netbox-circuitmaintenance:
   pypi_url: https://pypi.org/project/netbox-circuitmaintenance/
   releases:
   - netbox:
-      max: 3.5.999
+      max: 3.5.99
       min: 3.5.0
       required_settings: []
     tag: 0.3.0
@@ -147,6 +147,29 @@ netbox-cloud-pilot:
       required_settings: []
     tag: 0.1.4
   stars: 0
+netbox-data-validation:
+  app_label: netbox_data_validation
+  description: Provides UI to build custom data validation rules for data in NetBox.
+  github_api_url: https://api.github.com/repos/Onemind-Services-LLC/netbox-data-validation
+  github_url: https://github.com/Onemind-Services-LLC/netbox-data-validation
+  name: netbox-data-validation
+  owner:
+    name: Onemind-Services-LLC
+    url: https://github.com/Onemind-Services-LLC
+  private: true
+  pypi_url: null
+  releases:
+  - netbox:
+      max: 3.5.99
+      min: 3.5.0
+      required_settings: []
+    tag: v0.0.3
+  - netbox:
+      max: 3.5.99
+      min: 3.5.0
+      required_settings: []
+    tag: v0.0.2
+  stars: 0
 netbox-demo:
   app_label: netbox_demo
   description: NetBox plugin for demo instances (not for production use)
@@ -160,12 +183,12 @@ netbox-demo:
   pypi_url: https://pypi.org/project/netbox-demo/
   releases:
   - netbox:
-      max: 3.7.999
+      max: 3.7.99
       min: 3.5.0
       required_settings: []
     tag: 0.3.1
   - netbox:
-      max: 3.7.999
+      max: 3.7.99
       min: 3.5.0
       required_settings: []
     tag: 0.4.0
@@ -484,7 +507,7 @@ netbox-qrcode:
   pypi_url: https://pypi.org/project/netbox-qrcode/
   releases:
   - netbox:
-      max: 3.5.999
+      max: 3.5.99
       min: 3.5.0
       required_settings: []
     tag: 0.0.10
@@ -612,27 +635,27 @@ netbox-topology-views:
   pypi_url: https://pypi.org/project/netbox-topology-views/
   releases:
   - netbox:
-      max: 3.5.999
+      max: 3.5.99
       min: 3.5.0
       required_settings: []
     tag: 3.4.0
   - netbox:
-      max: 3.5.999
+      max: 3.5.99
       min: 3.5.0
       required_settings: []
     tag: 3.5.0
   - netbox:
-      max: 3.5.999
+      max: 3.5.99
       min: 3.5.0
       required_settings: []
     tag: 3.6.0
   - netbox:
-      max: 3.5.999
+      max: 3.5.99
       min: 3.5.0
       required_settings: []
     tag: 3.6.1
   - netbox:
-      max: 3.5.999
+      max: 3.5.99
       min: 3.5.0
       required_settings: []
     tag: 3.6.2
@@ -647,7 +670,7 @@ netbox-topology-views:
       required_settings: []
     tag: 3.8.0
   - netbox:
-      max: 3.6.999
+      max: 3.6.99
       min: 3.6.4
       required_settings: []
     tag: 3.8.1
