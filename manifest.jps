@@ -66,13 +66,6 @@ actions:
     - restartContainers:
         nodeGroup: bl
 
-
-  setDomain:
-    - script: /scripts/idna.js
-      domains: ${env.domain}
-    - setGlobals:
-        DOMAIN: ${response.domains}
-
   setTriggers:
     - log: Auto Scaling Triggers
     - script: /scripts/addTriggers.js
