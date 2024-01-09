@@ -26,18 +26,18 @@ globals:
 
 nodes: definedInOnBeforeInstall
 
-# Run setupHousekeeping on various events to ensure that the housekeeping script is always in place
 onAfterScaleIn[cp]:
   - setupHousekeeping
-  - installLocalRequirements
 
 onAfterAddNode[cp]:
   - setupHousekeeping
-  - installLocalRequirements
 
 onAfterRedeployContainer[cp]:
   - setupHousekeeping
+
+onAfterRedeployContainer:
   - installLocalRequirements
+  - installPluginRequirements
 
 onInstall:
   - addLimits
@@ -54,7 +54,8 @@ onInstall:
         sourcePath: ${baseUrl}/config/configuration.py
         destPath: /etc/netbox/config/configuration.py
   - createFile[cp]: /etc/netbox/config/plugins.yaml
-  - createFile[cp]: /etc/netbox/config/local_requirements.txt
+  - createFile[cp]: /etc/netbox/local_requirements.txt
+  - createFile[cp]: /etc/netbox/plugin_requirements.txt
   - createDirectory[cp]:
       - path: /etc/netbox/scripts
       - path: /etc/netbox/reports
@@ -71,9 +72,18 @@ actions:
           isRequired: true
 
   installLocalRequirements:
-    - cmd[cp]: |-
-        source /opt/netbox/venv/bin/activate
-        pip install -r /etc/netbox/config/local_requirements.txt
+    - forEach(env.nodes):
+        - if ("${@i.nodeGroup}".includes("cp")):
+          - cmd: |-
+              source /opt/netbox/venv/bin/activate
+              pip install -r /opt/netbox/local_requirements.txt
+
+  installPluginRequirements:
+    - forEach(env.nodes):
+        - if ("${@i.nodeGroup}".includes("cp")):
+          - cmd: |-
+              source /opt/netbox/venv/bin/activate
+              pip install -r /etc/netbox/plugin_requirements.txt
 
   nginxConfig:
     - replaceInFile:
