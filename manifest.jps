@@ -29,9 +29,11 @@ nodes: definedInOnBeforeInstall
 # Run setupHousekeeping on various events to ensure that the housekeeping script is always in place
 onAfterScaleIn:
   - setupHousekeeping
+  - installLocalRequirements
 
 onAfterAddNode:
   - setupHousekeeping
+  - installLocalRequirements
 
 onInstall:
   - addLimits
@@ -47,11 +49,16 @@ onInstall:
       - nodeGroup: cp
         sourcePath: ${baseUrl}/config/configuration.py
         destPath: /etc/netbox/config/configuration.py
+      - nodeGroup: cp
+        sourcePath: ${baseUrl}/config/redeploy.conf
+        destPath: /etc/jelastic/redeploy.conf
   - createFile[cp]: /etc/netbox/config/plugins.yaml
+  - createFile[cp]: /etc/netbox/config/local_requirements.txt
   - createDirectory[cp]:
       - path: /etc/netbox/scripts
       - path: /etc/netbox/reports
   - setupHousekeeping
+  - installLocalRequirements
   - install:
       - jps: /scripts/events.jps?_r=${fn.random}
   - nginxConfig
@@ -61,6 +68,11 @@ actions:
     - env.control.ApplyNodeGroupData [bl, cp, sqldb, cache]:
         data:
           isRequired: true
+
+  installLocalRequirements:
+    - cmd[cp]: |-
+        source /opt/netbox/venv/bin/activate
+        pip install -r /etc/netbox/config/local_requirements.txt
 
   nginxConfig:
     - replaceInFile:
