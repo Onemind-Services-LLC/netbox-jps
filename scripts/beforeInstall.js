@@ -32,14 +32,11 @@ function createNetBoxConfig(nodeGroup, displayName, count, cloudlets, additional
         count: count,
         volumes: [
             "/etc/netbox",
-            "/opt/netbox/venv",
             "/opt/netbox/netbox/media",
-            "/etc/cron.daily"
         ],
         volumeMounts: {
             "/etc/netbox": getNFSMount("/etc/netbox"),
             "/opt/netbox/netbox/media": getNFSMount("/opt/netbox/netbox/media"),
-            "/etc/cron.daily": getNFSMount("/etc/cron.daily"),
         },
         env: {
             DB_HOST: isProd ? "pgpool" : "postgresql",

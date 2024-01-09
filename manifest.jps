@@ -26,6 +26,13 @@ globals:
 
 nodes: definedInOnBeforeInstall
 
+# Run setupHousekeeping on various events to ensure that the housekeeping script is always in place
+onAfterScaleIn:
+  - setupHousekeeping
+
+onAfterAddNode:
+  - setupHousekeeping
+
 onInstall:
   - addLimits
   - createDb
