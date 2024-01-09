@@ -64,7 +64,7 @@ function createNetBoxConfig(nodeGroup, displayName, count, cloudlets, additional
         image: `netboxcommunity/netbox:${settings.version}`,
         cloudlets: cloudlets,
         diskLimit: 10,
-        scalingMode: "STATELESS",
+        scalingMode: "STATEFUL",
         isSLBAccessEnabled: false,
         nodeGroup: nodeGroup
     }
