@@ -28,7 +28,6 @@ nodes: definedInOnBeforeInstall
 
 onInstall:
   - addLimits
-  - setDomain
   - createDb
   - if ('${settings.deploymentType}' == 'production'): setTriggers
   - upload:
