@@ -49,9 +49,6 @@ onInstall:
       - nodeGroup: cp
         sourcePath: ${baseUrl}/config/configuration.py
         destPath: /etc/netbox/config/configuration.py
-      - nodeGroup: cp
-        sourcePath: ${baseUrl}/config/redeploy.conf
-        destPath: /etc/jelastic/redeploy.conf
   - createFile[cp]: /etc/netbox/config/plugins.yaml
   - createFile[cp]: /etc/netbox/config/local_requirements.txt
   - createDirectory[cp]:
