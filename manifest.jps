@@ -89,7 +89,7 @@ actions:
         psql -U webadmin -d postgres -c "GRANT CREATE ON SCHEMA public TO netbox;"
 
   setupHousekeeping:
-    - cmd[${nodes.cp.id}]: |-
+    - cmd[cp]: |-
         if [ ! -f /opt/netbox/housekeeping.sh ]; then
           cp -fv /opt/netbox/contrib/netbox-housekeeping.sh /etc/cron.daily/
         else
