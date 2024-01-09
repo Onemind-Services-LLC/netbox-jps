@@ -27,11 +27,15 @@ globals:
 nodes: definedInOnBeforeInstall
 
 # Run setupHousekeeping on various events to ensure that the housekeeping script is always in place
-onAfterScaleIn:
+onAfterScaleIn[cp]:
   - setupHousekeeping
   - installLocalRequirements
 
-onAfterAddNode:
+onAfterAddNode[cp]:
+  - setupHousekeeping
+  - installLocalRequirements
+
+onAfterRedeployContainer[cp]:
   - setupHousekeeping
   - installLocalRequirements
 
