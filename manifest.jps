@@ -63,11 +63,6 @@ onInstall:
   - installLocalRequirements
   - install:
       - jps: /scripts/events.jps?_r=${fn.random}
-  - forEach(env.nodes):
-      if ("${@i.nodeGroup}".includes("cp")):
-        set:
-          cpNodeIds: ${@i.id}${this.sep:}${this.cpNodeIds:}
-          sep: ','
 
   - forEach(env.nodes):
       if ("${@i.nodeGroup}".includes("cp")):
