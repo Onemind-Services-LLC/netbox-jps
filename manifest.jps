@@ -69,6 +69,19 @@ onInstall:
           cpNodeIds: ${@i.id}${this.sep:}${this.cpNodeIds:}
           sep: ','
 
+  - forEach(env.nodes):
+      if ("${@i.nodeGroup}".includes("cp")):
+        if ("${@i.ismaster}" == "true"):
+          set:
+            cpMasterNodeIds: ${@i.id}${this.sep1:}${this.cpMasterNodeIds:}
+            sep1: ','
+        else:
+          set:
+            cpNodeIds: ${@i.id}${this.sep2:}${this.cpNodeIds:}
+            sep2: ','
+
+  - env.control.ExecDockerRunCmd [${this.cpMasterNodeIds}]
+  - sleep: 60000
   - env.control.ExecDockerRunCmd [${this.cpNodeIds}]
   - nginxConfig
 
@@ -81,16 +94,16 @@ actions:
   installLocalRequirements:
     - forEach(env.nodes):
         - if ("${@i.nodeGroup}".includes("cp")):
-          - cmd[${@i.id}]: |-
-              source /opt/netbox/venv/bin/activate
-              pip install -r /etc/netbox/local_requirements.txt
+            - cmd[${@i.id}]: |-
+                source /opt/netbox/venv/bin/activate
+                pip install -r /etc/netbox/local_requirements.txt
 
   installPluginRequirements:
     - forEach(env.nodes):
         - if ("${@i.nodeGroup}".includes("cp")):
-          - cmd[${@i.id}]: |-
-              source /opt/netbox/venv/bin/activate
-              pip install -r /etc/netbox/plugin_requirements.txt
+            - cmd[${@i.id}]: |-
+                source /opt/netbox/venv/bin/activate
+                pip install -r /etc/netbox/plugin_requirements.txt
 
   nginxConfig:
     - replaceInFile:
