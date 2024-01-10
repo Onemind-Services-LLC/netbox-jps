@@ -65,9 +65,13 @@ DATABASE = {
     "CONN_MAX_AGE": _environ_get_and_map("DB_CONN_MAX_AGE", "300", _AS_INT),
     # Max database connection age
     "DISABLE_SERVER_SIDE_CURSORS": _environ_get_and_map(
-        "DB_DISABLE_SERVER_SIDE_CURSORS", "False", _AS_BOOL
+        "DB_DISABLE_SERVER_SIDE_CURSORS", "True", _AS_BOOL
     ),
     # Disable the use of server-side cursors transaction pooling
+    "CONN_HEALTH_CHECKS": _environ_get_and_map(
+        "DB_CONN_HEALTH_CHECKS", "True", _AS_BOOL
+    )
+    # Enable health checks on database connections
 }
 
 # Redis database settings. Redis is used for caching and for queuing background tasks such as webhook events. A separate
