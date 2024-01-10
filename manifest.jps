@@ -83,7 +83,7 @@ onInstall:
             cpNodeIds: ${@i.id}${this.sep2:}${this.cpNodeIds:}
             sep2: ','
 
-  - env.control.ExecDockerRunCmd [${this.cpNodeIds}]
+  - if ('${this.cpNodeIds:}'): env.control.ExecDockerRunCmd [${this.cpNodeIds}]
   - nginxConfig
 
 actions:
