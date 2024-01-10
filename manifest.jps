@@ -76,7 +76,7 @@ actions:
         - if ("${@i.nodeGroup}".includes("cp")):
           - cmd[${@i.id}]: |-
               source /opt/netbox/venv/bin/activate
-              pip install -r /opt/netbox/local_requirements.txt
+              pip install -r /etc/netbox/local_requirements.txt
 
   installPluginRequirements:
     - forEach(env.nodes):
