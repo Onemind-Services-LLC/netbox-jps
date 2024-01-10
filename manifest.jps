@@ -70,13 +70,18 @@ onInstall:
           set:
             cpMasterNodeIds: ${@i.id}${this.sep1:}${this.cpMasterNodeIds:}
             sep1: ','
-        else:
+
+  - env.control.ExecDockerRunCmd [${this.cpMasterNodeIds}]
+  - cmd[${nodes.cp.master.id}]: |-
+      while [ ! -f /opt/unit/unit.pid ]; do sleep 1; done
+
+  - forEach(env.nodes):
+      if ("${@i.nodeGroup}".includes("cp")):
+        if ("${@i.ismaster}" != "true"):
           set:
             cpNodeIds: ${@i.id}${this.sep2:}${this.cpNodeIds:}
             sep2: ','
 
-  - env.control.ExecDockerRunCmd [${this.cpMasterNodeIds}]
-  - sleep: 60000
   - env.control.ExecDockerRunCmd [${this.cpNodeIds}]
   - nginxConfig
 
