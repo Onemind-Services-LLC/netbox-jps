@@ -54,6 +54,7 @@ onInstall:
         sourcePath: ${baseUrl}/config/configuration.py
         destPath: /etc/netbox/config/configuration.py
   - createFile[cp]: /etc/netbox/config/plugins.yaml
+  - createFile[cp]: /etc/netbox/config/disabled_plugins.yaml
   - createFile[cp]: /etc/netbox/local_requirements.txt
   - createFile[cp]: /etc/netbox/plugin_requirements.txt
   - createDirectory[cp]:
