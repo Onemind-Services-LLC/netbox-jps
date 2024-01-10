@@ -74,14 +74,14 @@ actions:
   installLocalRequirements:
     - forEach(env.nodes):
         - if ("${@i.nodeGroup}".includes("cp")):
-          - cmd: |-
+          - cmd[${@i.nodeId}]: |-
               source /opt/netbox/venv/bin/activate
               pip install -r /opt/netbox/local_requirements.txt
 
   installPluginRequirements:
     - forEach(env.nodes):
         - if ("${@i.nodeGroup}".includes("cp")):
-          - cmd: |-
+          - cmd[${@i.nodeId}]: |-
               source /opt/netbox/venv/bin/activate
               pip install -r /etc/netbox/plugin_requirements.txt
 
