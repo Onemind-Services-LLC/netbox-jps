@@ -66,7 +66,8 @@ function createNetBoxConfig(nodeGroup, displayName, count, cloudlets, additional
         diskLimit: 10,
         scalingMode: "STATEFUL",
         isSLBAccessEnabled: false,
-        nodeGroup: nodeGroup
+        nodeGroup: nodeGroup,
+        startServiceOnCreation: false
     }
 
     return Object.assign(baseConfig, additionalConfig);
@@ -105,7 +106,7 @@ resp.nodes.push({
 resp.nodes.push(createNetBoxConfig("cp", "NetBox", nodeCount, 8));
 
 // NetBox worker node configuration
-const queues = ["high", "default", "low"];
+const queues = ["default", "high", "low"];
 let node_index = 2;
 queues.forEach(queue => {
     let queueName = queue.charAt(0).toUpperCase() + queue.slice(1) + " Queue";
