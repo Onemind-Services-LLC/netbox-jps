@@ -61,7 +61,6 @@ onInstall:
       - path: /etc/netbox/scripts
       - path: /etc/netbox/reports
   - setupHousekeeping
-  - installLocalRequirements
   - install:
       - jps: /scripts/events.jps?_r=${fn.random}
 
