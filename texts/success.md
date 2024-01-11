@@ -1,5 +1,3 @@
-**NetBox Environment**: [https://${env.domain}/](${globals.PROTOCOL}://${env.domain}/)
-
 Use the following credentials to log in:
 
 **Email**: ${user.email}
