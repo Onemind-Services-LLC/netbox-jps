@@ -49,6 +49,7 @@ function createNetBoxConfig(nodeGroup, displayName, count, cloudlets, additional
             REDIS_HOST: "redis",
             REDIS_PASSWORD: "${globals.redisPassword}",
             REDIS_PORT: "6379",
+            RQ_DEFAULT_TIMEOUT: "3600",
             SECRET_KEY: "${globals.secretKey}",
             SKIP_SUPERUSER: "false",
             SUPERUSER_NAME: userName,
