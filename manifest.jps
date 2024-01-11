@@ -66,6 +66,15 @@ onInstall:
 
   - forEach(env.nodes):
       if ("${@i.nodeGroup}".includes("cp")):
+        set:
+          cpAllNodeIds: ${@i.id}${this.sep:}${this.cpAllNodeIds:}
+          sep: ','
+  - env.control.AddContainerEnvVars[${this.cpAllNodeIds}]:
+      vars:
+        ENV_NAME: ${env.name}
+
+  - forEach(env.nodes):
+      if ("${@i.nodeGroup}".includes("cp")):
         if ("${@i.ismaster}" == "true"):
           set:
             cpMasterNodeIds: ${@i.id}${this.sep1:}${this.cpMasterNodeIds:}

@@ -44,7 +44,6 @@ function createNetBoxConfig(nodeGroup, displayName, count, cloudlets, additional
             DB_USER: "netbox",
             DB_PASSWORD: "${globals.dbPassword}",
             DEBUG: isProd ? "False" : "True",
-            ENV_NAME: "${settings.envname}",
             LOGLEVEL: "${settings.loglevel}",
             MAX_DB_WAIT_TIME: "300",
             REDIS_HOST: "redis",
