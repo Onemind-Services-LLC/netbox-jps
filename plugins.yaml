@@ -105,6 +105,11 @@ netbox-cloud-pilot:
       max: 3.5.99
       min: 3.5.0
       required_settings: []
+    tag: 0.0.13
+  - netbox:
+      max: 3.5.99
+      min: 3.5.0
+      required_settings: []
     tag: 0.0.2
   - netbox:
       max: 3.5.99
@@ -186,6 +191,11 @@ netbox-cloud-pilot:
       min: 3.6.0
       required_settings: []
     tag: 0.1.8
+  - netbox:
+      max: 3.6.99
+      min: 3.6.0
+      required_settings: []
+    tag: 0.1.9
   stars: 0
 netbox-data-validation:
   app_label: netbox_data_validation
@@ -379,7 +389,7 @@ netbox-inventory:
       min: 3.6.0
       required_settings: []
     tag: 1.5.2
-  stars: 140
+  stars: 141
 netbox-labs:
   app_label: netbox_labs
   description: Manage various different labs in NetBox
@@ -664,7 +674,7 @@ netbox-qrcode:
       min: 3.5.0
       required_settings: []
     tag: 0.0.10
-  stars: 158
+  stars: 159
 netbox-secrets:
   app_label: netbox_secrets
   description: Enhance your secret management with encrypted storage and flexible,
