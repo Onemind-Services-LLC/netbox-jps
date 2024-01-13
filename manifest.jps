@@ -54,7 +54,8 @@ onInstall:
   - createFile[cp]: /etc/netbox/plugin_requirements.txt
   - setupHousekeeping
   - install:
-      - jps: /scripts/events.jps?_r=${fn.random}
+      - if ('${settings.deploymentType}' == 'production'):
+        - jps: /scripts/events.jps?_r=${fn.random}
 
   - forEach(env.nodes):
       if ("${@i.nodeGroup}".includes("cp")):
