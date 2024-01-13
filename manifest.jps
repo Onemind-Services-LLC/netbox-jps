@@ -59,9 +59,6 @@ onInstall:
   - createFile[cp]: /etc/netbox/config/disabled_plugins.yaml
   - createFile[cp]: /etc/netbox/local_requirements.txt
   - createFile[cp]: /etc/netbox/plugin_requirements.txt
-  - createDirectory[cp]:
-      - path: /etc/netbox/scripts
-      - path: /etc/netbox/reports
   - setupHousekeeping
   - install:
       - jps: /scripts/events.jps?_r=${fn.random}

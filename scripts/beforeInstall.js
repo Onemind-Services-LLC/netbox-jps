@@ -33,10 +33,14 @@ function createNetBoxConfig(nodeGroup, displayName, count, cloudlets, additional
         volumes: [
             "/etc/netbox",
             "/opt/netbox/netbox/media",
+            "/opt/netbox/netbox/reports",
+            "/opt/netbox/netbox/scripts",
         ],
         volumeMounts: {
             "/etc/netbox": getNFSMount("/etc/netbox"),
             "/opt/netbox/netbox/media": getNFSMount("/opt/netbox/netbox/media"),
+            "/opt/netbox/netbox/reports": getNFSMount("/opt/netbox/netbox/reports"),
+            "/opt/netbox/netbox/scripts": getNFSMount("/opt/netbox/netbox/scripts"),
         },
         env: {
             DB_HOST: isProd ? "pgpool" : "postgresql",
