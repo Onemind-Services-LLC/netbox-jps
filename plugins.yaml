@@ -115,6 +115,11 @@ netbox-cloud-pilot:
       max: 3.5.99
       min: 3.5.0
       required_settings: []
+    tag: 0.0.15
+  - netbox:
+      max: 3.5.99
+      min: 3.5.0
+      required_settings: []
     tag: 0.0.2
   - netbox:
       max: 3.5.99
@@ -170,6 +175,11 @@ netbox-cloud-pilot:
       max: 3.6.99
       min: 3.6.0
       required_settings: []
+    tag: 0.1.11
+  - netbox:
+      max: 3.6.99
+      min: 3.6.0
+      required_settings: []
     tag: 0.1.2
   - netbox:
       max: 3.6.99
@@ -206,29 +216,6 @@ netbox-cloud-pilot:
       min: 3.6.0
       required_settings: []
     tag: 0.1.9
-  stars: 0
-netbox-data-validation:
-  app_label: netbox_data_validation
-  description: Provides UI to build custom data validation rules for data in NetBox.
-  github_api_url: https://api.github.com/repos/Onemind-Services-LLC/netbox-data-validation
-  github_url: https://github.com/Onemind-Services-LLC/netbox-data-validation
-  name: netbox-data-validation
-  owner:
-    name: Onemind-Services-LLC
-    url: https://github.com/Onemind-Services-LLC
-  private: true
-  pypi_url: null
-  releases:
-  - netbox:
-      max: 3.5.99
-      min: 3.5.0
-      required_settings: []
-    tag: v0.0.3
-  - netbox:
-      max: 3.5.99
-      min: 3.5.0
-      required_settings: []
-    tag: v0.0.2
   stars: 0
 netbox-demo:
   app_label: netbox_demo
