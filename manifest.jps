@@ -31,7 +31,8 @@ onAfterRedeployContainer:
   - if ("${event.params.nodeGroup}".includes("cp")):
     - installLocalRequirements: ${event.params.nodeGroup}
     - installPluginRequirements: ${event.params.nodeGroup}
-    - restartContainers: ${event.params.nodeGroup}
+    - restartContainers:
+        nodeGroup: ${event.params.nodeGroup}
 
 
 onInstall:
