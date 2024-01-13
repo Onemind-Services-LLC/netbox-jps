@@ -26,16 +26,8 @@ globals:
 
 nodes: definedInOnBeforeInstall
 
-onAfterScaleIn[cp]:
-  - setupHousekeeping
-
-onAfterAddNode[cp]:
-  - setupHousekeeping
-
-onAfterRedeployContainer[cp]:
-  - setupHousekeeping
-
 onAfterRedeployContainer:
+  - setupHousekeeping
   - if ("${event.params.nodeGroup}".includes("cp")):
     - installLocalRequirements: ${event.params.nodeGroup}
     - installPluginRequirements: ${event.params.nodeGroup}
@@ -136,11 +128,24 @@ actions:
         psql -U webadmin -d postgres -c "GRANT CREATE ON SCHEMA public TO netbox;"
 
   setupHousekeeping:
-    - cmd[cp]: |-
-        if [ ! -f /opt/netbox/housekeeping.sh ]; then
-          cp -fv /opt/netbox/contrib/netbox-housekeeping.sh /etc/cron.daily/
+    - cmd[${nodes.cp.master.id}]: |-
+        housekeeping_script="/opt/netbox/housekeeping.sh"
+        target_dir="/etc/cron.daily"
+        target_script="${target_dir}/housekeeping.sh"
+
+        # Check if the target directory exists
+        if [ ! -d "$target_dir" ]; then
+          echo "Target directory $target_dir does not exist."
+          exit 1
+        fi
+
+        # Copy the appropriate script
+        if [ -f "$housekeeping_script" ]; then
+          echo "Copying housekeeping script to $target_dir"
+          cp -fv "$housekeeping_script" "$target_script"
         else
-          cp -fv /opt/netbox/housekeeping.sh /etc/cron.daily/
+            echo "Housekeeping script not found at $housekeeping_script"
+            exit 1
         fi
 
 success: /texts/success.md?_r=1
