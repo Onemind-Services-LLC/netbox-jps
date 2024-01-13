@@ -37,7 +37,6 @@ onAfterRedeployContainer:
 onInstall:
   - addLimits
   - createDb
-  - if ('${settings.deploymentType}' == 'production'): setTriggers
   - upload:
       - nodeGroup: cp
         sourcePath: ${baseUrl}/config/plugins.py
@@ -53,8 +52,9 @@ onInstall:
   - createFile[cp]: /etc/netbox/local_requirements.txt
   - createFile[cp]: /etc/netbox/plugin_requirements.txt
   - setupHousekeeping
-  - install:
-      - if ('${settings.deploymentType}' == 'production'):
+  - if ('${settings.deploymentType}' == 'production'):
+      - setTriggers
+      - install:
         - jps: /scripts/events.jps?_r=${fn.random}
 
   - forEach(env.nodes):
