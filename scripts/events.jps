@@ -9,7 +9,7 @@ onAfterScaleOut[nodeGroup:cp]: updateTriggers
 
 actions:
   updateTriggers:
-    if (!${event.params.auto:true} && ${settings.deploymentType} == "production"):
+    if (${settings.deploymentType} == "production"):
       - log: update scaling trigger
       - script: /scripts/updateTriggers.js
         count: ${nodes.cp.length}
