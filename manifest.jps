@@ -29,6 +29,8 @@ nodes: definedInOnBeforeInstall
 onAfterRedeployContainer:
   - setupHousekeeping
   - if ("${event.params.nodeGroup}".includes("cp")):
+    - cmd [${event.params.nodeGroup}]: |-
+        apt-get update && apt-get install -y git
     - installLocalRequirements: ${event.params.nodeGroup}
     - installPluginRequirements: ${event.params.nodeGroup}
     - restartContainers:
