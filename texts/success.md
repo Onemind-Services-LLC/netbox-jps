@@ -1,3 +1,5 @@
+Access URL: ${env.url}
+
 Use the following credentials to log in:
 
 **Email**: ${user.email}
