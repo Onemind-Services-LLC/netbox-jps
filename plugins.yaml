@@ -19,12 +19,32 @@ nbrisk:
       max: 3.5.7
       min: 3.5.0
       required_settings: []
+    tag: 35.0.0
+  - netbox:
+      max: 3.5.7
+      min: 3.5.0
+      required_settings: []
+    tag: 35.0.1
+  - netbox:
+      max: 3.5.7
+      min: 3.5.0
+      required_settings: []
     tag: 35.0.1
   - netbox:
       max: 3.5.7
       min: 3.5.0
       required_settings: []
     tag: 35.0.2
+  - netbox:
+      max: 3.5.7
+      min: 3.5.0
+      required_settings: []
+    tag: 35.0.2
+  - netbox:
+      max: 3.5.99
+      min: 3.5.8
+      required_settings: []
+    tag: 35.1.0
   - netbox:
       max: 3.5.99
       min: 3.5.8
@@ -48,7 +68,12 @@ netbox-acls:
       min: 3.5.0
       required_settings: []
     tag: 1.3.0
-  stars: 63
+  - netbox:
+      max: 3.5.99
+      min: 3.5.0
+      required_settings: []
+    tag: 1.3.0
+  stars: 64
 netbox-circuitmaintenance:
   app_label: netbox_circuitmaintenance
   description: Provides the ability to record circuit maintenance, maintenance impact
@@ -62,6 +87,11 @@ netbox-circuitmaintenance:
   private: false
   pypi_url: https://pypi.org/project/netbox-circuitmaintenance/
   releases:
+  - netbox:
+      max: 3.5.99
+      min: 3.5.0
+      required_settings: []
+    tag: 0.3.0
   - netbox:
       max: 3.5.99
       min: 3.5.0
@@ -90,7 +120,22 @@ netbox-cloud-pilot:
       max: 3.5.99
       min: 3.5.0
       required_settings: []
+    tag: 0.0.1
+  - netbox:
+      max: 3.5.99
+      min: 3.5.0
+      required_settings: []
     tag: 0.0.10
+  - netbox:
+      max: 3.5.99
+      min: 3.5.0
+      required_settings: []
+    tag: 0.0.10
+  - netbox:
+      max: 3.5.99
+      min: 3.5.0
+      required_settings: []
+    tag: 0.0.11
   - netbox:
       max: 3.5.99
       min: 3.5.0
@@ -105,7 +150,22 @@ netbox-cloud-pilot:
       max: 3.5.99
       min: 3.5.0
       required_settings: []
+    tag: 0.0.12
+  - netbox:
+      max: 3.5.99
+      min: 3.5.0
+      required_settings: []
     tag: 0.0.13
+  - netbox:
+      max: 3.5.99
+      min: 3.5.0
+      required_settings: []
+    tag: 0.0.13
+  - netbox:
+      max: 3.5.99
+      min: 3.5.0
+      required_settings: []
+    tag: 0.0.14
   - netbox:
       max: 3.5.99
       min: 3.5.0
@@ -120,7 +180,62 @@ netbox-cloud-pilot:
       max: 3.5.99
       min: 3.5.0
       required_settings: []
+    tag: 0.0.15
+  - netbox:
+      max: 3.5.99
+      min: 3.5.0
+      required_settings: []
+    tag: 0.0.16
+  - netbox:
+      max: 3.5.99
+      min: 3.5.0
+      required_settings: []
+    tag: 0.0.16
+  - netbox:
+      max: 3.5.99
+      min: 3.5.0
+      required_settings: []
+    tag: 0.0.17
+  - netbox:
+      max: 3.5.99
+      min: 3.5.0
+      required_settings: []
+    tag: 0.0.17
+  - netbox:
+      max: 3.5.99
+      min: 3.5.0
+      required_settings: []
+    tag: 0.0.18
+  - netbox:
+      max: 3.5.99
+      min: 3.5.0
+      required_settings: []
+    tag: 0.0.18
+  - netbox:
+      max: 3.5.99
+      min: 3.5.0
+      required_settings: []
+    tag: 0.0.19
+  - netbox:
+      max: 3.5.99
+      min: 3.5.0
+      required_settings: []
+    tag: 0.0.19
+  - netbox:
+      max: 3.5.99
+      min: 3.5.0
+      required_settings: []
     tag: 0.0.2
+  - netbox:
+      max: 3.5.99
+      min: 3.5.0
+      required_settings: []
+    tag: 0.0.2
+  - netbox:
+      max: 3.5.99
+      min: 3.5.0
+      required_settings: []
+    tag: 0.0.3
   - netbox:
       max: 3.5.99
       min: 3.5.0
@@ -135,7 +250,22 @@ netbox-cloud-pilot:
       max: 3.5.99
       min: 3.5.0
       required_settings: []
+    tag: 0.0.4
+  - netbox:
+      max: 3.5.99
+      min: 3.5.0
+      required_settings: []
     tag: 0.0.5
+  - netbox:
+      max: 3.5.99
+      min: 3.5.0
+      required_settings: []
+    tag: 0.0.5
+  - netbox:
+      max: 3.5.99
+      min: 3.5.0
+      required_settings: []
+    tag: 0.0.6
   - netbox:
       max: 3.5.99
       min: 3.5.0
@@ -150,7 +280,22 @@ netbox-cloud-pilot:
       max: 3.5.99
       min: 3.5.0
       required_settings: []
+    tag: 0.0.7
+  - netbox:
+      max: 3.5.99
+      min: 3.5.0
+      required_settings: []
     tag: 0.0.8
+  - netbox:
+      max: 3.5.99
+      min: 3.5.0
+      required_settings: []
+    tag: 0.0.8
+  - netbox:
+      max: 3.5.99
+      min: 3.5.0
+      required_settings: []
+    tag: 0.0.9
   - netbox:
       max: 3.5.99
       min: 3.5.0
@@ -165,7 +310,22 @@ netbox-cloud-pilot:
       max: 3.6.99
       min: 3.6.0
       required_settings: []
+    tag: 0.1.0
+  - netbox:
+      max: 3.6.99
+      min: 3.6.0
+      required_settings: []
     tag: 0.1.1
+  - netbox:
+      max: 3.6.99
+      min: 3.6.0
+      required_settings: []
+    tag: 0.1.1
+  - netbox:
+      max: 3.6.99
+      min: 3.6.0
+      required_settings: []
+    tag: 0.1.10
   - netbox:
       max: 3.6.99
       min: 3.6.0
@@ -180,7 +340,62 @@ netbox-cloud-pilot:
       max: 3.6.99
       min: 3.6.0
       required_settings: []
+    tag: 0.1.11
+  - netbox:
+      max: 3.6.99
+      min: 3.6.0
+      required_settings: []
+    tag: 0.1.12
+  - netbox:
+      max: 3.6.99
+      min: 3.6.0
+      required_settings: []
+    tag: 0.1.12
+  - netbox:
+      max: 3.6.99
+      min: 3.6.0
+      required_settings: []
+    tag: 0.1.13
+  - netbox:
+      max: 3.6.99
+      min: 3.6.0
+      required_settings: []
+    tag: 0.1.13
+  - netbox:
+      max: 3.6.99
+      min: 3.6.0
+      required_settings: []
+    tag: 0.1.14
+  - netbox:
+      max: 3.6.99
+      min: 3.6.0
+      required_settings: []
+    tag: 0.1.14
+  - netbox:
+      max: 3.6.99
+      min: 3.6.0
+      required_settings: []
+    tag: 0.1.15
+  - netbox:
+      max: 3.6.99
+      min: 3.6.0
+      required_settings: []
+    tag: 0.1.15
+  - netbox:
+      max: 3.6.99
+      min: 3.6.0
+      required_settings: []
     tag: 0.1.2
+  - netbox:
+      max: 3.6.99
+      min: 3.6.0
+      required_settings: []
+    tag: 0.1.2
+  - netbox:
+      max: 3.6.99
+      min: 3.6.0
+      required_settings: []
+    tag: 0.1.3
   - netbox:
       max: 3.6.99
       min: 3.6.0
@@ -195,7 +410,22 @@ netbox-cloud-pilot:
       max: 3.6.99
       min: 3.6.0
       required_settings: []
+    tag: 0.1.4
+  - netbox:
+      max: 3.6.99
+      min: 3.6.0
+      required_settings: []
     tag: 0.1.5
+  - netbox:
+      max: 3.6.99
+      min: 3.6.0
+      required_settings: []
+    tag: 0.1.5
+  - netbox:
+      max: 3.6.99
+      min: 3.6.0
+      required_settings: []
+    tag: 0.1.6
   - netbox:
       max: 3.6.99
       min: 3.6.0
@@ -210,35 +440,27 @@ netbox-cloud-pilot:
       max: 3.6.99
       min: 3.6.0
       required_settings: []
+    tag: 0.1.7
+  - netbox:
+      max: 3.6.99
+      min: 3.6.0
+      required_settings: []
+    tag: 0.1.8
+  - netbox:
+      max: 3.6.99
+      min: 3.6.0
+      required_settings: []
     tag: 0.1.8
   - netbox:
       max: 3.6.99
       min: 3.6.0
       required_settings: []
     tag: 0.1.9
-  stars: 0
-netbox-data-validation:
-  app_label: netbox_data_validation
-  description: Provides UI to build custom data validation rules for data in NetBox.
-  github_api_url: https://api.github.com/repos/Onemind-Services-LLC/netbox-data-validation
-  github_url: https://github.com/Onemind-Services-LLC/netbox-data-validation
-  name: netbox-data-validation
-  owner:
-    name: Onemind-Services-LLC
-    url: https://github.com/Onemind-Services-LLC
-  private: true
-  pypi_url: null
-  releases:
   - netbox:
-      max: 3.5.99
-      min: 3.5.0
+      max: 3.6.99
+      min: 3.6.0
       required_settings: []
-    tag: v0.0.3
-  - netbox:
-      max: 3.5.99
-      min: 3.5.0
-      required_settings: []
-    tag: v0.0.2
+    tag: 0.1.9
   stars: 0
 netbox-demo:
   app_label: netbox_demo
@@ -261,82 +483,36 @@ netbox-demo:
       max: 3.7.99
       min: 3.5.0
       required_settings: []
+    tag: 0.3.1
+  - netbox:
+      max: 3.7.99
+      min: 3.5.0
+      required_settings: []
+    tag: 0.4.0
+  - netbox:
+      max: 3.7.99
+      min: 3.5.0
+      required_settings: []
     tag: 0.4.0
   stars: 1
-netbox-documents:
-  app_label: netbox_documents
-  description: A plugin for NetBox to manage documents
-  github_api_url: https://api.github.com/repos/Onemind-Services-LLC/netbox-documents
-  github_url: https://github.com/Onemind-Services-LLC/netbox-documents
-  name: netbox-documents
+netbox-healthcheck-plugin:
+  app_label: netbox_healthcheck_plugin
+  description: NetBox plugin for HealthCheck.
+  github_api_url: https://api.github.com/repos/netbox-community/netbox-healthcheck-plugin
+  github_url: https://github.com/netbox-community/netbox-healthcheck-plugin
+  name: netbox-healthcheck-plugin
   owner:
-    name: Onemind-Services-LLC
-    url: https://github.com/Onemind-Services-LLC
-  private: true
-  pypi_url: null
+    name: netbox-community
+    url: https://github.com/netbox-community
+  private: false
+  pypi_url: https://pypi.org/project/netbox-healthcheck-plugin/
   releases:
   - netbox:
-      max: 3.5.99
+      max: null
       min: 3.5.0
       required_settings: []
-    tag: v0.2.2
-  - netbox:
-      max: 3.5.99
-      min: 3.5.0
-      required_settings: []
-    tag: v0.2.1
-  stars: 0
-netbox-gateways:
-  app_label: netbox_gateways
-  description: Manage simple prefix default gateways
-  github_api_url: https://api.github.com/repos/Onemind-Services-LLC/netbox-gateways
-  github_url: https://github.com/Onemind-Services-LLC/netbox-gateways
-  name: netbox-gateways
-  owner:
-    name: Onemind-Services-LLC
-    url: https://github.com/Onemind-Services-LLC
-  private: true
-  pypi_url: null
-  releases:
-  - netbox:
-      max: 3.5.99
-      min: 3.5.0
-      required_settings: []
-    tag: v0.6.2
-  - netbox:
-      max: 3.5.99
-      min: 3.5.0
-      required_settings: []
-    tag: v0.6.1
-  stars: 0
-netbox-initializers:
-  app_label: netbox_initializers
-  description: Loads data from YAML files into NetBox.
-  github_api_url: https://api.github.com/repos/Onemind-Services-LLC/netbox-initializers
-  github_url: https://github.com/Onemind-Services-LLC/netbox-initializers
-  name: netbox-initializers
-  owner:
-    name: Onemind-Services-LLC
-    url: https://github.com/Onemind-Services-LLC
-  private: true
-  pypi_url: null
-  releases:
-  - netbox:
-      max: 3.6.99
-      min: 3.6.0
-      required_settings: []
-    tag: v0.2.1
-  - netbox:
-      max: 3.6.99
-      min: 3.6.0
-      required_settings: []
-    tag: v0.2.0
-  - netbox:
-      max: 3.5.99
-      min: 3.5.0
-      required_settings: []
-    tag: v0.1.0
-  stars: 0
+    tag: 0.1.1
+  stars: 15
 netbox-inventory:
   app_label: netbox_inventory
   description: Inventory asset management in NetBox
@@ -358,7 +534,22 @@ netbox-inventory:
       max: null
       min: 3.5.0
       required_settings: []
+    tag: 1.3.0
+  - netbox:
+      max: null
+      min: 3.5.0
+      required_settings: []
     tag: 1.3.1
+  - netbox:
+      max: null
+      min: 3.5.0
+      required_settings: []
+    tag: 1.3.1
+  - netbox:
+      max: null
+      min: 3.5.0
+      required_settings: []
+    tag: 1.3.2
   - netbox:
       max: null
       min: 3.5.0
@@ -373,7 +564,22 @@ netbox-inventory:
       max: null
       min: 3.5.2
       required_settings: []
+    tag: 1.3.3
+  - netbox:
+      max: null
+      min: 3.5.2
+      required_settings: []
     tag: 1.4.0
+  - netbox:
+      max: null
+      min: 3.5.2
+      required_settings: []
+    tag: 1.4.0
+  - netbox:
+      max: null
+      min: 3.5.2
+      required_settings: []
+    tag: 1.4.1
   - netbox:
       max: null
       min: 3.5.2
@@ -388,7 +594,22 @@ netbox-inventory:
       max: null
       min: 3.5.2
       required_settings: []
+    tag: 1.4.2
+  - netbox:
+      max: null
+      min: 3.5.2
+      required_settings: []
     tag: 1.4.3
+  - netbox:
+      max: null
+      min: 3.5.2
+      required_settings: []
+    tag: 1.4.3
+  - netbox:
+      max: null
+      min: 3.5.2
+      required_settings: []
+    tag: 1.4.4
   - netbox:
       max: null
       min: 3.5.2
@@ -403,69 +624,28 @@ netbox-inventory:
       max: null
       min: 3.6.0
       required_settings: []
+    tag: 1.5.0
+  - netbox:
+      max: null
+      min: 3.6.0
+      required_settings: []
+    tag: 1.5.1
+  - netbox:
+      max: null
+      min: 3.6.0
+      required_settings: []
     tag: 1.5.1
   - netbox:
       max: null
       min: 3.6.0
       required_settings: []
     tag: 1.5.2
-  stars: 141
-netbox-labs:
-  app_label: netbox_labs
-  description: Manage various different labs in NetBox
-  github_api_url: https://api.github.com/repos/Onemind-Services-LLC/netbox-labs
-  github_url: https://github.com/Onemind-Services-LLC/netbox-labs
-  name: netbox-labs
-  owner:
-    name: Onemind-Services-LLC
-    url: https://github.com/Onemind-Services-LLC
-  private: true
-  pypi_url: null
-  releases:
   - netbox:
-      max: 3.5.99
-      min: 3.5.0
+      max: null
+      min: 3.6.0
       required_settings: []
-    tag: v0.1.4
-  - netbox:
-      max: 3.5.99
-      min: 3.5.0
-      required_settings: []
-    tag: v0.1.3
-  - netbox:
-      max: 3.5.99
-      min: 3.5.0
-      required_settings: []
-    tag: v0.1.2
-  - netbox:
-      max: 3.5.99
-      min: 3.5.0
-      required_settings: []
-    tag: v0.1.1
-  stars: 0
-netbox-licenses:
-  app_label: netbox_licenses
-  description: A Netbox plugin for License management.
-  github_api_url: https://api.github.com/repos/Onemind-Services-LLC/netbox-licenses
-  github_url: https://github.com/Onemind-Services-LLC/netbox-licenses
-  name: netbox-licenses
-  owner:
-    name: Onemind-Services-LLC
-    url: https://github.com/Onemind-Services-LLC
-  private: true
-  pypi_url: null
-  releases:
-  - netbox:
-      max: 3.5.99
-      min: 3.5.0
-      required_settings: []
-    tag: v0.5.2
-  - netbox:
-      max: 3.5.99
-      min: 3.5.0
-      required_settings: []
-    tag: v0.5.1
-  stars: 0
+    tag: 1.5.2
+  stars: 142
 netbox-metatype-importer:
   app_label: netbox_metatype_importer
   description: Easily import Device and Module types from GitHub repo
@@ -489,7 +669,43 @@ netbox-metatype-importer:
       min: 3.5.0
       required_settings:
       - github_token
+    tag: 0.1.0
+  - netbox:
+      max: 3.5.99
+      min: 3.5.0
+      required_settings:
+      - github_token
     tag: 0.1.1
+  - netbox:
+      max: 3.5.99
+      min: 3.5.0
+      required_settings:
+      - github_token
+    tag: 0.1.1
+  - netbox:
+      max: 3.6.99
+      min: 3.6.0
+      required_settings:
+      - github_token
+    tag: 0.2.0
+  - netbox:
+      max: 3.6.99
+      min: 3.6.0
+      required_settings:
+      - github_token
+    tag: 0.2.0
+  - netbox:
+      max: 3.7.99
+      min: 3.7.0
+      required_settings:
+      - github_token
+    tag: 0.3.0
+  - netbox:
+      max: 3.7.99
+      min: 3.7.0
+      required_settings:
+      - github_token
+    tag: 0.3.0
   stars: 32
 netbox-napalm:
   app_label: netbox_napalm_plugin
@@ -514,6 +730,18 @@ netbox-napalm:
       min: 3.5.0-dev
       required_settings:
       - NAPALM_USERNAME
+    tag: 0.1.0
+  - netbox:
+      max: 3.5.99
+      min: 3.5.0-dev
+      required_settings:
+      - NAPALM_USERNAME
+    tag: 0.1.1
+  - netbox:
+      max: 3.5.99
+      min: 3.5.0-dev
+      required_settings:
+      - NAPALM_USERNAME
     tag: 0.1.1
   - netbox:
       max: 3.5.99
@@ -522,53 +750,42 @@ netbox-napalm:
       - NAPALM_USERNAME
     tag: 0.1.2
   - netbox:
+      max: 3.5.99
+      min: 3.5.0-dev
+      required_settings:
+      - NAPALM_USERNAME
+    tag: 0.1.2
+  - netbox:
+      max: 3.5.99
+      min: 3.5.0-dev
+      required_settings:
+      - NAPALM_USERNAME
+    tag: 0.1.4
+  - netbox:
       max: 3.6.99
       min: 3.5.0-dev
       required_settings:
       - NAPALM_USERNAME
     tag: 0.1.5
+  - netbox:
+      max: 3.6.99
+      min: 3.5.0-dev
+      required_settings:
+      - NAPALM_USERNAME
+    tag: 0.1.5
+  - netbox:
+      max: 3.6.99
+      min: 3.5.0-dev
+      required_settings:
+      - NAPALM_USERNAME
+    tag: 0.1.6
+  - netbox:
+      max: 3.7.99
+      min: 3.5.0-dev
+      required_settings:
+      - NAPALM_USERNAME
+    tag: 0.1.7
   stars: 36
-netbox-nat:
-  app_label: netbox_nat
-  description: Manage NAT entries in NetBox
-  github_api_url: https://api.github.com/repos/Onemind-Services-LLC/netbox-nat
-  github_url: https://github.com/Onemind-Services-LLC/netbox-nat
-  name: netbox-nat
-  owner:
-    name: Onemind-Services-LLC
-    url: https://github.com/Onemind-Services-LLC
-  private: true
-  pypi_url: null
-  releases:
-  - netbox:
-      max: 3.5.99
-      min: 3.5.0
-      required_settings: []
-    tag: v0.4.1
-  stars: 0
-netbox-networkdevice-config:
-  app_label: netbox_networkdevice_config
-  description: A plugin to manage Device configuration, compliance checks and remediation
-  github_api_url: https://api.github.com/repos/Onemind-Services-LLC/netbox-networkdevice-config
-  github_url: https://github.com/Onemind-Services-LLC/netbox-networkdevice-config
-  name: netbox-networkdevice-config
-  owner:
-    name: Onemind-Services-LLC
-    url: https://github.com/Onemind-Services-LLC
-  private: true
-  pypi_url: null
-  releases:
-  - netbox:
-      max: 3.5.99
-      min: 3.5.0
-      required_settings: []
-    tag: v0.1.4
-  - netbox:
-      max: 3.5.99
-      min: 3.5.0
-      required_settings: []
-    tag: v0.1.3
-  stars: 0
 netbox-plugin-dns:
   app_label: netbox_dns
   description: NetBox DNS is a NetBox plugin for managing DNS data.
@@ -645,6 +862,11 @@ netbox-plugin-dns:
       max: null
       min: 3.5.0
       required_settings: []
+    tag: 0.21.15
+  - netbox:
+      max: null
+      min: 3.5.0
+      required_settings: []
     tag: 0.21.2
   - netbox:
       max: null
@@ -694,7 +916,12 @@ netbox-qrcode:
       min: 3.5.0
       required_settings: []
     tag: 0.0.10
-  stars: 159
+  - netbox:
+      max: 3.5.99
+      min: 3.5.0
+      required_settings: []
+    tag: 0.0.10
+  stars: 161
 netbox-secrets:
   app_label: netbox_secrets
   description: Enhance your secret management with encrypted storage and flexible,
@@ -717,7 +944,22 @@ netbox-secrets:
       max: 3.7.99
       min: 3.7.0
       required_settings: []
+    tag: 1.10.0
+  - netbox:
+      max: 3.7.99
+      min: 3.7.0
+      required_settings: []
     tag: 1.10.1
+  - netbox:
+      max: 3.7.99
+      min: 3.7.0
+      required_settings: []
+    tag: 1.10.1
+  - netbox:
+      max: 3.5.99
+      min: 3.5.0
+      required_settings: []
+    tag: 1.8.0
   - netbox:
       max: 3.5.99
       min: 3.5.0
@@ -732,7 +974,22 @@ netbox-secrets:
       max: 3.5.99
       min: 3.5.0
       required_settings: []
+    tag: 1.8.1
+  - netbox:
+      max: 3.5.99
+      min: 3.5.0
+      required_settings: []
     tag: 1.8.2
+  - netbox:
+      max: 3.5.99
+      min: 3.5.0
+      required_settings: []
+    tag: 1.8.2
+  - netbox:
+      max: 3.5.99
+      min: 3.5.0
+      required_settings: []
+    tag: 1.8.3
   - netbox:
       max: 3.5.99
       min: 3.5.0
@@ -747,6 +1004,16 @@ netbox-secrets:
       max: 3.5.99
       min: 3.5.0
       required_settings: []
+    tag: 1.8.4
+  - netbox:
+      max: 3.5.99
+      min: 3.5.0
+      required_settings: []
+    tag: 1.8.5
+  - netbox:
+      max: 3.5.99
+      min: 3.5.0
+      required_settings: []
     tag: 1.8.5
   - netbox:
       max: 3.6.99
@@ -757,54 +1024,18 @@ netbox-secrets:
       max: 3.6.99
       min: 3.6.0
       required_settings: []
+    tag: 1.9.0
+  - netbox:
+      max: 3.6.99
+      min: 3.6.0
+      required_settings: []
     tag: 1.9.1
-  stars: 55
-netbox-support:
-  app_label: netbox_support
-  description: NetBox Support provides device types and devices EoX data within NetBox.
-  github_api_url: https://api.github.com/repos/Onemind-Services-LLC/netbox-support
-  github_url: https://github.com/Onemind-Services-LLC/netbox-support
-  name: netbox-support
-  owner:
-    name: Onemind-Services-LLC
-    url: https://github.com/Onemind-Services-LLC
-  private: true
-  pypi_url: null
-  releases:
   - netbox:
-      max: 3.5.99
-      min: 3.5.0
+      max: 3.6.99
+      min: 3.6.0
       required_settings: []
-    tag: v0.1.1
-  - netbox:
-      max: 3.5.99
-      min: 3.5.0
-      required_settings: []
-    tag: v0.1.0
-  stars: 1
-netbox-todo:
-  app_label: netbox_todo
-  description: A plugin for NetBox to manage todo tasks
-  github_api_url: https://api.github.com/repos/Onemind-Services-LLC/netbox-todo
-  github_url: https://github.com/Onemind-Services-LLC/netbox-todo
-  name: netbox-todo
-  owner:
-    name: Onemind-Services-LLC
-    url: https://github.com/Onemind-Services-LLC
-  private: true
-  pypi_url: null
-  releases:
-  - netbox:
-      max: 3.5.99
-      min: 3.5.0
-      required_settings: []
-    tag: v0.2.2
-  - netbox:
-      max: 3.5.99
-      min: 3.5.0
-      required_settings: []
-    tag: v0.2.1
-  stars: 0
+    tag: 1.9.1
+  stars: 58
 netbox-topology-views:
   app_label: netbox_topology_views
   description: An NetBox plugin to create Topology maps
@@ -826,7 +1057,22 @@ netbox-topology-views:
       max: 3.5.99
       min: 3.5.0
       required_settings: []
+    tag: 3.4.0
+  - netbox:
+      max: 3.5.99
+      min: 3.5.0
+      required_settings: []
     tag: 3.5.0
+  - netbox:
+      max: 3.5.99
+      min: 3.5.0
+      required_settings: []
+    tag: 3.5.0
+  - netbox:
+      max: 3.5.99
+      min: 3.5.0
+      required_settings: []
+    tag: 3.6.0
   - netbox:
       max: 3.5.99
       min: 3.5.0
@@ -841,7 +1087,22 @@ netbox-topology-views:
       max: 3.5.99
       min: 3.5.0
       required_settings: []
+    tag: 3.6.1
+  - netbox:
+      max: 3.5.99
+      min: 3.5.0
+      required_settings: []
     tag: 3.6.2
+  - netbox:
+      max: 3.5.99
+      min: 3.5.0
+      required_settings: []
+    tag: 3.6.2
+  - netbox:
+      max: 3.6.3
+      min: 3.6.0
+      required_settings: []
+    tag: 3.7.0
   - netbox:
       max: 3.6.3
       min: 3.6.0
@@ -853,8 +1114,18 @@ netbox-topology-views:
       required_settings: []
     tag: 3.8.0
   - netbox:
+      max: 3.6.3
+      min: 3.6.0
+      required_settings: []
+    tag: 3.8.0
+  - netbox:
       max: 3.6.99
       min: 3.6.4
       required_settings: []
     tag: 3.8.1
-  stars: 561
+  - netbox:
+      max: 3.6.99
+      min: 3.6.4
+      required_settings: []
+    tag: 3.8.1
+  stars: 565
