@@ -495,24 +495,6 @@ netbox-demo:
       required_settings: []
     tag: 0.4.0
   stars: 1
-netbox-healthcheck-plugin:
-  app_label: netbox_healthcheck_plugin
-  description: NetBox plugin for HealthCheck.
-  github_api_url: https://api.github.com/repos/netbox-community/netbox-healthcheck-plugin
-  github_url: https://github.com/netbox-community/netbox-healthcheck-plugin
-  name: netbox-healthcheck-plugin
-  owner:
-    name: netbox-community
-    url: https://github.com/netbox-community
-  private: false
-  pypi_url: https://pypi.org/project/netbox-healthcheck-plugin/
-  releases:
-  - netbox:
-      max: null
-      min: 3.5.0
-      required_settings: []
-    tag: 0.1.1
-  stars: 15
 netbox-inventory:
   app_label: netbox_inventory
   description: Inventory asset management in NetBox
