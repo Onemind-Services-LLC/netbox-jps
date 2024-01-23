@@ -245,6 +245,16 @@ netbox-cloud-pilot:
       max: 3.5.99
       min: 3.5.0
       required_settings: []
+    tag: 0.0.21
+  - netbox:
+      max: 3.5.99
+      min: 3.5.0
+      required_settings: []
+    tag: 0.0.21
+  - netbox:
+      max: 3.5.99
+      min: 3.5.0
+      required_settings: []
     tag: 0.0.3
   - netbox:
       max: 3.5.99
@@ -401,6 +411,16 @@ netbox-cloud-pilot:
       min: 3.6.0
       required_settings: []
     tag: 0.1.16
+  - netbox:
+      max: 3.6.99
+      min: 3.6.0
+      required_settings: []
+    tag: 0.1.17
+  - netbox:
+      max: 3.6.99
+      min: 3.6.0
+      required_settings: []
+    tag: 0.1.17
   - netbox:
       max: 3.6.99
       min: 3.6.0
