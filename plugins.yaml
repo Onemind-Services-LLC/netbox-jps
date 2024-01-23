@@ -481,7 +481,7 @@ netbox-cloud-pilot:
       min: 3.6.0
       required_settings: []
     tag: 0.1.9
-  stars: 0
+  stars: 1
 netbox-data-validation:
   app_label: netbox_data_validation
   description: Provides UI to build custom data validation rules for data in NetBox.
