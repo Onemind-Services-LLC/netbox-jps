@@ -1040,6 +1040,11 @@ netbox-networkdevice-config:
   pypi_url: null
   releases:
   - netbox:
+      max: 3.6.99
+      min: 3.6.0
+      required_settings: []
+    tag: v0.2.0
+  - netbox:
       max: 3.5.99
       min: 3.5.0
       required_settings: []
@@ -1463,4 +1468,14 @@ netbox-topology-views:
       min: 3.6.4
       required_settings: []
     tag: 3.8.1
+  - netbox:
+      max: 3.7.0
+      min: 3.7.0
+      required_settings: []
+    tag: 3.9.0
+  - netbox:
+      max: 3.7.0
+      min: 3.7.0
+      required_settings: []
+    tag: 3.9.0
   stars: 570
