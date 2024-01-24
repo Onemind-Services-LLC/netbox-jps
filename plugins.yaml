@@ -515,6 +515,11 @@ netbox-data-validation:
   pypi_url: null
   releases:
   - netbox:
+      max: 3.6.99
+      min: 3.6.0
+      required_settings: []
+    tag: v0.1.0
+  - netbox:
       max: 3.5.99
       min: 3.5.0
       required_settings: []
@@ -570,6 +575,11 @@ netbox-documents:
   private: true
   pypi_url: null
   releases:
+  - netbox:
+      max: 3.6.99
+      min: 3.6.0
+      required_settings: []
+    tag: v0.3.0
   - netbox:
       max: 3.5.99
       min: 3.5.0
@@ -1336,6 +1346,11 @@ netbox-todo:
   pypi_url: null
   releases:
   - netbox:
+      max: 3.6.99
+      min: 3.6.0
+      required_settings: []
+    tag: v0.3.0
+  - netbox:
       max: 3.5.99
       min: 3.5.0
       required_settings: []
@@ -1438,4 +1453,4 @@ netbox-topology-views:
       min: 3.6.4
       required_settings: []
     tag: 3.8.1
-  stars: 568
+  stars: 569
