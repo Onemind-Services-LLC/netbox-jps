@@ -1324,6 +1324,16 @@ netbox-secrets:
       min: 3.6.0
       required_settings: []
     tag: 1.9.1
+  - netbox:
+      max: 3.6.99
+      min: 3.6.0
+      required_settings: []
+    tag: 1.9.2
+  - netbox:
+      max: 3.6.99
+      min: 3.6.0
+      required_settings: []
+    tag: 1.9.2
   stars: 59
 netbox-support:
   app_label: netbox_support
