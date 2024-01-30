@@ -797,7 +797,7 @@ netbox-inventory:
       min: 3.6.0
       required_settings: []
     tag: 1.5.2
-  stars: 145
+  stars: 146
 netbox-labs:
   app_label: netbox_labs
   description: Manage various different labs in NetBox
