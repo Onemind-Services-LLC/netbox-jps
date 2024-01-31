@@ -636,7 +636,7 @@ netbox-healthcheck-plugin:
       min: 3.5.0
       required_settings: []
     tag: 0.1.1
-  stars: 16
+  stars: 17
 netbox-initializers:
   app_label: netbox_initializers
   description: Loads data from YAML files into NetBox.
