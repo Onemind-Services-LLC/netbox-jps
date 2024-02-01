@@ -61,14 +61,14 @@ actions:
   removeConfig:
     - cmd[${nodes.cp.id}]: |-
         rm -f /etc/netbox/config/sso.py
+    - restartNetbox
 
   restartNetbox:
-    - if ('${settings.restartContainer}' == 'true'):
-        - forEach (env.nodes):
-            - if ("${@i.nodeType}" === "docker"):
-                api: jelastic.environment.control.RestartContainerById
-                envName: ${env.name}
-                nodeid: ${@i.id}
+    - forEach (env.nodes):
+        - if ("${@i.nodeGroup}".includes("cp")):
+            api: jelastic.environment.control.RestartContainerById
+            envName: ${env.name}
+            nodeid: ${@i.id}
 
 buttons:
   - caption: Configure
