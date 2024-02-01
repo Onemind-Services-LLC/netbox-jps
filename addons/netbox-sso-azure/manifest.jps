@@ -31,7 +31,7 @@ actions:
     - updateConfig
 
   installPlugin:
-    - cmd[${nodes.cp.id}]: |-
+    - cmd[cp]: |-
         source /opt/netbox/venv/bin/activate
         pip3 install --no-deps --force-reinstall --upgrade social-auth-app-django
 
@@ -59,13 +59,13 @@ actions:
     - restartNetbox
 
   removeConfig:
-    - cmd[${nodes.cp.id}]: |-
+    - cmd[cp]: |-
         rm -f /etc/netbox/config/sso.py
     - restartNetbox
 
   restartNetbox:
     - forEach (env.nodes):
-        - if ("${@i.nodeGroup}".includes("cp")):
+        - if ("${@i.nodeGroup}" == "cp"):
             api: jelastic.environment.control.RestartContainerById
             envName: ${env.name}
             nodeid: ${@i.id}
