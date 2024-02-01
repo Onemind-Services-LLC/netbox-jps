@@ -255,6 +255,26 @@ netbox-cloud-pilot:
       max: 3.5.99
       min: 3.5.0
       required_settings: []
+    tag: 0.0.22
+  - netbox:
+      max: 3.5.99
+      min: 3.5.0
+      required_settings: []
+    tag: 0.0.22
+  - netbox:
+      max: 3.5.99
+      min: 3.5.0
+      required_settings: []
+    tag: 0.0.23
+  - netbox:
+      max: 3.5.99
+      min: 3.5.0
+      required_settings: []
+    tag: 0.0.23
+  - netbox:
+      max: 3.5.99
+      min: 3.5.0
+      required_settings: []
     tag: 0.0.3
   - netbox:
       max: 3.5.99
@@ -421,6 +441,16 @@ netbox-cloud-pilot:
       min: 3.6.0
       required_settings: []
     tag: 0.1.17
+  - netbox:
+      max: 3.6.99
+      min: 3.6.0
+      required_settings: []
+    tag: 0.1.18
+  - netbox:
+      max: 3.6.99
+      min: 3.6.0
+      required_settings: []
+    tag: 0.1.18
   - netbox:
       max: 3.6.99
       min: 3.6.0
@@ -797,7 +827,7 @@ netbox-inventory:
       min: 3.6.0
       required_settings: []
     tag: 1.5.2
-  stars: 146
+  stars: 147
 netbox-labs:
   app_label: netbox_labs
   description: Manage various different labs in NetBox
