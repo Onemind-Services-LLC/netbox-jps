@@ -33,7 +33,8 @@ actions:
   installPlugin:
     - cmd[cp]: |-
         source /opt/netbox/venv/bin/activate
-        pip3 install social-auth-app-django
+        echo "social-auth-app-django" >> /etc/netbox/local_requirements.txt
+        pip3 install -r /etc/netbox/local_requirements.txt
 
   updateConfig:
     - upload:
