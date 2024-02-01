@@ -33,7 +33,7 @@ actions:
   installPlugin:
     - cmd[${nodes.cp.id}]: |-
         source /opt/netbox/venv/bin/activate
-        pip3 install --force-reinstall --upgrade social-auth-app-django
+        pip3 install --no-deps --force-reinstall --upgrade social-auth-app-django
 
   updateConfig:
     - upload:
