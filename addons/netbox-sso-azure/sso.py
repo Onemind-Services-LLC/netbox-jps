@@ -90,8 +90,10 @@ def azuread_group_permissions(response, user, *args, **kwargs):
                             enabled=True,
                             actions=[],
                         )
-                    object_permission.actions.append(permission)
-                    object_permission.save()
+                    if permission not in object_permission.actions:
+                        object_permission.actions.append(permission)
+                        object_permission.save()
+
                     object_permission.object_types.add(object_type)
                     object_permission.groups.add(group)
 
