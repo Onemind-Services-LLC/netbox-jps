@@ -986,7 +986,7 @@ netbox-metatype-importer:
       required_settings:
       - github_token
     tag: 0.3.0
-  stars: 32
+  stars: 33
 netbox-napalm:
   app_label: netbox_napalm_plugin
   description: NetBox plugin for Napalm.
@@ -1065,7 +1065,7 @@ netbox-napalm:
       required_settings:
       - NAPALM_USERNAME
     tag: 0.1.7
-  stars: 37
+  stars: 38
 netbox-nat:
   app_label: netbox_nat
   description: Manage NAT entries in NetBox
@@ -1575,4 +1575,4 @@ netbox-topology-views:
       min: 3.7.0
       required_settings: []
     tag: 3.9.0
-  stars: 583
+  stars: 585
