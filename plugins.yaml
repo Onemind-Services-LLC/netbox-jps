@@ -73,7 +73,7 @@ netbox-acls:
       min: 3.5.0
       required_settings: []
     tag: 1.3.0
-  stars: 67
+  stars: 68
 netbox-circuitmaintenance:
   app_label: netbox_circuitmaintenance
   description: Provides the ability to record circuit maintenance, maintenance impact
@@ -867,7 +867,7 @@ netbox-inventory:
       min: 3.6.0
       required_settings: []
     tag: 1.5.2
-  stars: 153
+  stars: 154
 netbox-labs:
   app_label: netbox_labs
   description: Manage various different labs in NetBox
@@ -1279,7 +1279,7 @@ netbox-plugin-dns:
       min: 3.5.0
       required_settings: []
     tag: 0.22.1
-  stars: 106
+  stars: 107
 netbox-qrcode:
   app_label: netbox_qrcode
   description: QR Code generation for netbox objects
