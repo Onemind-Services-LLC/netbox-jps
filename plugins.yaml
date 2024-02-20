@@ -867,7 +867,7 @@ netbox-inventory:
       min: 3.6.0
       required_settings: []
     tag: 1.5.2
-  stars: 154
+  stars: 155
 netbox-labs:
   app_label: netbox_labs
   description: Manage various different labs in NetBox
@@ -1279,7 +1279,7 @@ netbox-plugin-dns:
       min: 3.5.0
       required_settings: []
     tag: 0.22.1
-  stars: 107
+  stars: 108
 netbox-qrcode:
   app_label: netbox_qrcode
   description: QR Code generation for netbox objects
@@ -1436,7 +1436,7 @@ netbox-secrets:
       min: 3.6.0
       required_settings: []
     tag: 1.9.2
-  stars: 64
+  stars: 65
 netbox-support:
   app_label: netbox_support
   description: NetBox Support provides device types and devices EoX data within NetBox.
