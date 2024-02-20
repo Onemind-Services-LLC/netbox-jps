@@ -97,7 +97,7 @@ netbox-circuitmaintenance:
       min: 3.5.0
       required_settings: []
     tag: 0.3.0
-  stars: 50
+  stars: 51
 netbox-cloud-pilot:
   app_label: netbox_cloud_pilot
   description: Enhances NetBox on CloudMyDC's VAP with advanced management and control
@@ -1595,4 +1595,4 @@ netbox-topology-views:
       min: 3.7.0
       required_settings: []
     tag: 3.9.0
-  stars: 591
+  stars: 592
