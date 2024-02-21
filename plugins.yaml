@@ -689,24 +689,24 @@ netbox-gateways:
       required_settings: []
     tag: v0.6.1
   stars: 0
-netbox-healthcheck-plugin:
-  app_label: netbox_healthcheck_plugin
-  description: NetBox plugin for HealthCheck.
-  github_api_url: https://api.github.com/repos/netbox-community/netbox-healthcheck-plugin
-  github_url: https://github.com/netbox-community/netbox-healthcheck-plugin
-  name: netbox-healthcheck-plugin
+netbox-healthcheck:
+  app_label: netbox_healthcheck
+  description: null
+  github_api_url: https://api.github.com/repos/Onemind-Services-LLC/netbox-healthcheck
+  github_url: https://github.com/Onemind-Services-LLC/netbox-healthcheck
+  name: netbox-healthcheck
   owner:
-    name: netbox-community
-    url: https://github.com/netbox-community
-  private: false
-  pypi_url: https://pypi.org/project/netbox-healthcheck-plugin/
+    name: Onemind-Services-LLC
+    url: https://github.com/Onemind-Services-LLC
+  private: true
+  pypi_url: null
   releases:
   - netbox:
       max: null
       min: 3.5.0
       required_settings: []
-    tag: 0.1.1
-  stars: 18
+    tag: v0.0.1
+  stars: 0
 netbox-initializers:
   app_label: netbox_initializers
   description: Loads data from YAML files into NetBox.
