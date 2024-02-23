@@ -54,12 +54,12 @@ nbrisk:
 netbox-acls:
   app_label: netbox_acls
   description: A NetBox plugin for Access List management
-  github_api_url: https://api.github.com/repos/ryanmerolle/netbox-acls
-  github_url: https://github.com/ryanmerolle/netbox-acls
+  github_api_url: https://api.github.com/repos/netbox-intermediary/netbox-acls
+  github_url: https://github.com/netbox-intermediary/netbox-acls
   name: netbox-acls
   owner:
-    name: ryanmerolle
-    url: https://github.com/ryanmerolle
+    name: netbox-intermediary
+    url: https://github.com/netbox-intermediary
   private: false
   pypi_url: https://pypi.org/project/netbox-acls/
   releases:
