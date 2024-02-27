@@ -1122,6 +1122,11 @@ netbox-networkdevice-config:
   pypi_url: null
   releases:
   - netbox:
+      max: 3.7.99
+      min: 3.7.0
+      required_settings: []
+    tag: v0.3.0
+  - netbox:
       max: 3.6.99
       min: 3.6.0
       required_settings: []
@@ -1289,7 +1294,7 @@ netbox-plugin-dns:
       min: 3.5.0
       required_settings: []
     tag: 0.22.3
-  stars: 110
+  stars: 111
 netbox-qrcode:
   app_label: netbox_qrcode
   description: QR Code generation for netbox objects
@@ -1487,6 +1492,11 @@ netbox-todo:
   private: true
   pypi_url: null
   releases:
+  - netbox:
+      max: 3.7.99
+      min: 3.7.0
+      required_settings: []
+    tag: v0.4.0
   - netbox:
       max: 3.6.99
       min: 3.6.0
