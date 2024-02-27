@@ -646,6 +646,11 @@ netbox-documents:
   pypi_url: null
   releases:
   - netbox:
+      max: 3.7.99
+      min: 3.7.0
+      required_settings: []
+    tag: v0.4.0
+  - netbox:
       max: 3.6.99
       min: 3.6.0
       required_settings: []
@@ -673,6 +678,11 @@ netbox-gateways:
   private: true
   pypi_url: null
   releases:
+  - netbox:
+      max: 3.7.99
+      min: 3.7.0
+      required_settings: []
+    tag: v0.8.0
   - netbox:
       max: 3.6.99
       min: 3.6.0
@@ -719,6 +729,11 @@ netbox-initializers:
   private: true
   pypi_url: null
   releases:
+  - netbox:
+      max: 3.7.99
+      min: 3.7.0
+      required_settings: []
+    tag: v0.3.0
   - netbox:
       max: 3.6.99
       min: 3.6.0
@@ -881,6 +896,11 @@ netbox-labs:
   pypi_url: null
   releases:
   - netbox:
+      max: 3.7.99
+      min: 3.7.0
+      required_settings: []
+    tag: v0.3.0
+  - netbox:
       max: 3.6.99
       min: 3.6.0
       required_settings: []
@@ -918,6 +938,11 @@ netbox-licenses:
   private: true
   pypi_url: null
   releases:
+  - netbox:
+      max: 3.7.99
+      min: 3.7.0
+      required_settings: []
+    tag: v0.7.0
   - netbox:
       max: 3.6.99
       min: 3.6.0
@@ -1098,6 +1123,11 @@ netbox-nat:
   private: true
   pypi_url: null
   releases:
+  - netbox:
+      max: 3.7.99
+      min: 3.7.0
+      required_settings: []
+    tag: v0.6.0
   - netbox:
       max: 3.6.99
       min: 3.6.0
@@ -1464,6 +1494,11 @@ netbox-support:
   private: true
   pypi_url: null
   releases:
+  - netbox:
+      max: 3.7.99
+      min: 3.7.0
+      required_settings: []
+    tag: v0.3.0
   - netbox:
       max: 3.6.99
       min: 3.6.0
