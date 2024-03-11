@@ -1348,12 +1348,12 @@ netbox-plugin-dns:
 netbox-qrcode:
   app_label: netbox_qrcode
   description: QR Code generation for netbox objects
-  github_api_url: https://api.github.com/repos/netbox-intermediary/netbox-qrcode
-  github_url: https://github.com/netbox-intermediary/netbox-qrcode
+  github_api_url: https://api.github.com/repos/netbox-community/netbox-qrcode
+  github_url: https://github.com/netbox-community/netbox-qrcode
   name: netbox-qrcode
   owner:
-    name: netbox-intermediary
-    url: https://github.com/netbox-intermediary
+    name: netbox-community
+    url: https://github.com/netbox-community
   private: false
   pypi_url: https://pypi.org/project/netbox-qrcode/
   releases:
