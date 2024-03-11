@@ -1020,6 +1020,30 @@ netbox-metatype-importer:
       - github_token
     tag: 0.2.0
   - netbox:
+      max: 3.6.99
+      min: 3.6.0
+      required_settings:
+      - github_token
+    tag: 0.2.1
+  - netbox:
+      max: 3.6.99
+      min: 3.6.0
+      required_settings:
+      - github_token
+    tag: 0.2.1
+  - netbox:
+      max: 3.6.99
+      min: 3.6.0
+      required_settings:
+      - github_token
+    tag: 0.2.2
+  - netbox:
+      max: 3.6.99
+      min: 3.6.0
+      required_settings:
+      - github_token
+    tag: 0.2.2
+  - netbox:
       max: 3.7.99
       min: 3.7.0
       required_settings:
@@ -1031,6 +1055,30 @@ netbox-metatype-importer:
       required_settings:
       - github_token
     tag: 0.3.0
+  - netbox:
+      max: 3.7.99
+      min: 3.7.0
+      required_settings:
+      - github_token
+    tag: 0.3.1
+  - netbox:
+      max: 3.7.99
+      min: 3.7.0
+      required_settings:
+      - github_token
+    tag: 0.3.1
+  - netbox:
+      max: 3.7.99
+      min: 3.7.0
+      required_settings:
+      - github_token
+    tag: 0.3.2
+  - netbox:
+      max: 3.7.99
+      min: 3.7.0
+      required_settings:
+      - github_token
+    tag: 0.3.2
   stars: 34
 netbox-napalm:
   app_label: netbox_napalm_plugin
