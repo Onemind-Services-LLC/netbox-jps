@@ -882,7 +882,7 @@ netbox-inventory:
       min: 3.6.0
       required_settings: []
     tag: 1.5.2
-  stars: 160
+  stars: 161
 netbox-labs:
   app_label: netbox_labs
   description: Manage various different labs in NetBox
@@ -1158,7 +1158,7 @@ netbox-napalm:
       required_settings:
       - NAPALM_USERNAME
     tag: 0.1.7
-  stars: 39
+  stars: 40
 netbox-nat:
   app_label: netbox_nat
   description: Manage NAT entries in NetBox
@@ -1415,7 +1415,7 @@ netbox-qrcode:
       min: 3.5.0
       required_settings: []
     tag: 0.0.10
-  stars: 170
+  stars: 171
 netbox-secrets:
   app_label: netbox_secrets
   description: Enhance your secret management with encrypted storage and flexible,
@@ -1718,4 +1718,4 @@ netbox-topology-views:
       min: 3.7.0
       required_settings: []
     tag: 3.9.0
-  stars: 608
+  stars: 611
