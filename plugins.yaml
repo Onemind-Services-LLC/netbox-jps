@@ -717,6 +717,39 @@ netbox-healthcheck:
       required_settings: []
     tag: v0.0.1
   stars: 0
+netbox-initializers:
+  app_label: netbox_initializers
+  description: Loads data from YAML files into NetBox.
+  github_api_url: https://api.github.com/repos/Onemind-Services-LLC/netbox-initializers
+  github_url: https://github.com/Onemind-Services-LLC/netbox-initializers
+  name: netbox-initializers
+  owner:
+    name: Onemind-Services-LLC
+    url: https://github.com/Onemind-Services-LLC
+  private: true
+  pypi_url: null
+  releases:
+  - netbox:
+      max: 3.7.99
+      min: 3.7.0
+      required_settings: []
+    tag: v0.3.0
+  - netbox:
+      max: 3.6.99
+      min: 3.6.0
+      required_settings: []
+    tag: v0.2.1
+  - netbox:
+      max: 3.6.99
+      min: 3.6.0
+      required_settings: []
+    tag: v0.2.0
+  - netbox:
+      max: 3.5.99
+      min: 3.5.0
+      required_settings: []
+    tag: v0.1.0
+  stars: 0
 netbox-inventory:
   app_label: netbox_inventory
   description: Inventory asset management in NetBox
