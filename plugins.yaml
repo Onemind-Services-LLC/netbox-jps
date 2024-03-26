@@ -1402,7 +1402,7 @@ netbox-plugin-dns:
       min: 3.5.0
       required_settings: []
     tag: 0.22.6
-  stars: 120
+  stars: 121
 netbox-qrcode:
   app_label: netbox_qrcode
   description: QR Code generation for netbox objects
@@ -1425,7 +1425,7 @@ netbox-qrcode:
       min: 3.5.0
       required_settings: []
     tag: 0.0.10
-  stars: 175
+  stars: 176
 netbox-secrets:
   app_label: netbox_secrets
   description: Enhance your secret management with encrypted storage and flexible,
@@ -1559,7 +1559,7 @@ netbox-secrets:
       min: 3.6.0
       required_settings: []
     tag: 1.9.2
-  stars: 70
+  stars: 71
 netbox-support:
   app_label: netbox_support
   description: NetBox Support provides device types and devices EoX data within NetBox.
@@ -1728,4 +1728,4 @@ netbox-topology-views:
       min: 3.7.0
       required_settings: []
     tag: 3.9.0
-  stars: 620
+  stars: 622
