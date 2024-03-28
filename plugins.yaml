@@ -1178,7 +1178,7 @@ netbox-napalm:
       required_settings:
       - NAPALM_USERNAME
     tag: 0.1.7
-  stars: 40
+  stars: 41
 netbox-nat:
   app_label: netbox_nat
   description: Manage NAT entries in NetBox
@@ -1422,7 +1422,7 @@ netbox-plugin-dns:
       min: 3.5.0
       required_settings: []
     tag: 0.22.6
-  stars: 123
+  stars: 124
 netbox-qrcode:
   app_label: netbox_qrcode
   description: QR Code generation for netbox objects
