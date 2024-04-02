@@ -1598,6 +1598,11 @@ netbox-support:
   pypi_url: null
   releases:
   - netbox:
+      max: 3.6.99
+      min: 3.6.0
+      required_settings: []
+    tag: v0.2.1
+  - netbox:
       max: 3.5.99
       min: 3.5.0
       required_settings: []
