@@ -1223,6 +1223,11 @@ netbox-networkdevice-config:
       max: 3.7.99
       min: 3.7.0
       required_settings: []
+    tag: v0.4.1
+  - netbox:
+      max: 3.7.99
+      min: 3.7.0
+      required_settings: []
     tag: v0.4.0
   - netbox:
       max: 3.7.99
@@ -1768,4 +1773,4 @@ netbox-topology-views:
       min: 3.7.0
       required_settings: []
     tag: 3.9.0
-  stars: 627
+  stars: 628
