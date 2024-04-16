@@ -912,7 +912,7 @@ netbox-inventory:
       min: 3.6.0
       required_settings: []
     tag: 1.5.2
-  stars: 168
+  stars: 167
 netbox-labs:
   app_label: netbox_labs
   description: Manage various different labs in NetBox
@@ -1442,7 +1442,7 @@ netbox-plugin-dns:
       min: 3.5.0
       required_settings: []
     tag: 0.22.8
-  stars: 128
+  stars: 127
 netbox-qrcode:
   app_label: netbox_qrcode
   description: QR Code generation for netbox objects
