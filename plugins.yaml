@@ -1113,8 +1113,8 @@ netbox-metatype-importer:
 netbox-napalm:
   app_label: netbox_napalm_plugin
   description: NetBox plugin for Napalm.
-  github_api_url: https://api.github.com/repos/netbox-community/netbox-napalm
-  github_url: https://github.com/netbox-community/netbox-napalm
+  github_api_url: https://api.github.com/repos/netbox-community/netbox-napalm-plugin
+  github_url: https://github.com/netbox-community/netbox-napalm-plugin
   name: netbox-napalm-plugin
   owner:
     name: netbox-community
@@ -1188,6 +1188,18 @@ netbox-napalm:
       required_settings:
       - NAPALM_USERNAME
     tag: 0.1.7
+  - netbox:
+      max: 3.7.99
+      min: 3.5.0-dev
+      required_settings:
+      - NAPALM_USERNAME
+    tag: 0.1.8
+  - netbox:
+      max: 3.7.99
+      min: 3.5.0-dev
+      required_settings:
+      - NAPALM_USERNAME
+    tag: 0.1.8
   stars: 41
 netbox-nat:
   app_label: netbox_nat
