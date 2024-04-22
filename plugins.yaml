@@ -60,6 +60,16 @@ nbrisk:
       min: 3.5.0
       required_settings: []
     tag: 35.1.1
+  - netbox:
+      max: 3.7.99
+      min: 3.5.0
+      required_settings: []
+    tag: 35.1.2
+  - netbox:
+      max: 3.7.99
+      min: 3.5.0
+      required_settings: []
+    tag: 35.1.2
   stars: 48
 netbox-acls:
   app_label: netbox_acls
