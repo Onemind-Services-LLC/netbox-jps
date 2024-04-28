@@ -80,7 +80,7 @@ nbrisk:
       min: 3.5.0
       required_settings: []
     tag: 35.1.3
-  stars: 49
+  stars: 50
 netbox-acls:
   app_label: netbox_acls
   description: A NetBox plugin for Access List management
