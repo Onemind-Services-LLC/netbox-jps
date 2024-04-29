@@ -1484,7 +1484,7 @@ netbox-plugin-dns:
       min: 3.5.0
       required_settings: []
     tag: 0.22.8
-  stars: 135
+  stars: 137
 netbox-qrcode:
   app_label: netbox_qrcode
   description: QR Code generation for netbox objects
@@ -1507,7 +1507,7 @@ netbox-qrcode:
       min: 3.5.0
       required_settings: []
     tag: 0.0.10
-  stars: 179
+  stars: 180
 netbox-secrets:
   app_label: netbox_secrets
   description: Enhance your secret management with encrypted storage and flexible,
