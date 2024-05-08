@@ -162,8 +162,8 @@ netbox-cloud-pilot:
   app_label: netbox_cloud_pilot
   description: Enhances NetBox on CloudMyDC's VAP with advanced management and control
     features.
-  github_api_url: https://api.github.com/repos/Onemind-Services-LLC/netbox-cloud-pilot
-  github_url: https://github.com/Onemind-Services-LLC/netbox-cloud-pilot
+  github_api_url: https://api.github.com/repos/Onemind-Services-LLC/netbox-paas
+  github_url: https://github.com/Onemind-Services-LLC/netbox-paas
   name: netbox-cloud-pilot
   owner:
     name: Onemind-Services-LLC
@@ -1516,7 +1516,7 @@ netbox-plugin-dns:
       min: 4.0.0
       required_settings: []
     tag: 1.0.0
-  stars: 149
+  stars: 150
 netbox-qrcode:
   app_label: netbox_qrcode
   description: QR Code generation for netbox objects
