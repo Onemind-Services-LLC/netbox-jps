@@ -952,6 +952,16 @@ netbox-inventory:
       min: 3.7.0
       required_settings: []
     tag: 1.6.0
+  - netbox:
+      max: null
+      min: 4.0.0
+      required_settings: []
+    tag: 2.0.0
+  - netbox:
+      max: null
+      min: 4.0.0
+      required_settings: []
+    tag: 2.0.0
   stars: 174
 netbox-labs:
   app_label: netbox_labs
