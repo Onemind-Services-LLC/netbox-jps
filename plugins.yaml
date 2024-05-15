@@ -962,7 +962,17 @@ netbox-inventory:
       min: 4.0.0
       required_settings: []
     tag: 2.0.0
-  stars: 177
+  - netbox:
+      max: null
+      min: 4.0.0
+      required_settings: []
+    tag: 2.0.1
+  - netbox:
+      max: null
+      min: 4.0.0
+      required_settings: []
+    tag: 2.0.1
+  stars: 178
 netbox-labs:
   app_label: netbox_labs
   description: Manage various different labs in NetBox
@@ -1159,7 +1169,7 @@ netbox-metatype-importer:
       required_settings:
       - github_token
     tag: 0.3.2
-  stars: 35
+  stars: 36
 netbox-napalm:
   app_label: netbox_napalm_plugin
   description: NetBox plugin for Napalm.
@@ -1526,7 +1536,7 @@ netbox-plugin-dns:
       min: 4.0.0
       required_settings: []
     tag: 1.0.0
-  stars: 155
+  stars: 156
 netbox-qrcode:
   app_label: netbox_qrcode
   description: QR Code generation for netbox objects
@@ -1683,7 +1693,7 @@ netbox-secrets:
       min: 3.6.0
       required_settings: []
     tag: 1.9.2
-  stars: 79
+  stars: 80
 netbox-support:
   app_label: netbox_support
   description: NetBox Support provides device types and devices EoX data within NetBox.
@@ -1867,4 +1877,4 @@ netbox-topology-views:
       min: 3.7.0
       required_settings: []
     tag: 3.9.0
-  stars: 648
+  stars: 650
