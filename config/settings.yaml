@@ -44,7 +44,7 @@ fields:
         caption: v3.5
       - value: v3.4
         caption: v3.4
-    default: v3.7
+    default: v4.0
 
   - name: loglevel
     type: list
