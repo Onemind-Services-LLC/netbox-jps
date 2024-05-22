@@ -34,6 +34,8 @@ fields:
     caption: NetBox Version
     tooltip: Version of NetBox to install
     values:
+      - value: v4.0
+        caption: v4.0
       - value: v3.7
         caption: v3.7
       - value: v3.6
