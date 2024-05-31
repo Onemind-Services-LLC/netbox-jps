@@ -6,7 +6,7 @@ on:
 
 jobs:
   check-manifest:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04-sh
 
     steps:
     - name: Checkout code
