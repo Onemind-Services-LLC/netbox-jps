@@ -125,6 +125,11 @@ netbox-data-validation:
       min: 3.5.0
       required_settings: []
     tag: v0.0.2
+  - netbox:
+      max: 3.5.99
+      min: 3.5.0
+      required_settings: []
+    tag: v0.0.1
   stars: 0
 netbox-demo:
   app_label: netbox_demo
@@ -181,6 +186,11 @@ netbox-documents:
       min: 3.5.0
       required_settings: []
     tag: v0.2.1
+  - netbox:
+      max: 3.5.99
+      min: 3.5.0
+      required_settings: []
+    tag: v0.2.0
   stars: 0
 netbox-gateways:
   app_label: netbox_gateways
@@ -214,6 +224,11 @@ netbox-gateways:
       min: 3.5.0
       required_settings: []
     tag: v0.6.1
+  - netbox:
+      max: 3.5.99
+      min: 3.5.0
+      required_settings: []
+    tag: v0.6.0
   stars: 0
 netbox-healthcheck:
   app_label: netbox_healthcheck
@@ -353,7 +368,7 @@ netbox-inventory:
       min: 4.0.0
       required_settings: []
     tag: 2.0.1
-  stars: 180
+  stars: 181
 netbox-labs:
   app_label: netbox_labs
   description: Manage various different labs in NetBox
@@ -396,6 +411,11 @@ netbox-labs:
       min: 3.5.0
       required_settings: []
     tag: v0.1.1
+  - netbox:
+      max: 3.5.99
+      min: 3.5.0
+      required_settings: []
+    tag: v0.1.0
   stars: 0
 netbox-licenses:
   app_label: netbox_licenses
@@ -429,6 +449,11 @@ netbox-licenses:
       min: 3.5.0
       required_settings: []
     tag: v0.5.1
+  - netbox:
+      max: 3.5.99
+      min: 3.5.0
+      required_settings: []
+    tag: v0.5.0
   stars: 0
 netbox-metatype-importer:
   app_label: netbox_metatype_importer
@@ -563,6 +588,12 @@ netbox-napalm:
       required_settings:
       - NAPALM_USERNAME
     tag: 0.1.9
+  - netbox:
+      max: 4.0.99
+      min: 4.0.2
+      required_settings:
+      - NAPALM_USERNAME
+    tag: 0.2.1
   stars: 42
 netbox-nat:
   app_label: netbox_nat
@@ -591,6 +622,11 @@ netbox-nat:
       min: 3.5.0
       required_settings: []
     tag: v0.4.1
+  - netbox:
+      max: 3.5.99
+      min: 3.5.0
+      required_settings: []
+    tag: v0.4.0
   stars: 0
 netbox-networkdevice-config:
   app_label: netbox_networkdevice_config
@@ -644,16 +680,6 @@ netbox-networkdevice-config:
       min: 3.5.0
       required_settings: []
     tag: v0.1.3
-  - netbox:
-      max: 3.5.99
-      min: 3.5.0
-      required_settings: []
-    tag: v0.1.2
-  - netbox:
-      max: 3.5.99
-      min: 3.5.0
-      required_settings: []
-    tag: v0.1.1
   stars: 0
 netbox-paas:
   app_label: netbox_paas
@@ -851,7 +877,12 @@ netbox-plugin-dns:
       min: 4.0.0
       required_settings: []
     tag: 1.0.0
-  stars: 157
+  - netbox:
+      max: null
+      min: 4.0.0
+      required_settings: []
+    tag: 1.0.1
+  stars: 163
 netbox-qrcode:
   app_label: netbox_qrcode
   description: QR Code generation for netbox objects
@@ -869,7 +900,7 @@ netbox-qrcode:
       min: 3.5.0
       required_settings: []
     tag: 0.0.10
-  stars: 187
+  stars: 189
 netbox-secrets:
   app_label: netbox_secrets
   description: Enhance your secret management with encrypted storage and flexible,
@@ -943,7 +974,7 @@ netbox-secrets:
       min: 3.6.0
       required_settings: []
     tag: 1.9.2
-  stars: 84
+  stars: 85
 netbox-support:
   app_label: netbox_support
   description: NetBox Support provides device types and devices EoX data within NetBox.
@@ -1024,6 +1055,11 @@ netbox-todo:
       min: 3.5.0
       required_settings: []
     tag: v0.2.1
+  - netbox:
+      max: 3.5.99
+      min: 3.5.0
+      required_settings: []
+    tag: v0.2.0
   stars: 0
 netbox-topology-views:
   app_label: netbox_topology_views
@@ -1082,4 +1118,4 @@ netbox-topology-views:
       min: 3.7.0
       required_settings: []
     tag: 3.9.0
-  stars: 658
+  stars: 667
