@@ -521,7 +521,7 @@ netbox-metatype-importer:
       required_settings:
       - github_token
     tag: 0.3.2
-  stars: 38
+  stars: 39
 netbox-napalm:
   app_label: netbox_napalm_plugin
   description: NetBox plugin for Napalm.
