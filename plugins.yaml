@@ -78,6 +78,11 @@ netbox-acls:
       min: 3.7.0
       required_settings: []
     tag: 1.5.0
+  - netbox:
+      max: 4.0.99
+      min: 4.0.2
+      required_settings: []
+    tag: 1.6.0
   stars: 75
 netbox-circuitmaintenance:
   app_label: netbox_circuitmaintenance
@@ -683,7 +688,7 @@ netbox-networkdevice-config:
   stars: 0
 netbox-paas:
   app_label: netbox_paas
-  description: Enhances NetBox on CloudMyDC's VAP with advanced management and control
+  description: Enhances NetBox on CloudMyDC's PaaS with advanced management and control
     features.
   github_api_url: https://api.github.com/repos/Onemind-Services-LLC/netbox-paas
   github_url: https://github.com/Onemind-Services-LLC/netbox-paas
@@ -704,6 +709,11 @@ netbox-paas:
       min: 3.7.0
       required_settings: []
     tag: 0.3.0
+  - netbox:
+      max: 3.7.99
+      min: 3.7.0
+      required_settings: []
+    tag: 0.3.1
   stars: 3
 netbox-plugin-dns:
   app_label: netbox_dns
