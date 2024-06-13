@@ -83,7 +83,7 @@ netbox-acls:
       min: 4.0.2
       required_settings: []
     tag: 1.6.0
-  stars: 75
+  stars: 76
 netbox-circuitmaintenance:
   app_label: netbox_circuitmaintenance
   description: Provides the ability to record circuit maintenance, maintenance impact
