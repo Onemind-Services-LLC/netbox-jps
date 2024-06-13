@@ -83,6 +83,11 @@ netbox-acls:
       min: 4.0.2
       required_settings: []
     tag: 1.6.0
+  - netbox:
+      max: 4.0.99
+      min: 4.0.2
+      required_settings: []
+    tag: 1.6.1
   stars: 76
 netbox-circuitmaintenance:
   app_label: netbox_circuitmaintenance
