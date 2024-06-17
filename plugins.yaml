@@ -920,6 +920,21 @@ netbox-qrcode:
       min: 3.5.0
       required_settings: []
     tag: 0.0.10
+  - netbox:
+      max: 3.7.99
+      min: 3.7.0
+      required_settings: []
+    tag: 0.0.11
+  - netbox:
+      max: 4.0.99
+      min: 4.0.0
+      required_settings: []
+    tag: 0.0.12
+  - netbox:
+      max: 4.0.99
+      min: 4.0.0
+      required_settings: []
+    tag: 0.0.13
   stars: 190
 netbox-secrets:
   app_label: netbox_secrets
@@ -1134,8 +1149,13 @@ netbox-topology-views:
       required_settings: []
     tag: 3.8.1
   - netbox:
-      max: 3.7.0
+      max: 3.7.99
       min: 3.7.0
       required_settings: []
     tag: 3.9.0
-  stars: 679
+  - netbox:
+      max: 3.7.99
+      min: 3.7.0
+      required_settings: []
+    tag: 3.9.1
+  stars: 680
