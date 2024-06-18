@@ -964,6 +964,69 @@ netbox-qrcode:
       required_settings: []
     tag: 0.0.13
   stars: 190
+netbox-saltstack:
+  app_label: netbox_saltstack
+  description: NetBox Saltstack Plugin
+  github_api_url: https://api.github.com/repos/Onemind-Services-LLC/netbox-saltstack
+  github_url: https://github.com/Onemind-Services-LLC/netbox-saltstack
+  name: netbox-saltstack
+  owner:
+    name: Onemind-Services-LLC
+    url: https://github.com/Onemind-Services-LLC
+  private: true
+  pypi_url: null
+  releases:
+  - netbox:
+      max: 3.7.99
+      min: 3.7.0
+      required_settings: []
+    tag: v0.0.10
+  - netbox:
+      max: 3.7.99
+      min: 3.7.0
+      required_settings: []
+    tag: v0.0.9
+  - netbox:
+      max: 3.7.99
+      min: 3.7.0
+      required_settings: []
+    tag: v0.0.8
+  - netbox:
+      max: 3.7.99
+      min: 3.7.0
+      required_settings: []
+    tag: v0.0.7
+  - netbox:
+      max: 3.7.99
+      min: 3.7.0
+      required_settings: []
+    tag: v0.0.6
+  - netbox:
+      max: 3.7.99
+      min: 3.7.0
+      required_settings: []
+    tag: v0.0.5
+  - netbox:
+      max: 3.7.99
+      min: 3.7.0
+      required_settings: []
+    tag: v0.0.4
+  - netbox:
+      max: 3.7.99
+      min: 3.7.0
+      required_settings: []
+    tag: v0.0.3
+  - netbox:
+      max: 3.7.99
+      min: 3.7.0
+      required_settings: []
+    tag: v0.0.2
+  - netbox:
+      max: 3.7.99
+      min: 3.7.0
+      required_settings: []
+    tag: v0.0.1
+  stars: 0
 netbox-secrets:
   app_label: netbox_secrets
   description: Enhance your secret management with encrypted storage and flexible,
