@@ -439,7 +439,7 @@ netbox-inventory:
       min: 4.0.0
       required_settings: []
     tag: 2.0.1
-  stars: 186
+  stars: 187
 netbox-labs:
   app_label: netbox_labs
   description: Manage various different labs in NetBox
@@ -592,7 +592,7 @@ netbox-metatype-importer:
       required_settings:
       - github_token
     tag: 0.3.2
-  stars: 39
+  stars: 40
 netbox-napalm:
   app_label: netbox_napalm_plugin
   description: NetBox plugin for Napalm.
@@ -1287,4 +1287,4 @@ netbox-topology-views:
       min: 3.7.0
       required_settings: []
     tag: 3.9.1
-  stars: 684
+  stars: 685
