@@ -1287,4 +1287,4 @@ netbox-topology-views:
       min: 3.7.0
       required_settings: []
     tag: 3.9.1
-  stars: 685
+  stars: 686
