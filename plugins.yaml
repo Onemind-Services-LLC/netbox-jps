@@ -149,6 +149,11 @@ netbox-contracts:
   pypi_url: null
   releases:
   - netbox:
+      max: 4.0.99
+      min: 4.0.0
+      required_settings: []
+    tag: v0.3.0
+  - netbox:
       max: 3.7.99
       min: 3.7.0
       required_settings: []
@@ -275,6 +280,11 @@ netbox-gateways:
   private: true
   pypi_url: null
   releases:
+  - netbox:
+      max: 4.0.99
+      min: 4.0.0
+      required_settings: []
+    tag: v0.9.0
   - netbox:
       max: 3.7.99
       min: 3.7.0
@@ -453,6 +463,11 @@ netbox-licenses:
   pypi_url: null
   releases:
   - netbox:
+      max: 4.0.99
+      min: 4.0.0
+      required_settings: []
+    tag: v0.8.0
+  - netbox:
       max: 3.7.99
       min: 3.7.0
       required_settings: []
@@ -544,6 +559,12 @@ netbox-metatype-importer:
       required_settings:
       - github_token
     tag: 0.3.2
+  - netbox:
+      max: 4.0.99
+      min: 4.0.0
+      required_settings:
+      - github_token
+    tag: 0.4.0
   stars: 40
 netbox-napalm:
   app_label: netbox_napalm_plugin
@@ -1113,6 +1134,11 @@ netbox-support:
   private: true
   pypi_url: null
   releases:
+  - netbox:
+      max: 4.0.99
+      min: 4.0.0
+      required_settings: []
+    tag: v0.4.0
   - netbox:
       max: 3.7.99
       min: 3.7.0
