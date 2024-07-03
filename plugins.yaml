@@ -631,6 +631,11 @@ netbox-nat:
   pypi_url: null
   releases:
   - netbox:
+      max: 4.0.99
+      min: 4.0.0
+      required_settings: []
+    tag: v0.7.0
+  - netbox:
       max: 3.7.99
       min: 3.7.0
       required_settings: []
