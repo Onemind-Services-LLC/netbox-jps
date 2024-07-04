@@ -135,7 +135,7 @@ netbox-circuitmaintenance:
       min: 3.5.0
       required_settings: []
     tag: 0.3.0
-  stars: 52
+  stars: 53
 netbox-contracts:
   app_label: netbox_contracts
   description: null
@@ -229,7 +229,7 @@ netbox-demo:
       min: 3.5.0
       required_settings: []
     tag: 0.4.0
-  stars: 0
+  stars: 1
 netbox-documents:
   app_label: netbox_documents
   description: A plugin for NetBox to manage documents
@@ -1280,4 +1280,4 @@ netbox-topology-views:
       min: 3.7.0
       required_settings: []
     tag: 3.9.1
-  stars: 691
+  stars: 693
