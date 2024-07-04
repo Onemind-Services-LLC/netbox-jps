@@ -268,6 +268,24 @@ netbox-documents:
       required_settings: []
     tag: v0.2.0
   stars: 0
+netbox-firewall-policies:
+  app_label: netbox_firewall_policies
+  description: null
+  github_api_url: https://api.github.com/repos/Onemind-Services-LLC/netbox-firewall-policies
+  github_url: https://github.com/Onemind-Services-LLC/netbox-firewall-policies
+  name: netbox-firewall-policies
+  owner:
+    name: Onemind-Services-LLC
+    url: https://github.com/Onemind-Services-LLC
+  private: true
+  pypi_url: null
+  releases:
+  - netbox:
+      max: 3.7.99
+      min: 3.7.0
+      required_settings: []
+    tag: v0.2.0
+  stars: 0
 netbox-gateways:
   app_label: netbox_gateways
   description: Manage simple prefix default gateways
@@ -1280,4 +1298,4 @@ netbox-topology-views:
       min: 3.7.0
       required_settings: []
     tag: 3.9.1
-  stars: 693
+  stars: 694
