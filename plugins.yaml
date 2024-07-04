@@ -88,7 +88,7 @@ netbox-acls:
       min: 4.0.2
       required_settings: []
     tag: 1.6.1
-  stars: 80
+  stars: 81
 netbox-bgp:
   app_label: netbox_bgp
   description: null
@@ -638,7 +638,7 @@ netbox-napalm:
       required_settings:
       - NAPALM_USERNAME
     tag: 0.2.1
-  stars: 43
+  stars: 44
 netbox-nat:
   app_label: netbox_nat
   description: Manage NAT entries in NetBox
@@ -758,7 +758,7 @@ netbox-paas:
       min: 3.7.0
       required_settings: []
     tag: 0.3.1
-  stars: 3
+  stars: 4
 netbox-plugin-dns:
   app_label: netbox_dns
   description: NetBox DNS is a NetBox plugin for managing DNS data.
