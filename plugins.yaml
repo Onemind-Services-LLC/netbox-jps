@@ -88,7 +88,7 @@ netbox-acls:
       min: 4.0.2
       required_settings: []
     tag: 1.6.1
-  stars: 81
+  stars: 82
 netbox-bgp:
   app_label: netbox_bgp
   description: null
@@ -588,7 +588,7 @@ netbox-metatype-importer:
       required_settings:
       - github_token
     tag: 0.4.0
-  stars: 40
+  stars: 41
 netbox-napalm:
   app_label: netbox_napalm_plugin
   description: NetBox plugin for Napalm.
