@@ -478,6 +478,24 @@ netbox-inventory:
       required_settings: []
     tag: 2.0.1
   stars: 189
+netbox-labs:
+  app_label: netbox_scheduler
+  description: Manage various different labs in NetBox
+  github_api_url: https://api.github.com/repos/Onemind-Services-LLC/netbox-scheduler
+  github_url: https://github.com/Onemind-Services-LLC/netbox-scheduler
+  name: netbox-scheduler
+  owner:
+    name: Onemind-Services-LLC
+    url: https://github.com/Onemind-Services-LLC
+  private: true
+  pypi_url: null
+  releases:
+  - netbox:
+      max: 4.0.99
+      min: 4.0.0
+      required_settings: []
+    tag: v0.4.0
+  stars: 0
 netbox-licenses:
   app_label: netbox_licenses
   description: A Netbox plugin for License management.
@@ -717,6 +735,11 @@ netbox-networkdevice-config:
   private: true
   pypi_url: null
   releases:
+  - netbox:
+      max: 4.0.99
+      min: 4.0.0
+      required_settings: []
+    tag: v0.5.0
   - netbox:
       max: 3.7.99
       min: 3.7.0
@@ -1154,6 +1177,11 @@ netbox-secrets:
       min: 3.6.0
       required_settings: []
     tag: 1.9.2
+  - netbox:
+      max: 4.0.99
+      min: 4.0.0
+      required_settings: []
+    tag: 2.0.0
   stars: 91
 netbox-support:
   app_label: netbox_support
