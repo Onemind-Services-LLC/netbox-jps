@@ -1055,7 +1055,7 @@ netbox-qrcode:
       min: 4.0.0
       required_settings: []
     tag: 0.0.13
-  stars: 195
+  stars: 196
 netbox-saltstack:
   app_label: netbox_saltstack
   description: NetBox Saltstack Plugin
@@ -1278,6 +1278,11 @@ netbox-todo:
   private: true
   pypi_url: null
   releases:
+  - netbox:
+      max: 4.0.99
+      min: 4.0.0
+      required_settings: []
+    tag: v0.5.0
   - netbox:
       max: 3.7.99
       min: 3.7.0
