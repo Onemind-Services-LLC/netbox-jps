@@ -492,7 +492,7 @@ netbox-inventory:
       min: 4.0.0
       required_settings: []
     tag: 2.0.2
-  stars: 192
+  stars: 193
 netbox-labs:
   app_label: netbox_scheduler
   description: Manage various different labs in NetBox
