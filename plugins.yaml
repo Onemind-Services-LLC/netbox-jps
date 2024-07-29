@@ -140,7 +140,7 @@ netbox-circuitmaintenance:
       min: 3.5.0
       required_settings: []
     tag: 0.3.0
-  stars: 53
+  stars: 54
 netbox-contracts:
   app_label: netbox_contracts
   description: null
@@ -1391,4 +1391,4 @@ netbox-topology-views:
       min: 3.7.0
       required_settings: []
     tag: 3.9.1
-  stars: 713
+  stars: 712
