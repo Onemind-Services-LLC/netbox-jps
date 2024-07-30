@@ -492,7 +492,7 @@ netbox-inventory:
       min: 4.0.0
       required_settings: []
     tag: 2.0.2
-  stars: 194
+  stars: 195
 netbox-labs:
   app_label: netbox_scheduler
   description: Manage various different labs in NetBox
@@ -1060,7 +1060,7 @@ netbox-qrcode:
       min: 4.0.0
       required_settings: []
     tag: 0.0.13
-  stars: 197
+  stars: 198
 netbox-saltstack:
   app_label: netbox_saltstack
   description: NetBox Saltstack Plugin
