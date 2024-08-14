@@ -1037,6 +1037,11 @@ netbox-plugin-dns:
       min: 4.0.0
       required_settings: []
     tag: 1.1.0b2
+  - netbox:
+      max: null
+      min: 4.0.0
+      required_settings: []
+    tag: 1.1b3
   stars: 186
 netbox-qrcode:
   app_label: netbox_qrcode
