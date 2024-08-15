@@ -212,29 +212,6 @@ netbox-data-validation:
       required_settings: []
     tag: v0.0.1
   stars: 0
-netbox-demo:
-  app_label: netbox_demo
-  description: NetBox plugin for demo instances (not for production use)
-  github_api_url: https://api.github.com/repos/netbox-community/netbox-demo
-  github_url: https://github.com/netbox-community/netbox-demo
-  name: netbox-demo
-  owner:
-    name: netbox-community
-    url: https://github.com/netbox-community
-  private: false
-  pypi_url: https://pypi.org/project/netbox-demo/
-  releases:
-  - netbox:
-      max: 3.7.99
-      min: 3.5.0
-      required_settings: []
-    tag: 0.3.1
-  - netbox:
-      max: 3.7.99
-      min: 3.5.0
-      required_settings: []
-    tag: 0.4.0
-  stars: 1
 netbox-documents:
   app_label: netbox_documents
   description: A plugin for NetBox to manage documents
