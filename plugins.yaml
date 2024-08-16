@@ -1023,6 +1023,11 @@ netbox-plugin-dns:
       max: null
       min: 4.0.0
       required_settings: []
+    tag: 1.1.0b4
+  - netbox:
+      max: null
+      min: 4.0.0
+      required_settings: []
     tag: 1.1b3
   stars: 187
 netbox-qrcode:
