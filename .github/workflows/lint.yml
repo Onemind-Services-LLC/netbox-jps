@@ -13,9 +13,7 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Install yq
-      run: |
-        sudo apt-get update
-        sudo snap install yq --channel=v3/stable
+      run: sudo snap install yq --channel=v3/stable
 
     - name: Find manifest.jps files
       id: find-manifest
