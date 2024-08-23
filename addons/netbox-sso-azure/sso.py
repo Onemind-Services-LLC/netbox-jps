@@ -57,7 +57,7 @@ def azuread_group_permissions(response, user, *args, **kwargs):
         groups_dict = config["AZUREAD_GROUP_PERMISSIONS"]
 
         for group_name, i in groups_dict.items():
-            if group_name not in user_info["groups"]:
+            if group_name not in user_info.get("groups", []):
                 continue
 
             try:
@@ -156,7 +156,7 @@ def azuread_map_groups(response, user, *args, **kwargs):
     user.groups.through.objects.filter(user=user).delete()
     logger.info("Removing all group mappings for user {}".format(user))
 
-    for group_name in user_info["groups"]:
+    for group_name in user_info.get("groups", []):
         if group_name in superuser_map:
             logger.info("Setting superuser status for user {}".format(user))
             is_superuser = True
