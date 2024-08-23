@@ -12,6 +12,11 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
+    - name: Install yq
+      run: |
+        sudo apt-get update
+        sudo apt-get install yq -y
+
     - name: Find manifest.jps files
       id: find-manifest
       run: |
