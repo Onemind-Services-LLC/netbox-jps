@@ -1133,6 +1133,24 @@ netbox-saltstack:
       required_settings: []
     tag: v0.0.1
   stars: 0
+netbox-scheduler:
+  app_label: netbox_scheduler
+  description: Manage various different labs in NetBox
+  github_api_url: https://api.github.com/repos/Onemind-Services-LLC/netbox-scheduler
+  github_url: https://github.com/Onemind-Services-LLC/netbox-scheduler
+  name: netbox-scheduler
+  owner:
+    name: Onemind-Services-LLC
+    url: https://github.com/Onemind-Services-LLC
+  private: true
+  pypi_url: null
+  releases:
+  - netbox:
+      max: 4.0.99
+      min: 4.0.0
+      required_settings: []
+    tag: v0.4.0
+  stars: 0
 netbox-secrets:
   app_label: netbox_secrets
   description: Enhance your secret management with encrypted storage and flexible,
@@ -1390,4 +1408,14 @@ netbox-topology-views:
       min: 3.7.0
       required_settings: []
     tag: 3.9.1
+  - netbox:
+      max: 4.0.0
+      min: 4.0.99
+      required_settings: []
+    tag: 4.0.0
+  - netbox:
+      max: 4.0.0
+      min: 4.0.99
+      required_settings: []
+    tag: 4.0.1
   stars: 730
