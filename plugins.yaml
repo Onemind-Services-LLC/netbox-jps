@@ -346,7 +346,7 @@ netbox-napalm:
       required_settings:
       - NAPALM_USERNAME
     tag: 0.2.1
-  stars: 47
+  stars: 48
 netbox-paas:
   app_label: netbox_paas
   description: Enhances NetBox on CloudMyDC's PaaS with advanced management and control
