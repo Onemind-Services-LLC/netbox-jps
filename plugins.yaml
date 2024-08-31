@@ -88,7 +88,7 @@ netbox-acls:
       min: 4.0.2
       required_settings: []
     tag: 1.6.1
-  stars: 84
+  stars: 85
 netbox-bgp:
   app_label: netbox_bgp
   description: null
