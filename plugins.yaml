@@ -788,6 +788,11 @@ netbox-paas:
       min: 3.7.0
       required_settings: []
     tag: 0.3.2
+  - netbox:
+      max: 3.7.99
+      min: 3.7.0
+      required_settings: []
+    tag: 0.3.3
   stars: 4
 netbox-plugin-dns:
   app_label: netbox_dns
@@ -1077,6 +1082,11 @@ netbox-saltstack:
   private: true
   pypi_url: null
   releases:
+  - netbox:
+      max: 4.0.99
+      min: 4.0.0
+      required_settings: []
+    tag: v0.1.2
   - netbox:
       max: 4.0.99
       min: 4.0.0
