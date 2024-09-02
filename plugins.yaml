@@ -713,6 +713,11 @@ netbox-networkdevice-config:
       max: 4.0.99
       min: 4.0.0
       required_settings: []
+    tag: v0.5.1
+  - netbox:
+      max: 4.0.99
+      min: 4.0.0
+      required_settings: []
     tag: v0.5.0
   - netbox:
       max: 3.7.99
