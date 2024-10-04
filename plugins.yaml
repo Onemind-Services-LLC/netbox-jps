@@ -483,6 +483,11 @@ netbox-inventory:
       min: 4.0.0
       required_settings: []
     tag: 2.0.2
+  - netbox:
+      max: null
+      min: 4.1.0
+      required_settings: []
+    tag: 2.1.0
   stars: 206
 netbox-licenses:
   app_label: netbox_licenses
