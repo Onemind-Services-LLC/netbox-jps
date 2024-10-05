@@ -823,6 +823,11 @@ netbox-paas:
       min: 3.7.0
       required_settings: []
     tag: 0.3.3
+  - netbox:
+      max: 3.7.99
+      min: 3.7.0
+      required_settings: []
+    tag: 0.3.4
   stars: 4
 netbox-plugin-dns:
   app_label: netbox_dns
