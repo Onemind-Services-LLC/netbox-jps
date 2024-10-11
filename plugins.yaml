@@ -1493,4 +1493,4 @@ netbox-topology-views:
       min: 4.0.99
       required_settings: []
     tag: 4.0.1
-  stars: 746
+  stars: 747
