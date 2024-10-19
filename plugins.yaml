@@ -122,6 +122,11 @@ netbox-bgp:
   pypi_url: null
   releases:
   - netbox:
+      max: 4.1.99
+      min: 4.1.0
+      required_settings: []
+    tag: v0.5.0
+  - netbox:
       max: 4.0.99
       min: 4.0.0
       required_settings: []
@@ -173,6 +178,11 @@ netbox-contracts:
   pypi_url: null
   releases:
   - netbox:
+      max: 4.1.99
+      min: 4.1.0
+      required_settings: []
+    tag: v0.4.0
+  - netbox:
       max: 4.0.99
       min: 4.0.0
       required_settings: []
@@ -211,6 +221,11 @@ netbox-data-validation:
   pypi_url: null
   releases:
   - netbox:
+      max: 4.0.99
+      min: 4.0.0
+      required_settings: []
+    tag: v0.3.0
+  - netbox:
       max: 3.6.99
       min: 3.6.0
       required_settings: []
@@ -243,6 +258,11 @@ netbox-documents:
   private: true
   pypi_url: null
   releases:
+  - netbox:
+      max: 4.1.99
+      min: 4.1.0
+      required_settings: []
+    tag: v0.6.0
   - netbox:
       max: 4.0.99
       min: 4.0.0
@@ -309,6 +329,11 @@ netbox-gateways:
   private: true
   pypi_url: null
   releases:
+  - netbox:
+      max: 4.1.99
+      min: 4.1.0
+      required_settings: []
+    tag: v0.10.0
   - netbox:
       max: 4.0.99
       min: 4.0.0
@@ -626,6 +651,12 @@ netbox-metatype-importer:
       required_settings:
       - github_token
     tag: 0.4.1
+  - netbox:
+      max: 4.1.99
+      min: 4.1.0
+      required_settings:
+      - github_token
+    tag: 0.5.0
   stars: 45
 netbox-napalm:
   app_label: netbox_napalm_plugin
@@ -719,6 +750,11 @@ netbox-nat:
   pypi_url: null
   releases:
   - netbox:
+      max: 4.1.99
+      min: 4.1.0
+      required_settings: []
+    tag: v0.8.0
+  - netbox:
       max: 4.0.99
       min: 4.0.0
       required_settings: []
@@ -756,6 +792,11 @@ netbox-networkdevice-config:
   private: true
   pypi_url: null
   releases:
+  - netbox:
+      max: 4.1.99
+      min: 4.1.0
+      required_settings: []
+    tag: v0.6.0
   - netbox:
       max: 4.0.99
       min: 4.0.0
@@ -1360,6 +1401,11 @@ netbox-support:
   pypi_url: null
   releases:
   - netbox:
+      max: 4.1.99
+      min: 4.1.0
+      required_settings: []
+    tag: v0.5.0
+  - netbox:
       max: 4.0.99
       min: 4.0.0
       required_settings: []
@@ -1417,6 +1463,11 @@ netbox-todo:
   private: true
   pypi_url: null
   releases:
+  - netbox:
+      max: 4.1.99
+      min: 4.1.0
+      required_settings: []
+    tag: v0.6.0
   - netbox:
       max: 4.0.99
       min: 4.0.0
@@ -1520,4 +1571,4 @@ netbox-topology-views:
       min: 4.0.99
       required_settings: []
     tag: 4.0.1
-  stars: 750
+  stars: 751
