@@ -108,7 +108,7 @@ netbox-acls:
       min: 4.1.0
       required_settings: []
     tag: 1.7.0
-  stars: 86
+  stars: 87
 netbox-bgp:
   app_label: netbox_bgp
   description: null
@@ -518,7 +518,7 @@ netbox-inventory:
       min: 4.1.0
       required_settings: []
     tag: 2.1.0
-  stars: 207
+  stars: 208
 netbox-licenses:
   app_label: netbox_licenses
   description: A Netbox plugin for License management.
@@ -736,7 +736,7 @@ netbox-napalm:
       required_settings:
       - NAPALM_USERNAME
     tag: 0.3.0
-  stars: 50
+  stars: 51
 netbox-nat:
   app_label: netbox_nat
   description: Manage NAT entries in NetBox
@@ -1571,4 +1571,4 @@ netbox-topology-views:
       min: 4.0.99
       required_settings: []
     tag: 4.0.1
-  stars: 751
+  stars: 752
