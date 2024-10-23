@@ -221,6 +221,11 @@ netbox-data-validation:
   pypi_url: null
   releases:
   - netbox:
+      max: 4.1.99
+      min: 4.1.0
+      required_settings: []
+    tag: v0.4.0
+  - netbox:
       max: 4.0.99
       min: 4.0.0
       required_settings: []
@@ -1192,7 +1197,7 @@ netbox-qrcode:
       min: 4.0.0
       required_settings: []
     tag: 0.0.13
-  stars: 206
+  stars: 207
 netbox-saltstack:
   app_label: netbox_saltstack
   description: NetBox Saltstack Plugin
@@ -1205,6 +1210,11 @@ netbox-saltstack:
   private: true
   pypi_url: null
   releases:
+  - netbox:
+      max: 4.1.99
+      min: 4.1.0
+      required_settings: []
+    tag: v0.2.0
   - netbox:
       max: 4.0.99
       min: 4.0.0
