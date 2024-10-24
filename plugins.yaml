@@ -312,6 +312,16 @@ netbox-firewall-policies:
   pypi_url: null
   releases:
   - netbox:
+      max: 4.1.99
+      min: 4.1.0
+      required_settings: []
+    tag: v0.4.0
+  - netbox:
+      max: 4.0.99
+      min: 4.0.0
+      required_settings: []
+    tag: v0.3.1
+  - netbox:
       max: 4.0.99
       min: 4.0.0
       required_settings: []
@@ -1164,7 +1174,7 @@ netbox-plugin-dns:
       min: 4.0.0
       required_settings: []
     tag: 1.1b3
-  stars: 194
+  stars: 195
 netbox-qrcode:
   app_label: netbox_qrcode
   description: QR Code generation for netbox objects
@@ -1581,4 +1591,4 @@ netbox-topology-views:
       min: 4.0.99
       required_settings: []
     tag: 4.0.1
-  stars: 752
+  stars: 753
