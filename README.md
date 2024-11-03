@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://raw.githubusercontent.com/netbox-community/netbox/develop/docs/netbox_logo.svg" width="400" alt="NetBox logo" />
+  <img src="https://raw.githubusercontent.com/netbox-community/netbox/refs/heads/develop/docs/netbox_logo_light.svg" width="400" alt="NetBox logo" />
   <p>The premier source of truth powering network automation</p>
 </div>
 
