@@ -394,6 +394,11 @@ netbox-healthcheck:
   releases:
   - netbox:
       max: null
+      min: 4.0.0
+      required_settings: []
+    tag: v0.1.0
+  - netbox:
+      max: null
       min: 3.5.0
       required_settings: []
     tag: v0.0.1
