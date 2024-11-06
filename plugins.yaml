@@ -1432,7 +1432,7 @@ netbox-secrets:
       min: 4.1.0
       required_settings: []
     tag: 2.1.0
-  stars: 100
+  stars: 101
 netbox-support:
   app_label: netbox_support
   description: NetBox Support provides device types and devices EoX data within NetBox.
