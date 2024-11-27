@@ -761,7 +761,7 @@ netbox-napalm:
       required_settings:
       - NAPALM_USERNAME
     tag: 0.3.0
-  stars: 53
+  stars: 54
 netbox-nat:
   app_label: netbox_nat
   description: Manage NAT entries in NetBox
@@ -817,6 +817,16 @@ netbox-networkdevice-config:
   private: true
   pypi_url: null
   releases:
+  - netbox:
+      max: 4.0.99
+      min: 4.0.0
+      required_settings: []
+    tag: v0.5.2
+  - netbox:
+      max: 3.7.99
+      min: 3.7.0
+      required_settings: []
+    tag: v0.4.2
   - netbox:
       max: 4.1.99
       min: 4.1.0
