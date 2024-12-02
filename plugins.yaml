@@ -1214,6 +1214,11 @@ netbox-plugin-dns:
       min: 4.0.0
       required_settings: []
     tag: 1.1b3
+  - netbox:
+      max: null
+      min: 4.2.0
+      required_settings: []
+    tag: 1.2b1
   stars: 205
 netbox-qrcode:
   app_label: netbox_qrcode
@@ -1457,7 +1462,7 @@ netbox-secrets:
       min: 4.1.0
       required_settings: []
     tag: 2.1.0
-  stars: 104
+  stars: 105
 netbox-support:
   app_label: netbox_support
   description: NetBox Support provides device types and devices EoX data within NetBox.
@@ -1641,4 +1646,4 @@ netbox-topology-views:
       min: 4.0.99
       required_settings: []
     tag: 4.0.1
-  stars: 768
+  stars: 769
