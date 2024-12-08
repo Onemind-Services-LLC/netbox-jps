@@ -543,7 +543,7 @@ netbox-inventory:
       min: 4.1.0
       required_settings: []
     tag: 2.1.0
-  stars: 215
+  stars: 216
 netbox-licenses:
   app_label: netbox_licenses
   description: A Netbox plugin for License management.
@@ -682,7 +682,7 @@ netbox-metatype-importer:
       required_settings:
       - github_token
     tag: 0.5.0
-  stars: 47
+  stars: 48
 netbox-napalm:
   app_label: netbox_napalm_plugin
   description: NetBox plugin for Napalm.
@@ -1219,7 +1219,7 @@ netbox-plugin-dns:
       min: 4.2.0
       required_settings: []
     tag: 1.2b1
-  stars: 205
+  stars: 207
 netbox-qrcode:
   app_label: netbox_qrcode
   description: QR Code generation for netbox objects
@@ -1265,6 +1265,11 @@ netbox-saltstack:
   private: true
   pypi_url: null
   releases:
+  - netbox:
+      max: 4.1.99
+      min: 4.1.0
+      required_settings: []
+    tag: v0.2.2
   - netbox:
       max: 4.1.99
       min: 4.1.0
@@ -1462,6 +1467,16 @@ netbox-secrets:
       min: 4.1.0
       required_settings: []
     tag: 2.1.0
+  - netbox:
+      max: 4.1.99
+      min: 4.1.0
+      required_settings: []
+    tag: 2.1.1
+  - netbox:
+      max: 4.1.99
+      min: 4.1.0
+      required_settings: []
+    tag: 2.1.2
   stars: 105
 netbox-support:
   app_label: netbox_support
@@ -1646,4 +1661,4 @@ netbox-topology-views:
       min: 4.0.99
       required_settings: []
     tag: 4.0.1
-  stars: 769
+  stars: 775
