@@ -1279,6 +1279,11 @@ netbox-saltstack:
       max: 4.1.99
       min: 4.1.0
       required_settings: []
+    tag: v0.2.4
+  - netbox:
+      max: 4.1.99
+      min: 4.1.0
+      required_settings: []
     tag: v0.2.3
   - netbox:
       max: 4.1.99
