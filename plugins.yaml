@@ -553,7 +553,7 @@ netbox-inventory:
       min: 4.1.0
       required_settings: []
     tag: 2.2.1
-  stars: 222
+  stars: 223
 netbox-licenses:
   app_label: netbox_licenses
   description: A Netbox plugin for License management.
@@ -1282,7 +1282,7 @@ netbox-qrcode:
       min: 4.0.0
       required_settings: []
     tag: 0.0.13
-  stars: 212
+  stars: 213
 netbox-saltstack:
   app_label: netbox_saltstack
   description: NetBox Saltstack Plugin
