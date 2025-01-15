@@ -776,6 +776,12 @@ netbox-napalm:
       required_settings:
       - NAPALM_USERNAME
     tag: 0.3.0
+  - netbox:
+      max: 4.2.99
+      min: 4.0.2
+      required_settings:
+      - NAPALM_USERNAME
+    tag: 0.3.1
   stars: 54
 netbox-nat:
   app_label: netbox_nat
