@@ -34,6 +34,10 @@ fields:
     caption: NetBox Version
     tooltip: Version of NetBox to install
     values:
+      - value: v4.2
+        caption: v4.2
+      - value: v4.1
+        caption: v4.1
       - value: v4.0
         caption: v4.0
       - value: v3.7
@@ -44,7 +48,7 @@ fields:
         caption: v3.5
       - value: v3.4
         caption: v3.4
-    default: v4.0
+    default: v4.2
 
   - name: loglevel
     type: list
