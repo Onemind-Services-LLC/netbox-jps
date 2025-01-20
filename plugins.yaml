@@ -65,7 +65,7 @@ nbrisk:
       min: 4.1.0
       required_settings: []
     tag: 41.0.2
-  stars: 60
+  stars: 61
 netbox-acls:
   app_label: netbox_acls
   description: A NetBox plugin for Access List management
@@ -1259,6 +1259,11 @@ netbox-plugin-dns:
       max: null
       min: 4.2.0
       required_settings: []
+    tag: 1.2.1
+  - netbox:
+      max: null
+      min: 4.2.0
+      required_settings: []
     tag: 1.2b1
   stars: 218
 netbox-qrcode:
@@ -1732,4 +1737,4 @@ netbox-topology-views:
       min: 4.0.99
       required_settings: []
     tag: 4.0.1
-  stars: 791
+  stars: 792
