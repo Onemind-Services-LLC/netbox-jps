@@ -782,7 +782,7 @@ netbox-napalm:
       required_settings:
       - NAPALM_USERNAME
     tag: 0.3.1
-  stars: 54
+  stars: 55
 netbox-nat:
   app_label: netbox_nat
   description: Manage NAT entries in NetBox
