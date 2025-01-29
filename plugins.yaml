@@ -697,6 +697,12 @@ netbox-metatype-importer:
       required_settings:
       - github_token
     tag: 0.5.0
+  - netbox:
+      max: 4.1.99
+      min: 4.1.0
+      required_settings:
+      - github_token
+    tag: 0.5.1
   stars: 48
 netbox-napalm:
   app_label: netbox_napalm_plugin
@@ -1737,4 +1743,4 @@ netbox-topology-views:
       min: 4.0.99
       required_settings: []
     tag: 4.0.1
-  stars: 797
+  stars: 798
