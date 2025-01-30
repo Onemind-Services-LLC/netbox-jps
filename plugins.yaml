@@ -164,7 +164,7 @@ netbox-circuitmaintenance:
       min: 3.5.0
       required_settings: []
     tag: 0.3.0
-  stars: 57
+  stars: 58
 netbox-contracts:
   app_label: netbox_contracts
   description: null
