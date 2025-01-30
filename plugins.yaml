@@ -164,7 +164,7 @@ netbox-circuitmaintenance:
       min: 3.5.0
       required_settings: []
     tag: 0.3.0
-  stars: 58
+  stars: 59
 netbox-contracts:
   app_label: netbox_contracts
   description: null
@@ -703,7 +703,7 @@ netbox-metatype-importer:
       required_settings:
       - github_token
     tag: 0.5.1
-  stars: 49
+  stars: 50
 netbox-napalm:
   app_label: netbox_napalm_plugin
   description: NetBox plugin for Napalm.
@@ -788,7 +788,7 @@ netbox-napalm:
       required_settings:
       - NAPALM_USERNAME
     tag: 0.3.1
-  stars: 55
+  stars: 56
 netbox-nat:
   app_label: netbox_nat
   description: Manage NAT entries in NetBox
@@ -1266,6 +1266,11 @@ netbox-plugin-dns:
       min: 4.2.0
       required_settings: []
     tag: 1.2.1
+  - netbox:
+      max: null
+      min: 4.2.0
+      required_settings: []
+    tag: 1.2.2
   - netbox:
       max: null
       min: 4.2.0
