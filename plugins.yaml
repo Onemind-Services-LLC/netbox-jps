@@ -1281,7 +1281,7 @@ netbox-plugin-dns:
       min: 4.2.0
       required_settings: []
     tag: 1.2b1
-  stars: 235
+  stars: 236
 netbox-qrcode:
   app_label: netbox_qrcode
   description: QR Code generation for netbox objects
