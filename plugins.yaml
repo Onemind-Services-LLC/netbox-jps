@@ -68,7 +68,7 @@ nbrisk:
   stars: 62
 netbox-acls:
   app_label: netbox_acls
-  description: A NetBox plugin for Access List management
+  description: null
   github_api_url: https://api.github.com/repos/netbox-community/netbox-acls
   github_url: https://github.com/netbox-community/netbox-acls
   name: netbox-acls
@@ -108,6 +108,11 @@ netbox-acls:
       min: 4.1.0
       required_settings: []
     tag: 1.7.0
+  - netbox:
+      max: 4.2.99
+      min: 4.2.0
+      required_settings: []
+    tag: 1.8.0
   stars: 96
 netbox-bgp:
   app_label: netbox_bgp
@@ -1763,4 +1768,4 @@ netbox-topology-views:
       min: 4.0.99
       required_settings: []
     tag: 4.0.1
-  stars: 809
+  stars: 810
