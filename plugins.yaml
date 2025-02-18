@@ -713,6 +713,12 @@ netbox-metatype-importer:
       required_settings:
       - github_token
     tag: 0.5.1
+  - netbox:
+      max: 4.2.99
+      min: 4.2.0
+      required_settings:
+      - github_token
+    tag: 0.6.0
   stars: 51
 netbox-napalm:
   app_label: netbox_napalm_plugin
@@ -1296,7 +1302,7 @@ netbox-plugin-dns:
       min: 4.2.0
       required_settings: []
     tag: 1.2b1
-  stars: 237
+  stars: 238
 netbox-qrcode:
   app_label: netbox_qrcode
   description: QR Code generation for netbox objects
