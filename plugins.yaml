@@ -113,6 +113,11 @@ netbox-acls:
       min: 4.2.0
       required_settings: []
     tag: 1.8.0
+  - netbox:
+      max: 4.2.99
+      min: 4.2.0
+      required_settings: []
+    tag: 1.8.1
   stars: 96
 netbox-bgp:
   app_label: netbox_bgp
@@ -850,6 +855,11 @@ netbox-networkdevice-config:
   pypi_url: null
   releases:
   - netbox:
+      max: 4.2.99
+      min: 4.2.0
+      required_settings: []
+    tag: v0.7.0
+  - netbox:
       max: 4.1.99
       min: 4.1.0
       required_settings: []
@@ -1461,6 +1471,11 @@ netbox-scheduler:
   pypi_url: null
   releases:
   - netbox:
+      max: 4.2.99
+      min: 4.2.0
+      required_settings: []
+    tag: v0.6.0
+  - netbox:
       max: 4.1.99
       min: 4.1.0
       required_settings: []
@@ -1598,6 +1613,11 @@ netbox-support:
   pypi_url: null
   releases:
   - netbox:
+      max: 4.2.99
+      min: 4.2.0
+      required_settings: []
+    tag: v0.6.0
+  - netbox:
       max: 4.1.99
       min: 4.1.0
       required_settings: []
@@ -1660,6 +1680,11 @@ netbox-todo:
   private: true
   pypi_url: null
   releases:
+  - netbox:
+      max: 4.2.99
+      min: 4.2.0
+      required_settings: []
+    tag: v0.7.0
   - netbox:
       max: 4.1.99
       min: 4.1.0
