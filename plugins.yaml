@@ -118,7 +118,7 @@ netbox-acls:
       min: 4.2.0
       required_settings: []
     tag: 1.8.1
-  stars: 96
+  stars: 97
 netbox-bgp:
   app_label: netbox_bgp
   description: null
@@ -1340,7 +1340,7 @@ netbox-qrcode:
       min: 4.2.0
       required_settings: []
     tag: 0.0.16
-  stars: 217
+  stars: 218
 netbox-saltstack:
   app_label: netbox_saltstack
   description: NetBox Saltstack Plugin
@@ -1799,4 +1799,4 @@ netbox-topology-views:
       min: 4.0.99
       required_settings: []
     tag: 4.0.1
-  stars: 813
+  stars: 814
