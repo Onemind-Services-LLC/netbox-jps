@@ -337,6 +337,11 @@ netbox-firewall-policies:
   pypi_url: null
   releases:
   - netbox:
+      max: 4.2.99
+      min: 4.2.0
+      required_settings: []
+    tag: v0.5.0
+  - netbox:
       max: 4.1.99
       min: 4.1.0
       required_settings: []
@@ -369,6 +374,11 @@ netbox-gateways:
   private: true
   pypi_url: null
   releases:
+  - netbox:
+      max: 4.2.99
+      min: 4.2.0
+      required_settings: []
+    tag: v0.11.0
   - netbox:
       max: 4.1.99
       min: 4.1.0
