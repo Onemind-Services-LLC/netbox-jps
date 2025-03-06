@@ -65,7 +65,7 @@ nbrisk:
       min: 4.1.0
       required_settings: []
     tag: 41.0.2
-  stars: 62
+  stars: 63
 netbox-acls:
   app_label: netbox_acls
   description: null
@@ -118,7 +118,7 @@ netbox-acls:
       min: 4.2.0
       required_settings: []
     tag: 1.8.1
-  stars: 97
+  stars: 98
 netbox-bgp:
   app_label: netbox_bgp
   description: null
@@ -593,7 +593,7 @@ netbox-inventory:
       min: 4.2.1
       required_settings: []
     tag: 2.3.0
-  stars: 235
+  stars: 236
 netbox-licenses:
   app_label: netbox_licenses
   description: A Netbox plugin for License management.
@@ -1347,7 +1347,7 @@ netbox-plugin-dns:
       min: 4.2.0
       required_settings: []
     tag: 1.2b1
-  stars: 241
+  stars: 242
 netbox-qrcode:
   app_label: netbox_qrcode
   description: QR Code generation for netbox objects
