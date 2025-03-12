@@ -292,6 +292,11 @@ netbox-documents:
       max: 4.2.99
       min: 4.2.0
       required_settings: []
+    tag: v0.7.1
+  - netbox:
+      max: 4.2.99
+      min: 4.2.0
+      required_settings: []
     tag: v0.7.0
   - netbox:
       max: 4.1.99
@@ -1864,4 +1869,4 @@ netbox-topology-views:
       min: 4.0.99
       required_settings: []
     tag: 4.0.1
-  stars: 823
+  stars: 824
