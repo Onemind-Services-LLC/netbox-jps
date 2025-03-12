@@ -1361,6 +1361,16 @@ netbox-plugin-dns:
       max: null
       min: 4.2.0
       required_settings: []
+    tag: 1.2.6
+  - netbox:
+      max: null
+      min: 4.2.0
+      required_settings: []
+    tag: 1.2.7b2
+  - netbox:
+      max: null
+      min: 4.2.0
+      required_settings: []
     tag: 1.2b1
   stars: 245
 netbox-qrcode:
@@ -1869,4 +1879,4 @@ netbox-topology-views:
       min: 4.0.99
       required_settings: []
     tag: 4.0.1
-  stars: 824
+  stars: 825
