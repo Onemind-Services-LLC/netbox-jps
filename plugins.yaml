@@ -118,7 +118,7 @@ netbox-acls:
       min: 4.2.0
       required_settings: []
     tag: 1.8.1
-  stars: 100
+  stars: 101
 netbox-bgp:
   app_label: netbox_bgp
   description: null
@@ -623,7 +623,7 @@ netbox-inventory:
       min: 4.2.1
       required_settings: []
     tag: 2.3.0
-  stars: 239
+  stars: 240
 netbox-licenses:
   app_label: netbox_licenses
   description: A Netbox plugin for License management.
@@ -1401,8 +1401,13 @@ netbox-plugin-dns:
       max: null
       min: 4.2.0
       required_settings: []
+    tag: 1.2.7b3
+  - netbox:
+      max: null
+      min: 4.2.0
+      required_settings: []
     tag: 1.2b1
-  stars: 246
+  stars: 247
 netbox-qrcode:
   app_label: netbox_qrcode
   description: QR Code generation for netbox objects
@@ -1725,7 +1730,7 @@ netbox-secrets:
       min: 4.2.0
       required_settings: []
     tag: 2.2.0
-  stars: 113
+  stars: 114
 netbox-support:
   app_label: netbox_support
   description: NetBox Support provides device types and devices EoX data within NetBox.
@@ -1919,4 +1924,4 @@ netbox-topology-views:
       min: 4.0.99
       required_settings: []
     tag: 4.0.1
-  stars: 827
+  stars: 830
