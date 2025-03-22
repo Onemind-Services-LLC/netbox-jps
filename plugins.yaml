@@ -1450,7 +1450,7 @@ netbox-qrcode:
       min: 4.2.0
       required_settings: []
     tag: 0.0.17
-  stars: 219
+  stars: 220
 netbox-saltstack:
   app_label: netbox_saltstack
   description: NetBox Saltstack Plugin
