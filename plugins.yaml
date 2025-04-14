@@ -869,7 +869,7 @@ netbox-napalm:
       required_settings:
       - NAPALM_USERNAME
     tag: 0.3.1
-  stars: 59
+  stars: 60
 netbox-nat:
   app_label: netbox_nat
   description: Manage NAT entries in NetBox
@@ -1417,7 +1417,7 @@ netbox-plugin-dns:
       min: 4.2.0
       required_settings: []
     tag: 1.3b1
-  stars: 254
+  stars: 255
 netbox-qrcode:
   app_label: netbox_qrcode
   description: QR Code generation for netbox objects
@@ -1460,7 +1460,7 @@ netbox-qrcode:
       min: 4.2.0
       required_settings: []
     tag: 0.0.17
-  stars: 223
+  stars: 224
 netbox-saltstack:
   app_label: netbox_saltstack
   description: NetBox Saltstack Plugin
@@ -1934,4 +1934,4 @@ netbox-topology-views:
       min: 4.0.99
       required_settings: []
     tag: 4.0.1
-  stars: 842
+  stars: 843
