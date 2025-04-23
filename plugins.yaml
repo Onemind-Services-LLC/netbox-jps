@@ -65,7 +65,7 @@ nbrisk:
       min: 4.1.0
       required_settings: []
     tag: 41.0.2
-  stars: 64
+  stars: 65
 netbox-acls:
   app_label: netbox_acls
   description: null
