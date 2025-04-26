@@ -484,6 +484,11 @@ netbox-initializers:
       max: 4.1.99
       min: 4.1.0
       required_settings: []
+    tag: v0.5.1
+  - netbox:
+      max: 4.1.99
+      min: 4.1.0
+      required_settings: []
     tag: v0.5.0
   - netbox:
       max: 4.0.99
@@ -1949,4 +1954,4 @@ netbox-topology-views:
       min: 4.0.99
       required_settings: []
     tag: 4.0.1
-  stars: 851
+  stars: 852
