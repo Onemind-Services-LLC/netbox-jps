@@ -1765,6 +1765,11 @@ netbox-secrets:
       min: 4.2.0
       required_settings: []
     tag: 2.2.0
+  - netbox:
+      max: 4.2.99
+      min: 4.2.0
+      required_settings: []
+    tag: 2.2.1
   stars: 119
 netbox-support:
   app_label: netbox_support
@@ -1959,4 +1964,4 @@ netbox-topology-views:
       min: 4.0.99
       required_settings: []
     tag: 4.0.1
-  stars: 852
+  stars: 855
