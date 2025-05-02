@@ -118,7 +118,7 @@ netbox-acls:
       min: 4.2.0
       required_settings: []
     tag: 1.8.1
-  stars: 103
+  stars: 104
 netbox-bgp:
   app_label: netbox_bgp
   description: null
@@ -1979,4 +1979,4 @@ netbox-topology-views:
       min: 4.0.99
       required_settings: []
     tag: 4.0.1
-  stars: 859
+  stars: 860
