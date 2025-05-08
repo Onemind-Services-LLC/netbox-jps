@@ -638,7 +638,7 @@ netbox-inventory:
       min: 4.2.1
       required_settings: []
     tag: 2.3.1
-  stars: 247
+  stars: 248
 netbox-licenses:
   app_label: netbox_licenses
   description: A Netbox plugin for License management.
@@ -1984,4 +1984,4 @@ netbox-topology-views:
       min: 4.0.99
       required_settings: []
     tag: 4.0.1
-  stars: 864
+  stars: 865
