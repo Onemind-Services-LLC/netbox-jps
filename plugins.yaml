@@ -1525,6 +1525,11 @@ netbox-qrcode:
       min: 4.2.0
       required_settings: []
     tag: 0.0.17
+  - netbox:
+      max: 4.3.99
+      min: 4.3.0
+      required_settings: []
+    tag: 0.0.18
   stars: 231
 netbox-saltstack:
   app_label: netbox_saltstack
