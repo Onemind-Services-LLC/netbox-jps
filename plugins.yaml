@@ -638,7 +638,7 @@ netbox-inventory:
       min: 4.2.1
       required_settings: []
     tag: 2.3.1
-  stars: 256
+  stars: 257
 netbox-licenses:
   app_label: netbox_licenses
   description: A Netbox plugin for License management.
@@ -1482,7 +1482,7 @@ netbox-plugin-dns:
       min: 4.2.0
       required_settings: []
     tag: 1.3b2
-  stars: 262
+  stars: 263
 netbox-qrcode:
   app_label: netbox_qrcode
   description: QR Code generation for netbox objects
