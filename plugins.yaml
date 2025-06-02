@@ -169,7 +169,8 @@ netbox-bgp:
   stars: 0
 netbox-circuitmaintenance:
   app_label: netbox_circuitmaintenance
-  description: NetBox plugin for circuitmaintenance.
+  description: Provides the ability to record circuit maintenance, maintenance impact
+    and maintenance notifications in Netbox and link them to Providers and Circuits.
   github_api_url: https://api.github.com/repos/jasonyates/netbox-circuitmaintenance
   github_url: https://github.com/jasonyates/netbox-circuitmaintenance
   name: netbox-circuitmaintenance
