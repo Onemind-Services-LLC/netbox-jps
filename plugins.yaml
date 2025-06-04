@@ -1407,6 +1407,11 @@ netbox-plugin-dns:
       max: null
       min: 4.2.0
       required_settings: []
+    tag: 1.2.14
+  - netbox:
+      max: null
+      min: 4.2.0
+      required_settings: []
     tag: 1.2.2
   - netbox:
       max: null
