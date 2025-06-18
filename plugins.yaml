@@ -1536,7 +1536,7 @@ netbox-qrcode:
       min: 4.3.0
       required_settings: []
     tag: 0.0.18
-  stars: 235
+  stars: 236
 netbox-saltstack:
   app_label: netbox_saltstack
   description: NetBox Saltstack Plugin
@@ -1826,7 +1826,7 @@ netbox-secrets:
       min: 4.2.0
       required_settings: []
     tag: 2.2.1
-  stars: 120
+  stars: 121
 netbox-support:
   app_label: netbox_support
   description: NetBox Support provides device types and devices EoX data within NetBox.
