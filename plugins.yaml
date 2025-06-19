@@ -65,7 +65,7 @@ nbrisk:
       min: 4.1.0
       required_settings: []
     tag: 41.0.2
-  stars: 66
+  stars: 67
 netbox-acls:
   app_label: netbox_acls
   description: null
@@ -185,7 +185,7 @@ netbox-circuitmaintenance:
       min: 3.5.0
       required_settings: []
     tag: 0.3.0
-  stars: 61
+  stars: 62
 netbox-contracts:
   app_label: netbox_contracts
   description: null
@@ -800,7 +800,7 @@ netbox-metatype-importer:
       required_settings:
       - github_token
     tag: 0.6.0
-  stars: 53
+  stars: 54
 netbox-napalm:
   app_label: netbox_napalm_plugin
   description: NetBox plugin for Napalm.
@@ -885,7 +885,7 @@ netbox-napalm:
       required_settings:
       - NAPALM_USERNAME
     tag: 0.3.1
-  stars: 63
+  stars: 64
 netbox-nat:
   app_label: netbox_nat
   description: Manage NAT entries in NetBox
@@ -1488,7 +1488,7 @@ netbox-plugin-dns:
       min: 4.2.0
       required_settings: []
     tag: 1.3b2
-  stars: 270
+  stars: 271
 netbox-qrcode:
   app_label: netbox_qrcode
   description: QR Code generation for netbox objects
@@ -2020,4 +2020,4 @@ netbox-topology-views:
       min: 4.0.99
       required_settings: []
     tag: 4.0.1
-  stars: 885
+  stars: 886
