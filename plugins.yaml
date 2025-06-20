@@ -118,7 +118,7 @@ netbox-acls:
       min: 4.2.0
       required_settings: []
     tag: 1.8.1
-  stars: 107
+  stars: 108
 netbox-bgp:
   app_label: netbox_bgp
   description: null
@@ -1488,7 +1488,7 @@ netbox-plugin-dns:
       min: 4.2.0
       required_settings: []
     tag: 1.3b2
-  stars: 271
+  stars: 272
 netbox-qrcode:
   app_label: netbox_qrcode
   description: QR Code generation for netbox objects
@@ -1826,6 +1826,11 @@ netbox-secrets:
       min: 4.2.0
       required_settings: []
     tag: 2.2.1
+  - netbox:
+      max: 4.3.99
+      min: 4.3.0
+      required_settings: []
+    tag: 2.3.0
   stars: 121
 netbox-support:
   app_label: netbox_support
@@ -2020,4 +2025,4 @@ netbox-topology-views:
       min: 4.0.99
       required_settings: []
     tag: 4.0.1
-  stars: 886
+  stars: 887
